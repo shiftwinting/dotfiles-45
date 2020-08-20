@@ -30,8 +30,8 @@
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
-(nvim.ex.autocmd :FileType :lua "set formatprg=lua-format -i")
-(nvim.ex.autocmd :FileType :java "set formatprg=google-java-format -")
+;(nvim.ex.autocmd :FileType :lua "set formatprg=lua-format -i")
+;(nvim.ex.autocmd :FileType :java "set formatprg=google-java-format -")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")
 (nvim.ex.autocmd :BufEnter "* lua require'completion'.on_attach()")
 (nvim.ex.autocmd :BufEnter "* lua require'diagnostic'.on_attach()")
