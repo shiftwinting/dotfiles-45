@@ -116,10 +116,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-
-
-
-
+# Colourful man
 man() {
   LESS_TERMCAP_md=$'\e[01;31m' \
   LESS_TERMCAP_me=$'\e[0m' \
@@ -130,10 +127,10 @@ man() {
   command man "$@"
 }
 
-
-
+# Aliases
 alias yeet='yay -Rsn'
 alias cat='bat'
 alias :q='exit'
 
+# dircolors
 eval $(dircolors ~/.dir_colors/Dracula.dircolors)

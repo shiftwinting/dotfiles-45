@@ -3,7 +3,7 @@
 
 (set nvim.g.spaceline_diagnostic_tool :nvim_lsp)
 (if
-  (= 1 nvim.g.gnvim) (set nvim.g.spaceline_diagnostic_errorsign :×)  
+  (= 1 nvim.g.gnvim) (set nvim.g.spaceline_diagnostic_errorsign :×)
   (set nvim.g.spaceline_diagnostic_errorsign :🚫))
 (if
   (= 1 nvim.g.gnvim) (set nvim.g.spaceline_diagnostic_warnsign :!)

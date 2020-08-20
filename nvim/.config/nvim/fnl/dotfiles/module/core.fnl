@@ -24,15 +24,9 @@
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
 (nvim.ex.highlight :link :Label :DraculaPurple)
-;(nvim.ex.highlight :link :Delimiter :DraculaRed)
-;(nvim.ex.highlight :link :Operator :DraculaYellow)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")
 (nvim.ex.autocmd :BufEnter "* lua require'completion'.on_attach()")
 (nvim.ex.autocmd :BufEnter "* lua require'diagnostic'.on_attach()")
-
-;;gnvim
-;(when (= 1 nvim.g.gnvim)
-;  (nvim.ex.gnvim.popupmenu.toggle_details))

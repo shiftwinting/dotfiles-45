@@ -60,7 +60,5 @@
 ;nvim-colorizer
 (smap :n :<leader>c ":ColorizerToggle<CR>")
 
-;(map :n :tb "<Plug>VimspectorToggleBreakpoint")
-;(map :n :<F5> "<Plug>VimspectorContinue")
-
+;format
 (smap :n :<C-f> "1G0gqG")
