@@ -1,5 +1,5 @@
 (module dotfiles.module.diagnostic
-  {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim}})
 
 (set nvim.g.diagnostic_enable_virtual_text 1)
 (set nvim.g.diagnostic_virtual_text_prefix "🩺")

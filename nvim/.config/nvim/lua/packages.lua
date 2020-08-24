@@ -1,5 +1,5 @@
 local packages = {
-  {'wbthomason/packer.nvim'},
+  {'wbthomason/packer.nvim', opt=true},
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   {'bakpakin/fennel.vim'},
   {'camspiers/lens.vim', requires = {'camspiers/animate.vim'}},
@@ -80,7 +80,9 @@ local packages = {
   {'Yggdroot/indentLine', requires = {'lukas-reineke/indent-blankline.nvim'}},
   {'ryanoasis/vim-devicons'},
   {'takac/vim-hardtime'},
-  {'puremourning/vimspector', tag = '1835'}
+--  {'puremourning/vimspector', tag = '1835'}
+  {'eraserhd/parinfer-rust', run = 'cargo build --release'},
+  {'ThePrimeagen/vim-be-good', run = './install.sh'}
 }
 
 return packages

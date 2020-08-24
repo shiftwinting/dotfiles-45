@@ -1,13 +1,13 @@
 (module dotfiles.module.core
-  {require {nvim aniseed.nvim
-            core aniseed.core
-            str aniseed.string}})
+        {require {nvim aniseed.nvim
+                  core aniseed.core
+                  str aniseed.string}})
 
 (set nvim.o.termguicolors true)
 (set nvim.o.mouse :a)
 (set nvim.o.number true)
 (set nvim.o.relativenumber true)
-(set nvim.o.guifont "JetBrains Mono:h11")
+;(set nvim.o.guifont "JetBrains Mono:h11")
 (set nvim.o.guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"])))
 (set nvim.o.listchars "eol:↴,tab:<->,space:·")
 (set nvim.o.showmode false)
@@ -30,8 +30,6 @@
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
-;(nvim.ex.autocmd :FileType :lua "set formatprg=lua-format -i")
-;(nvim.ex.autocmd :FileType :java "set formatprg=google-java-format -")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")
 (nvim.ex.autocmd :BufEnter "* lua require'completion'.on_attach()")
 (nvim.ex.autocmd :BufEnter "* lua require'diagnostic'.on_attach()")

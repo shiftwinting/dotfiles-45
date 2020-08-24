@@ -1,5 +1,5 @@
 (module dotfiles.module.definitions
-  {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim}})
 
 (set nvim.g.languagetool_server_command :languagetool)
 (set nvim.g.neoterm_default_mod :botright)

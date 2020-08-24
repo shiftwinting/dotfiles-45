@@ -1,5 +1,5 @@
 (module dotfiles.module.spaceline
-  {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim}})
 
 (set nvim.g.spaceline_diagnostic_tool :nvim_lsp)
 (if

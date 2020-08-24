@@ -1,6 +1,11 @@
 (module dotfiles.module.ale
-  {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim}})
 
+;(nvim.call_function :ale#fix#registry#Add
+;                    [:"joker"
+;                     :"joker --format -"
+;                     :[:fennel :clojure]
+;                     :"Format lisps"]}})
 (set nvim.g.ale_linters
      {:python [:flake8]
       :sh []

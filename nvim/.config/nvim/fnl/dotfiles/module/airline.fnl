@@ -1,5 +1,5 @@
 (module dotfiles.module.airline
-  {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim}})
 
 (set nvim.g.airline_theme "dracula")
 (set nvim.g.airline_powerline_fonts 1)

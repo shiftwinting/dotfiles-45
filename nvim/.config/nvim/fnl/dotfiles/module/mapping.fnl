@@ -1,7 +1,7 @@
 (module dotfiles.module.mapping
-  {require {nvim aniseed.nvim
-            nu aniseed.nvim.util
-            core aniseed.core}})
+        {require {nvim aniseed.nvim
+                  nu aniseed.nvim.util
+                  core aniseed.core}})
 
 (defn- map [mode from to]
   "Sets a mapping"
@@ -23,7 +23,7 @@
 (set nvim.g.maplocalleader ",")
 
 (map :c :<C-v> "<C-r>+") ;;;
-(map :n :<M-f> ":ALEFix<CR>")
+(map :n :<F8> "<Plug>(ale_fix)")
 (smap :n :K ":call <SID>show_documentation()<CR>")
 
 ;reload init.vim
