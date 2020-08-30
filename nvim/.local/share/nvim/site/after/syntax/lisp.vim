@@ -1,3 +1,3 @@
 if ! dracula#should_abort('lisp') || ! dracula_pro#should_abort('lisp')
-  hi link lispParen DraculaSubtle
+  hi lispParen guifg=#565866
 endif

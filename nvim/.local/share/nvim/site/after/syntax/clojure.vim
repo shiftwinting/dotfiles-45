@@ -1,3 +1,3 @@
 if ! dracula#should_abort('clojure')
-  hi link clojureParen guifg=#000000
+  hi clojureParen guifg=#565866
 endif
