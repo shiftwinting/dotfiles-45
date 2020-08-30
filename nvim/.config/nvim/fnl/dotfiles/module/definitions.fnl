@@ -11,3 +11,5 @@
 (set nvim.g.float_preview#docked 0)
 (set nvim.g.vista_default_executive :nvim_lsp)
 ;(set nvim.g.hardtime_default_on :1)
+(set nvim.g.neosnippet#enable_completed_snippet 1)
+(set nvim.g.neosnippet#enable_complete_done 1)

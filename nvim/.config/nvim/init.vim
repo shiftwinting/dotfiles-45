@@ -1,4 +1,6 @@
 lua require('init')
-autocmd FileType fennel set formatprg=joker\ --format\ -
-autocmd FileType clojure set formatprg=joker\ --format\ -
-autocmd FileType lua set formatprg=lua-format\ -i
+let g:neosnippet#disable_runtime_snippets = {
+\   '_' : 1,
+\ }
+autocmd FileType fennel set lisp
+autocmd FileType clojure set lisp

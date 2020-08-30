@@ -11,10 +11,13 @@
       :sh []
       :java []
       :vim []
-      :lua []})
+      :lua []
+      :clojure [:joker]
+      :fennel [:joker]})
 (set nvim.g.ale_fixers
      {:* [:remove_trailing_lines :trim_whitespace]
-      :java [:google_java_format]})
+      :java [:google_java_format]
+      :sh [:shfmt]})
 
 (set nvim.g.ale_sign_error :×)
 (set nvim.g.ale_lint_on_text_changed :always)

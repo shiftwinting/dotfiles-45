@@ -31,7 +31,7 @@ local packages = {
 --    run = 'vim.cmd[[UpdateRemotePlugins]]'
   },
   {'liuchengxu/vim-clap',
-    cond = function() return vim.g.gnvim ~= 1 end,
+--    cond = function() return vim.g.gnvim ~= 1 end,
     run = ':Clap install-binary<CR>'
   },
   {'liuchengxu/vista.vim'},
@@ -41,20 +41,21 @@ local packages = {
   {'mhinz/vim-startify',
     cond = function() return vim.g.gnvim == 1 end
   },
-  {'nvim-lua/completion-nvim',
-    requires = {
-        'hrsh7th/vim-vsnip',
-        'hrsh7th/vim-vsnip-integ',
-        {'aca/completion-tabnine', run = './install.sh'},
-        {'ncm2/float-preview.nvim', cond = function() return ((vim.g.gonvim_running ~= 1) and (vim.g.gnvim ~=1)) end }
-      }
+  {'Shougo/deoplete.nvim',
+    run = ':UpdateRemotePlugins',
+    requires= {
+      {'tbodt/deoplete-tabnine', run = './install.sh'},
+      'Shougo/deoplete-lsp',
+      'ncm2/float-preview.nvim'
+    }
   },
+  {'Shougo/neosnippet.vim'},
   {'neovim/nvim-lsp',
     requires = {'nvim-lua/lsp-status.nvim', 'nvim-lua/diagnostic-nvim'},
     config = {'require [[nvim_lsp]].bashls.setup{}',
       'require [[nvim_lsp]].jdtls.setup{}',
       'require [[nvim_lsp]].vimls.setup{}',
-      'require [[nvim_lsp]].sumneko_lua.setup{cmd={"/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server", "-E", "/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua" };}'
+      'require [[nvim_lsp]].sumneko_lua.setup{cmd={"/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server", "-E", "/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua"};}'
     }
   },
   {'norcalli/nvim-colorizer.lua',
@@ -82,7 +83,6 @@ local packages = {
   {'takac/vim-hardtime'},
 --  {'puremourning/vimspector', tag = '1835'}
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
-  {'ThePrimeagen/vim-be-good', run = './install.sh'}
 }
 
 return packages
