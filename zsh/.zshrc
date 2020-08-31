@@ -131,6 +131,6 @@ man() {
 alias yeet='yay -Rsn'
 alias cat='bat'
 alias :q='exit'
-
+alias pls='sudo'
 # dircolors
 eval $(dircolors ~/.dir_colors/Dracula.dircolors)

@@ -13,3 +13,8 @@
 ;(set nvim.g.hardtime_default_on :1)
 (set nvim.g.neosnippet#enable_completed_snippet 1)
 (set nvim.g.neosnippet#enable_complete_done 1)
+;neovide
+(when nvim.g.neovide
+  (set nvim.g.airline_left_sep "")
+  (set nvim.g.airline_right_sep "")
+  (set nvim.g.neovide_transparency 0.8))

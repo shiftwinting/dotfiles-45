@@ -3,7 +3,9 @@
 
 (set nvim.g.completion_chain_complete_list
      {:default
-      [{:complete_items [:tabnine :lsp :snippet]}
+      [{:complete_items [:tabnine
+                         :lsp
+                         :snippet]}
        {:mode "<c-p>"}
        {:mode "<c-n>"}]})
 

@@ -41,16 +41,15 @@ local packages = {
   {'mhinz/vim-startify',
     cond = function() return vim.g.gnvim == 1 end
   },
-  {'Shougo/deoplete.nvim',
-    run = ':UpdateRemotePlugins',
+  {'nvim-lua/completion-nvim',
     requires= {
-      {'tbodt/deoplete-tabnine', run = './install.sh'},
-      'Shougo/deoplete-lsp',
-      'ncm2/float-preview.nvim'
+      {'aca/completion-tabnine', run = './install.sh'},
+      'ncm2/float-preview.nvim',
+      'hrsh7th/vim-vsnip',
+      'hrsh7th/vim-vsnip-integ'
     }
   },
-  {'Shougo/neosnippet.vim'},
-  {'neovim/nvim-lsp',
+  {'neovim/nvim-lspconfig',
     requires = {'nvim-lua/lsp-status.nvim', 'nvim-lua/diagnostic-nvim'},
     config = {'require [[nvim_lsp]].bashls.setup{}',
       'require [[nvim_lsp]].jdtls.setup{}',

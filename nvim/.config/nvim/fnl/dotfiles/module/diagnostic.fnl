@@ -1,8 +1,8 @@
 (module dotfiles.module.diagnostic
         {require {nvim aniseed.nvim}})
 
-(set nvim.g.diagnostic_enable_virtual_text 1)
-(set nvim.g.diagnostic_virtual_text_prefix "🩺")
+(set nvim.g.diagnostic_enable_virtual_text 0)
+;(set nvim.g.diagnostic_virtual_text_prefix "🩺")
 (set nvim.g.diagnostic_insert_delay 1)
 
 (nvim.call_function :sign_define [:LspDiagnosticsHintSign
@@ -16,4 +16,4 @@
                                    :texthl "LspDiagnosticsInformation"}])
 (nvim.call_function :sign_define [:LspDiagnosticsErrorSign
                                   {:text "🚫"
-                                   :texthl "LspDiagnosticsError"}])
+                                   :texthl "LspDiagnosticError"}])
