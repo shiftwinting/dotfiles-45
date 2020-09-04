@@ -65,7 +65,7 @@ require'nvim-treesitter.configs'.setup {
       ["im"] = "@call.inner"
   }
     },
-    ensure_installed = {'java', 'query'}, -- one of 'all', 'language', or a list of languages,
+    ensure_installed = {'java', 'query', 'lua', 'fennel'}, -- one of 'all', 'language', or a list of languages,
   playground = {
     enable = true,
     disable = {},

@@ -1,3 +1,3 @@
 if ! dracula#should_abort('fennel')
-  hi fennelParen guifg=#565866
+  hi link fennelParen DraculaSubtle
 endif

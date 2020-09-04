@@ -1,11 +1,6 @@
 (module dotfiles.module.ale
         {require {nvim aniseed.nvim}})
 
-;(nvim.call_function :ale#fix#registry#Add
-;                    [:"joker"
-;                     :"joker --format -"
-;                     :[:fennel :clojure]
-;                     :"Format lisps"]}})
 (set nvim.g.ale_linters
      {:python [:flake8]
       :sh []
@@ -14,6 +9,7 @@
       :lua []
       :clojure [:joker]
       :fennel [:joker]})
+
 (set nvim.g.ale_fixers
      {:* [:remove_trailing_lines :trim_whitespace]
       :java [:google_java_format]

@@ -1,7 +1,6 @@
 local packages = {
   {'wbthomason/packer.nvim', opt=true},
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
-  {'bakpakin/fennel.vim'},
   {'camspiers/lens.vim', requires = {'camspiers/animate.vim'}},
   {'dense-analysis/ale'},
   {'dracula/vim', as = 'dracula'},
@@ -60,8 +59,9 @@ local packages = {
   {'norcalli/nvim-colorizer.lua',
    config = {'require [[colorizer]].setup()'},
    cmd = 'ColorizerLoad'},
-  {'p00f/nvim-treesitter', config = 'require [[treesitter_setup]]'},
+  {'nvim-treesitter/nvim-treesitter', config = 'require [[treesitter_setup]]'},
   {'nvim-treesitter/playground'},
+  {'vigoux/treesitter-context.nvim'},
   {'Olical/aniseed', config='require [[aniseed.dotfiles]]', tag = 'v3.6.1'},
   {'Olical/conjure', ft = {'fnl', 'clj', 'fennel', 'clojure'}, tag = 'v4.3.1'},
   {'pbrisbin/vim-mkdir'},
@@ -75,13 +75,15 @@ local packages = {
   {'vigoux/LanguageTool.nvim',
 --TODO    ft = {},
   },
-  {'vim-airline/vim-airline'},
+--  {'vim-airline/vim-airline'},
 --  {'hardcoreplayers/spaceline.vim', requires = {'airblade/vim-gitgutter'}},
   {'Yggdroot/indentLine', requires = {'lukas-reineke/indent-blankline.nvim'}},
   {'ryanoasis/vim-devicons'},
   {'takac/vim-hardtime'},
 --  {'puremourning/vimspector', tag = '1835'}
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
+  {'vigoux/architext.nvim'},
+  {'tjdevries/express_line.nvim', requires = 'nvim-lua/plenary.nvim', config = 'require [[el]].setup{}'}
 }
 
 return packages

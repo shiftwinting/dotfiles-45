@@ -22,7 +22,7 @@
 (set nvim.o.expandtab true)
 (set nvim.o.foldexpr "nvim_treesitter#foldexpr()")
 (set nvim.o.foldmethod :expr)
-(set nvim.o.clipboard :unnamedplus) ;see https://github.com/Olical/dotfiles/issues/6#issuecomment-667534866
+(set nvim.o.clipboard :unnamedplus)
 (set nvim.o.completeopt "menuone,noinsert,noselect")
 (when nvim.g.gnvim
   (set nvim.o.completeopt "menuone,noinsert,noselect,preview"))
@@ -35,11 +35,12 @@
 
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
+(nvim.ex.highlight :link :fennelParen :DraculaSubtle)
 (nvim.ex.highlight :link :Label :DraculaPurple)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")
-(nvim.ex.autocmd :BufEnter "* lua require'diagnostic'.on_attach()")
-(nvim.ex.autocmd :BufEnter "* lua require'completion'.on_attach()")
-(nvim.ex.autocmd :CursorHold "* lua vim.lsp.util.show_line_diagnostics()")
+(nvim.ex.autocmd :BufEnter :* "lua require'diagnostic'.on_attach()")
+(nvim.ex.autocmd :BufEnter :* "lua require'completion'.on_attach()")
+(nvim.ex.autocmd :CursorHold :* "lua vim.lsp.util.show_line_diagnostics()")
