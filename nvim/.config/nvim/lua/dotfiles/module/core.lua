@@ -31,10 +31,9 @@ if nvim.g.gnvim then
   nvim.o.guifont = "JetBrains Mono,Delugia Nerd Font,FreeMono:h11"
 elseif nvim.g.gonvim_running then
   nvim.o.guifont = "JetBrains Mono:h11"
-else
+elseif nvim.g.neovide then
   nvim.o.guifont = "JetBrains Mono,Delugia Nerd Font,FreeMono,Noto Color Emoji:h15"
 end
-nvim.o.updatetime = 300
 nvim.o.guicursor = str.join(",", core.concat(str.split(nvim.o.guicursor, ","), {"a:blinkon700"}))
 nvim.o.listchars = "eol:\226\134\180,tab:<->,space:\194\183"
 nvim.o.showmode = false

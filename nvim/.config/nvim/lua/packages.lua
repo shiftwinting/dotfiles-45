@@ -6,7 +6,7 @@ local packages = {
   {'dracula/vim', as = 'dracula'},
   {'editorconfig/editorconfig-vim'},
   {'guns/vim-sexp',
-   ft = {'clj', 'fnl'},
+   ft = {'clojure', 'fennel'},
    requires = {'tpope/vim-sexp-mappings-for-regular-people'}
   },
   {'hardcoreplayers/dashboard-nvim',
@@ -23,11 +23,10 @@ local packages = {
   {'jiangmiao/auto-pairs'},
   {'justinmk/vim-gtfo'},
   {'justinmk/vim-sneak'},
-  {'kassio/neoterm', cmd = {'Tnew'}},
---  {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}},
+  {'kyazdani42/nvim-web-devicons'},
   {'ms-jpq/chadtree',
     branch = 'chad',
---    run = 'vim.cmd[[UpdateRemotePlugins]]'
+    run = 'vim.cmd[[UpdateRemotePlugins]]'
   },
   {'liuchengxu/vim-clap',
 --    cond = function() return vim.g.gnvim ~= 1 end,
@@ -78,12 +77,13 @@ local packages = {
 --  {'vim-airline/vim-airline'},
 --  {'hardcoreplayers/spaceline.vim', requires = {'airblade/vim-gitgutter'}},
   {'Yggdroot/indentLine', requires = {'lukas-reineke/indent-blankline.nvim'}},
-  {'ryanoasis/vim-devicons'},
   {'takac/vim-hardtime'},
 --  {'puremourning/vimspector', tag = '1835'}
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'vigoux/architext.nvim'},
-  {'tjdevries/express_line.nvim', requires = 'nvim-lua/plenary.nvim', config = 'require [[el]].setup{}'}
+  {'tjdevries/express_line.nvim', requires = 'nvim-lua/plenary.nvim', config = 'require [[el]].setup{}'},
+  {'antoinemadec/FixCursorHold.nvim'},
+  {'voldikss/vim-floaterm'}
 }
 
 return packages

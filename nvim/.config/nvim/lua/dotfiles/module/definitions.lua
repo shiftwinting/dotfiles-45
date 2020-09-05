@@ -35,5 +35,6 @@ if nvim.g.neovide then
   nvim.g.airline_left_sep = "\238\130\180"
   nvim.g.airline_right_sep = "\238\130\182"
   nvim.g.neovide_transparency = 0.80000000000000004
-  return nil
 end
+nvim.g.cursorhold_updatetime = 300
+return nil
