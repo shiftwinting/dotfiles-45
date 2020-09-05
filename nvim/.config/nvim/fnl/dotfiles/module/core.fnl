@@ -11,9 +11,9 @@
 (if
   nvim.g.gnvim (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,FreeMono:h11")
   nvim.g.gonvim_running (set nvim.o.guifont "JetBrains Mono:h11")
-  (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,FreeMono,Noto Color Emoji:h15"))
+  nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,FreeMono,Noto Color Emoji:h15"))
 
-(set nvim.o.updatetime 300);
+;(set nvim.o.updatetime 300)
 (set nvim.o.guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"])))
 (set nvim.o.listchars "eol:↴,tab:<->,space:·")
 (set nvim.o.showmode false)
