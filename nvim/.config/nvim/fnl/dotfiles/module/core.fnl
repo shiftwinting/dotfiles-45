@@ -44,3 +44,4 @@
 (nvim.ex.autocmd :BufEnter :* "lua require'diagnostic'.on_attach()")
 (nvim.ex.autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (nvim.ex.autocmd :CursorHold :* "lua vim.lsp.util.show_line_diagnostics()")
+(nvim.ex.autocmd :FileType :scheme "ParinferOff")
