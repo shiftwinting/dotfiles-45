@@ -29,7 +29,7 @@ local packages = {
     run = 'vim.cmd[[UpdateRemotePlugins]]'
   },
   {'liuchengxu/vim-clap',
---    cond = function() return vim.g.gnvim ~= 1 end,
+    cond = function() return vim.g.gnvim ~= 1 end,
     run = ':Clap install-binary<CR>'
   },
   {'liuchengxu/vista.vim'},
@@ -70,20 +70,17 @@ local packages = {
   {'tyru/caw.vim'},
   {'reedes/vim-pencil', ft = {'txt', 'md', 'mkdn', 'rst'}},
   {'rhysd/git-messenger.vim'},
---TODO  'skywind3000/vim-quickui',
   {'vigoux/LanguageTool.nvim',
 --TODO    ft = {},
   },
---  {'vim-airline/vim-airline'},
---  {'hardcoreplayers/spaceline.vim', requires = {'airblade/vim-gitgutter'}},
   {'Yggdroot/indentLine', requires = {'lukas-reineke/indent-blankline.nvim'}},
   {'takac/vim-hardtime'},
---  {'puremourning/vimspector', tag = '1835'}
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'vigoux/architext.nvim'},
   {'tjdevries/express_line.nvim', requires = 'nvim-lua/plenary.nvim', config = 'require [[el]].setup{}'},
   {'antoinemadec/FixCursorHold.nvim'},
-  {'voldikss/vim-floaterm'}
+  {'voldikss/vim-floaterm'},
+  {'ryanoasis/vim-devicons'}
 }
 
 return packages

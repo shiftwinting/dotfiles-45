@@ -134,3 +134,4 @@ alias :q='exit'
 alias pls='sudo'
 # dircolors
 eval $(dircolors ~/.dir_colors/Dracula.dircolors)
+export TERM=xterm-256color-italic
