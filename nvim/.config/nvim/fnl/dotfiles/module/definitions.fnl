@@ -16,7 +16,7 @@
 ;neovide
 (when nvim.g.neovide
   (set nvim.g.airline_left_sep "")
-  (set nvim.g.airline_right_sep "")
-  (set nvim.g.neovide_transparency 0.8))
+  (set nvim.g.airline_right_sep ""))
+;  (set nvim.g.neovide_transparency 0.8))
 ;shorter CursorHold
 (set nvim.g.cursorhold_updatetime 300)

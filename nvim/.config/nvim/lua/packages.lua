@@ -23,19 +23,15 @@ local packages = {
   {'jiangmiao/auto-pairs'},
   {'justinmk/vim-gtfo'},
   {'justinmk/vim-sneak'},
-  {'kyazdani42/nvim-web-devicons'},
-  {'ms-jpq/chadtree',
-    branch = 'chad',
-    run = 'vim.cmd[[UpdateRemotePlugins]]'
-  },
+  {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'},
   {'liuchengxu/vim-clap',
     cond = function() return vim.g.gnvim ~= 1 end,
-    run = ':Clap install-binary<CR>'
+    run = ':Clap install-binary<CR>',
+    requires = 'ryanoasis/vim-devicons'
   },
   {'liuchengxu/vista.vim'},
   {'liuchengxu/vim-which-key'},
   {'mattn/vim-sonictemplate', cmd = 'Template'},
---  {'mhinz/vim-signify'},              (gitgutter for spaceline, signify for airline)
   {'mhinz/vim-startify',
     cond = function() return vim.g.gnvim == 1 end
   },
@@ -77,10 +73,14 @@ local packages = {
   {'takac/vim-hardtime'},
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'vigoux/architext.nvim'},
-  {'tjdevries/express_line.nvim', requires = 'nvim-lua/plenary.nvim', config = 'require [[el]].setup{}'},
+  {'tjdevries/express_line.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons'
+    },
+    config = 'require [[el]].setup{}'},
   {'antoinemadec/FixCursorHold.nvim'},
   {'voldikss/vim-floaterm'},
-  {'ryanoasis/vim-devicons'}
 }
 
 return packages

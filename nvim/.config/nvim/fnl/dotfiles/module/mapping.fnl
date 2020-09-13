@@ -11,18 +11,11 @@
   "Sets a mapping with {:silent true}"
   (nvim.set_keymap mode from to {:silent true}))
 
-;(defn- noremap [mode from to]
-;  "Sets a mapping with {:noremap true}."
-;  (nvim.set_keymap mode from to {:noremap true}))
-;
-;(defn- snoremap [mode from to]
-;  "Sets a mapping with {:noremap true :silent true}."
-;  (nvim.set_keymap mode from to {:noremap true :silent true}))
 
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
 
-(map :c :<C-v> "<C-r>+") ;;;
+(map :c :<C-v> "<C-r>+")
 (map :n :<F8> "<Plug>(ale_fix)")
 (smap :n :K ":call <SID>show_documentation()<CR>")
 
@@ -41,10 +34,10 @@
 (smap :n :<ScrollWheelUp> ":call smoothie#upwards()<CR>")
 (smap :n :<ScrollWheelDown> ":call smoothie#downwards()<CR>")
 
-;;LuaTree
-;(smap :n :<C-n> ":LuaTreeToggle<CR>")
-;(map :n :<leader>r ":LuaTreeRefresh<CR>")
-;(smap :n :<leader>n ":LuaTreeFindFile<CR>") ;LuaTreeOpen and LuaTreeClose are also available if you need them
+;LuaTree
+(smap :n :<leader>v ":LuaTreeToggle<CR>")
+(map :n :<leader>r ":LuaTreeRefresh<CR>")
+(smap :n :<leader>n ":LuaTreeFindFile<CR>") ;LuaTreeOpen and LuaTreeClose are also available if you need them
 
 ;which-key
 (smap :n :<leader> ":<c-u>WhichKey '<Space>'<CR>")
@@ -53,9 +46,6 @@
 
 ;nvim-treesitter
 (smap :n :<C-h> ":w | e | TSBufEnable highlight<CR>")
-
-;CHADTree
-(smap :n :<leader>v "<cmd>CHADopen<CR>")
 
 ;nvim-colorizer
 (smap :n :<leader>c ":ColorizerToggle<CR>")
