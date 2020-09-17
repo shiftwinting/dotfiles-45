@@ -15,6 +15,6 @@ if has('nvim-0.5')
   lua jdtls = require('jdtls')
   augroup lsp
     au!
-    au FileType java lua jdtls.start_or_attach({cmd={'jdtls_launcher.sh'}})
+    au FileType java lua jdtls.start_or_attach({cmd={'jdtls'}})
   augroup end
 endif
