@@ -43,6 +43,16 @@ do
   _0_0["aniseed/locals"]["smap"] = v_0_
   smap = v_0_
 end
+local noremap = nil
+do
+  local v_0_ = nil
+  local function noremap0(mode, from, to)
+    return nvim.set_keymap(mode, from, to, {noremap = true})
+  end
+  v_0_ = noremap0
+  _0_0["aniseed/locals"]["noremap"] = v_0_
+  noremap = v_0_
+end
 nvim.g.mapleader = " "
 nvim.g.maplocalleader = ","
 map("c", "<C-v>", "<C-r>+")
@@ -58,9 +68,17 @@ map("n", "<ScrollWheelDown>", "<C-E>")
 smap("n", "<ScrollWheelUp>", ":call smoothie#upwards()<CR>")
 smap("n", "<ScrollWheelDown>", ":call smoothie#downwards()<CR>")
 smap("n", "<leader>v", ":LuaTreeToggle<CR>")
-map("n", "<leader>r", ":LuaTreeRefresh<CR>")
 smap("n", "<leader>n", ":LuaTreeFindFile<CR>")
+smap("n", "<leader>r", ":LuaTreeRefresh<CR>")
 smap("n", "<leader>", ":<c-u>WhichKey '<Space>'<CR>")
 smap("n", "<localleader>", ":<c-u>WhichKey ','<CR>")
 smap("n", "<C-h>", ":w | e | TSBufEnable highlight<CR>")
-return smap("n", "<leader>c", ":ColorizerToggle<CR>")
+smap("n", "<leader>c", ":ColorizerToggle<CR>")
+noremap("n", "<M-CR>", ":lua require('jdtls').code_action()<CR>")
+noremap("v", "<M-CR>", ":lua require('jdtls').code_action(true)<CR>")
+noremap("n", "<M-o>", ":lua require'jdtls'.organize_imports()<CR>")
+noremap("n", "crv", ":lua require('jdtls').extract_variable()<CR>")
+noremap("v", "crv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
+noremap("v", "crm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
+noremap("n", "<leader>dc", ":lua require'jdtls'.test_class()<CR>")
+return noremap("n", "<leader>dm", ":lua require'jdtls'.test_nearest_method()<CR>")

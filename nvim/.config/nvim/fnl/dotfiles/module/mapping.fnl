@@ -11,6 +11,9 @@
   "Sets a mapping with {:silent true}"
   (nvim.set_keymap mode from to {:silent true}))
 
+(defn- noremap [mode from to]
+ "Sets a mapping with {:noremap true}"
+ (nvim.set_keymap mode from to {:noremap true}))
 
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
@@ -36,8 +39,8 @@
 
 ;LuaTree
 (smap :n :<leader>v ":LuaTreeToggle<CR>")
-(map :n :<leader>r ":LuaTreeRefresh<CR>")
 (smap :n :<leader>n ":LuaTreeFindFile<CR>")
+(smap :n :<leader>r ":LuaTreeRefresh<CR>")
 
 ;which-key
 (smap :n :<leader> ":<c-u>WhichKey '<Space>'<CR>")
@@ -48,3 +51,15 @@
 
 ;nvim-colorizer
 (smap :n :<leader>c ":ColorizerToggle<CR>")
+
+;LSP
+(noremap :n :<M-CR> ":lua require('jdtls').code_action()<CR>")
+(noremap :v :<M-CR> ":lua require('jdtls').code_action(true)<CR>")
+(noremap :n :<M-o> ":lua require'jdtls'.organize_imports()<CR>")
+(noremap :n :crv ":lua require('jdtls').extract_variable()<CR>")
+(noremap :v :crv "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
+(noremap :v :crm "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
+
+;DAP
+(noremap :n :<leader>dc ":lua require'jdtls'.test_class()<CR>")
+(noremap :n :<leader>dm ":lua require'jdtls'.test_nearest_method()<CR>")

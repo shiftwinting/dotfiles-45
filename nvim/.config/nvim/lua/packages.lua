@@ -44,13 +44,33 @@ local packages = {
     }
   },
   {'neovim/nvim-lspconfig',
-    requires = {'nvim-lua/lsp-status.nvim', 'nvim-lua/diagnostic-nvim'},
-    config = {'require [[nvim_lsp]].bashls.setup{}',
+    requires = {
+      'nvim-lua/lsp-status.nvim',
+      'nvim-lua/diagnostic-nvim'
+    },
+    config = {
+      'require [[nvim_lsp]].bashls.setup{}',
       'require [[nvim_lsp]].vimls.setup{}',
-      'require [[nvim_lsp]].sumneko_lua.setup{cmd={"/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server", "-E", "/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua"};}'
+      [[
+        require 'nvim_lsp'.sumneko_lua.setup {
+          cmd = {
+            '/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server',
+            '-E',
+            '/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua'
+          };
+        }
+      ]]
     }
   },
-  {'mfussenegger/nvim-jdtls'},
+  {'mfussenegger/nvim-jdtls',
+    ft = 'java',
+    config = {
+      [[
+        jdtls = require('jdtls')
+        jdtls.start_or_attach({cmd = {'jdtls'}})
+      ]]
+    }
+  },
   {'norcalli/nvim-colorizer.lua',
    config = {'require [[colorizer]].setup()'},
    cmd = 'ColorizerLoad'},

@@ -10,11 +10,11 @@ autocmd BufRead,BufNewFile *.fnl setlocal filetype=fennel
 autocmd BufNewFile,BufRead * call s:DetectFennel()
 
 
-if has('nvim-0.5')
-  packadd nvim-jdtls
-  lua jdtls = require('jdtls')
-  augroup lsp
-    au!
-    au FileType java lua jdtls.start_or_attach({cmd={'jdtls'}})
-  augroup end
-endif
+"if has('nvim-0.5')
+"  packadd nvim-jdtls
+"  lua jdtls = require('jdtls')
+"  augroup lsp
+"    au!
+"    au FileType java lua jdtls.start_or_attach({cmd={'jdtls'}})
+"  augroup end
+"endif
