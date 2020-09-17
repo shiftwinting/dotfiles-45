@@ -50,6 +50,7 @@ local packages = {
       'require [[nvim_lsp]].sumneko_lua.setup{cmd={"/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server", "-E", "/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua"};}'
     }
   },
+  {'mfussenegger/nvim-jdtls'},
   {'norcalli/nvim-colorizer.lua',
    config = {'require [[colorizer]].setup()'},
    cmd = 'ColorizerLoad'},
