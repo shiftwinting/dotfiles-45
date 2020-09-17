@@ -46,7 +46,6 @@ local packages = {
   {'neovim/nvim-lspconfig',
     requires = {'nvim-lua/lsp-status.nvim', 'nvim-lua/diagnostic-nvim'},
     config = {'require [[nvim_lsp]].bashls.setup{}',
-      'require [[nvim_lsp]].jdtls.setup{}',
       'require [[nvim_lsp]].vimls.setup{}',
       'require [[nvim_lsp]].sumneko_lua.setup{cmd={"/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server", "-E", "/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua"};}'
     }
@@ -58,7 +57,7 @@ local packages = {
   {'nvim-treesitter/playground'},
   {'vigoux/treesitter-context.nvim'},
   {'Olical/aniseed', config='require [[aniseed.dotfiles]]', tag = 'v3.6.1'},
-  {'Olical/conjure', ft = {'fnl', 'clj', 'fennel', 'clojure'}, tag = 'v4.3.1'},
+  {'Olical/conjure', ft = {'fnl', 'clj', 'fennel', 'clojure'}, tag = 'v4.4.0'},
   {'pbrisbin/vim-mkdir'},
   {'psliwka/vim-smoothie'},
   {'tpope/vim-fugitive'},

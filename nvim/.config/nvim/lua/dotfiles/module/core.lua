@@ -40,10 +40,14 @@ nvim.o.showmode = false
 nvim.o.tabstop = 2
 nvim.o.shiftwidth = 2
 nvim.o.expandtab = true
+nvim.o.softtabstop = 2
 nvim.o.foldexpr = "nvim_treesitter#foldexpr()"
 nvim.o.foldmethod = "expr"
 nvim.o.clipboard = "unnamedplus"
 nvim.o.completeopt = "menuone,noinsert,noselect"
+nvim.o.hidden = true
+nvim.o.autoindent = true
+nvim.o.smartindent = true
 if nvim.g.gnvim then
   nvim.o.completeopt = "menuone,noinsert,noselect,preview"
 end

@@ -20,10 +20,14 @@
 (set nvim.o.tabstop 2)
 (set nvim.o.shiftwidth 2)
 (set nvim.o.expandtab true)
+(set nvim.o.softtabstop 2)
 (set nvim.o.foldexpr "nvim_treesitter#foldexpr()")
 (set nvim.o.foldmethod :expr)
 (set nvim.o.clipboard :unnamedplus)
 (set nvim.o.completeopt "menuone,noinsert,noselect")
+(set nvim.o.hidden true)
+(set nvim.o.autoindent true)
+(set nvim.o.smartindent true)
 (when nvim.g.gnvim
   (set nvim.o.completeopt "menuone,noinsert,noselect,preview"))
 

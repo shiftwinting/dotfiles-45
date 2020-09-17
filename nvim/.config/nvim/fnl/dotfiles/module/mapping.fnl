@@ -37,18 +37,14 @@
 ;LuaTree
 (smap :n :<leader>v ":LuaTreeToggle<CR>")
 (map :n :<leader>r ":LuaTreeRefresh<CR>")
-(smap :n :<leader>n ":LuaTreeFindFile<CR>") ;LuaTreeOpen and LuaTreeClose are also available if you need them
+(smap :n :<leader>n ":LuaTreeFindFile<CR>")
 
 ;which-key
 (smap :n :<leader> ":<c-u>WhichKey '<Space>'<CR>")
 (smap :n :<localleader> ":<c-u>WhichKey ','<CR>")
-;(smap :n :<C> ":<c-u> WhichKey '<C>'<CR>")
 
 ;nvim-treesitter
 (smap :n :<C-h> ":w | e | TSBufEnable highlight<CR>")
 
 ;nvim-colorizer
 (smap :n :<leader>c ":ColorizerToggle<CR>")
-
-;format
-(smap :n :<C-f> "1G0gqG")
