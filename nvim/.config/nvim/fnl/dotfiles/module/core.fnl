@@ -28,13 +28,14 @@
 (set nvim.o.hidden true)
 (set nvim.o.autoindent true)
 (set nvim.o.smartindent true)
+(set nvim.o.emoji false)
+(set nvim.o.list true)
 (when nvim.g.gnvim
   (set nvim.o.completeopt "menuone,noinsert,noselect,preview"))
 
 (set nvim.o.pumblend 15)
 (set nvim.o.winblend 15)
 
-(nvim.ex.set :list)
 (nvim.ex.colorscheme :dracula)
 
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")

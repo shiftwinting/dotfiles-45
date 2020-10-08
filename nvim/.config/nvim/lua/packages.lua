@@ -67,16 +67,22 @@ local packages = {
     config = {
       [[
         jdtls = require('jdtls')
-        jdtls.start_or_attach({cmd = {'jdtls'}})
+        jdtls.start_or_attach({cmd = {'jdtls_launcher.sh'}})
       ]]
     }
   },
   {'norcalli/nvim-colorizer.lua',
    config = {'require [[colorizer]].setup()'},
    cmd = 'ColorizerLoad'},
-  {'nvim-treesitter/nvim-treesitter', config = 'require [[treesitter_setup]]'},
+  {'nvim-treesitter/nvim-treesitter',
+    config = 'require [[treesitter_setup]]',
+    requires = {
+    'nvim-treesitter/nvim-treesitter-refactor',
+    'nvim-treesitter/nvim-treesitter-textobjects'
+    }
+  },
   {'nvim-treesitter/playground'},
-  {'vigoux/treesitter-context.nvim'},
+--  {'vigoux/treesitter-context.nvim'},
   {'Olical/aniseed', config='require [[aniseed.dotfiles]]', tag = 'v3.6.1'},
   {'Olical/conjure', ft = {'fnl', 'clj', 'fennel', 'clojure'}, tag = 'v4.4.0'},
   {'pbrisbin/vim-mkdir'},

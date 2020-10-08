@@ -20,3 +20,4 @@
 ;  (set nvim.g.neovide_transparency 0.8))
 ;shorter CursorHold
 (set nvim.g.cursorhold_updatetime 300)
+(set nvim.g.sonictemplate_vim_template_dir "~/.config/nvim/template")

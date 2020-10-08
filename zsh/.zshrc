@@ -134,8 +134,8 @@ alias :q='exit'
 alias pls='sudo'
 # dircolors
 eval $(dircolors ~/.dir_colors/Dracula.dircolors)
-export TERM=xterm-256color-italic
-
+#export TERM=xterm-256color-italic
+export TERM=xterm-kitty
 n ()
 {
     # Block nesting of nnn in subshells
@@ -163,3 +163,5 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+
+source /home/p00f/.config/broot/launcher/bash/br

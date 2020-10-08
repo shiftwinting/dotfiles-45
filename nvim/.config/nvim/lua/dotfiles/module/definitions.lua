@@ -36,4 +36,5 @@ if nvim.g.neovide then
   nvim.g.airline_right_sep = "\238\130\182"
 end
 nvim.g.cursorhold_updatetime = 300
+nvim.g.sonictemplate_vim_template_dir = "~/.config/nvim/template"
 return nil

@@ -48,12 +48,13 @@ nvim.o.completeopt = "menuone,noinsert,noselect"
 nvim.o.hidden = true
 nvim.o.autoindent = true
 nvim.o.smartindent = true
+nvim.o.emoji = false
+nvim.o.list = true
 if nvim.g.gnvim then
   nvim.o.completeopt = "menuone,noinsert,noselect,preview"
 end
 nvim.o.pumblend = 15
 nvim.o.winblend = 15
-nvim.ex.set("list")
 nvim.ex.colorscheme("dracula")
 nvim.ex.highlight("dashboardHeader", "guifg=#50fa7b")
 nvim.ex.highlight("link", "TSParameter", "DraculaOrangeItalic")
