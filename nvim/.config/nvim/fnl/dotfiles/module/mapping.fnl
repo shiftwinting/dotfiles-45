@@ -24,11 +24,13 @@
 ;reload init.vim
 (map :n :<leader>rv ":source ~/.config/nvim/init.vim<CR>")
 
-;vim-clap
-(smap :n :<leader>f ":Clap files<CR>")
-(smap :n :<leader>h ":Clap history<CR>")
+;Telescope
+(smap :n :<leader>f ":TelescopeFindFile<CR>")
+(smap :n :<leader>h ":TelescopeOldFiles<CR>")
 (smap :n :<leader>e ":Clap filer<CR>")
-(smap :n :<leader>b ":Clap marks<CR>")
+(smap :n :<leader>b ":TelescopeMarks<CR>")
+(smap :n :<leader>g ":TelescopeLiveGrep<CR>")
+(smap :n :<leader>ts ":TelescopeTreesitter<CR>")
 
 ;vim-smoothie
 (map :n :<ScrollWheelUp> "<C-Y>")

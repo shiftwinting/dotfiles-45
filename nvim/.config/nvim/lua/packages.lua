@@ -50,11 +50,7 @@ local packages = {
     },
     config = {'require [[ls_setup]]'}
   },
-  {'mfussenegger/nvim-jdtls',
-    ft = 'java',
-    config = 'require [[jdtls_setup]]',
-    requires = 'mfussenegger/nvim-dap'
-  },
+--  {'mfussenegger/nvim-jdtls', opt = true},
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {'nvim-treesitter/nvim-treesitter',
     config = 'require [[treesitter_setup]]',
@@ -89,6 +85,12 @@ local packages = {
     config = 'require [[el]].setup{}'},
   {'antoinemadec/FixCursorHold.nvim'},
   {'voldikss/vim-floaterm'},
+  {'nvim-lua/telescope.nvim',
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim'
+    }
+  }
 }
 
 return packages

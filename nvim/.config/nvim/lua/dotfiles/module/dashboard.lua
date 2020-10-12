@@ -23,4 +23,5 @@ local nvim = _2_[1]
 do local _ = ({nil, _0_0, {{}, nil}})[2] end
 nvim.g.dashboard_custom_shortcut = {book_marks = "L b", change_colorscheme = "\194\183\194\183\194\183", find_file = "L f", find_history = "L h", find_word = "\194\183\194\183\194\183", last_session = "\194\183\194\183\194\183", new_file = "\194\183\194\183\194\183"}
 nvim.g.dashboard_change_to_dir = 1
+nvim.g.dashboard_default_executive = "telescope"
 return nil

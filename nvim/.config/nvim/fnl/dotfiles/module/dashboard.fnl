@@ -10,3 +10,4 @@
       :find_word "···"
       :book_marks "L b"})
 (set nvim.g.dashboard_change_to_dir 1)
+(set nvim.g.dashboard_default_executive "telescope")
