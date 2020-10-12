@@ -58,8 +58,8 @@
 ;jdtls
 (noremap :v :<M-CR> "<Esc><Cmd>lua require('jdtls').code_action(true)<CR>")
 (noremap :n :<M-r> ":lua require('jdtls').code_action(false, 'refactor')<CR>")
-(noremap :n :<M-o> ":lua require'jdtls'.organize_imports()<CR>")
-(noremap :n :crv "<Cmd>lua require('jdtls').extract_variable()<CR>")
+(noremap :n :<M-o> ":lua require('jdtls').organize_imports()<CR>")
+(noremap :n :crv ":lua require('jdtls').extract_variable()<CR>")
 (noremap :v :crv "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
 (noremap :v :crm "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
 

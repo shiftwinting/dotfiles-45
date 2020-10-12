@@ -48,32 +48,14 @@ local packages = {
       'nvim-lua/lsp-status.nvim',
       'nvim-lua/diagnostic-nvim'
     },
-    config = {
-      'require [[nvim_lsp]].bashls.setup{}',
-      'require [[nvim_lsp]].vimls.setup{}',
-      [[
-        require 'nvim_lsp'.sumneko_lua.setup {
-          cmd = {
-            '/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server',
-            '-E',
-            '/home/p00f/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua'
-          };
-        }
-      ]]
-    }
+    config = {'require [[ls_setup]]'}
   },
   {'mfussenegger/nvim-jdtls',
     ft = 'java',
-    config = {
-      [[
-        jdtls = require('jdtls')
-        jdtls.start_or_attach({cmd = {'jdtls_launcher.sh'}})
-      ]]
-    }
+    config = 'require [[jdtls_setup]]',
+    requires = 'mfussenegger/nvim-dap'
   },
-  {'norcalli/nvim-colorizer.lua',
-   config = {'require [[colorizer]].setup()'},
-   cmd = 'ColorizerLoad'},
+  {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {'nvim-treesitter/nvim-treesitter',
     config = 'require [[treesitter_setup]]',
     requires = {
@@ -82,7 +64,7 @@ local packages = {
     }
   },
   {'nvim-treesitter/playground'},
---  {'vigoux/treesitter-context.nvim'},
+  {'vigoux/treesitter-context.nvim'},
   {'Olical/aniseed', config='require [[aniseed.dotfiles]]', tag = 'v3.6.1'},
   {'Olical/conjure', ft = {'fnl', 'clj', 'fennel', 'clojure'}, tag = 'v4.4.0'},
   {'pbrisbin/vim-mkdir'},
