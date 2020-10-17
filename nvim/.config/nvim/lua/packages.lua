@@ -13,7 +13,7 @@ local packages = {
     cond = function() return vim.g.gnvim ~= 1 end
   },
   {'iamcco/markdown-preview.nvim',
-    ft = {'md', 'mkdn', 'markdown'},
+    ft = {'markdown'},
     config = {'vim.cmd[[doautocmd BufEnter]]'
       },
     run = 'cd app && yarn install',
@@ -24,11 +24,6 @@ local packages = {
   {'justinmk/vim-gtfo'},
   {'justinmk/vim-sneak'},
   {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'},
-  {'liuchengxu/vim-clap',
-    cond = function() return vim.g.gnvim ~= 1 end,
-    run = ':Clap install-binary<CR>',
-    requires = 'ryanoasis/vim-devicons'
-  },
   {'liuchengxu/vista.vim'},
   {'liuchengxu/vim-which-key'},
   {'mattn/vim-sonictemplate', cmd = 'Template'},
@@ -38,7 +33,10 @@ local packages = {
   {'nvim-lua/completion-nvim',
     requires= {
       {'aca/completion-tabnine', run = './install.sh'},
-      'ncm2/float-preview.nvim',
+      {'ncm2/float-preview.nvim', cond = function() return
+                                          vim.g.gnvim ~=1 and vim.g.uivonim ~= 1
+                                         end
+      },
       'hrsh7th/vim-vsnip',
       'hrsh7th/vim-vsnip-integ'
     }
@@ -50,7 +48,7 @@ local packages = {
     },
     config = {'require [[ls_setup]]'}
   },
---  {'mfussenegger/nvim-jdtls', opt = true},
+  {'mfussenegger/nvim-jdtls', opt = true},
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {'nvim-treesitter/nvim-treesitter',
     config = 'require [[treesitter_setup]]',
@@ -61,8 +59,8 @@ local packages = {
   },
   {'nvim-treesitter/playground'},
   {'vigoux/treesitter-context.nvim'},
-  {'Olical/aniseed', config='require [[aniseed.dotfiles]]', tag = 'v3.6.1'},
-  {'Olical/conjure', ft = {'fnl', 'clj', 'fennel', 'clojure'}, tag = 'v4.4.0'},
+  {'Olical/aniseed', config='require [[aniseed.dotfiles]]', tag = 'v3.8.0'},
+  {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.8.0'},
   {'pbrisbin/vim-mkdir'},
   {'psliwka/vim-smoothie'},
   {'tpope/vim-fugitive'},

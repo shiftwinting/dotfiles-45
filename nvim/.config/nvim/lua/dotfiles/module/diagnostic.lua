@@ -14,16 +14,27 @@ do
   package.loaded[name_0_] = module_0_
   _0_0 = module_0_
 end
-local function _1_(...)
-  _0_0["aniseed/local-fns"] = {require = {nvim = "aniseed.nvim"}}
-  return {require("aniseed.nvim")}
+local function _2_(...)
+  local ok_3f_0_, val_0_ = nil, nil
+  local function _2_()
+    return {require("aniseed.nvim")}
+  end
+  ok_3f_0_, val_0_ = pcall(_2_)
+  if ok_3f_0_ then
+    _0_0["aniseed/local-fns"] = {require = {nvim = "aniseed.nvim"}}
+    return val_0_
+  else
+    return print(val_0_)
+  end
 end
-local _2_ = _1_(...)
-local nvim = _2_[1]
-do local _ = ({nil, _0_0, {{}, nil}})[2] end
+local _1_ = _2_(...)
+local nvim = _1_[1]
+local _2amodule_2a = _0_0
+local _2amodule_name_2a = "dotfiles.module.diagnostic"
+do local _ = ({nil, _0_0, {{}, nil, nil, nil}})[2] end
 nvim.g.diagnostic_enable_virtual_text = 0
 nvim.g.diagnostic_insert_delay = 1
-nvim.call_function("sign_define", {"LspDiagnosticsHintSign", {text = "h", texthl = "LspDiagnosticsHint"}})
+nvim.call_function("sign_define", {"LspDiagnosticsHintSign", {text = "\240\159\146\161", texthl = "LspDiagnosticsHint"}})
 nvim.call_function("sign_define", {"LspDiagnosticsWarningSign", {text = "!", texthl = "LspDiagnosticsWarning"}})
 nvim.call_function("sign_define", {"LspDiagnosticsInformationSign", {text = "i", texthl = "LspDiagnosticsInformation"}})
-return nvim.call_function("sign_define", {"LspDiagnosticsErrorSign", {text = "x", texthl = "LspDiagnosticError"}})
+return nvim.call_function("sign_define", {"LspDiagnosticsErrorSign", {text = "\226\157\140", texthl = "LspDiagnosticError"}})

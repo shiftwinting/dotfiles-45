@@ -10,10 +10,12 @@ endfun
 autocmd BufRead,BufNewFile *.fnl setlocal filetype=fennel
 autocmd BufNewFile,BufRead * call s:DetectFennel()
 
-"" jdtls
-"packadd nvim-jdtls
-"lua dofile('/home/p00f/.config/nvim/lua/jdtls_setup.lua')
-"augroup lsp
-"  au!
-"  au FileType java lua jdtls.start_or_attach(config)
-"augroup end
+" jdtls
+packadd nvim-jdtls
+lua dofile('/home/p00f/.config/nvim/lua/jdtls_setup.lua')
+augroup lsp
+  au!
+  au FileType java lua jdtls.start_or_attach(config)
+augroup end
+
+set termguicolors

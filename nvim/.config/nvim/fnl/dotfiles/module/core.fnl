@@ -9,9 +9,9 @@
 (set nvim.o.relativenumber true)
 
 (if
-  nvim.g.gnvim (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,FreeMono:h11")
+  nvim.g.gnvim (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11")
   nvim.g.gonvim_running (set nvim.o.guifont "JetBrains Mono:h11")
-  nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,FreeMono,Noto Color Emoji:h15"))
+  nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
 
 ;(set nvim.o.updatetime 300)
 (set nvim.o.guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"])))
@@ -43,6 +43,7 @@
 (nvim.ex.highlight :link :fennelParen :DraculaSubtle)
 (nvim.ex.highlight :link :Label :DraculaPurple)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
+;(nvim.ex.highlight :Comment "gui=Bold")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")

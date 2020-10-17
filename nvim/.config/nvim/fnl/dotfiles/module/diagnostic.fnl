@@ -6,7 +6,7 @@
 (set nvim.g.diagnostic_insert_delay 1)
 
 (nvim.call_function :sign_define [:LspDiagnosticsHintSign
-                                  {:text "h"
+                                  {:text "💡"
                                    :texthl "LspDiagnosticsHint"}])
 (nvim.call_function :sign_define [:LspDiagnosticsWarningSign
                                   {:text "!"
@@ -15,5 +15,5 @@
                                   {:text "i"
                                    :texthl "LspDiagnosticsInformation"}])
 (nvim.call_function :sign_define [:LspDiagnosticsErrorSign
-                                  {:text "x"
+                                  {:text "❌"
                                    :texthl "LspDiagnosticError"}])

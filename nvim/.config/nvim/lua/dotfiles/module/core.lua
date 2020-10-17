@@ -14,25 +14,36 @@ do
   package.loaded[name_0_] = module_0_
   _0_0 = module_0_
 end
-local function _1_(...)
-  _0_0["aniseed/local-fns"] = {require = {core = "aniseed.core", nvim = "aniseed.nvim", str = "aniseed.string"}}
-  return {require("aniseed.core"), require("aniseed.nvim"), require("aniseed.string")}
+local function _2_(...)
+  local ok_3f_0_, val_0_ = nil, nil
+  local function _2_()
+    return {require("aniseed.core"), require("aniseed.nvim"), require("aniseed.string")}
+  end
+  ok_3f_0_, val_0_ = pcall(_2_)
+  if ok_3f_0_ then
+    _0_0["aniseed/local-fns"] = {require = {core = "aniseed.core", nvim = "aniseed.nvim", str = "aniseed.string"}}
+    return val_0_
+  else
+    return print(val_0_)
+  end
 end
-local _2_ = _1_(...)
-local core = _2_[1]
-local nvim = _2_[2]
-local str = _2_[3]
-do local _ = ({nil, _0_0, {{}, nil}})[2] end
+local _1_ = _2_(...)
+local core = _1_[1]
+local nvim = _1_[2]
+local str = _1_[3]
+local _2amodule_2a = _0_0
+local _2amodule_name_2a = "dotfiles.module.core"
+do local _ = ({nil, _0_0, {{}, nil, nil, nil}})[2] end
 nvim.o.termguicolors = true
 nvim.o.mouse = "a"
 nvim.o.number = true
 nvim.o.relativenumber = true
 if nvim.g.gnvim then
-  nvim.o.guifont = "JetBrains Mono,Delugia Nerd Font,FreeMono:h11"
+  nvim.o.guifont = "JetBrains Mono,Delugia Nerd Font,Inter:h11"
 elseif nvim.g.gonvim_running then
   nvim.o.guifont = "JetBrains Mono:h11"
 elseif nvim.g.neovide then
-  nvim.o.guifont = "JetBrains Mono,Delugia Nerd Font,FreeMono,Noto Color Emoji:h15"
+  nvim.o.guifont = "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"
 end
 nvim.o.guicursor = str.join(",", core.concat(str.split(nvim.o.guicursor, ","), {"a:blinkon700"}))
 nvim.o.listchars = "eol:\226\134\180,tab:<->,space:\194\183"
