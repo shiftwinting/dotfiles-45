@@ -14,15 +14,26 @@ do
   package.loaded[name_0_] = module_0_
   _0_0 = module_0_
 end
-local function _1_(...)
-  _0_0["aniseed/local-fns"] = {require = {core = "aniseed.core", nu = "aniseed.nvim.util", nvim = "aniseed.nvim"}}
-  return {require("aniseed.core"), require("aniseed.nvim.util"), require("aniseed.nvim")}
+local function _2_(...)
+  local ok_3f_0_, val_0_ = nil, nil
+  local function _2_()
+    return {require("aniseed.core"), require("aniseed.nvim.util"), require("aniseed.nvim")}
+  end
+  ok_3f_0_, val_0_ = pcall(_2_)
+  if ok_3f_0_ then
+    _0_0["aniseed/local-fns"] = {require = {core = "aniseed.core", nu = "aniseed.nvim.util", nvim = "aniseed.nvim"}}
+    return val_0_
+  else
+    return print(val_0_)
+  end
 end
-local _2_ = _1_(...)
-local core = _2_[1]
-local nu = _2_[2]
-local nvim = _2_[3]
-do local _ = ({nil, _0_0, {{}, nil}})[2] end
+local _1_ = _2_(...)
+local core = _1_[1]
+local nu = _1_[2]
+local nvim = _1_[3]
+local _2amodule_2a = _0_0
+local _2amodule_name_2a = "dotfiles.module.mapping"
+do local _ = ({nil, _0_0, {{}, nil, nil, nil}})[2] end
 local map = nil
 do
   local v_0_ = nil
@@ -64,6 +75,7 @@ smap("n", "<leader>e", ":Clap filer<CR>")
 smap("n", "<leader>b", ":TelescopeMarks<CR>")
 smap("n", "<leader>g", ":TelescopeLiveGrep<CR>")
 smap("n", "<leader>ts", ":TelescopeTreesitter<CR>")
+smap("n", "<leader>td", ":lua require 'custom_telescope'.dotfiles()<CR>")
 map("n", "<ScrollWheelUp>", "<C-Y>")
 map("n", "<ScrollWheelDown>", "<C-E>")
 smap("n", "<ScrollWheelUp>", ":call smoothie#upwards()<CR>")

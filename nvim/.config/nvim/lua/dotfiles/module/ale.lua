@@ -14,15 +14,26 @@ do
   package.loaded[name_0_] = module_0_
   _0_0 = module_0_
 end
-local function _1_(...)
-  _0_0["aniseed/local-fns"] = {require = {nvim = "aniseed.nvim"}}
-  return {require("aniseed.nvim")}
+local function _2_(...)
+  local ok_3f_0_, val_0_ = nil, nil
+  local function _2_()
+    return {require("aniseed.nvim")}
+  end
+  ok_3f_0_, val_0_ = pcall(_2_)
+  if ok_3f_0_ then
+    _0_0["aniseed/local-fns"] = {require = {nvim = "aniseed.nvim"}}
+    return val_0_
+  else
+    return print(val_0_)
+  end
 end
-local _2_ = _1_(...)
-local nvim = _2_[1]
-do local _ = ({nil, _0_0, {{}, nil}})[2] end
+local _1_ = _2_(...)
+local nvim = _1_[1]
+local _2amodule_2a = _0_0
+local _2amodule_name_2a = "dotfiles.module.ale"
+do local _ = ({nil, _0_0, {{}, nil, nil, nil}})[2] end
 nvim.g.ale_linters = {clojure = {"joker"}, fennel = {"joker"}, java = {}, lua = {}, python = {"flake8"}, sh = {}, vim = {}}
-nvim.g.ale_fixers = {["*"] = {"remove_trailing_lines", "trim_whitespace"}, java = {"google_java_format"}, sh = {"shfmt"}}
+nvim.g.ale_fixers = {["*"] = {"remove_trailing_lines", "trim_whitespace"}, java = {"google_java_format"}, python = {"flake8"}, sh = {"shfmt"}}
 nvim.g.ale_sign_error = "\195\151"
 nvim.g.ale_lint_on_text_changed = "always"
 nvim.g.ale_disable_lsp = 1

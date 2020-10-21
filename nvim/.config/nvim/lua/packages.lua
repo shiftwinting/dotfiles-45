@@ -9,16 +9,7 @@ local packages = {
    ft = {'clojure', 'fennel'},
    requires = {'tpope/vim-sexp-mappings-for-regular-people'}
   },
-  {'hardcoreplayers/dashboard-nvim',
-    cond = function() return vim.g.gnvim ~= 1 end
-  },
-  {'iamcco/markdown-preview.nvim',
-    ft = {'markdown'},
-    config = {'vim.cmd[[doautocmd BufEnter]]'
-      },
-    run = 'cd app && yarn install',
-    cmd = 'MarkdownPreview'
-  },
+  {'hardcoreplayers/dashboard-nvim'},
   {'jeffkreeftmeijer/vim-numbertoggle'},
   {'jiangmiao/auto-pairs'},
   {'justinmk/vim-gtfo'},
@@ -27,9 +18,6 @@ local packages = {
   {'liuchengxu/vista.vim'},
   {'liuchengxu/vim-which-key'},
   {'mattn/vim-sonictemplate', cmd = 'Template'},
-  {'mhinz/vim-startify',
-    cond = function() return vim.g.gnvim == 1 end
-  },
   {'nvim-lua/completion-nvim',
     requires= {
       {'aca/completion-tabnine', run = './install.sh'},
@@ -58,9 +46,9 @@ local packages = {
     }
   },
   {'nvim-treesitter/playground'},
-  {'vigoux/treesitter-context.nvim'},
-  {'Olical/aniseed', config='require [[aniseed.dotfiles]]', tag = 'v3.8.0'},
-  {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.8.0'},
+--  {'romgrk/nvim-treesitter-context'},
+  {'Olical/aniseed', config=[[require('aniseed.env').init({ module = 'dotfiles.init' })]], tag = 'v3.9.0'},
+  {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.7.0'},
   {'pbrisbin/vim-mkdir'},
   {'psliwka/vim-smoothie'},
   {'tpope/vim-fugitive'},
@@ -80,7 +68,8 @@ local packages = {
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons'
     },
-    config = 'require [[el]].setup{}'},
+    config = 'require [[expressline_setup]]'
+  },
   {'antoinemadec/FixCursorHold.nvim'},
   {'voldikss/vim-floaterm'},
   {'nvim-lua/telescope.nvim',
@@ -88,7 +77,28 @@ local packages = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim'
     }
-  }
+  },
+  {'mhartington/formatter.nvim',
+    config = {
+      [[
+        require('format').setup({
+          lua = {
+              luafmt = function()
+                return {
+                  exe = "luafmt",
+                  args = {"--indent-count", 2, "--stdin"},
+                  stdin = true
+                }
+              end
+            }
+        })
+      ]]
+    }
+  },
+  {'nvim-treesitter/completion-treesitter'},
+  {'ThePrimeagen/vim-be-good'},
+  {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'}
 }
+
 
 return packages

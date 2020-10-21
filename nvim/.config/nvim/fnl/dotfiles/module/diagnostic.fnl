@@ -2,8 +2,9 @@
         {require {nvim aniseed.nvim}})
 
 (set nvim.g.diagnostic_enable_virtual_text 0)
-;(set nvim.g.diagnostic_virtual_text_prefix "🩺")
 (set nvim.g.diagnostic_insert_delay 1)
+
+;(nvim.ex.highlight :LspDiagnosticsWarning "guifg=#FFEA00")
 
 (nvim.call_function :sign_define [:LspDiagnosticsHintSign
                                   {:text "💡"

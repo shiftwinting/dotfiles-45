@@ -31,6 +31,7 @@
 (smap :n :<leader>b ":TelescopeMarks<CR>")
 (smap :n :<leader>g ":TelescopeLiveGrep<CR>")
 (smap :n :<leader>ts ":TelescopeTreesitter<CR>")
+(smap :n :<leader>td ":lua require 'custom_telescope'.dotfiles()<CR>")
 
 ;vim-smoothie
 (map :n :<ScrollWheelUp> "<C-Y>")
