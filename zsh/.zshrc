@@ -36,18 +36,25 @@ man() {
 }
 
 # Aliases
-alias yeet='yay -Rsn'
+alias yeet='paru -Rsn'
 alias cat='bat'
 alias :q='exit'
 alias pls='sudo'
+alias gonlaunch='LD_LIBRARY_PATH=~/.local/bin/goneovim/lib goneovim'
 
 # dircolors
 eval $(dircolors ~/.dir_colors/Dracula.dircolors)
 
 export TERM=xterm-256color
 
+
 n ()
 {
+    export NNN_TRASH=2
+    export NNN_OPTS="EFxP"
+    export NNN_FIFO=/tmp/nnn.fifo
+    export NNN_PLUG='p:preview-tui'
+
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"
