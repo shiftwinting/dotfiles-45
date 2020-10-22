@@ -48,6 +48,6 @@ if nvim.g.neovide then
 end
 nvim.g.cursorhold_updatetime = 300
 nvim.g.sonictemplate_vim_template_dir = "~/.config/nvim/template"
-nvim.g.signify_sign_change = "\226\128\162"
+nvim.g.signify_sign_change = "~"
 nvim.g.signify_sign_delete = "-"
 return nil
