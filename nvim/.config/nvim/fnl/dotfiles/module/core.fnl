@@ -43,6 +43,7 @@
 (nvim.ex.highlight :link :fennelParen :DraculaSubtle)
 (nvim.ex.highlight :link :Label :DraculaPurple)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
+(nvim.ex.highlight :DiffChange "guifg=#f8f8f2 guibg=#282a36")
 ;(nvim.ex.highlight :Comment "gui=Bold")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")

@@ -14,13 +14,24 @@ do
   package.loaded[name_0_] = module_0_
   _0_0 = module_0_
 end
-local function _1_(...)
-  _0_0["aniseed/local-fns"] = {require = {nvim = "aniseed.nvim"}}
-  return {require("aniseed.nvim")}
+local function _2_(...)
+  local ok_3f_0_, val_0_ = nil, nil
+  local function _2_()
+    return {require("aniseed.nvim")}
+  end
+  ok_3f_0_, val_0_ = pcall(_2_)
+  if ok_3f_0_ then
+    _0_0["aniseed/local-fns"] = {require = {nvim = "aniseed.nvim"}}
+    return val_0_
+  else
+    return print(val_0_)
+  end
 end
-local _2_ = _1_(...)
-local nvim = _2_[1]
-do local _ = ({nil, _0_0, {{}, nil}})[2] end
+local _1_ = _2_(...)
+local nvim = _1_[1]
+local _2amodule_2a = _0_0
+local _2amodule_name_2a = "dotfiles.module.definitions"
+do local _ = ({nil, _0_0, {{}, nil, nil, nil}})[2] end
 nvim.g.languagetool_server_command = "languagetool"
 nvim.g.neoterm_default_mod = "botright"
 nvim.g["sneak#label"] = 1
@@ -37,4 +48,6 @@ if nvim.g.neovide then
 end
 nvim.g.cursorhold_updatetime = 300
 nvim.g.sonictemplate_vim_template_dir = "~/.config/nvim/template"
+nvim.g.signify_sign_change = "\226\128\162"
+nvim.g.signify_sign_delete = "-"
 return nil

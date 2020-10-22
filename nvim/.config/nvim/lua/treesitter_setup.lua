@@ -1,51 +1,55 @@
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true,                    -- false will disable the whole extension
-        disable = {},        -- list of language that will be disabled
-        custom_captures = {               -- mapping of user defined captures to highlight groups
-          -- ["foo.bar"] = "Identifier"   -- highlight own capture @foo.bar with highlight group "Identifier", see :h nvim-treesitter-query-extensions
-        },
+require "nvim-treesitter.configs".setup {
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = {"css"}, -- list of language that will be disabled
+    custom_captures = {}
+  },
+  indent = {
+    enable = true
+  },
+  incremental_selection = {
+    enable = true,
+    disable = {},
+    keymaps = {
+      -- mappings for incremental selection (visual mappings)
+      init_selection = "gnn", -- maps in normal mode to init the node/scope selection
+      node_incremental = "grn", -- increment to the upper named parent
+      scope_incremental = "grc", -- increment to the upper scope (as defined in locals.scm)
+      node_decremental = "grm" -- decrement to the previous node
+    }
+  },
+  refactor = {
+    highlight_definitions = {
+      enable = true
     },
-    incremental_selection = {
-        enable = true,
-        disable = {},
-        keymaps = {                       -- mappings for incremental selection (visual mappings)
-          init_selection = 'gnn',         -- maps in normal mode to init the node/scope selection
-          node_incremental = "grn",       -- increment to the upper named parent
-          scope_incremental = "grc",      -- increment to the upper scope (as defined in locals.scm)
-          node_decremental = "grm",       -- decrement to the previous node
-        }
+    highlight_current_scope = {
+      enable = false
     },
-    refactor = {
-      highlight_definitions = {
-        enable = true
-      },
-      highlight_current_scope = {
-        enable = false
-      },
-      smart_rename = {
-        enable = true,
-        keymaps = {
-          smart_rename = "grr"            -- mapping to rename reference under cursor
-        }
-      },
-      navigation = {
-        enable = true,
-        keymaps = {
-          goto_definition = "gnd",        -- mapping to go to definition of symbol under cursor
-          list_definitions = "gnD"        -- mapping to list all definitions in current file
-        }
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "grr" -- mapping to rename reference under cursor
       }
     },
-    textobjects = { -- syntax-aware textobjects
-  enable = true,
-  disable = {},
-  keymaps = {
-      ["iL"] = { -- you can define your own textobjects directly here
-    python = "(function_definition) @function",
-    cpp = "(function_definition) @function",
-    c = "(function_definition) @function",
-    java = "(method_declaration) @function"
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "gnd", -- mapping to go to definition of symbol under cursor
+        list_definitions = "gnD" -- mapping to list all definitions in current file
+      }
+    }
+  },
+  textobjects = {
+    -- syntax-aware textobjects
+    enable = true,
+    disable = {},
+    keymaps = {
+      ["iL"] = {
+        -- you can define your own textobjects directly here
+        python = "(function_definition) @function",
+        cpp = "(function_definition) @function",
+        c = "(function_definition) @function",
+        java = "(method_declaration) @function"
       },
       -- or you use the queries from supported languages with textobjects.scm
       ["af"] = "@function.outer",
@@ -63,9 +67,9 @@ require'nvim-treesitter.configs'.setup {
       ["ad"] = "@comment.outer",
       ["am"] = "@call.outer",
       ["im"] = "@call.inner"
-  }
-    },
-    ensure_installed = {'java', 'query', 'lua', 'fennel', 'python', 'c', 'cpp', 'bash', 'json', 'regex', 'toml'}, -- one of 'all', 'language', or a list of languages,
+    }
+  },
+  ensure_installed = {"java", "query", "lua", "fennel", "python", "c", "cpp", "bash", "json", "regex", "toml"}, -- one of 'all', 'language', or a list of languages,
   playground = {
     enable = true,
     disable = {},

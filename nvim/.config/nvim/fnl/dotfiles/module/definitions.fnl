@@ -21,3 +21,7 @@
 ;shorter CursorHold
 (set nvim.g.cursorhold_updatetime 300)
 (set nvim.g.sonictemplate_vim_template_dir "~/.config/nvim/template")
+
+;signify
+(set nvim.g.signify_sign_change :•)
+(set nvim.g.signify_sign_delete :-)
