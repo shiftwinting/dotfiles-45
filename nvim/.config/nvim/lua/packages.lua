@@ -1,7 +1,6 @@
 local packages = {
   {'wbthomason/packer.nvim', opt = true},
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
-  {'camspiers/lens.vim', requires = {'camspiers/animate.vim'}},
   {'dense-analysis/ale'},
   {'dracula/vim', as = 'dracula'},
   {'editorconfig/editorconfig-vim'},
@@ -47,13 +46,13 @@ local packages = {
     'nvim-treesitter/nvim-treesitter',
     config = 'require [[treesitter_setup]]',
     requires = {
-      'nvim-treesitter/nvim-treesitter-refactor',
+      'p00f/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects'
     }
   },
   {'nvim-treesitter/playground'},
   {'romgrk/nvim-treesitter-context'},
-  {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]], tag = 'v3.9.0'},
+  {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]], tag = 'v3.10.0'},
   {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.7.0'},
   {'pbrisbin/vim-mkdir'},
   {'psliwka/vim-smoothie'},
@@ -68,16 +67,12 @@ local packages = {
   },
   {'Yggdroot/indentLine', requires = {'lukas-reineke/indent-blankline.nvim'}},
   {'takac/vim-hardtime'},
-  {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'vigoux/architext.nvim'},
-  {
-    'tjdevries/express_line.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons'
-    },
-    config = 'require [[expressline_setup]]'
+  {'glepnir/galaxyline.nvim',
+    config = 'require [[dotfiles.module.glsetup]]',
+    branch = 'main'
   },
+--  {'tjdevries/express_line.nvim', config = 'require [[el]].setup{}'},
   {'antoinemadec/FixCursorHold.nvim'},
   {'voldikss/vim-floaterm'},
   {
@@ -108,7 +103,17 @@ local packages = {
   {'nvim-treesitter/completion-treesitter'},
   {'ThePrimeagen/vim-be-good'},
   {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
-  {'mhinz/vim-signify'}
+  {'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = [[require('gitsigns').setup()]],
+    branch = 'main'
+  },
+  {
+    'smolck/nvim-todoist.lua',
+    requires = 'nvim-lua/plenary.nvim',
+    config = 'require[[nvim-todoist]].neovim_stuff.use_defaults()'
+  },
+  {'wfxr/minimap.vim'}
 }
 
 return packages

@@ -11,11 +11,14 @@
 (if
   nvim.g.gnvim (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11")
   nvim.g.gonvim_running (set nvim.o.guifont "JetBrains Mono:h11")
-  nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
+  nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
+  nvim.g.uivonim (set nvim.o.guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
 
 ;(set nvim.o.updatetime 300)
 (set nvim.o.guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"])))
-(set nvim.o.listchars "eol:↴,tab:<->,space:·")
+(if
+  nvim.g.uivonim (set nvim.o.listchars "tab:<->,space:·")
+  (set nvim.o.listchars "eol:↴,tab:<->,space:·"))
 (set nvim.o.showmode false)
 (set nvim.o.tabstop 2)
 (set nvim.o.shiftwidth 2)
@@ -30,6 +33,7 @@
 (set nvim.o.smartindent true)
 (set nvim.o.emoji false)
 (set nvim.o.list true)
+(set nvim.o.signcolumn "auto:3")
 (when nvim.g.gnvim
   (set nvim.o.completeopt "menuone,noinsert,noselect,preview"))
 
@@ -44,7 +48,7 @@
 (nvim.ex.highlight :link :Label :DraculaPurple)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 (nvim.ex.highlight :DiffChange "guifg=#f8f8f2 guibg=#282a36")
-;(nvim.ex.highlight :Comment "gui=Bold")
+(nvim.ex.highlight :lispbrackets "guifg=#80859E")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")

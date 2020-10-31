@@ -37,7 +37,7 @@ man() {
 
 # Aliases
 alias yeet='paru -Rsn'
-alias cat='bat'
+#alias cat='bat'
 alias :q='exit'
 alias pls='sudo'
 alias gonlaunch='LD_LIBRARY_PATH=~/.local/bin/goneovim/lib goneovim'
@@ -45,7 +45,7 @@ alias gonlaunch='LD_LIBRARY_PATH=~/.local/bin/goneovim/lib goneovim'
 # dircolors
 eval $(dircolors ~/.dir_colors/Dracula.dircolors)
 
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 
 n ()

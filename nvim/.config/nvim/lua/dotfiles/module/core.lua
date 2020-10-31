@@ -44,9 +44,15 @@ elseif nvim.g.gonvim_running then
   nvim.o.guifont = "JetBrains Mono:h11"
 elseif nvim.g.neovide then
   nvim.o.guifont = "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"
+elseif nvim.g.uivonim then
+  nvim.o.guifont = "Delugia Nerd Font,Inter,Noto Color Emoji:h15"
 end
 nvim.o.guicursor = str.join(",", core.concat(str.split(nvim.o.guicursor, ","), {"a:blinkon700"}))
-nvim.o.listchars = "eol:\226\134\180,tab:<->,space:\194\183"
+if nvim.g.uivonim then
+  nvim.o.listchars = "tab:<->,space:\194\183"
+else
+  nvim.o.listchars = "eol:\226\134\180,tab:<->,space:\194\183"
+end
 nvim.o.showmode = false
 nvim.o.tabstop = 2
 nvim.o.shiftwidth = 2
@@ -61,6 +67,7 @@ nvim.o.autoindent = true
 nvim.o.smartindent = true
 nvim.o.emoji = false
 nvim.o.list = true
+nvim.o.signcolumn = "auto:3"
 if nvim.g.gnvim then
   nvim.o.completeopt = "menuone,noinsert,noselect,preview"
 end
@@ -73,6 +80,7 @@ nvim.ex.highlight("link", "fennelParen", "DraculaSubtle")
 nvim.ex.highlight("link", "Label", "DraculaPurple")
 nvim.ex.highlight("MsgSeparator", "guifg=#282a36")
 nvim.ex.highlight("DiffChange", "guifg=#f8f8f2 guibg=#282a36")
+nvim.ex.highlight("lispbrackets", "guifg=#80859E")
 nvim.ex.autocmd("FileType", "dashboard", "set showtabline=0")
 nvim.ex.autocmd("WinLeave", "<buffer>", "set showtabline=2")
 nvim.ex.autocmd("BufEnter", "*", "lua require'diagnostic'.on_attach()")

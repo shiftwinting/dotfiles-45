@@ -32,7 +32,7 @@ local nvim = _1_[1]
 local _2amodule_2a = _0_0
 local _2amodule_name_2a = "dotfiles.module.completion"
 do local _ = ({nil, _0_0, {{}, nil, nil, nil}})[2] end
-nvim.g.completion_chain_complete_list = {default = {{complete_items = {"tabnine", "ts", "lsp", "snippet"}}, {mode = "<c-p>"}, {mode = "<c-n>"}}}
+nvim.g.completion_chain_complete_list = {default = {{complete_items = {"tabnine", "lsp", "snippet"}}, {mode = "<c-p>"}, {mode = "<c-n>"}}}
 nvim.g.completion_tabnine_sort_by_defaults = 1
 nvim.g.completion_enable_snippet = "vim-vsnip"
 return nil
