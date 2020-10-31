@@ -44,7 +44,7 @@ local packages = {
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {
     'nvim-treesitter/nvim-treesitter',
-    config = 'require [[treesitter_setup]]',
+    config = 'require [[dotfiles.module.treesitter]]',
     requires = {
       'p00f/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects'

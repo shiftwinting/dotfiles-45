@@ -10,11 +10,11 @@
                                   {:text "💡"
                                    :texthl "LspDiagnosticsHint"}])
 (nvim.call_function :sign_define [:LspDiagnosticsWarningSign
-                                  {:text "!"
+                                  {:text ""
                                    :texthl "LspDiagnosticsWarning"}])
 (nvim.call_function :sign_define [:LspDiagnosticsInformationSign
                                   {:text "i"
                                    :texthl "LspDiagnosticsInformation"}])
 (nvim.call_function :sign_define [:LspDiagnosticsErrorSign
-                                  {:text "❌"
-                                   :texthl "LspDiagnosticError"}])
+                                  {:text ""
+                                   :texthl "DraculaRed"}])

@@ -35,6 +35,6 @@ do local _ = ({nil, _0_0, {{}, nil, nil, nil}})[2] end
 nvim.g.diagnostic_enable_virtual_text = 0
 nvim.g.diagnostic_insert_delay = 1
 nvim.call_function("sign_define", {"LspDiagnosticsHintSign", {text = "\240\159\146\161", texthl = "LspDiagnosticsHint"}})
-nvim.call_function("sign_define", {"LspDiagnosticsWarningSign", {text = "!", texthl = "LspDiagnosticsWarning"}})
+nvim.call_function("sign_define", {"LspDiagnosticsWarningSign", {text = "\239\129\177", texthl = "LspDiagnosticsWarning"}})
 nvim.call_function("sign_define", {"LspDiagnosticsInformationSign", {text = "i", texthl = "LspDiagnosticsInformation"}})
-return nvim.call_function("sign_define", {"LspDiagnosticsErrorSign", {text = "\226\157\140", texthl = "LspDiagnosticError"}})
+return nvim.call_function("sign_define", {"LspDiagnosticsErrorSign", {text = "\239\129\151", texthl = "DraculaRed"}})
