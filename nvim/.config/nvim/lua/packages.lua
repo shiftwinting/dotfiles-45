@@ -44,7 +44,6 @@ local packages = {
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {
     'nvim-treesitter/nvim-treesitter',
-    config = 'require [[dotfiles.module.treesitter]]',
     requires = {
       'p00f/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects'
@@ -69,10 +68,9 @@ local packages = {
   {'takac/vim-hardtime'},
   {'vigoux/architext.nvim'},
   {'glepnir/galaxyline.nvim',
-    config = 'require [[dotfiles.module.glsetup]]',
     branch = 'main'
   },
---  {'tjdevries/express_line.nvim', config = 'require [[el]].setup{}'},
+--  {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
   {'antoinemadec/FixCursorHold.nvim'},
   {'voldikss/vim-floaterm'},
   {
@@ -113,7 +111,8 @@ local packages = {
     requires = 'nvim-lua/plenary.nvim',
     config = 'require[[nvim-todoist]].neovim_stuff.use_defaults()'
   },
-  {'wfxr/minimap.vim'}
+  {'wfxr/minimap.vim'},
+  {'junegunn/rainbow_parentheses.vim'}
 }
 
 return packages

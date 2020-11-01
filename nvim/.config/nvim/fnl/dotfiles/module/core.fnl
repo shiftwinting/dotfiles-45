@@ -39,12 +39,10 @@
 
 (set nvim.o.pumblend 15)
 (set nvim.o.winblend 15)
-
 (nvim.ex.colorscheme :dracula)
 
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
-(nvim.ex.highlight :link :fennelParen :DraculaSubtle)
 (nvim.ex.highlight :link :Label :DraculaPurple)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 (nvim.ex.highlight :lispbrackets "guifg=#80859E")
@@ -54,4 +52,3 @@
 (nvim.ex.autocmd :BufEnter :* "lua require'diagnostic'.on_attach()")
 (nvim.ex.autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (nvim.ex.autocmd :CursorHold :* "lua vim.lsp.util.show_line_diagnostics()")
-(nvim.ex.autocmd :FileType :scheme "ParinferOff")
