@@ -1,5 +1,5 @@
 local packages = {
-  {'wbthomason/packer.nvim', opt = true},
+  {'wbthomason/packer.nvim', opt = true, commit = '2aba863c46e786eb05198040773c593851d773d0'},
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   {'dense-analysis/ale'},
   {'dracula/vim', as = 'dracula'},
@@ -44,15 +44,16 @@ local packages = {
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {
     'nvim-treesitter/nvim-treesitter',
+    commit = '9327b113c2360d503ab183718c57e3e1b0819887',
     requires = {
-      'p00f/nvim-treesitter-refactor',
+      'nvim-treesitter/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects'
     }
   },
   {'nvim-treesitter/playground'},
   {'romgrk/nvim-treesitter-context'},
-  {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]], tag = 'v3.10.0'},
-  {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.7.0'},
+  {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]], branch = 'develop'},
+  {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.8.0'},
   {'pbrisbin/vim-mkdir'},
   {'psliwka/vim-smoothie'},
   {'tpope/vim-fugitive'},
@@ -67,10 +68,10 @@ local packages = {
   {'Yggdroot/indentLine', requires = {'lukas-reineke/indent-blankline.nvim'}},
   {'takac/vim-hardtime'},
   {'vigoux/architext.nvim'},
-  {'glepnir/galaxyline.nvim',
-    branch = 'main'
-  },
---  {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
+--  {'glepnir/galaxyline.nvim',
+--    branch = 'main'
+--  },
+  {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
   {'antoinemadec/FixCursorHold.nvim'},
   {'voldikss/vim-floaterm'},
   {
@@ -112,7 +113,8 @@ local packages = {
     config = 'require[[nvim-todoist]].neovim_stuff.use_defaults()'
   },
   {'wfxr/minimap.vim'},
-  {'junegunn/rainbow_parentheses.vim'}
+--  {'romgrk/lister', run = 'npm install'}
+  {'git@github.com:p00f/nvim-ts-rainbow.git'}
 }
 
 return packages

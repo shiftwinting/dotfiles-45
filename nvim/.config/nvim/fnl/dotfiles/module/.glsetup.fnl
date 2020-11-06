@@ -20,16 +20,9 @@
                                (> squeeze_width 40)))
       buffer_not_empty
         (fn [] (not (= 1 (nvim.call_function :empty [(nvim.call_function :expand ["%:t"])]))))
-        
-
-      vimode_provider
+      is_git_dir
         (fn []
-          (let [alias {:n "NORMAL"
-                       :i "INSERT"
-                       :c "COMMAND"
-                       :v "VISUAL"
-                       "" "V-BLOCK"}]
-            (. alias (nvim.call_function :mode {}))))]
+          (. (require "galaxyline.provider_vcs") :get_git_dir))]
 
  (set gl.short_line_list [:LuaTree
                           :vista
@@ -39,7 +32,13 @@
                         {:provider (fn [] "▋")
                          :highlight [(. colors :blue) (. colors :yellow)]}}
                      {:ViMode
-                        {:provider vimode_provider
+                        {:provider (fn []
+                                     (let [alias {:n "NORMAL"
+                                                  :i "INSERT"
+                                                  :c "COMMAND"
+                                                  :v "VISUAL"
+                                                  "" "V-BLOCK"}]
+                                       (. alias (nvim.call_function :mode {}))))
                          :separator ""
                          :separator_highlight [(. colors :yellow)
                                                (fn []
@@ -62,11 +61,11 @@
                          :highlight [(. colors :magenta) (. colors :darkblue)]}}
                      {:GitIcon
                         {:provider (fn [] "  ")
-                         :condition buffer_not_empty
+                         :condition (= 1 0)
                          :highlight [(. colors :orange) (. colors :purple)]}}
                      {:GitBranch
                         {:provider "GitBranch"
-                         :condition buffer_not_empty
+                         :condition (and is_git_dir buffer_not_empty)
                          :highlight [(. colors :grey) (. colors :purple)]}}
                      {:DiffAdd
                         {:provider "DiffAdd"

@@ -5,8 +5,9 @@
 (let [tsconfigs (require "nvim-treesitter.configs")]
   (tsconfigs.setup
     {:highlight {:enable true
-                 :disable ["css"]
-                 :custom_captures {:lispbrackets "lispbrackets"}}
+                 :disable ["css" "java"]}
+                 :custom_captures {:lispbrackets "lispbrackets"}
+     :rainbow {:enable true}
      :indent {:enable false}
      :incremental_selection {:enable true
                              :disable {}

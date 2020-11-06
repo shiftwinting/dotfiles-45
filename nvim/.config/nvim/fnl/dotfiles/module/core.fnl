@@ -33,7 +33,6 @@
 (set nvim.o.smartindent true)
 (set nvim.o.emoji false)
 (set nvim.o.list true)
-(set nvim.o.signcolumn "auto:3")
 (when nvim.g.gnvim
   (set nvim.o.completeopt "menuone,noinsert,noselect,preview"))
 
@@ -52,3 +51,4 @@
 (nvim.ex.autocmd :BufEnter :* "lua require'diagnostic'.on_attach()")
 (nvim.ex.autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (nvim.ex.autocmd :CursorHold :* "lua vim.lsp.util.show_line_diagnostics()")
+(set nvim.g.rainbow_active 1)

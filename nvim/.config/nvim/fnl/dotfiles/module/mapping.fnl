@@ -1,19 +1,17 @@
 (module dotfiles.module.mapping
-        {require {nvim aniseed.nvim
-                  nu aniseed.nvim.util
-                  core aniseed.core}})
+  {require {nvim aniseed.nvim}})
 
 (defn- map [mode from to]
-  "Sets a mapping"
-  (nvim.set_keymap mode from to {}))
+       "Sets a mapping"
+       (nvim.set_keymap mode from to {}))
 
 (defn- smap [mode from to]
-  "Sets a mapping with {:silent true}"
-  (nvim.set_keymap mode from to {:silent true}))
+       "Sets a mapping with {:silent true}"
+       (nvim.set_keymap mode from to {:silent true}))
 
 (defn- noremap [mode from to]
- "Sets a mapping with {:noremap true}"
- (nvim.set_keymap mode from to {:noremap true}))
+       "Sets a mapping with {:noremap true}"
+       (nvim.set_keymap mode from to {:noremap true}))
 
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
@@ -25,13 +23,14 @@
 (map :n :<leader>rv ":source ~/.config/nvim/init.vim<CR>")
 
 ;Telescope
-(smap :n :<leader>f ":TelescopeFindFile<CR>")
-(smap :n :<leader>h ":TelescopeOldFiles<CR>")
-(smap :n :<leader>e ":Clap filer<CR>")
-(smap :n :<leader>b ":TelescopeMarks<CR>")
-(smap :n :<leader>g ":TelescopeLiveGrep<CR>")
-(smap :n :<leader>ts ":TelescopeTreesitter<CR>")
+(smap :n :<leader>f ":Telescope find_files<CR>")
+(smap :n :<leader>h ":Telescope oldfiles<CR>")
+(smap :n :<leader>b ":Telescope marks<CR>")
+(smap :n :<leader>g ":Telescope live_grep<CR>")
+(smap :n :<leader>ts ":Telescope treesitter<CR>")
 (smap :n :<leader>td ":lua require 'custom_telescope'.dotfiles()<CR>")
+(smap :n :<leader>ch ":Telescope command_history<CR>")
+(smap :n :<leader>ht ":Telescope help_tags<CR>")
 
 ;vim-smoothie
 (map :n :<ScrollWheelUp> "<C-Y>")
