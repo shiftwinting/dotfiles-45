@@ -32,11 +32,11 @@
 (smap :n :<leader>ch ":Telescope command_history<CR>")
 (smap :n :<leader>ht ":Telescope help_tags<CR>")
 
-;vim-smoothie
-(map :n :<ScrollWheelUp> "<C-Y>")
-(map :n :<ScrollWheelDown> "<C-E>")
-(smap :n :<ScrollWheelUp> ":call smoothie#upwards()<CR>")
-(smap :n :<ScrollWheelDown> ":call smoothie#downwards()<CR>")
+;smoothie
+(smap :n :<Up> ":call comfortable_motion#flick(-40)<CR>")
+(smap :n :<ScrollWheelUp> ":call comfortable_motion#flick(-40)<CR>")
+(smap :n :<Down> ":call comfortable_motion#flick(40)<CR>")
+(smap :n :<ScrollWheelDown> ":call comfortable_motion#flick(40)<CR>")
 
 ;LuaTree
 (smap :n :<leader>v ":LuaTreeToggle<CR>")

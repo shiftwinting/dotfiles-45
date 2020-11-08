@@ -86,5 +86,8 @@ source /home/p00f/.config/broot/launcher/bash/br
 
 # Command-not-found handler
 source /usr/share/doc/pkgfile/command-not-found.zsh
+
+autoload -Uz compinit
+compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/bit bit

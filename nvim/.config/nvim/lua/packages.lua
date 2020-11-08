@@ -54,7 +54,7 @@ local packages = {
   {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]], branch = 'develop'},
   {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.8.0'},
   {'pbrisbin/vim-mkdir'},
-  {'psliwka/vim-smoothie'},
+  {'yuttie/comfortable-motion.vim'},
   {'tpope/vim-fugitive'},
   {'tpope/vim-surround'},
   {'tyru/caw.vim'},
@@ -67,9 +67,6 @@ local packages = {
   {'Yggdroot/indentline', requires = 'lukas-reineke/indent-blankline.nvim'},
   {'takac/vim-hardtime'},
   {'vigoux/architext.nvim'},
---  {'glepnir/galaxyline.nvim',
---    branch = 'main'
---  },
   {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
   {'antoinemadec/FixCursorHold.nvim'},
   {'voldikss/vim-floaterm'},
