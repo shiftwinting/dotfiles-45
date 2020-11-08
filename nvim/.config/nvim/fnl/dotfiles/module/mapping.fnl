@@ -68,3 +68,6 @@
 ;DAP
 (noremap :n :<leader>dc ":lua require'jdtls'.test_class()<CR>")
 (noremap :n :<leader>dm ":lua require'jdtls'.test_nearest_method()<CR>")
+
+;Bufferline
+(smap :n :tt ":BufferLinePick<CR>")

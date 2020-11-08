@@ -1,5 +1,5 @@
 local packages = {
-  {'wbthomason/packer.nvim', opt = true, commit = '2aba863c46e786eb05198040773c593851d773d0'},
+  {'wbthomason/packer.nvim', opt = true},
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   {'dense-analysis/ale'},
   {'dracula/vim', as = 'dracula'},
@@ -44,7 +44,6 @@ local packages = {
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {
     'nvim-treesitter/nvim-treesitter',
-    commit = '9327b113c2360d503ab183718c57e3e1b0819887',
     requires = {
       'nvim-treesitter/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects'
@@ -65,7 +64,7 @@ local packages = {
     'vigoux/LanguageTool.nvim'
     --TODO    ft = {},
   },
-  {'Yggdroot/indentLine', requires = {'lukas-reineke/indent-blankline.nvim'}},
+  {'Yggdroot/indentline', requires = 'lukas-reineke/indent-blankline.nvim'},
   {'takac/vim-hardtime'},
   {'vigoux/architext.nvim'},
 --  {'glepnir/galaxyline.nvim',
@@ -106,11 +105,6 @@ local packages = {
     requires = 'nvim-lua/plenary.nvim',
     config = [[require('gitsigns').setup()]],
     branch = 'main'
-  },
-  {
-    'smolck/nvim-todoist.lua',
-    requires = 'nvim-lua/plenary.nvim',
-    config = 'require[[nvim-todoist]].neovim_stuff.use_defaults()'
   },
   {'wfxr/minimap.vim'},
 --  {'romgrk/lister', run = 'npm install'}
