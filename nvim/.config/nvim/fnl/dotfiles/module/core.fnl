@@ -43,13 +43,10 @@
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
 (nvim.ex.highlight :link :Label :DraculaPurple)
-;(nvim.ex.highlight :link :TSPunctuationBracket :dummy)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
-(nvim.ex.highlight :lispbrackets "guifg=#80859E")
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")
 (nvim.ex.autocmd :BufEnter :* "lua require'diagnostic'.on_attach()")
 (nvim.ex.autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (nvim.ex.autocmd :CursorHold :* "lua vim.lsp.util.show_line_diagnostics()")
-(set nvim.g.rainbow_active 1)
