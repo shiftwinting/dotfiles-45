@@ -60,10 +60,7 @@ local packages = {
   {'tyru/caw.vim'},
   {'reedes/vim-pencil', ft = {'txt', 'markdown', 'rst'}},
   {'rhysd/git-messenger.vim'},
-  {
-    'vigoux/LanguageTool.nvim'
-    --TODO    ft = {},
-  },
+  {'vigoux/proofreader.nvim'},
   {'Yggdroot/indentline', requires = 'lukas-reineke/indent-blankline.nvim'},
   {'takac/vim-hardtime'},
   {'vigoux/architext.nvim'},
@@ -98,13 +95,8 @@ local packages = {
   {'nvim-treesitter/completion-treesitter'},
   {'ThePrimeagen/vim-be-good'},
   {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
-  --{'lewis6991/gitsigns.nvim',
-  --  requires = 'nvim-lua/plenary.nvim',
-  --  config = [[require('gitsigns').setup()]],
-  --  branch = 'main'
-  --},
   {'wfxr/minimap.vim'},
---  {'romgrk/lister', run = 'npm install'}
+  --  {'romgrk/lister', run = 'npm install'}
   {'git@github.com:p00f/nvim-ts-rainbow.git'}
 }
 
