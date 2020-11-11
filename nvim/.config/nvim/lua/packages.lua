@@ -98,11 +98,11 @@ local packages = {
   {'nvim-treesitter/completion-treesitter'},
   {'ThePrimeagen/vim-be-good'},
   {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
-  {'lewis6991/gitsigns.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-    config = [[require('gitsigns').setup()]],
-    branch = 'main'
-  },
+--  {'lewis6991/gitsigns.nvim',
+--    requires = 'nvim-lua/plenary.nvim',
+--    config = [[require('gitsigns').setup()]],
+--    branch = 'main'
+--  },
   {'wfxr/minimap.vim'},
 --  {'romgrk/lister', run = 'npm install'}
   {'git@github.com:p00f/nvim-ts-rainbow.git'}

@@ -5,8 +5,9 @@
 (let [tsconfigs (require "nvim-treesitter.configs")]
   (tsconfigs.setup
     {:highlight {:enable true
-                 :disable ["css" "java" "fennel"]}
-     :rainbow {:enable true}
+                 :disable ["css"]}
+     :rainbow {:enable true
+               :disable ["lua"]}
      :indent {:enable false}
      :incremental_selection {:enable true
                              :disable {}
@@ -22,7 +23,6 @@
                              :keymaps {:goto_definition "gnd"
                                        :list_definitions "gnD"}}}
      :textobjects {:enable true
-                   :disable {}
                    :keymaps {"iF" {:python "(function_definition) @function"
                                    :cpp "(function_definition) @function"
                                    :c "(function_definition) @function"

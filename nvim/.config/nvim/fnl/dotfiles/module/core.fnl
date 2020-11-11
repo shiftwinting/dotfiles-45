@@ -43,6 +43,7 @@
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
 (nvim.ex.highlight :link :Label :DraculaPurple)
+;(nvim.ex.highlight :link :TSPunctuationBracket :dummy)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 (nvim.ex.highlight :lispbrackets "guifg=#80859E")
 
