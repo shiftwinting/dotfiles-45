@@ -5,7 +5,8 @@
 (let [tsconfigs (require "nvim-treesitter.configs")]
   (tsconfigs.setup
     {:highlight {:enable true
-                 :disable ["css"]}
+                 :disable ["css"]
+                 :use_languagetree true}
      :rainbow {:enable true
                :disable ["lua"]}
      :indent {:enable false}

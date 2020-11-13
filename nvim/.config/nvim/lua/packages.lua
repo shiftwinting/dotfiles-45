@@ -97,7 +97,8 @@ local packages = {
   {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
   {'wfxr/minimap.vim'},
   --  {'romgrk/lister', run = 'npm install'}
-  {'git@github.com:p00f/nvim-ts-rainbow.git'}
+  {'git@github.com:p00f/nvim-ts-rainbow.git'},
+  {'kdheepak/lazygit.nvim'}
 }
 
 return packages
