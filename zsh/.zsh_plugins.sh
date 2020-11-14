@@ -7,3 +7,5 @@ fpath+=( /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-z
 source /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k/powerlevel10k.zsh-theme
 source /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k/powerlevel9k.zsh-theme
 fpath+=( /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-romkatv-SLASH-powerlevel10k )
+source /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-peterhurford-SLASH-git-it-on.zsh/git-it-on.plugin.zsh
+fpath+=( /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-peterhurford-SLASH-git-it-on.zsh )

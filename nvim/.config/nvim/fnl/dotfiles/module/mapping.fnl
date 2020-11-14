@@ -30,7 +30,7 @@
 (smap :n :<leader>ts ":Telescope treesitter<CR>")
 (smap :n :<leader>td ":lua require 'custom_telescope'.dotfiles()<CR>")
 (smap :n :<leader>ch ":Telescope command_history<CR>")
-(smap :n :<leader>ht ":Telescope help_tags<CR>")
+(smap :n :<leader>th ":Telescope help_tags<CR>")
 
 ;smoothie
 (smap :n :<Up> ":call comfortable_motion#flick(-40)<CR>")

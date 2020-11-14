@@ -96,9 +96,8 @@ local packages = {
   {'ThePrimeagen/vim-be-good'},
   {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
   {'wfxr/minimap.vim'},
-  --  {'romgrk/lister', run = 'npm install'}
-  {'git@github.com:p00f/nvim-ts-rainbow.git'},
-  {'kdheepak/lazygit.nvim'}
+  {'kdheepak/lazygit.nvim'},
+  {'git@github.com:p00f/nvim-ts-rainbow'}
 }
 
 return packages
