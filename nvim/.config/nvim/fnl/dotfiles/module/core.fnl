@@ -14,7 +14,6 @@
   nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
   nvim.g.uivonim (set nvim.o.guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
 
-;(set nvim.o.updatetime 300)
 (set nvim.o.guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"])))
 (if
   nvim.g.uivonim (set nvim.o.listchars "tab:<->,space:·")

@@ -5,7 +5,7 @@
 (let [tsconfigs (require "nvim-treesitter.configs")]
   (tsconfigs.setup
     {:highlight {:enable true
-                 :disable ["css"]
+                 :disable ["css" "clojure"]
                  :use_languagetree true}
      :rainbow {:enable true
                :disable ["lua" "bash"]}
