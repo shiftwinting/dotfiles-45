@@ -46,6 +46,4 @@
 
 (nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
 (nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")
-(nvim.ex.autocmd :BufEnter :* "lua require'diagnostic'.on_attach()")
 (nvim.ex.autocmd :BufEnter :* "lua require'completion'.on_attach()")
-(nvim.ex.autocmd :CursorHold :* "lua vim.lsp.util.show_line_diagnostics()")

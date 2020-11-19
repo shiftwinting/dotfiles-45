@@ -1,20 +1,27 @@
 (module dotfiles.module.diagnostic
-        {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim
+                  lsp vim.lsp}})
 
-(set nvim.g.diagnostic_enable_virtual_text 0)
-(set nvim.g.diagnostic_insert_delay 1)
 
-;(nvim.ex.highlight :LspDiagnosticsWarning "guifg=#FFEA00")
 
-(nvim.call_function :sign_define [:LspDiagnosticsHintSign
+(nvim.call_function :sign_define [:LspDiagnosticsSignHint
                                   {:text "💡"
-                                   :texthl "LspDiagnosticsHint"}])
-(nvim.call_function :sign_define [:LspDiagnosticsWarningSign
+                                   :texthl "LspDiagnosticsSignHint"}])
+(nvim.call_function :sign_define [:LspDiagnosticsSignWarning
                                   {:text ""
-                                   :texthl "LspDiagnosticsWarning"}])
-(nvim.call_function :sign_define [:LspDiagnosticsInformationSign
+                                   :texthl "LspDiagnosticsSignWarning"}])
+(nvim.call_function :sign_define [:LspDiagnosticsSignInformation
                                   {:text "i"
-                                   :texthl "LspDiagnosticsInformation"}])
-(nvim.call_function :sign_define [:LspDiagnosticsErrorSign
+                                   :texthl "LspDiagnosticsSignInformation"}])
+(nvim.call_function :sign_define [:LspDiagnosticsSignError
                                   {:text ""
-                                   :texthl "DraculaRed"}])
+                                   :texthl "LspDiagnosticsSignError"}])
+(tset lsp.handlers "textDocument/publishDiagnostics"
+   (lsp.with lsp.diagnostic.on_publish_diagnostics {:virtual_text true
+                                                    :signs true
+                                                    :update_in_insert false}))
+
+(nvim.ex.highlight :LspDiagnosticsVirtualTextError "guifg=#FF0072")
+(nvim.ex.highlight :LspDiagnosticsVirtualTextWarning "guifg=#FF5300")
+(nvim.ex.highlight :LspDiagnosticsVirtualTextHint "guifg=#7AFF00")
+(nvim.ex.highlight :LspDiagnosticsVirtualTextInformation "guifg=#0073FF")

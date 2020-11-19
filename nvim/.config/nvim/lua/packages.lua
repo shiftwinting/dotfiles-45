@@ -35,8 +35,7 @@ local packages = {
   {
     'neovim/nvim-lspconfig',
     requires = {
-      'nvim-lua/lsp-status.nvim',
-      'nvim-lua/diagnostic-nvim'
+      'nvim-lua/lsp-status.nvim'
     },
     config = {'require [[ls_setup]]'}
   },
@@ -46,13 +45,14 @@ local packages = {
     'nvim-treesitter/nvim-treesitter',
     requires = {
       'nvim-treesitter/nvim-treesitter-refactor',
-      'nvim-treesitter/nvim-treesitter-textobjects'
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/completion-treesitter'
     }
   },
   {'nvim-treesitter/playground'},
   {'romgrk/nvim-treesitter-context'},
-  {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]], branch = 'develop'},
-  {'Olical/conjure', ft = {'fennel', 'clojure'}, tag = 'v4.8.0'},
+  {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]]},
+  {'Olical/conjure', ft = {'fennel', 'clojure'}},
   {'pbrisbin/vim-mkdir'},
   {'yuttie/comfortable-motion.vim'},
   {'tpope/vim-fugitive'},
@@ -60,7 +60,6 @@ local packages = {
   {'tyru/caw.vim'},
   {'reedes/vim-pencil', ft = {'txt', 'markdown', 'rst'}},
   {'rhysd/git-messenger.vim'},
-  {'vigoux/proofreader.nvim'},
   {'Yggdroot/indentline', requires = 'lukas-reineke/indent-blankline.nvim'},
   {'takac/vim-hardtime'},
   {'vigoux/architext.nvim'},
@@ -92,12 +91,13 @@ local packages = {
       ]]
     }
   },
-  {'nvim-treesitter/completion-treesitter'},
   {'ThePrimeagen/vim-be-good'},
   {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
   {'wfxr/minimap.vim'},
   {'kdheepak/lazygit.nvim'},
-  {'git@github.com:p00f/nvim-ts-rainbow'}
+  {'git@github.com:p00f/nvim-ts-rainbow'},
+  {'andymass/vim-matchup'},
+  {'KabbAmine/vCoolor.vim'}
 }
 
 return packages

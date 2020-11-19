@@ -18,6 +18,4 @@ autocmd BufNewFile,BufRead * call s:DetectFennel()
 "  au FileType java lua jdtls.start_or_attach(config)
 "augroup end
 
-"call sign_define('ts_scope', {'text' : '│'})
-"
 set termguicolors
