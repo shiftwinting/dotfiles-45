@@ -11,13 +11,13 @@
    (core.assoc nvim.o (. opt_value 1) (. opt_value 2)))
 
 (if
-  nvim.g.gnvim (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11")
-  nvim.g.gonvim_running (set nvim.o.guifont "JetBrains Mono:h11")
-  nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
-  nvim.g.uivonim (set nvim.o.guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
+  nvim.g.gnvim (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11")
+  nvim.g.gonvim_running (setopt :guifont "JetBrains Mono:h11")
+  nvim.g.neovide (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
+  nvim.g.uivonim (setopt :guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
 
 (when nvim.g.gnvim
-  (set nvim.o.completeopt "menuone,noinsert,noselect,preview"))
+  (setopt :completeopt "menuone,noinsert,noselect,preview"))
 
 (nvim.ex.colorscheme :oak)
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
