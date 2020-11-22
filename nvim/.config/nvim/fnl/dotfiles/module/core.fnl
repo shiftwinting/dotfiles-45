@@ -4,17 +4,17 @@
                   str aniseed.string}})
 
 (defn- autocmd [event name todo]
-  (nvim.ex.autocmd event name todo))
+   (nvim.ex.autocmd event name todo))
 
 (defn- setopt [opt_value]
    "Sets a vim option" 
    (core.assoc nvim.o (. opt_value 1) (. opt_value 2)))
 
 (if
-  nvim.g.gnvim (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11")
-  nvim.g.gonvim_running (setopt :guifont "JetBrains Mono:h11")
-  nvim.g.neovide (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
-  nvim.g.uivonim (setopt :guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
+  nvim.g.gnvim (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11"])
+  nvim.g.gonvim_running (setopt [:guifont "JetBrains Mono:h11"])
+  nvim.g.neovide (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"])
+  nvim.g.uivonim (setopt [:guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"]))
 
 (when nvim.g.gnvim
   (setopt :completeopt "menuone,noinsert,noselect,preview"))

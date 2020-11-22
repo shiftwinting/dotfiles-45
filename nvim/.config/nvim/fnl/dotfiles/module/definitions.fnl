@@ -9,11 +9,11 @@
 (def globals
   [[:sneak#label 1]
    [:indentLine_char "│"]
-   [:indentLine_fileTypeExclude [:clojure :fennel :dashboard]]
+   [:indentLine_fileTypeExclude [:clojure :fennel :dashboard :help ""]]
    [:which_key_map {}]  ;; initialise which-key map
    [:float_preview#docked 0]
    [:vista_default_executive "nvim_lsp"]
-   [:neovide_transparency 0.8]
+   [:neovide_transparency 1]
    [:cursorhold_updatetime 300]  ;; shorter CursorHold, decoupled from updatetime
    [:sexp_filetypes "clojure,query,fennel"]])
 
