@@ -1,10 +1,9 @@
 export LIBVA_DRIVER_NAME=i965
-if [[ "$DESKTOP_SESSION" == "gnome-xorg" ]]
-then
-  export MOZ_X11_EGL=1  
-elif [[ "$DESKTOP_SESSION" == "gnome" ]]
+if [[ "$DESKTOP_SESSION" == "gnome" ]]
 then
   export MOZ_ENABLE_WAYLAND=1
+else
+  export MOZ_X11_EGL=1
 fi
 export QT_QPA_PLATFORMTHEME=qt5ct
 export MOZ_WEBRENDER=1

@@ -21,7 +21,7 @@
                                                     :signs true
                                                     :update_in_insert false}))
 
-(nvim.ex.highlight :LspDiagnosticsVirtualTextError "guifg=#FF0072")
-(nvim.ex.highlight :LspDiagnosticsVirtualTextWarning "guifg=#FF5300")
-(nvim.ex.highlight :LspDiagnosticsVirtualTextHint "guifg=#7AFF00")
-(nvim.ex.highlight :LspDiagnosticsVirtualTextInformation "guifg=#0073FF")
+;(nvim.ex.highlight :LspDiagnosticsVirtualTextError "guifg=#FF0072")
+;(nvim.ex.highlight :LspDiagnosticsVirtualTextWarning "guifg=#FF5300")
+;(nvim.ex.highlight :LspDiagnosticsVirtualTextHint "guifg=#7AFF00")
+;(nvim.ex.highlight :LspDiagnosticsVirtualTextInformation "guifg=#0073FF")

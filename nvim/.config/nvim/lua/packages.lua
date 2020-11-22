@@ -97,7 +97,9 @@ local packages = {
   {'kdheepak/lazygit.nvim'},
   {'git@github.com:p00f/nvim-ts-rainbow'},
   {'andymass/vim-matchup'},
-  {'KabbAmine/vCoolor.vim'}
+  {'KabbAmine/vCoolor.vim'},
+  {'lewis6991/gitsigns.nvim', config = [[require('gitsigns').setup()]]},
+  {'vigoux/oak'}
 }
 
 return packages

@@ -3,6 +3,9 @@
                   core aniseed.core
                   str aniseed.string}})
 
+(defn- autocmd [event name todo]
+  (nvim.ex.autocmd event name todo))
+
 (set nvim.o.termguicolors true)
 (set nvim.o.mouse :a)
 (set nvim.o.number true)
@@ -37,13 +40,13 @@
 
 (set nvim.o.pumblend 15)
 (set nvim.o.winblend 15)
-(nvim.ex.colorscheme :dracula)
+(nvim.ex.colorscheme :oak)
 
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
 (nvim.ex.highlight :link :Label :DraculaPurple)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 
-(nvim.ex.autocmd :FileType :dashboard "set showtabline=0")
-(nvim.ex.autocmd :WinLeave :<buffer> "set showtabline=2")
-(nvim.ex.autocmd :BufEnter :* "lua require'completion'.on_attach()")
+(autocmd :FileType :dashboard "set showtabline=1")
+(autocmd :WinLeave :<buffer> "set showtabline=2")
+(autocmd :BufEnter :* "lua require'completion'.on_attach()")
