@@ -6,10 +6,9 @@
 (defn- autocmd [event name todo]
   (nvim.ex.autocmd event name todo))
 
-(set nvim.o.termguicolors true)
-(set nvim.o.mouse :a)
-(set nvim.o.number true)
-(set nvim.o.relativenumber true)
+(defn- setopt [opt_value]
+   "Sets a vim option" 
+   (core.assoc nvim.o (. opt_value 1) (. opt_value 2)))
 
 (if
   nvim.g.gnvim (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11")
@@ -17,36 +16,40 @@
   nvim.g.neovide (set nvim.o.guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
   nvim.g.uivonim (set nvim.o.guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
 
-(set nvim.o.guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"])))
-(if
-  nvim.g.uivonim (set nvim.o.listchars "tab:<->,space:·")
-  (set nvim.o.listchars "eol:↴,tab:<->,space:·"))
-(set nvim.o.showmode false)
-(set nvim.o.tabstop 2)
-(set nvim.o.shiftwidth 2)
-(set nvim.o.expandtab true)
-(set nvim.o.softtabstop 2)
-(set nvim.o.foldexpr "nvim_treesitter#foldexpr()")
-(set nvim.o.foldmethod :expr)
-(set nvim.o.clipboard :unnamedplus)
-(set nvim.o.completeopt "menuone,noinsert,noselect")
-(set nvim.o.hidden true)
-(set nvim.o.autoindent true)
-(set nvim.o.smartindent true)
-(set nvim.o.emoji false)
-(set nvim.o.list true)
 (when nvim.g.gnvim
   (set nvim.o.completeopt "menuone,noinsert,noselect,preview"))
 
-(set nvim.o.pumblend 15)
-(set nvim.o.winblend 15)
 (nvim.ex.colorscheme :oak)
-
 (nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
-(nvim.ex.highlight :link :Label :DraculaPurple)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
+
+(def- options
+  [[:termguicolors true]
+   [:mouse :a]
+   [:number true]
+   [:relativenumber true]
+   [:guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))]
+   [:listchars "eol:↴,tab:<->,space:·"]
+   [:showmode false]
+   [:tabstop 2]
+   [:shiftwidth 2]
+   [:expandtab true]
+   [:softtabstop 2]
+   [:foldexpr "nvim_treesitter#foldexpr()"]
+   [:foldmethod "expr"]
+   [:clipboard "unnamedplus"]
+   [:completeopt "menuone,noinsert,noselect"]
+   [:hidden true]
+   [:autoindent true]
+   [:smartindent true]
+   [:emoji true]
+   [:list true]
+   [:pumblend 15]
+   [:winblend 15]])
+
+(core.map setopt options)

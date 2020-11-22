@@ -1,28 +1,20 @@
 (module dotfiles.module.definitions
-        {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim
+                  core aniseed.core}})
 
-(set nvim.g.languagetool_server_command :languagetool)
-(set nvim.g.neoterm_default_mod :botright)
-(set nvim.g.sneak#label 1)
-(set nvim.g.indentLine_fileTypeExclude [:clojure :fennel :dashboard])
-(set nvim.g.indentLine_char :│)
-; Initialise WhichKey map, this will be populated automatically
-(set nvim.g.which_key_map {})
-(set nvim.g.float_preview#docked 0)
-(set nvim.g.vista_default_executive :nvim_lsp)
-;(set nvim.g.hardtime_default_on :1)
-(set nvim.g.neosnippet#enable_completed_snippet 1)
-(set nvim.g.neosnippet#enable_complete_done 1)
-;neovide
-(when nvim.g.neovide
-  (set nvim.g.neovide_transparency 0.8))
-;shorter CursorHold
-(set nvim.g.cursorhold_updatetime 300)
-(set nvim.g.sonictemplate_vim_template_dir "~/.config/nvim/template")
+(defn set_global [var_value]
+   "Sets a neovim global variable"
+   (core.assoc nvim.g (. var_value 1) (. var_value 2)))
 
-;signify
-(set nvim.g.signify_sign_change "~")
-(set nvim.g.signify_sign_delete :-)
+(def globals
+  [[:sneak#label 1]
+   [:indentLine_char "│"]
+   [:indentLine_fileTypeExclude [:clojure :fennel :dashboard]]
+   [:which_key_map {}]  ;; initialise which-key map
+   [:float_preview#docked 0]
+   [:vista_default_executive "nvim_lsp"]
+   [:neovide_transparency 0.8]
+   [:cursorhold_updatetime 300]  ;; shorter CursorHold, decoupled from updatetime
+   [:sexp_filetypes "clojure,query,fennel"]])
 
-;sexp
-(set nvim.g.sexp_filetypes "clojure,query,fennel")
+(core.map set_global globals)
