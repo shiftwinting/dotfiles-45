@@ -6,15 +6,14 @@
    "Sets a neovim global variable"
    (core.assoc nvim.g global_ value))
 
-(def globals
-  [[:sneak#label 1]
-   [:indentLine_char "│"]
-   [:indentLine_fileTypeExclude [:clojure :fennel :dashboard :help ""]]
-   [:which_key_map {}]  ;; initialise which-key map
-   [:float_preview#docked 0]
-   [:vista_default_executive "nvim_lsp"]
-   [:neovide_transparency 1]
-   [:cursorhold_updatetime 300]  ;; shorter CursorHold, decoupled from updatetime
-   [:sexp_filetypes "clojure,query,fennel"]])
-
-(core.map set_global globals)
+(let [globals
+        [[:sneak#label 1]
+         [:indentLine_char "│"]
+         [:indentLine_fileTypeExclude [:clojure :fennel :dashboard :help ""]]
+         [:which_key_map {}]  ;; initialise which-key map
+         [:float_preview#docked 0]
+         [:vista_default_executive "nvim_lsp"]
+         [:neovide_transparency 1]
+         [:cursorhold_updatetime 300]  ;; shorter CursorHold, decoupled from updatetime
+         [:sexp_filetypes "clojure,query,fennel"]]]
+     (core.map set_global globals))
