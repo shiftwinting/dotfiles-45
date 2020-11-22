@@ -6,9 +6,9 @@
 (defn- autocmd [event name todo]
    (nvim.ex.autocmd event name todo))
 
-(defn- setopt [opt_value]
+(defn- setopt [[opt value]]
    "Sets a vim option" 
-   (core.assoc nvim.o (. opt_value 1) (. opt_value 2)))
+   (core.assoc nvim.o opt value))
 
 (if
   nvim.g.gnvim (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11"])

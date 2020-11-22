@@ -2,9 +2,9 @@
         {require {nvim aniseed.nvim
                   core aniseed.core}})
 
-(defn set_global [var_value]
+(defn set_global [[global_ value]]
    "Sets a neovim global variable"
-   (core.assoc nvim.g (. var_value 1) (. var_value 2)))
+   (core.assoc nvim.g global_ value))
 
 (def globals
   [[:sneak#label 1]
