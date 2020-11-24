@@ -11,13 +11,13 @@
    (core.assoc nvim.o opt value))
 
 (nvim.ex.colorscheme :oak)
-(nvim.ex.highlight :dashboardHeader "guifg=#50fa7b")
 (nvim.ex.highlight :link :TSParameter :DraculaOrangeItalic)
 (nvim.ex.highlight :MsgSeparator "guifg=#282a36")
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
+(autocmd :BufWritePost :plugins.lua "PackerCompile")
 
 (let [options
         [[:termguicolors true]

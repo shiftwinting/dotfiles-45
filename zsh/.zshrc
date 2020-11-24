@@ -41,6 +41,7 @@ alias yeet='paru -Rsn'
 alias :q='exit'
 alias pls='sudo'
 alias gonlaunch='LD_LIBRARY_PATH=~/.local/bin/goneovim/lib goneovim'
+alias pins="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 
 # dircolors
 eval $(dircolors ~/.dir_colors/Dracula.dircolors)
