@@ -19,3 +19,4 @@ autocmd BufNewFile,BufRead * call s:DetectFennel()
 "augroup end
 
 set termguicolors
+let g:oak_virtualtext_bg = 1
