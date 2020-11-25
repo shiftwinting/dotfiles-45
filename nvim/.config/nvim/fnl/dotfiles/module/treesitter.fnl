@@ -1,20 +1,20 @@
 (module dotfiles.module.treesitter
-    {require {nvim aniseed.nvim
-              tsconfigs nvim-treesitter.configs}})
+  {require {nvim aniseed.nvim
+            tsconfigs nvim-treesitter.configs}})
 
 (tsconfigs.setup
   {:highlight {:enable true
                :disable ["css" "clojure"]
                :use_languagetree true}
    :rainbow {:enable true
-             :disable ["lua" "java"]}
+             :disable ["java" "bash"]}
    :indent {:enable false}
    :incremental_selection {:enable true
                            :disable {}
                            :keymaps {:init_selection "gnn"
-                           :node_incremental "grn"
-                           :scope_incremental "grc"
-                           :node_decremental "grm"}}
+                                     :node_incremental "grn"
+                                     :scope_incremental "grc"
+                                     :node_decremental "grm"}}
    :refactor {:highlight_definitions {:enable true}
               :highlight_current_scope {:enable false}
               :smart_rename {:enable true

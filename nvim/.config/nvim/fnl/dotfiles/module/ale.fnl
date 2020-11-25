@@ -1,5 +1,5 @@
 (module dotfiles.module.ale
-        {require {nvim aniseed.nvim}})
+  {require {nvim aniseed.nvim}})
 
 (set nvim.g.ale_linters
      {:python [:flake8]

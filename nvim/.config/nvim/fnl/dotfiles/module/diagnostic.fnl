@@ -1,6 +1,6 @@
 (module dotfiles.module.diagnostic
-        {require {nvim aniseed.nvim
-                  lsp vim.lsp}})
+  {require {nvim aniseed.nvim
+            lsp vim.lsp}})
 
 
 
@@ -17,6 +17,6 @@
                                   {:text ""
                                    :texthl "LspDiagnosticsSignError"}])
 (tset lsp.handlers "textDocument/publishDiagnostics"
-   (lsp.with lsp.diagnostic.on_publish_diagnostics {:virtual_text true
-                                                    :signs true
-                                                    :update_in_insert false}))
+      (lsp.with lsp.diagnostic.on_publish_diagnostics {:virtual_text true
+                                                       :signs true
+                                                       :update_in_insert false}))

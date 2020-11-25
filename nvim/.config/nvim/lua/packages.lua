@@ -99,7 +99,8 @@ local packages = {
   {'andymass/vim-matchup'},
   {'KabbAmine/vCoolor.vim'},
   {'lewis6991/gitsigns.nvim', config = [[require('gitsigns').setup()]]},
-  {'vigoux/oak'}
+  {'vigoux/oak'},
+  {'bakpakin/fennel.vim'}
 }
 
 return packages

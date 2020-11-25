@@ -1,5 +1,5 @@
 (module dotfiles.module.dashboard
-        {require {nvim aniseed.nvim}})
+  {require {nvim aniseed.nvim}})
 
 (set nvim.g.dashboard_custom_shortcut
      {:last_session "···"

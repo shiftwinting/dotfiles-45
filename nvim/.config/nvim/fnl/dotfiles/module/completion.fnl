@@ -1,5 +1,5 @@
 (module dotfiles.module.completion
-        {require {nvim aniseed.nvim}})
+  {require {nvim aniseed.nvim}})
 
 (set nvim.g.completion_chain_complete_list
      {:default

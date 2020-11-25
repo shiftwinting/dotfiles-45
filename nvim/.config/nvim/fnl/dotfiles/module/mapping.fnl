@@ -2,16 +2,16 @@
   {require {nvim aniseed.nvim}})
 
 (defn- map [mode from to]
-       "Sets a mapping"
-       (nvim.set_keymap mode from to {}))
+  "Sets a mapping"
+  (nvim.set_keymap mode from to {}))
 
 (defn- smap [mode from to]
-       "Sets a mapping with {:silent true}"
-       (nvim.set_keymap mode from to {:silent true}))
+  "Sets a mapping with {:silent true}"
+  (nvim.set_keymap mode from to {:silent true}))
 
 (defn- noremap [mode from to]
-       "Sets a mapping with {:noremap true}"
-       (nvim.set_keymap mode from to {:noremap true}))
+  "Sets a mapping with {:noremap true}"
+  (nvim.set_keymap mode from to {:noremap true}))
 
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
