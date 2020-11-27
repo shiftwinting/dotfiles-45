@@ -39,7 +39,8 @@
        [:emoji true]
        [:list true]
        [:pumblend 15]
-       [:winblend 15]]]
+       [:winblend 15]
+       [:title true]]]
   (core.map setopt options))
 
 (if
