@@ -89,5 +89,5 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/power":{ "format":"    ", "on-click":"bash ~/.local/bin/swaynag.sh" },
+    "custom/power":{ "format":"    ", "on-click":"swaynag.sh" },
 }

@@ -98,7 +98,7 @@ gaps inner 7
     bindsym $mod+Shift+m exec swaylock -i Downloads/pawel-czerwinski-IIHuZa1WirQ-unsplash.jpg --effect-greyscale
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec bash ~/.local/bin/swaynag.sh
+    bindsym $mod+Shift+e exec swaynag.sh
 #
 # Moving around:
 #
