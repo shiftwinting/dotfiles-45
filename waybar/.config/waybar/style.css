@@ -69,6 +69,11 @@ window#waybar.solo {
 #mode,
 #idle_inhibitor,
 
+mpd {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #ffffff;
+}
 #clock {
     background-color: #585123;
 }

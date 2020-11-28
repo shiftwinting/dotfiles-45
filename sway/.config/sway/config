@@ -73,7 +73,7 @@ gaps inner 7
     bindsym $mod+Return exec $term
     default_border none
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
