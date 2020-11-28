@@ -1,5 +1,0 @@
-PATH=$PATH:~/.local/bin:~/.local/bin/servo
-PATH=$PATH:~/.local/bin/goneovim
-PATH=$PATH:~/.gem/ruby/2.7.0/bin
-export GPG_TTY=$(tty)
-export DIFFPROG='nvim -d'

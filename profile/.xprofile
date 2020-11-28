@@ -1,3 +1,0 @@
-# Don't put envvars for wayland here, this file is not read in wayland. Use ~/.config/environment.d
-export LIBVA_DRIVER_NAME=i965
-export MOZ_X11_EGL=1
