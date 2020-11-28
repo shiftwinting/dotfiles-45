@@ -71,7 +71,11 @@ local packages = {
     requires = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim'
-    }
+    },
+    config = [[
+      require('telescope').setup()
+      require('telescope').load_extension('fzy_native')
+    ]]
   },
   {
     'mhartington/formatter.nvim',
@@ -100,7 +104,9 @@ local packages = {
   {'KabbAmine/vCoolor.vim'},
   {'lewis6991/gitsigns.nvim', config = [[require('gitsigns').setup()]]},
   {'vigoux/oak'},
-  {'bakpakin/fennel.vim'}
+  {'bakpakin/fennel.vim'},
+  {'nvim-telescope/telescope-fzy-native.nvim'},
+  {'mtdl9/vim-log-highlighting'}
 }
 
 return packages
