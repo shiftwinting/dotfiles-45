@@ -81,7 +81,7 @@ local packages = {
     'mhartington/formatter.nvim',
     config = {
       [[
-        require('format').setup({
+        require('formatter').setup({
           lua = {
               luafmt = function()
                 return {

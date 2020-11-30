@@ -5,5 +5,4 @@ These are my dotfiles, managed using [GNU Stow](https://www.gnu.org/software/sto
 
 Big thanks to
  - Alex Pearce for [this tutorial](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/). (But the [tutorial](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) on GNU Stow's [website](https://www.gnu.org/software/stow/) is even more straightforward)
- - [@joshbenham](https://github.com/joshbenham) for [Dracula ls_colors](https://github.com/joshbenham/linux-dotfiles/blob/master/dircolors/Dracula.dircolors)
  - [@stove-panini](https://github.com/stove-panini) for [emoji fontconfig](https://github.com/stove-panini/fontconfig-emoji)

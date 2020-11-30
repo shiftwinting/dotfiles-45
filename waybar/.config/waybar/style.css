@@ -74,9 +74,9 @@ mpd {
     margin: 0 4px;
     color: #ffffff;
 }
-#clock {
+/* #clock {
     background-color: #585123;
-}
+} */
 
 @keyframes blink {
     to {
