@@ -74,8 +74,9 @@ window#waybar.solo {
 #tray,
 #mode,
 #idle_inhibitor,
+#custom-firefox_media,
 
-mpd {
+#mpd {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
@@ -166,4 +167,10 @@ label:focus {
 #idle_inhibitor.activated {
     background-color: #a89984;
     color: #3c3836;
+}
+
+#custom-firefox_media {
+  background-color: #d65d0e;
+  color: #d5c4a1;
+  box-shadow: inset 0 -3px #fbf1c7;
 }

@@ -6,25 +6,18 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "sway/language", "clock", "custom/power", "tray"],
+    "modules-right": ["custom/firefox_media", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "sway/language", "clock", "custom/power", "tray"],
+
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "custom/firefox_media": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/firefox_media.sh",
+        "on-click": "playerctl -p $(playerctl -l | grep firefox) play-pause",
+        "escape": true
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -72,7 +65,7 @@
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume:2}% {icon:2} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",

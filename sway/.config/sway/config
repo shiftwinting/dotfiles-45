@@ -72,6 +72,9 @@ gaps inner 7
     # Start a terminal
     bindsym $mod+Return exec $term
     default_border none
+
+    #wofer
+    bindsym $mod+p exec ~/wofer/wofer.sh
     # Kill focused window
     bindsym $mod+q kill
 
@@ -96,7 +99,7 @@ gaps inner 7
     bindsym Ctrl+Print exec grimshot save area
 
     # swaylock
-    bindsym $mod+Shift+m exec swaylock -i Downloads/pawel-czerwinski-IIHuZa1WirQ-unsplash.jpg --effect-greyscale
+    bindsym $mod+Shift+m exec swaylock -i ~/Pictures/wall.png --effect-greyscale
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag.sh
