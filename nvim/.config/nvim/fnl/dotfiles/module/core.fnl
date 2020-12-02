@@ -15,7 +15,7 @@
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
-(autocmd :BufWritePost :plugins.lua "PackerCompile")
+(autocmd :BufWritePost :packages.lua "PackerCompile")
 
 (let [options
       [[:termguicolors true]

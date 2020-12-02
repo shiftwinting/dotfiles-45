@@ -70,7 +70,8 @@ local packages = {
     'nvim-lua/telescope.nvim',
     requires = {
       'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim'
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-packer.nvim'
     },
     config = [[
       require('telescope').setup()
