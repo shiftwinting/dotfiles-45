@@ -81,6 +81,11 @@ gaps inner 7
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # switch to csd
+    bindsym $mod+g border csd
+    # switch to no border
+    bindsym $mod+m border none
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.

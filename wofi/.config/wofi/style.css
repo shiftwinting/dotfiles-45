@@ -1,6 +1,7 @@
 window {
 margin: 5px;
 border: 2px solid #eec170;
+border-radius: 7px;
 background-color: #463f3a;
 }
 
@@ -18,12 +19,14 @@ background-color: #463f3a;
 #outer-box {
 margin: 5px;
 border: 2px solid #463f3a;
+border-radius: 7px;
 background-color: #463f3a;
 }
 
 #scroll {
 margin: 5px;
 border: 2px solid #f95738;
+border-radius: 5px;
 background-color: #463f3a;
 }
 
@@ -32,6 +35,6 @@ background-color: rgba(0,0,0,0);
 }
 #text:selected {
 border: 2px solid #3B342F;
+border-radius: 5px;
 background-color: #3B342F;
 }
-
