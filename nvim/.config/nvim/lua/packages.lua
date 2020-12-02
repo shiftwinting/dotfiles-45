@@ -106,7 +106,8 @@ local packages = {
   {'vigoux/oak'},
   {'bakpakin/fennel.vim'},
   {'nvim-telescope/telescope-fzy-native.nvim'},
-  {'mtdl9/vim-log-highlighting'}
+  {'mtdl9/vim-log-highlighting'},
+  {'ElPiloto/sidekick.nvim'}
 }
 
 return packages

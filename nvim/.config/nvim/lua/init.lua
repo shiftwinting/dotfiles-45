@@ -10,3 +10,6 @@ packer.startup(function()
     packer.use(value)
   end
 end)
+
+api.nvim_set_option("termguicolors", true)
+api.nvim_set_var("oak_virtualtext_bg", 1)
