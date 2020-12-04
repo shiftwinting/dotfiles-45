@@ -1,3 +1,4 @@
 nvim/.config/nvim/lua/dotfiles
 nvim/.config/nvim/plugin
 hunter/.config/hunter/history
+tmux/.config/tmux/plugins

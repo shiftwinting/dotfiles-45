@@ -7,43 +7,6 @@ local sections = require('el.sections')
 local subscribe = require('el.subscribe')
 local lsp_statusline = require('el.plugins.lsp_status')
 
--- TODO: Spinning planet extension. Integrated w/ telescope.
--- ◐ ◓ ◑ ◒
--- 🌛︎🌝︎🌜︎🌚︎
--- Show telescope icon / emoji when you open it as well
-
---[[
-let s:left_sep = ' ❯❯ '
-let s:right_sep = ' ❮❮ '
-        let s:seperator.filenameright = ''
-        let s:seperator.filesizeright = ''
-        let s:seperator.gitleft = ''
-        let s:seperator.gitright = ''
-        let s:seperator.lineinfoleft = ''
-        let s:seperator.lineformatright = ''
-        let s:seperator.EndSeperate = ' '
-        let s:seperator.emptySeperate1 = ''
-    elseif a:style == 'slant-cons'
-        let s:seperator.homemoderight = ''
-        let s:seperator.filenameright = ''
-        let s:seperator.filesizeright = '' let s:seperator.gitleft = ''
-        let s:seperator.gitright = ''
-        let s:seperator.lineinfoleft = ''
-        let s:seperator.lineformatright = ''
-        let s:seperator.EndSeperate = ' '
-        let s:seperator.emptySeperate1 = ''
-    elseif a:style == 'slant-fade'
-        let s:seperator.homemoderight = ''
-        let s:seperator.filenameright = ''
-        let s:seperator.filesizeright = ''
-        let s:seperator.gitleft = ''
-        let s:seperator.gitright = ''
-        " let s:seperator.gitright = ''
-        let s:seperator.lineinfoleft = ''
-        let s:seperator.lineformatright = ''
-        let s:seperator.EndSeperate = ' '
-        let s:seperator.emptySeperate1 = ''
---]]
 
 local git_icon = subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
   local icon = extensions.file_icon(_, bufnr)

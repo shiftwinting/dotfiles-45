@@ -71,11 +71,13 @@ local packages = {
     requires = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-packer.nvim'
+      'nvim-telescope/telescope-packer.nvim',
+      'nvim-telescope/telescope-github.nvim'
     },
     config = [[
       require('telescope').setup()
-      require('telescope').load_extension('fzy_native') 
+      require('telescope').load_extension('fzy_native')
+      require('telescope').load_extension('ghcli')
     ]]
   },
   {
@@ -108,7 +110,8 @@ local packages = {
   {'bakpakin/fennel.vim'},
   {'nvim-telescope/telescope-fzy-native.nvim'},
   {'mtdl9/vim-log-highlighting'},
-  {'ElPiloto/sidekick.nvim'}
+  {'ElPiloto/sidekick.nvim'},
+  {'glacambre/firenvim', run = ':call firenvim#install(0)'}
 }
 
 return packages
