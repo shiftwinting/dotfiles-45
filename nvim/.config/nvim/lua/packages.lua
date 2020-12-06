@@ -111,7 +111,9 @@ local packages = {
   {'nvim-telescope/telescope-fzy-native.nvim'},
   {'mtdl9/vim-log-highlighting'},
   {'ElPiloto/sidekick.nvim'},
-  {'glacambre/firenvim', run = ':call firenvim#install(0)'}
+  {'glacambre/firenvim', run = ':call firenvim#install(0)'},
+  {'eraserhd/parinfer-rust', run = 'cargo build --release'},
+  {'luochen1990/rainbow'}
 }
 
 return packages

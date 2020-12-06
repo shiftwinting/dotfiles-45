@@ -5,9 +5,12 @@
 (tsconfigs.setup
   {:highlight {:enable true
                :disable ["css"]
+                         ;"clojure"
+                         
                :use_languagetree true}
-   :rainbow {:enable true
-             :disable ["java" "bash"]}
+   :rainbow {:enable false}
+             ;:disable ["java" "bash"
+             ;          "clojure"]}
    :indent {:enable false}
    :incremental_selection {:enable true
                            :disable {}
@@ -41,7 +44,7 @@
                            "ad" "@comment.outer"
                            "am" "@call.outer"
                            "im" "@call.inner"}}
-   :ensure_installed [ :java :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css ]
+   :ensure_installed [ :java :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css]
    :playground {:enable true
                 :disable {}
                 :updatetime 25

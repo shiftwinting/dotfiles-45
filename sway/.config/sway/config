@@ -103,6 +103,11 @@ gaps inner 7
     bindsym Print exec grimshot save screen
     bindsym Ctrl+Print exec grimshot save area
 
+    #volume
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
     # swaylock
     bindsym $mod+Shift+m exec swaylock -i ~/Pictures/wall.png --effect-greyscale
 
@@ -241,7 +246,6 @@ bar {
 
 include /etc/sway/config.d/*
 exec swayidle -w \
-  timeout 285 'swaynag -t warning -m "Locking Screen" --background=#e60bdeFF --text=#ffffffFF --font=Source Code Pro' \
   timeout 300 'swaylock -f -c 000000' \
   timeout 600 'swaymsg "output * dpms off"' \
        resume 'swaymsg "output * dpms on"' \

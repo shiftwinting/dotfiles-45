@@ -21,8 +21,8 @@
 [init]
 	defaultBranch = main
 [merge]
-	tool = vimdiff3
+	tool = meld
 [mergetool]
-	path = nvim
+	path = meld
 [commit]
 	gpgsign = true
