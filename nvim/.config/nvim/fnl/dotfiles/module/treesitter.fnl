@@ -4,8 +4,8 @@
 
 (tsconfigs.setup
   {:highlight {:enable true
-               :disable ["css"]
-                         ;"clojure"
+               :disable ["css"
+                         "clojure"]
                          
                :use_languagetree true}
    :rainbow {:enable false}

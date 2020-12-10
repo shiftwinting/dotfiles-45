@@ -65,9 +65,9 @@ local packages = {
   {'vigoux/architext.nvim'},
   {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
   {'antoinemadec/FixCursorHold.nvim'},
-  {'voldikss/vim-floaterm'},
+  {'numtostr/FTerm.nvim'},
   {
-    'nvim-lua/telescope.nvim',
+    'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
@@ -75,7 +75,11 @@ local packages = {
       'nvim-telescope/telescope-github.nvim'
     },
     config = [[
-      require('telescope').setup()
+    require('telescope').setup {
+      defaults = {
+        file_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+      }
+    }
       require('telescope').load_extension('fzy_native')
       require('telescope').load_extension('ghcli')
     ]]
@@ -113,7 +117,9 @@ local packages = {
   {'ElPiloto/sidekick.nvim'},
   {'glacambre/firenvim', run = ':call firenvim#install(0)'},
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
-  {'luochen1990/rainbow'}
+  {'luochen1990/rainbow'},
+  {'notomo/helpeek.vim'},
+  {'edkolev/tmuxline.vim'}
 }
 
 return packages
