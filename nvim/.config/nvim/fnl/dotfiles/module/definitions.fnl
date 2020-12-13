@@ -18,5 +18,5 @@
        [:sexp_filetypes "clojure,query,fennel"]
        [:sidekick_printable_def_types ["function" "class" "type" "module" "parameter" "method" "field"]]
        [:rainbow_active 1]
-       [:tmuxline_powerline_separators 0]]]
+       [:srcery_italic 1]]]
   (core.map set_global globals))

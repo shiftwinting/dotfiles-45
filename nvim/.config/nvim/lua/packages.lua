@@ -75,11 +75,11 @@ local packages = {
       'nvim-telescope/telescope-github.nvim'
     },
     config = [[
-    require('telescope').setup {
-      defaults = {
-        file_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+      require('telescope').setup {
+        defaults = {
+          file_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+        }
       }
-    }
       require('telescope').load_extension('fzy_native')
       require('telescope').load_extension('ghcli')
     ]]
@@ -89,8 +89,9 @@ local packages = {
     config = {
       [[
         require('formatter').setup({
-          lua = {
-              luafmt = function()
+          filetype = {
+            lua = {
+              function()
                 return {
                   exe = 'luafmt',
                   args = {'--indent-count', 2, '--stdin'},
@@ -98,6 +99,7 @@ local packages = {
                 }
               end
             }
+          }
         })
       ]]
     }
@@ -119,7 +121,7 @@ local packages = {
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'luochen1990/rainbow'},
   {'notomo/helpeek.vim'},
-  {'edkolev/tmuxline.vim'}
+  {'srcery-colors/srcery-vim'}
 }
 
 return packages

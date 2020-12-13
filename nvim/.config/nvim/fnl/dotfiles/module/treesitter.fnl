@@ -8,9 +8,9 @@
                          "clojure"]
                          
                :use_languagetree true}
-   :rainbow {:enable false}
-             ;:disable ["java" "bash"
-             ;          "clojure"]}
+   :rainbow {:enable true
+             :disable ["java" "bash"
+                       "clojure"]}
    :indent {:enable false}
    :incremental_selection {:enable true
                            :disable {}
