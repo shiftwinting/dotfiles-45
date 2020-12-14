@@ -143,8 +143,9 @@ gaps inner 7
     bindsym $mod+c exec clipman pick -t wofi
 
     # grimshot
-    bindsym Print exec grimshot save screen
-    bindsym Ctrl+Print exec grimshot save area
+    bindsym Print exec grim - | swappy -f -
+    bindsym Ctrl+Print exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+Print exec swappy_window.sh
 
     #volume
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
