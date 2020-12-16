@@ -10,7 +10,7 @@
   "Sets a vim option"
   (core.assoc nvim.o opt value))
 (set nvim.g.srcery_italic 1)
-(set nvim.g.srcery_italic_types 0)
+(set nvim.g.srcery_italic_types 1)
 (set nvim.g.srcery_inverse_match_paren 1)
 (nvim.ex.colorscheme :srcery)
 
