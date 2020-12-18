@@ -9,10 +9,7 @@
 (defn setopt [[opt value]]
   "Sets a vim option"
   (core.assoc nvim.o opt value))
-(set nvim.g.srcery_italic 1)
-(set nvim.g.srcery_italic_types 1)
-(set nvim.g.srcery_inverse_match_paren 1)
-(nvim.ex.colorscheme :srcery)
+(nvim.ex.colorscheme :oak)
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
@@ -42,7 +39,8 @@
        [:list true]
        [:pumblend 15]
        [:winblend 15]
-       [:title true]]]
+       [:title true]
+       [:cursorline true]]]
   (core.map setopt options))
 
 (if
