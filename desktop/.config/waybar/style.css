@@ -44,12 +44,12 @@ window#waybar.solo {
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 -3px #D0BFA1;
+    text-shadow: inherit;
 }
 
 #workspaces button.focused {
     box-shadow: inset 0 -3px #F75341;
     color: #F75341;
-    border-radius: 3.5px;
 }
 
 #workspaces button.urgent {
