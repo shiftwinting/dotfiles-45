@@ -19,8 +19,9 @@ window#waybar.hidden {
 }
 
 #window {
-  font-family: Product Sans;
-  font-size: 14px;
+  padding: 0 10px;
+  font-family: Fira Sans;
+  font-size: 13px;
 }
 
 /*
