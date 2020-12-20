@@ -3,7 +3,7 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Iosevka, "FontAwesome 5 Free";
-    font-size: 16px;
+    font-size: 15.7px;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -142,11 +142,6 @@ label:focus {
 #pulseaudio {
     color: @white;
     background: @pulseaudio;
-}
-
-#pulseaudio.muted {
-    background-color: #faf0ca;
-    color: #2a5c45;
 }
 
 #temperature {
