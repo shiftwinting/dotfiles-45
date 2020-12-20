@@ -4,7 +4,7 @@
     "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode","sway/window"],
+    "modules-left": ["sway/mode" ,"sway/workspaces", "custom/arrow10", "sway/window"],
     "modules-center": [],
     "modules-right": ["custom/arrow1",
                       "custom/firefox_media",
