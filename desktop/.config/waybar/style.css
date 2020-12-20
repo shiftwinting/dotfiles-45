@@ -3,13 +3,28 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Iosevka, "FontAwesome 5 Free";
-    font-size: 14px;
+    font-size: 16px;
     min-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
+@define-color bg #282828;
+@define-color dark #3c3836;
+@define-color cpu #076678;
+@define-color network #689d6a;
+@define-color white #D0BFA1;
+@define-color brightwhite #FCE8C3;
+@define-color pulseaudio #8f3f71;
+@define-color temperature #79740e;
+@define-color backlight #83a598;
+@define-color firefox_media #af3a03;
+@define-color memory #b57614;
+@define-color idle_bg #b16286;
+
 window#waybar {
-    background-color: #1c1b19;
-    color: #d5c4a1;
+    background-color: @bg;
+    color: @white;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -21,7 +36,7 @@ window#waybar.hidden {
 #window {
   padding: 0 10px;
   font-family: Fira Sans;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 /*
@@ -78,7 +93,7 @@ window#waybar.solo {
 
 #mpd {
     padding: 0 10px;
-    margin: 0 4px;
+    margin: 0 0px;
     color: #ffffff;
 }
 /* #clock {
@@ -99,19 +114,23 @@ label:focus {
     color: #FCE8C3;
 }
 #cpu {
-    color: #0AAEB3;
+    color: @white;
+    background: @cpu;
 }
 
 #memory {
-    color: #E02C6D;
+    color: @bg;
+    background-color: @memory;
 }
 
 #backlight {
-    color: #53FDE9;
+    color: @dark;
+    background: @backlight;
 }
 
 #network {
-    color: #98BC37;
+    color: @dark;
+    background: @network;
 }
 
 #network.disconnected {
@@ -119,7 +138,8 @@ label:focus {
 }
 
 #pulseaudio {
-    color: #FBB829;
+    color: @white;
+    background: @pulseaudio;
 }
 
 #pulseaudio.muted {
@@ -128,7 +148,8 @@ label:focus {
 }
 
 #temperature {
-    color: #519F50;
+    color: @brightwhite;
+    background: @temperature;
 }
 
 #temperature.critical {
@@ -141,7 +162,8 @@ label:focus {
 }
 
 #idle_inhibitor {
-    color: #918175;
+    color: @dark;
+    background: @idle_bg;
 }
 
 #idle_inhibitor.activated {
@@ -149,10 +171,46 @@ label:focus {
 }
 
 #custom-firefox_media {
-  color: #FF5F00;
+  color: @firefox_media;
   font-family: Cantarell;
 }
 
 #custom-power {
     color: #EF2F27;
+}
+#custom-arrow1 {
+  color: @firefox_media;
+  background: @bg;
+}
+#custom-arrow2 {
+  color: @idle_bg;
+  background: @firefox_media;
+}
+#custom-arrow3 {
+    color: @pulseaudio;
+    background: @idle_bg;
+}
+#custom-arrow4 {
+    color: @network;
+    background: @pulseaudio;
+}
+#custom-arrow5 {
+    color: @cpu;
+    background:  @network;
+}
+#custom-arrow6 {
+    color: @memory;
+    background: @cpu;
+}
+#custom-arrow7 {
+    color: @temperature;
+    background: @memory;
+}
+#custom-arrow8 {
+    color: @backlight;
+    background: @temperature;
+}
+#custom-arrow9 {
+    color: @bg;
+    background: @backlight;
 }

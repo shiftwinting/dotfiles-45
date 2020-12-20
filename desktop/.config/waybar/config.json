@@ -6,7 +6,26 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode","sway/window"],
     "modules-center": [],
-    "modules-right": ["custom/firefox_media", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "sway/language", "clock", "custom/power", "tray"],
+    "modules-right": ["custom/arrow1",
+                      "custom/firefox_media",
+                      "custom/arrow2",
+                      "idle_inhibitor",
+                      "custom/arrow3",
+                      "pulseaudio",
+                      "custom/arrow4",
+                      "network",
+                      "custom/arrow5",
+                      "cpu",
+                      "custom/arrow6",
+                      "memory",
+                      "custom/arrow7",
+                      "temperature",
+                      "custom/arrow8",
+                      "backlight",
+                      "custom/arrow9",
+                      "clock",
+                      "custom/power",
+                      "tray"],
 
     // Modules configuration
     "sway/mode": {
@@ -97,4 +116,53 @@
       "format":"",
       "on-click":"swaynag.sh"
     },
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow10": {
+        "format": "",
+        "tooltip": false
+    }
 }
