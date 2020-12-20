@@ -121,7 +121,7 @@ local packages = {
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'luochen1990/rainbow'},
   {'notomo/helpeek.vim'},
-  {'srcery-colors/srcery-vim'}
+  {'shoumodip/ido.nvim'}
 }
 
 return packages

@@ -1,4 +1,5 @@
 clock
+timestr=%H:%M
 indicator
 ring-color=D69060
 ring-ver-color=ffffff

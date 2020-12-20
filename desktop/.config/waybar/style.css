@@ -2,8 +2,8 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrains Mono, sans-serif;
-    font-size: 13px;
+    font-family: Iosevka, "FontAwesome 5 Free";
+    font-size: 14px;
     min-height: 0;
 }
 
