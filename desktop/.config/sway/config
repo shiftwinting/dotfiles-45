@@ -273,6 +273,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+bindsym $mod+t exec eog ~/Pictures/timetable.png
 
 #
 # Status Bar:
