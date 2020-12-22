@@ -39,7 +39,8 @@
        [:list true]
        [:pumblend 15]
        [:winblend 15]
-       [:title true]]]
+       [:title true]
+       [:cursorline true]]]
   (core.map setopt options))
 
 (if
