@@ -121,7 +121,7 @@ local packages = {
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'luochen1990/rainbow'},
   {'notomo/helpeek.vim'},
-  {'shoumodip/ido.nvim'}
+  {'clojure-vim/vim-jack-in', ft = 'clojure'}
 }
 
 return packages

@@ -21,7 +21,7 @@
                       "custom/arrow7",
                       "temperature",
                       "custom/arrow8",
-                      "backlight",
+                      "custom/pacman",
                       "custom/arrow9",
                       "clock",
                       "custom/power",
@@ -36,7 +36,8 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/firefox_media.sh",
         "on-click": "playerctl -p $(playerctl -l | grep firefox) play-pause",
-        "escape": true
+        "escape": true,
+        "max-length": 30,
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -80,10 +81,13 @@
         ],
         "tooltip": false
     },
-    "backlight": {
-        //"device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+    "custom/pacman": {
+        "format": "{} ",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface

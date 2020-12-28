@@ -1,4 +1,3 @@
-export DIFFPROG='nvim -d'
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 # Lines configured by zsh-newuser-install

@@ -17,7 +17,7 @@
 @define-color brightwhite #FCE8C3;
 @define-color pulseaudio #8f3f71;
 @define-color temperature #79740e;
-@define-color backlight #b57614;
+@define-color pacman #b57614;
 @define-color firefox_media #af3a03;
 @define-color memory #427b58;
 @define-color idle_bg #b16286;
@@ -82,7 +82,7 @@ window#waybar.solo {
 #cpu,
 #memory,
 #temperature,
-#backlight,
+#custom-pacman,
 #network,
 #pulseaudio,
 #custom-media,
@@ -125,9 +125,9 @@ label:focus {
     background-color: @memory;
 }
 
-#backlight {
+#custom-pacman {
     color: @white;
-    background: @backlight;
+    background: @pacman;
 }
 
 #network {
@@ -205,12 +205,12 @@ label:focus {
     background: @memory;
 }
 #custom-arrow8 {
-    color: @backlight;
+    color: @pacman;
     background: @temperature;
 }
 #custom-arrow9 {
     color: @clock;
-    background: @backlight;
+    background: @pacman;
 }
 #custom-arrow10 {
     color: @workspaces;

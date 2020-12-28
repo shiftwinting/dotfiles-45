@@ -17,6 +17,6 @@
        [:cursorhold_updatetime 300]  ;; shorter CursorHold, decoupled from updatetime
        [:sexp_filetypes "clojure,query,fennel"]
        [:sidekick_printable_def_types ["function" "class" "type" "module" "parameter" "method" "field"]]
-       [:rainbow_active 0]
+       [:rainbow_active 1]
        [:srcery_italic 1]]]
   (core.map set_global globals))

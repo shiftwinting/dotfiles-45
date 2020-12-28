@@ -15,6 +15,7 @@
 (autocmd :WinLeave :<buffer> "set showtabline=2")
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (autocmd :BufWritePost :packages.lua "PackerCompile")
+(autocmd :FileType :java "lua require 'jdtls_setup'")
 
 (let [options
       [[:termguicolors true]

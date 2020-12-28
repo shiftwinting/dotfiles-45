@@ -1,5 +1,6 @@
 # Read `man 5 sway` for a complete reference.
 exec autotiling
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
 for_window [title="Firefox — Sharing Indicator"] floating enable
 for_window [title="Firefox — Sharing Indicator"] no_focus
 
@@ -152,10 +153,13 @@ gaps inner 7
     bindsym $mod+Print exec swappy_window.sh
 
     #volume
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
+    bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
+    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
 
+    #brightness
+    bindsym Ctrl+XF86AudioRaiseVolume exec brillo -A 5 -q && brillo -G -q | cut -d'.' -f1 > $SWAYSOCK.wob
+    bindsym Ctrl+XF86AudioLowerVolume exec brillo -U 5 -q && brillo -G -q | cut -d'.' -f1 > $SWAYSOCK.wob
     # swaylock
     bindsym $mod+Shift+m exec swaylock -i ~/Pictures/wall.png --effect-greyscale
 
@@ -297,6 +301,6 @@ include /etc/sway/config.d/*
 exec swayidle -w \
   timeout 300 'swaylock -f -c 000000' \
   timeout 600 'swaymsg "output * dpms off"' \
-  timeout 900 'systemctl -i suspend' \
+  timeout 900 'systemctl suspend' \
        resume 'swaymsg "output * dpms on"' \
   before-sleep 'swaylock -f -c 000000'
