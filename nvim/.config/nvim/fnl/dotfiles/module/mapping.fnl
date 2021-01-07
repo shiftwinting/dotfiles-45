@@ -33,11 +33,14 @@
 (smap :n :<leader>ch ":Telescope command_history<CR>")
 (smap :n :<leader>th ":Telescope help_tags<CR>")
 
-;smoothie
-(smap :n :<Up> ":call comfortable_motion#flick(-40)<CR>")
-(smap :n :<ScrollWheelUp> ":call comfortable_motion#flick(-40)<CR>")
-(smap :n :<Down> ":call comfortable_motion#flick(40)<CR>")
-(smap :n :<ScrollWheelDown> ":call comfortable_motion#flick(40)<CR>")
+
+(when (not nvim.g.neovide)  
+  (smap :n :<Up> ":call comfortable_motion#flick(-40)<CR>")
+  (smap :n :<ScrollWheelUp> ":call comfortable_motion#flick(-40)<CR>")
+  (smap :n :<Down> ":call comfortable_motion#flick(40)<CR>")
+  (smap :n :<ScrollWheelDown> ":call comfortable_motion#flick(40)<CR>"))
+  
+ 
 
 ;LuaTree
 (smap :n :<leader>v ":LuaTreeToggle<CR>")

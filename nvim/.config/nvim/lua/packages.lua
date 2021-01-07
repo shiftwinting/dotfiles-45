@@ -54,7 +54,11 @@ local packages = {
   {'Olical/aniseed', config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]]},
   {'Olical/conjure', ft = {'fennel', 'clojure'}},
   {'pbrisbin/vim-mkdir'},
-  {'yuttie/comfortable-motion.vim'},
+  {'yuttie/comfortable-motion.vim',
+        cond = function()
+          return vim.g.neovide ~= true
+        end
+  },
   {'tpope/vim-fugitive'},
   {'tpope/vim-surround'},
   {'tyru/caw.vim'},
@@ -121,7 +125,24 @@ local packages = {
   {'eraserhd/parinfer-rust', run = 'cargo build --release'},
   {'luochen1990/rainbow'},
   {'notomo/helpeek.vim'},
-  {'clojure-vim/vim-jack-in', ft = 'clojure'}
+  {'clojure-vim/vim-jack-in', ft = 'clojure'},
+  {'timeyyy/orchestra.nvim',
+    run = [[
+      :call orchestra#prelude()<CR>:call orchestra#set_tune('clackclack')<CR>
+    ]]
+  },
+  {'junegunn/limelight.vim'},
+  {'oberblastmeister/neuron.nvim',
+      config = [[
+        require'neuron'.setup {
+          virtual_titles = true,
+          mappings = true,
+          run = nil, -- function to run when in neuron dir
+          neuron_dir = "~/neuron" -- the directory of all of your notes (currently supports only one directory for notes, find a way to detect neuron.dhall to use any directory)    
+	}
+    ]]
+  }
 }
+
 
 return packages

@@ -22,14 +22,5 @@ else
       '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/main.lua'
     };
   }
-  if not lspconfig.clojure_lsp then
-    configs.clojure_lsp = {
-      default_config = {
-        cmd = {'/home/p00f/.local/bin/clojure-lsp'};
-        filetypes = {'clojure'};
-        settings = {};
-      };
-    }
-  end
-  lspconfig.clojure_lsp.setup{}
+require'lspconfig'.clojure_lsp.setup{}
 end
