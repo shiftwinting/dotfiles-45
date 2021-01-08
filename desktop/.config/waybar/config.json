@@ -14,10 +14,6 @@
                       "pulseaudio",
                       "custom/arrow4",
                       "network",
-                      "custom/arrow5",
-                      "cpu",
-                      "custom/arrow6",
-                      "memory",
                       "custom/arrow7",
                       "temperature",
                       "custom/arrow8",
@@ -117,7 +113,7 @@
     },
     "custom/power": {
       "format":"",
-      "on-click":"swaynag.sh"
+      "on-click":"sgtk-bar"
     },
     "custom/arrow1": {
         "format": "",
@@ -135,16 +131,6 @@
     },
 
     "custom/arrow4": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow5": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow6": {
         "format": "",
         "tooltip": false
     },

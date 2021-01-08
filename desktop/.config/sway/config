@@ -1,6 +1,7 @@
 # Read `man 5 sway` for a complete reference.
 exec autotiling
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
+exec_always --no-startup-id workstyle &> /tmp/workstyle.log
 for_window [title="Firefox — Sharing Indicator"] floating enable
 for_window [title="Firefox — Sharing Indicator"] no_focus
 
@@ -164,7 +165,7 @@ gaps inner 7
     bindsym $mod+Shift+m exec swaylock -i ~/Pictures/wall.png --effect-greyscale
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag.sh
+    bindsym $mod+Shift+e exec sgtk-bar
 #
 # Moving around:
 #
