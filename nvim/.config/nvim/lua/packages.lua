@@ -16,7 +16,6 @@ local packages = {
   {'justinmk/vim-sneak'},
   {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'},
   {'liuchengxu/vista.vim'},
-  {'liuchengxu/vim-which-key'},
   {'mattn/vim-sonictemplate', cmd = 'Template'},
   {
     'nvim-lua/completion-nvim',
@@ -85,29 +84,10 @@ local packages = {
         }
       }
       require('telescope').load_extension('fzy_native')
-      require('telescope').load_extension('ghcli')
+      require('telescope').load_extension('gh')
     ]]
   },
-  {
-    'mhartington/formatter.nvim',
-    config = {
-      [[
-        require('formatter').setup({
-          filetype = {
-            lua = {
-              function()
-                return {
-                  exe = 'luafmt',
-                  args = {'--indent-count', 2, '--stdin'},
-                  stdin = true
-                }
-              end
-            }
-          }
-        })
-      ]]
-    }
-  },
+  {'mhartington/formatter.nvim'},
   {'ThePrimeagen/vim-be-good'},
   {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
   {'wfxr/minimap.vim'},

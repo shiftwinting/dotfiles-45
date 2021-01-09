@@ -32,6 +32,7 @@
 (smap :n :<leader>tpp ":lua require('telescope').extensions.packer.plugins(opts)<CR>")
 (smap :n :<leader>ch ":Telescope command_history<CR>")
 (smap :n :<leader>th ":Telescope help_tags<CR>")
+(smap :n :<leader> ":Telescope keymaps<CR>")
 
 
 (when (and (not nvim.g.neovide) (not (= 1 nvim.g.gonvim_running)))
@@ -46,10 +47,6 @@
 (smap :n :<leader>v ":LuaTreeToggle<CR>")
 (smap :n :<leader>n ":LuaTreeFindFile<CR>")
 (smap :n :<leader>r ":LuaTreeRefresh<CR>")
-
-;which-key
-(smap :n :<leader> ":<c-u>WhichKey '<Space>'<CR>")
-(smap :n :<localleader> ":<c-u>WhichKey ','<CR>")
 
 ;nvim-treesitter
 (smap :n :<C-h> ":w | e | TSBufEnable highlight<CR>")
