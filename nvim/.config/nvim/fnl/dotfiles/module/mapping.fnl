@@ -34,7 +34,7 @@
 (smap :n :<leader>th ":Telescope help_tags<CR>")
 
 
-(when (not nvim.g.neovide)  
+(when (and (not nvim.g.neovide) (not (= 1 nvim.g.gonvim_running)))
   (smap :n :<Up> ":call comfortable_motion#flick(-40)<CR>")
   (smap :n :<ScrollWheelUp> ":call comfortable_motion#flick(-40)<CR>")
   (smap :n :<Down> ":call comfortable_motion#flick(40)<CR>")

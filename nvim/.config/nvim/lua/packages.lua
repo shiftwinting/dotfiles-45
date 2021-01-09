@@ -56,7 +56,7 @@ local packages = {
   {'pbrisbin/vim-mkdir'},
   {'yuttie/comfortable-motion.vim',
         cond = function()
-          return vim.g.neovide ~= true
+          return (vim.g.neovide ~= true and vim.g.gonvim_running ~=1)
         end
   },
   {'tpope/vim-fugitive'},

@@ -46,7 +46,7 @@
 
 (if
   nvim.g.gnvim          (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11"])
-  nvim.g.gonvim_running (setopt [:guifont "JetBrains Mono:h11"])
+  nvim.g.gonvim_running (setopt [:guifont "Delugia Nerd Font:h11:b"])
   nvim.g.neovide        (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"])
   nvim.g.uivonim        (setopt [:guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"]))
 

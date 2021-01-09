@@ -49,7 +49,7 @@ DisableImeInNormal = false
 
 ## This option makes the whole GUI window in semi-transparent.
 ## This setting also implicitly enables the Drawborder setting
-Transparent = 1.0
+Transparent = 0.8
 
 ## Draw borders on the GUI side instead of the vertical border and status line that nvim draws.
 DrawBorder = false
@@ -61,11 +61,11 @@ IndentGuide = false
 # DrawBorderForFloatWindow = false
 
 ## Draw shadow under a float window
- DrawShadowForFloatWindow = true
+DrawShadowForFloatWindow = true
 
 ## Enable desktop notification settings for nvim messages.
 ## This option works only if `ExtMessages` is enabled.
-# DesktopNotifications = false
+#DesktopNotifications = true
 
 
 # Pattern that fills the diff background
