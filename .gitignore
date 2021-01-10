@@ -1,4 +1,7 @@
 nvim/.config/nvim/lua/dotfiles
 nvim/.config/nvim/plugin
 hunter/.config/hunter/history
+hunter/.config/hunter/actions
+hunter/.config/hunter/~keys
+hunter/.config/hunter/previewers
 tmux/.config/tmux/plugins
