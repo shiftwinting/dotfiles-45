@@ -11,10 +11,9 @@
                        :stdin true})]
               :cpp
               [(fn [] {:exe "clang-format"
-                       :args ["-i"
-                              "--style=Google"]
+                       :args ["--style=Google"]
                        :stdin true})]
               :java
               [(fn [] {:exe "google-java-format"
-                       :args []
-                       :stdin false})]}})
+                       :args ["-"]
+                       :stdin true})]}})

@@ -113,7 +113,7 @@
     },
     "custom/power": {
       "format":"",
-      "on-click":"sgtk-bar"
+      "on-click":"nwgbar"
     },
     "custom/arrow1": {
         "format": "",

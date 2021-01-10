@@ -39,11 +39,11 @@ man() {
 
 # Aliases
 alias yeet='paru -Rsn'
-#alias cat='bat'
 alias :q='exit'
-alias pls='sudo'
 alias gonlaunch='LD_LIBRARY_PATH=~/.local/bin/goneovim/lib goneovim'
 alias pins="paru -Slq | sk -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
+alias lg="TERM=xterm-kitty lazygit"
+alias nvm="neovide --multiGrid"
 
 # broot
 source /home/p00f/.config/broot/launcher/bash/br

@@ -165,7 +165,7 @@ gaps inner 7
     bindsym $mod+Shift+m exec swaylock -i ~/Pictures/wall.png --effect-greyscale
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec sgtk-bar
+    bindsym $mod+Shift+e exec nwgbar
 #
 # Moving around:
 #

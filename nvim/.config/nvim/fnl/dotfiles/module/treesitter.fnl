@@ -8,7 +8,7 @@
                          "clojure"]
                          
                :use_languagetree true}
-   :rainbow {:enable true
+   :rainbow {:enable false
              :disable ["bash"]}
                        ;"clojure"]}
    :indent {:enable false}
