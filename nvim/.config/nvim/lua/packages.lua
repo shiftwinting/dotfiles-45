@@ -39,6 +39,7 @@ local packages = {
     config = {'require [[ls_setup]]'}
   },
   {'mfussenegger/nvim-jdtls', opt = true},
+  {'mfussenegger/nvim-dap'},
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {
     'nvim-treesitter/nvim-treesitter',

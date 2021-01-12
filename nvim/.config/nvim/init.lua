@@ -13,3 +13,7 @@ packer.startup(function()
     packer.use(value)
   end
 end)
+
+vim.cmd [[
+    command! -complete=file -nargs=* DebugC lua require "dap_setup".start_c_debugger({<f-args>}, "gdb")
+]]

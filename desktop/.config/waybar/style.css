@@ -19,7 +19,7 @@
 @define-color temperature #79740e;
 @define-color pacman #b57614;
 @define-color firefox_media #af3a03;
-@define-color memory #427b58;
+@define-color mellowplayer #427b58;
 @define-color idle_bg #b16286;
 @define-color clock #7c6f64;
 @define-color workspaces #458588;
@@ -119,7 +119,10 @@ label:focus {
     color: @bg;
     background: @cpu;
 }
-
+#mellowplayer {
+  color: @white;
+  background: @mellowplayer;
+}
 #memory {
     color: @white;
     background-color: @memory;
@@ -176,9 +179,13 @@ label:focus {
     color: #cc241d;
     background: @bg;
 }
+#custom-arrow0 {
+  color: @mellowplayer;
+  background: @bg;
+}
 #custom-arrow1 {
   color: @firefox_media;
-  background: @bg;
+  background: @mellowplayer;
 }
 #custom-arrow2 {
   color: @idle_bg;
