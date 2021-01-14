@@ -8,7 +8,8 @@
       :vim []
       :lua []
       :clojure [:joker]
-      :fennel [:joker]})
+      :fennel [:joker]
+      :cpp []})
 
 (set nvim.g.ale_fixers
      {:* [:remove_trailing_lines :trim_whitespace]

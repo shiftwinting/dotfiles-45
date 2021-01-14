@@ -7,5 +7,6 @@ export LIBVA_DRIVER_NAME=i965
 export MOZ_ENABLE_WAYLAND=1
 export KITTY_ENABLE_WAYLAND=1
 export CLUTTER_BACKEND=wayland
+export QT_QPA_PLATFORMTHEME=gnome
 
 systemd-cat --identifier=sway sway $@

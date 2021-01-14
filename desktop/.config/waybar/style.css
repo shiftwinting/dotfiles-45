@@ -119,7 +119,7 @@ label:focus {
     color: @bg;
     background: @cpu;
 }
-#mellowplayer {
+#custom-mellowplayer {
   color: @white;
   background: @mellowplayer;
 }

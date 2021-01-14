@@ -1,10 +1,10 @@
 #!/bin/sh
 
 class=$(playerctl metadata -p MellowPlayer3 --format '{{lc(status)}}')
-icon=""
+icon=" "
 
 if [[ $class == "playing" ]]; then
-  info=$(playerctl metadata -p MellowPlayer3 '{{artist}} - {{title}}')
+  info=$(playerctl metadata -p MellowPlayer3 --format '{{title}} - {{artist}}')
   if [[ ${#info} > 25 ]]; then
     info=$(echo $info | cut -c1-25)"..."
   fi
