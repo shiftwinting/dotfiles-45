@@ -11,3 +11,5 @@ source /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-pet
 fpath+=( /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-peterhurford-SLASH-git-it-on.zsh )
 source /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-jeffreytse-SLASH-zsh-vi-mode/zsh-vi-mode.plugin.zsh
 fpath+=( /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-jeffreytse-SLASH-zsh-vi-mode )
+source /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-NullSense-SLASH-fuzzy-sys/fuzzy-sys.plugin.zsh
+fpath+=( /home/p00f/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-NullSense-SLASH-fuzzy-sys )

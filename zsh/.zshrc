@@ -38,12 +38,13 @@ man() {
 }
 
 # Aliases
+alias pkgtop='pkgtop -pacman paru'
 alias yeet='paru -Rsn'
 alias :q='exit'
-alias gonlaunch='LD_LIBRARY_PATH=~/.local/bin/goneovim/lib goneovim'
 alias pins="paru -Slq | sk -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 alias lg="TERM=xterm-kitty lazygit"
 alias nvm="neovide --multiGrid"
+alias fzf='sk'
 
 # broot
 source /home/p00f/.config/broot/launcher/bash/br
@@ -55,3 +56,4 @@ autoload -Uz compinit
 compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/bit bit
+eval "$(zoxide init zsh)"

@@ -2,7 +2,7 @@ window {
 margin: 5px;
 border: 2px solid #fabd2f;
 border-radius: 7px;
-padding 0;
+padding: 0;
 background-color: #282828;
 }
 
@@ -35,7 +35,7 @@ background-color: #282828;
 background-color: rgba(0,0,0,0);
 }
 #text {
-  font: Roboto;
+  font: IBM Plex Mono Medium 13.8;
 }
 #text:selected {
 border: 2px solid #000000;
