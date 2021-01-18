@@ -6,9 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/mode" ,"sway/workspaces", "custom/arrow10", "sway/window"],
     "modules-center": [],
-    "modules-right": ["custom/arrow0",
-                      "custom/mellowplayer",
-                      "custom/arrow1",
+    "modules-right": [ "custom/arrow1",
                       "custom/firefox_media",
                       "custom/arrow2",
                       "idle_inhibitor",
@@ -28,13 +26,6 @@
     // Modules configuration
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "custom/mellowplayer": {
-      "interval": 1,
-      "return-type": "json",
-      "exec": "~/.config/waybar/modules/mellowplayer.sh",
-      "on-click": "playerctl -p MellowPlayer3 play-pause",
-      "escape": true
     },
     "custom/firefox_media": {
         "interval": 1,
@@ -123,10 +114,6 @@
     "custom/power": {
       "format":"",
       "on-click":"nwgbar"
-    },
-    "custom/arrow0": {
-        "format": "",
-        "tooltip": false
     },
     "custom/arrow1": {
         "format": "",
