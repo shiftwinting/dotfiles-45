@@ -24,7 +24,7 @@
 
 ;Telescope
 (smap :n :<leader>f ":Telescope find_files<CR>")
-(smap :n :<leader>h ":Telescope oldfiles<CR>")
+(smap :n :<leader>h ":Telescope frecency<CR>")
 (smap :n :<leader>b ":Telescope marks<CR>")
 (smap :n :<leader>g ":Telescope live_grep<CR>")
 (smap :n :<leader>ts ":Telescope treesitter<CR>")

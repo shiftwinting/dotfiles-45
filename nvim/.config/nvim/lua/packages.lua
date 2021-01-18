@@ -3,6 +3,7 @@ local packages = {
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   {'dense-analysis/ale'},
   {'dracula/vim', as = 'dracula'},
+  {'axvr/photon.vim'},
   {'editorconfig/editorconfig-vim'},
   {
     'guns/vim-sexp',
@@ -77,7 +78,7 @@ local packages = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-packer.nvim',
       'nvim-telescope/telescope-github.nvim'
-    },
+      },
     config = [[
       require('telescope').setup {
         defaults = {
@@ -87,6 +88,13 @@ local packages = {
       require('telescope').load_extension('fzy_native')
       require('telescope').load_extension('gh')
     ]]
+  },
+  {
+    'nvim-telescope/telescope-frecency.nvim',
+    requires = 'tami5/sql.nvim',
+    config = function()
+      require'telescope'.load_extension('frecency')
+    end
   },
   {'mhartington/formatter.nvim'},
   {'ThePrimeagen/vim-be-good'},

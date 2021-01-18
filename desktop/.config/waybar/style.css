@@ -2,8 +2,8 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Iosevka, "FontAwesome 5 Free";
-    font-size: 15.7px;
+    font-family: Fantasque Sans Mono, "FontAwesome 5 Free";
+    font-size: 20px;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -11,7 +11,6 @@
 
 @define-color bg #282828;
 @define-color dark #3c3836;
-@define-color cpu #458588;
 @define-color network #af3a03;
 @define-color white #D0BFA1;
 @define-color brightwhite #FCE8C3;
@@ -21,7 +20,7 @@
 @define-color firefox_media #af3a03;
 @define-color mellowplayer #427b58;
 @define-color idle_bg #b16286;
-@define-color clock #7c6f64;
+@define-color clock @white;
 @define-color workspaces #458588;
 @define-color focused_workspace #83a598;
 
@@ -173,11 +172,12 @@ label:focus {
   color: @white;
   background: @firefox_media;
   font-family: Cantarell;
+  font-size: 15px;
 }
 
 #custom-power {
-    color: #cc241d;
-    background: @bg;
+    color: @white;
+    background: #cc241d;
 }
 #custom-arrow0 {
   color: @mellowplayer;

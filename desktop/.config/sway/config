@@ -1,4 +1,5 @@
 # Read `man 5 sway` for a complete reference.
+# xwayland disable -- need xwayland for ltspice, disable later
 exec autotiling
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
 exec_always --no-startup-id workstyle &> /tmp/workstyle.log
@@ -168,6 +169,7 @@ gaps inner 7
     bindsym $mod+Shift+e exec nwgbar
     bindsym $mod+y exec nwggrid
     bindsym $mod+n exec makoctl menu wofi -d -p 'Choose Action: '
+    bindsym $mod+x exec makoctl dismiss
 #
 # Moving around:
 #
@@ -280,7 +282,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-bindsym $mod+t exec eog ~/Pictures/timetable.png
 
 #
 # Status Bar:
