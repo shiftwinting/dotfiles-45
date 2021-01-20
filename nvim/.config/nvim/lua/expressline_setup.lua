@@ -50,6 +50,15 @@ local fileformat =
   end
 )
 
+local ts_status =
+  subscribe.buf_autocmd(
+  "custom_treesitter_status",
+  "CursorMoved,CursorMovedI",
+  function()
+    return vim.api.nvim_call_function("nvim_treesitter#statusline", {50})
+  end
+)
+
 require("el").setup {
   generator = function(_, _)
     return {
@@ -67,7 +76,7 @@ require("el").setup {
         builtin.modified_flag
       },
       sections.split,
-      lsp_statusline.current_function,
+      ts_status,
       lsp_statusline.server_progress,
       git_changes,
       "[",

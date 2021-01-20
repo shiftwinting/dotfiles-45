@@ -14,6 +14,8 @@ text-ver-color=2C2C2C
 fade-in=0.5
 image=~/Pictures/wall.jpg
 effect-greyscale
+font=Fantasque Sans Mono
+font-size=29.5
 
 line-color=00000000
 line-clear-color=00000000
