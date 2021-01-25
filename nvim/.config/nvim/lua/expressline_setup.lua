@@ -5,6 +5,7 @@ local extensions = require("el.extensions")
 local sections = require("el.sections")
 local subscribe = require("el.subscribe")
 local lsp_statusline = require("el.plugins.lsp_status")
+local ts = require("nvim-treesitter")
 
 local git_icon =
   subscribe.buf_autocmd(
@@ -55,7 +56,7 @@ local ts_status =
   "custom_treesitter_status",
   "CursorMoved,CursorMovedI",
   function()
-    return vim.api.nvim_call_function("nvim_treesitter#statusline", {50})
+    return ts.statusline(50)
   end
 )
 

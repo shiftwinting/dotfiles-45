@@ -15,7 +15,8 @@ fade-in=0.5
 image=~/Pictures/wall.jpg
 effect-greyscale
 font=Fantasque Sans Mono
-font-size=29.5
+font-size=35
+indicator-radius=100
 
 line-color=00000000
 line-clear-color=00000000

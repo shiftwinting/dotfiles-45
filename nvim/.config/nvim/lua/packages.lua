@@ -127,11 +127,12 @@ local packages = {
           virtual_titles = true,
           mappings = true,
           run = nil, -- function to run when in neuron dir
-          neuron_dir = "~/neuron" -- the directory of all of your notes (currently supports only one directory for notes, find a way to detect neuron.dhall to use any directory)    
-	}
+          neuron_dir = "~/neuron"
+        }
     ]]
   }
 }
+
 
 
 return packages

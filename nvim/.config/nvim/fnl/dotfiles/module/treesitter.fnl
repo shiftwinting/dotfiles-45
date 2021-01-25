@@ -4,12 +4,12 @@
 
 (tsconfigs.setup
   {:highlight {:enable true
-               :disable ["css" "json"
+               :disable ["css"
                          "clojure"]
                          
                :use_languagetree true}
-   :rainbow {:enable false
-             :disable ["bash"]}
+   :rainbow {:enable true
+             :disable []}
                        ;"clojure"]}
    :indent {:enable false}
    :incremental_selection {:enable true

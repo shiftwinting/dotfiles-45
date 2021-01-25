@@ -6,6 +6,7 @@ exec_always --no-startup-id workstyle &> /tmp/workstyle.log
 for_window [title="Firefox — Sharing Indicator"] floating enable, no_focus
 for_window [title="ptpython"] floating enable, border normal, resize set width 500 px height 500 px
 
+font pango:Source Code Pro 10.5
 # Colors
 
 set $black #1C1B19

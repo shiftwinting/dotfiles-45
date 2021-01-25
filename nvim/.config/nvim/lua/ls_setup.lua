@@ -1,5 +1,4 @@
 local lspconfig = require('lspconfig')
-local configs = require'lspconfig/configs'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -34,6 +33,16 @@ else
       '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/bin/Linux/lua-language-server',
       '-E',
       '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/main.lua'
+    };
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {'vim'}
+        },
+        completion = {
+          keywordSnippet = true
+        }
+      }
     };
     capabilities = capabilities
   }
