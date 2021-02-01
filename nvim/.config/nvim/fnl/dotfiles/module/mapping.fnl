@@ -43,10 +43,10 @@
   
  
 
-;LuaTree
-(smap :n :<leader>v ":LuaTreeToggle<CR>")
-(smap :n :<leader>n ":LuaTreeFindFile<CR>")
-(smap :n :<leader>r ":LuaTreeRefresh<CR>")
+;NvimTree
+(smap :n :<leader>v ":NvimTreeToggle<CR>")
+(smap :n :<leader>n ":NvimTreeFindFile<CR>")
+(smap :n :<leader>r ":NvimTreeRefresh<CR>")
 
 ;nvim-treesitter
 (smap :n :<C-h> ":w | e | TSBufEnable highlight<CR>")

@@ -3,7 +3,6 @@ local packages = {
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   {'dense-analysis/ale'},
   {'dracula/vim', as = 'dracula'},
-  {'axvr/photon.vim'},
   {'editorconfig/editorconfig-vim'},
   {
     'guns/vim-sexp',
@@ -115,11 +114,7 @@ local packages = {
   {'luochen1990/rainbow'},
   {'notomo/helpeek.vim'},
   {'clojure-vim/vim-jack-in', ft = 'clojure'},
-  {'timeyyy/orchestra.nvim',
-    run = [[
-      :call orchestra#prelude()<CR>:call orchestra#set_tune('clackclack')<CR>
-    ]]
-  },
+  {'tjdevries/train.nvim'},
   {'junegunn/limelight.vim'},
   {'oberblastmeister/neuron.nvim',
       config = [[

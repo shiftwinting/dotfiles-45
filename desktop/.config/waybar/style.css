@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Fantasque Sans Mono, "FontAwesome 5 Free", FantasqueSansMono Nerd Font;
+    font-family: Fantasque Sans Mono, all-the-icons, "FontAwesome 5 Free",FantasqueSansMono Nerd Font;
     font-size: 20px;
     min-height: 0;
     margin: 0;

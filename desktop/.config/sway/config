@@ -171,6 +171,7 @@ gaps inner 7
     bindsym $mod+y exec nwggrid
     bindsym $mod+n exec makoctl menu wofi -d -p 'Choose Action: '
     bindsym $mod+x exec makoctl dismiss
+    bindsym $mod+Shift+d exec wldash
 #
 # Moving around:
 #

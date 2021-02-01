@@ -41,7 +41,10 @@
        [:pumblend 15]
        [:winblend 15]
        [:title true]
-       [:cursorline true]]]
+       [:cursorline true]
+       [:incsearch true]
+       [:hlsearch true]
+       [:autowrite true]]]
   (core.map setopt options))
 
 (if
