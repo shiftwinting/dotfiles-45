@@ -10,5 +10,6 @@ export CLUTTER_BACKEND=wayland
 export QT_QPA_PLATFORMTHEME=gnome
 export QT_QPA_PLATFORM=wayland-egl
 export SDL_VIDEODRIVER=wayland
+export GDK_BACKEND=wayland
 
 systemd-cat --identifier=sway sway $@

@@ -34,10 +34,15 @@ local packages = {
   {
     'neovim/nvim-lspconfig',
     requires = {
-      'nvim-lua/lsp-status.nvim'
+      'nvim-lua/lsp-status.nvim',
+      'onsails/lspkind-nvim'
     },
-    config = {'require [[ls_setup]]'}
+    config = {[[
+      require "ls_setup"
+      require('lspkind').init()
+    ]]}
   },
+  {'kosayoda/nvim-lightbulb', config = "vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]"},
   {'mfussenegger/nvim-jdtls', opt = true},
   {'mfussenegger/nvim-dap'},
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
@@ -116,18 +121,8 @@ local packages = {
   {'clojure-vim/vim-jack-in', ft = 'clojure'},
   {'tjdevries/train.nvim'},
   {'junegunn/limelight.vim'},
-  {'oberblastmeister/neuron.nvim',
-      config = [[
-        require'neuron'.setup {
-          virtual_titles = true,
-          mappings = true,
-          run = nil, -- function to run when in neuron dir
-          neuron_dir = "~/neuron"
-        }
-    ]]
-  }
+  {'brooth/far.vim'},
+  {'searleser97/cpbooster.vim'}
 }
-
-
 
 return packages

@@ -4,21 +4,14 @@
     "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/mode" ,"sway/workspaces", "custom/arrow10", "sway/window"],
+    "modules-left": ["sway/mode" ,"sway/workspaces", "sway/window"],
     "modules-center": [],
-    "modules-right": [ "custom/arrow1",
-                      "custom/firefox_media",
-                      "custom/arrow2",
-                      "idle_inhibitor",
-                      "custom/arrow3",
+    "modules-right": ["custom/firefox_media",
+                      "custom/mopidy",
                       "pulseaudio",
-                      "custom/arrow4",
                       "network",
-                      "custom/arrow7",
                       "temperature",
-                      "custom/arrow8",
                       "custom/pacman",
-                      "custom/arrow9",
                       "clock",
                       "custom/power",
                       "tray"],
@@ -33,6 +26,13 @@
         "exec": "~/.config/waybar/modules/firefox_media.sh",
         "on-click": "playerctl -p $(playerctl -l | grep firefox) play-pause",
         "escape": true
+    },
+    "custom/mopidy": {
+    "interval": 1,
+    "return-type": "json",
+    "exec": "~/.config/waybar/modules/mopidy.sh",
+    "on-click": "playerctl -p mopidy play-pause",
+    "escape": true
     },
     "idle_inhibitor": {
         "format": "{icon}",

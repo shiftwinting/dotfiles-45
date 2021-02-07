@@ -19,6 +19,6 @@
        [:sidekick_printable_def_types ["function" "class" "type" "module" "parameter" "method" "field"]]
        [:rainbow_active 0]
        [:srcery_italic 1]
-       [:hardtime_default_on 1]
+       [:hardtime_default_on 0]
        [:list_of_normal_keys ["h" "j" "k" "l" "-" "+" "<LEFT>" "<RIGHT>"]]]]
   (core.map set_global globals))

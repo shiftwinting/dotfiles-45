@@ -3,7 +3,7 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Fantasque Sans Mono, all-the-icons, "FontAwesome 5 Free",FantasqueSansMono Nerd Font;
-    font-size: 20px;
+    font-size: 19px;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@
 
 @define-color bg #282828;
 @define-color dark #3c3836;
-@define-color network #af3a03;
+@define-color network #427b58;
 @define-color white #D0BFA1;
 @define-color brightwhite #FCE8C3;
 @define-color pulseaudio #8f3f71;
@@ -154,6 +154,13 @@ label:focus {
 }
 
 #custom-firefox_media {
+  color: @white;
+  background: @firefox_media;
+  font-family: Cantarell;
+  font-size: 15px;
+}
+
+#custom-mopidy {
   color: @white;
   background: @firefox_media;
   font-family: Cantarell;

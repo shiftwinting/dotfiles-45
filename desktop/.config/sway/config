@@ -1,12 +1,13 @@
 # Read `man 5 sway` for a complete reference.
-# xwayland disable -- need xwayland for ltspice, disable later
+# xwayland disable
 exec autotiling
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
+exec emacs --daemon
 exec_always --no-startup-id workstyle &> /tmp/workstyle.log
 for_window [title="Firefox — Sharing Indicator"] floating enable, no_focus
 for_window [title="ptpython"] floating enable, border normal, resize set width 500 px height 500 px
 
-font pango:Source Code Pro 10.5
+font pango:JuliaMono 10
 # Colors
 
 set $black #1C1B19
