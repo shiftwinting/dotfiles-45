@@ -8,11 +8,11 @@ if [[ $class == "playing" ]]; then
   if [[ ${#info} > 25 ]]; then
     info=$(echo $info | cut -c1-25)"..."
   fi
-  text=$info"  "$icon" "
+  text=" "$info"  "$icon" "
 elif [[ $class == "paused" ]]; then
-  text=$icon" "
+  text=" "$icon" "
 elif [[ $class == "stopped" ]]; then
   text=""
 fi
 
-echo -e "{\"text\":\"  "$text"\", \"class\":\""$class"\"}"
+echo -e "{\"text\":\""$text"\", \"class\":\""$class"\"}"

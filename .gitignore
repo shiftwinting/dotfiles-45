@@ -5,3 +5,4 @@ hunter/.config/hunter/actions
 hunter/.config/hunter/~keys
 hunter/.config/hunter/previewers
 tmux/.config/tmux/plugins
+music/.config/mopidy/auth.json
