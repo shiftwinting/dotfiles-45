@@ -1,5 +1,4 @@
 # Read `man 5 sway` for a complete reference.
-# xwayland disable
 exec autotiling
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
 exec emacs --daemon
