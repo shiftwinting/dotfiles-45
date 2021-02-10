@@ -91,7 +91,6 @@ window#waybar.solo {
 #mpd {
     padding: 0 10px;
     margin: 0 0px;
-    color: #ffffff;
 }
 /* #clock {
     background-color: #585123;
@@ -154,24 +153,16 @@ label:focus {
 }
 
 #custom-firefox_media {
-  color: @white;
-  background: @firefox_media;
-  font-family: Cantarell;
-  font-size: 15px;
-}
-
-#custom-mopidy {
-  color: @white;
-  background: @firefox_media;
-  font-family: Cantarell;
-  font-size: 15px;
+    color: @white;
+    background: @firefox_media;
+    font-family: Fira Sans;
+    font-size: 13px;
 }
 
 #custom-power {
     color: @white;
     background: #cc241d;
 }
-
 
 #custom-arrow1 {
   color: @firefox_media;
@@ -204,4 +195,11 @@ label:focus {
 #custom-arrow10 {
     color: @workspaces;
     background: @bg;
+}
+
+#mpd {
+    color: @white;
+    background: @firefox_media;
+    font-family: Fira Sans;
+    font-size: 13px;
 }

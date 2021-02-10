@@ -7,7 +7,7 @@
     "modules-left": ["sway/mode" ,"sway/workspaces", "sway/window"],
     "modules-center": [],
     "modules-right": ["custom/firefox_media",
-                      "custom/mopidy",
+                      "mpd",
                       "pulseaudio",
                       "network",
                       "temperature",
@@ -27,12 +27,31 @@
         "on-click": "playerctl -p $(playerctl -l | grep firefox) play-pause",
         "escape": true
     },
-    "custom/mopidy": {
-    "interval": 1,
-    "return-type": "json",
-    "exec": "~/.config/waybar/modules/mopidy.sh",
-    "on-click": "playerctl -p mopidy play-pause",
-    "escape": true
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {title} ⸨{songPosition}|{queueLength}⸩",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
         "format": "{icon}",
