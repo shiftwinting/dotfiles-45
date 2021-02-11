@@ -1,7 +1,8 @@
+[include]
+  path = ~/.gitconfig.local
 [user]
-  email = chinmay.dalal.22012001@gmail.com
   name = Chinmay Dalal
-	signingkey = 2C930DF41C88D2A3
+  signingkey = 2C930DF41C88D2A3
 [core]
   pager = diff-so-fancy | less --tabs=2 -RFX
 [color]
@@ -19,10 +20,10 @@
   new = green bold
   whitespace = red reverse
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [merge]
-	tool = meld
+  tool = meld
 [mergetool]
-	path = meld
+  path = meld
 [commit]
-	gpgsign = true
+  gpgsign = true
