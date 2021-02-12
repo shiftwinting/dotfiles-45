@@ -12,7 +12,7 @@
 (set nvim.g.dashboard_change_to_dir 1)
 (set nvim.g.dashboard_default_executive "telescope")
 (set nvim.g.dashboard_custom_header
- ["                                        ▟▙            "
+ ["                                        ▟▙            "      ;; credits: gist.github.com/shaggyrogers
   "                                        ▝▘            "
   "██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖"
   "██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██"

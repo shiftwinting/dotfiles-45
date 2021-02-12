@@ -122,7 +122,8 @@ local packages = {
   {'tjdevries/train.nvim'},
   {'junegunn/limelight.vim'},
   {'brooth/far.vim'},
-  {'searleser97/cpbooster.vim'}
+  {'searleser97/cpbooster.vim'},
+  {'ntpeters/vim-better-whitespace'}
 }
 
 return packages
