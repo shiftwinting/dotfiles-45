@@ -9,7 +9,7 @@
 (defn setopt [[opt value]]
   "Sets a vim option"
   (core.assoc nvim.o opt value))
-(nvim.ex.colorscheme :oak)
+(nvim.ex.colorscheme :nvcode)
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
@@ -23,7 +23,7 @@
        [:number true]
        [:relativenumber true]
        [:guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))]
-       [:listchars "eol:↴,tab:<->,space:·"]
+       [:listchars "tab:<->"]
        [:showmode false]
        [:tabstop 2]
        [:shiftwidth 2]
@@ -55,3 +55,5 @@
 
 (when nvim.g.gnvim
   (setopt [:completeopt "menuone,noinsert,noselect,preview"]))
+(nvim.ex.highlight :TSType "guifg=#c586c0 ctermfg=175 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE")
+(nvim.ex.highlight :TSVariable "guifg=#9cdcfe ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE")

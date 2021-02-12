@@ -3,6 +3,7 @@ local packages = {
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   {'dense-analysis/ale'},
   {'dracula/vim', as = 'dracula'},
+  {'christianchiarulli/nvcode-color-schemes.vim'},
   {'editorconfig/editorconfig-vim'},
   {
     'guns/vim-sexp',

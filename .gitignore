@@ -7,3 +7,4 @@ hunter/.config/hunter/previewers
 tmux/.config/tmux/plugins
 music/.config/mopidy/auth.json
 emacs/.config/doom/mail-ids.el
+emacs/.config/doom/config.el

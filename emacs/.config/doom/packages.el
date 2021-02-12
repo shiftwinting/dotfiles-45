@@ -20,13 +20,7 @@
 (package! oj)
 (package! sly)
 (package! evil-mu4e)
-;(package! auth-source-pass)
 
-;;(require 'quelpa-use-package)
-;;(use-package matrix-client
-;;  :quelpa (matrix-client :fetcher github :repo "alphapapa/matrix-client.el"
-;;                         :files (:defaults "logo.png" "matrix-client-standalone.el.sh"))
-                                        ;quelpa-use-package oj auth-source-xoauth2 cider all-the-icons adoc-mode matrix-client quelpa
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
 ;; https://github.com/raxod502/straight.el#the-recipe-format
