@@ -11,7 +11,13 @@
       :book_marks "L b"})
 (set nvim.g.dashboard_change_to_dir 1)
 (set nvim.g.dashboard_default_executive "telescope")
-(set nvim.g.dashboard_preview_command "cat")
-(set nvim.g.dashboard_preview_file "~/stuff/sunjon.cat")
-(set nvim.g.dashboard_preview_file_width 70)
-(set nvim.g.dashboard_preview_file_height 10)
+(set nvim.g.dashboard_custom_header
+ ["                                        ▟▙            "
+  "                                        ▝▘            "
+  "██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖"
+  "██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██"
+  "██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██"
+  "██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██"
+  "▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀"])
+(let [q (nvim.fn.systemlist "pq")]
+  (set nvim.g.dashboard_custom_footer q))

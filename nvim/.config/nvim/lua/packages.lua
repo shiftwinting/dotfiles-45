@@ -2,7 +2,7 @@ local packages = {
   {'wbthomason/packer.nvim', opt = true},
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   {'dense-analysis/ale'},
-  {'dracula/vim', as = 'dracula'},
+--  {'dracula/vim', as = 'dracula'},
   {'christianchiarulli/nvcode-color-schemes.vim'},
   {'editorconfig/editorconfig-vim'},
   {
@@ -110,7 +110,6 @@ local packages = {
   {'andymass/vim-matchup'},
   {'KabbAmine/vCoolor.vim'},
   {'lewis6991/gitsigns.nvim', config = [[require('gitsigns').setup()]]},
-  {'vigoux/oak'},
   {'bakpakin/fennel.vim'},
   {'nvim-telescope/telescope-fzy-native.nvim'},
   {'mtdl9/vim-log-highlighting'},
