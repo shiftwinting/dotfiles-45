@@ -39,6 +39,10 @@ Used by GPG configuration, email clients, file templates and snippets.
 There are two ways to load a theme. Both assume the theme is installed and available. You can either set ~doom-theme~ or manually load a theme with the ~load-theme~ function. This is the default:
 #+BEGIN_SRC emacs-lisp
 (setq doom-theme 'doom-dark+)
+(setq doom-modeline-github t)
+(setq all-the-icons-color-icons t)
+(nyan-mode)
+(parrot-mode)
 #+END_SRC
 *** Relative line numbers
 #+BEGIN_SRC emacs-lisp
@@ -129,6 +133,14 @@ Create org-mode tasks with links to emails
 (setq org-capture-templates
       '(("t" "todo" entry (file+headline "~/org/todo.org" "Tasks")
          "* TODO [#A] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n%a\n")))
+#+END_SRC
+Email notifications
+#+BEGIN_SRC emacs-lisp
+(mu4e-alert-set-default-style 'libnotify)
+(add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
+(add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
+(add-hook 'mu4e-index-updated-hook #'parrot-start-animation)
+(setq doom-modeline-mu4e t)
 #+END_SRC
 
 *** Clojure cookbook

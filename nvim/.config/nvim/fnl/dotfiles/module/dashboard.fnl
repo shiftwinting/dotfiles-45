@@ -2,13 +2,21 @@
   {require {nvim aniseed.nvim}})
 
 (set nvim.g.dashboard_custom_shortcut
-     {:last_session "···"
+     {:last_session " • "
       :find_history "L h"
       :find_file "L f"
-      :new_file "···"
-      :change_colorscheme "···"
-      :find_word "···"
+      :new_file " • "
+      :change_colorscheme " • "
+      :find_word "L g"
       :book_marks "L b"})
+(set nvim.g.dashboard_custom_shortcut_icon
+     {:last_session "⏪ "
+      :find_history "🕑 "
+      :find_file "🔭 "
+      :new_file "📝 "
+      :change_colorscheme "🎨 "
+      :find_word "🔬 "
+      :book_marks "🔖 "})
 (set nvim.g.dashboard_change_to_dir 1)
 (set nvim.g.dashboard_default_executive "telescope")
 (set nvim.g.dashboard_custom_header
