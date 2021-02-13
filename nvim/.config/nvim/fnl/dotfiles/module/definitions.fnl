@@ -21,5 +21,5 @@
        [:srcery_italic 1]
        [:hardtime_default_on 0]
        [:list_of_normal_keys ["h" "j" "k" "l" "-" "+" "<LEFT>" "<RIGHT>"]]
-       [:better_whitespace_filetypes_blacklist ["dashboard"]]]]
+       [:better_whitespace_filetypes_blacklist ["dashboard" "packer"]]]]
   (core.map set_global globals))

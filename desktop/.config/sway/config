@@ -146,7 +146,7 @@ gaps inner 7
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-    
+
     # Clipman
     bindsym $mod+c exec clipman pick -t wofi
 
@@ -154,6 +154,11 @@ gaps inner 7
     bindsym Print exec grim - | swappy -f -
     bindsym Ctrl+Print exec grim -g "$(slurp)" - | swappy -f -
     bindsym $mod+Print exec swappy_window.sh
+
+    #playerctl
+    bindsym Mod1+XF86AudioRaiseVolume exec playerctl next
+    bindsym Mod1+XF86AudioLowerVolume exec playerctl previous
+    bindsym Mod1+XF86AudioMute exec playerctl play-pause
 
     #volume
     bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
