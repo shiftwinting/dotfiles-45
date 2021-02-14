@@ -111,7 +111,6 @@ local packages = {
   'andymass/vim-matchup',
   'KabbAmine/vCoolor.vim',
   {'lewis6991/gitsigns.nvim', config = [[require('gitsigns').setup()]]},
-  'bakpakin/fennel.vim',
   'nvim-telescope/telescope-fzy-native.nvim',
   'mtdl9/vim-log-highlighting',
   'ElPiloto/sidekick.nvim',

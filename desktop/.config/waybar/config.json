@@ -25,10 +25,12 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/firefox_media.sh",
         "on-click": "playerctl -p $(playerctl -l | grep firefox) play-pause",
-        "escape": true
+        "escape": true,
+        "max-length": 25,
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {title} ⸨{songPosition}|{queueLength}⸩",
+        "max-length": 25,
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
         "unknown-tag": "N/A",
