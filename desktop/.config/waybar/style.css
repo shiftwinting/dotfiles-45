@@ -1,37 +1,37 @@
 * {
-    border: none;
-    border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Fantasque Sans Mono, all-the-icons, "FontAwesome 5 Free",FantasqueSansMono Nerd Font;
-    font-size: 18px;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Fantasque Sans Mono, all-the-icons, "FontAwesome 5 Free",FantasqueSansMono Nerd Font;
+  font-size: 18px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @define-color bg #282828;
 @define-color dark #3c3836;
-@define-color network #427b58;
+@define-color network #608b4e;
 @define-color white #D0BFA1;
 @define-color brightwhite #FCE8C3;
-@define-color pulseaudio #8f3f71;
-@define-color temperature #79740e;
+@define-color pulseaudio #C586C0;
+@define-color temperature #569cd6;
 @define-color pacman #b57614;
-@define-color firefox_media #af3a03;
-@define-color idle_bg #b16286;
+@define-color firefox_media #E55D1D;
+@define-color idle_bg #daadd6;
 @define-color clock @white;
-@define-color workspaces #458588;
-@define-color focused_workspace #83a598;
-
+@define-color workspaces #11a8cd;
+@define-color focused_workspace #9cdcfe;
+@define-color bct rgba(50, 50, 50, 0.5);
 window#waybar {
-    background-color: @bg;
-    color: @white;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background: rgba(50, 50, 50, 0.5);
+  color: #BBBBBB;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 #window {
@@ -42,164 +42,132 @@ window#waybar.hidden {
 
 /*
 window#waybar.empty {
-    background-color: @bg;
+background-color: @bg;
 }
 window#waybar.solo {
-    background-color: #FFFFFF;
+background-color: #FFFFFF;
 }
-*/
+ */
 
-#workspaces button {
+  #workspaces button {
     padding: 0 5px;
-    color: @dark;
-    background: @workspaces;
-}
+    color: @workspaces;
+    background: @bct;
+  }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
+  /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+  #workspaces button:hover {
     background: @focused_workspace;
+    color: @dark;
     text-shadow: inherit;
-}
+  }
 
-#workspaces button.focused {
-    background: @focused_workspace;
-    color: @dark;
-}
+  #workspaces button.focused {
+    background: @bct;
+    color: @white;
+  }
 
-#workspaces button.urgent {
+  #workspaces button.urgent {
     color: #eb4d4b;
-}
+  }
 
-#mode {
+  #mode {
     color: #64727D;
     border-bottom: 3px solid #fbf1c7;
-}
+  }
 
-#clock,
-#battery,
-#temperature,
-#custom-pacman,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#custom-firefox_media,
-#custom-power,
+  #clock,
+  #battery,
+  #temperature,
+  #custom-pacman,
+  #network,
+  #pulseaudio,
+  #custom-media,
+  #tray,
+  #mode,
+  #idle_inhibitor,
+  #custom-firefox_media,
+  #custom-power,
 
-#mpd {
+  #mpd {
     padding: 0 10px;
     margin: 0 0px;
-}
-/* #clock {
-    background-color: #585123;
-} */
+  }
+  /* #clock {
+  background-color: #585123;
+  } */
 
-@keyframes blink {
+  @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+      background-color: #ffffff;
+      color: #000000;
     }
-}
+  }
 
-label:focus {
+  label:focus {
     background-color: #000000;
-}
-#clock {
-    color: @bg;
-    background: @clock;
-}
+  }
+  #clock {
+    color: @clock;
+    background: @bct;
+  }
 
-#custom-pacman {
-    color: @white;
-    background: @pacman;
-}
+  #custom-pacman {
+    color: @pacman;
+    background: @bct;
+  }
 
-#network {
-    color: @white;
-    background: @network;
-}
+  #network {
+    color: @network;
+    background: @bct;
+  }
 
-#network.disconnected {
+  #network.disconnected {
     color: #d79921;
-}
+  }
 
-#pulseaudio {
-    color: @white;
-    background: @pulseaudio;
-}
+  #pulseaudio {
+    color: @pulseaudio;
+    background: @bct;
+  }
 
-#temperature {
-    color: @brightwhite;
-    background: @temperature;
-}
+  #temperature {
+    color: @temperature;
+    background: @bct;
+  }
 
-#temperature.critical {
+  #temperature.critical {
     color: #EF2F27;
-}
+  }
 
-#tray {
+  #tray {
     background-color: #2C78BF;
-}
+  }
 
-#idle_inhibitor {
+  #idle_inhibitor {
     color: @dark;
     background: @idle_bg;
-}
+  }
 
-#idle_inhibitor.activated {
+  #idle_inhibitor.activated {
     color: #ffffff;
-}
+  }
 
-#custom-firefox_media {
-    color: @white;
-    background: @firefox_media;
+  #custom-firefox_media {
+    color: @firefox_media;
+    background: @bct;
     font-family: Fira Sans;
     font-size: 13px;
-}
+  }
 
-#custom-power {
-    color: @white;
-    background: #cc241d;
-}
+  #custom-power {
+    color: #cc241d;
+    background: @bct;
+  }
 
-#custom-arrow1 {
-  color: @firefox_media;
-  background: @mellowplayer;
-}
-#custom-arrow2 {
-  color: @idle_bg;
-  background: @firefox_media;
-}
-#custom-arrow3 {
-    color: @pulseaudio;
-    background: @idle_bg;
-}
-#custom-arrow4 {
-    color: @network;
-    background: @pulseaudio;
-}
-#custom-arrow7 {
-    color: @temperature;
-    background: @network;
-}
-#custom-arrow8 {
-    color: @pacman;
-    background: @temperature;
-}
-#custom-arrow9 {
-    color: @clock;
-    background: @pacman;
-}
-#custom-arrow10 {
-    color: @workspaces;
-    background: @bg;
-}
-
-#mpd {
-    color: @white;
-    background: @firefox_media;
+  #mpd {
+    color: @firefox_media;
+    background: @bct;
     font-family: Fira Sans;
     font-size: 13px;
-}
+  }
