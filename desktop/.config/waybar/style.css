@@ -16,12 +16,12 @@
 @define-color brightwhite #FCE8C3;
 @define-color pulseaudio #C586C0;
 @define-color temperature #569cd6;
-@define-color pacman #b57614;
+@define-color pacman #CE9178;
 @define-color firefox_media #E55D1D;
 @define-color idle_bg #daadd6;
 @define-color clock @white;
 @define-color workspaces #11a8cd;
-@define-color focused_workspace #9cdcfe;
+@define-color workspace_hover #9cdcfe;
 @define-color bct rgba(50, 50, 50, 0.5);
 window#waybar {
   background: rgba(50, 50, 50, 0.5);
@@ -51,20 +51,20 @@ background-color: #FFFFFF;
 
   #workspaces button {
     padding: 0 5px;
-    color: @workspaces;
+    color: @white;
     background: @bct;
   }
 
   /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
   #workspaces button:hover {
-    background: @focused_workspace;
+    background: @workspace_hover;
     color: @dark;
     text-shadow: inherit;
   }
 
   #workspaces button.focused {
     background: @bct;
-    color: @white;
+    color: @workspaces;
   }
 
   #workspaces button.urgent {

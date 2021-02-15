@@ -2,7 +2,6 @@ local packages = {
   {'wbthomason/packer.nvim', opt = true},
   {'Akin909/nvim-bufferline.lua', config = 'require [[bufferline]].setup()'},
   'dense-analysis/ale',
---  {'dracula/vim', as = 'dracula'},
   'christianchiarulli/nvcode-color-schemes.vim',
   'editorconfig/editorconfig-vim',
   {
@@ -123,7 +122,8 @@ local packages = {
   'junegunn/limelight.vim',
   'brooth/far.vim',
   'searleser97/cpbooster.vim',
-  'ntpeters/vim-better-whitespace'
+  'ntpeters/vim-better-whitespace',
+  'tkmpypy/chowcho.nvim'
 }
 
 return packages

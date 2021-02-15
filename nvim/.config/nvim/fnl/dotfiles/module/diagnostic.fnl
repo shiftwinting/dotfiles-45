@@ -8,13 +8,13 @@
                                   {:text "💡"
                                    :texthl "LspDiagnosticsSignHint"}])
 (nvim.call_function :sign_define [:LspDiagnosticsSignWarning
-                                  {:text ""
+                                  {:text "⚠️"
                                    :texthl "LspDiagnosticsSignWarning"}])
 (nvim.call_function :sign_define [:LspDiagnosticsSignInformation
-                                  {:text "i"
+                                  {:text "ℹ️"
                                    :texthl "LspDiagnosticsSignInformation"}])
 (nvim.call_function :sign_define [:LspDiagnosticsSignError
-                                  {:text ""
+                                  {:text "🚫"
                                    :texthl "LspDiagnosticsSignError"}])
 (nvim.call_function :sign_define [:LightBulbSign
                                   {:text "✨"}])
