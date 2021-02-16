@@ -1,7 +1,7 @@
 local wezterm = require "wezterm"
 return {
   harfbuzz_features = {"clig=1", "liga=1"},
-  font = wezterm.font_with_fallback({"JetBrains Mono", "Delugia Nerd Font", "Inter", "Noto Color Emoji"}),
+  font = wezterm.font_with_fallback({"JetBrains Mono", "Noto Color Emoji"}),
   font_size = 10.6,
   enable_scroll_bar = true,
   default_cursor_style = "BlinkingUnderline",
@@ -9,6 +9,7 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   adjust_window_size_when_changing_font_size = false,
   enable_wayland = true,
+  window_close_confirmation = "NeverPrompt",
   colors = {
     foreground = "#D4D4D4",
     background = "#1e1e1e",

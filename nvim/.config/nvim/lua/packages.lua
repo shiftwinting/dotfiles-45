@@ -13,7 +13,6 @@ local packages = {
   'jeffkreeftmeijer/vim-numbertoggle',
   'jiangmiao/auto-pairs',
   'justinmk/vim-gtfo',
-  'justinmk/vim-sneak',
   {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'},
   'liuchengxu/vista.vim',
   {'mattn/vim-sonictemplate', cmd = 'Template'},
@@ -43,7 +42,6 @@ local packages = {
     ]]}
   },
   {'kosayoda/nvim-lightbulb', config = "vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]"},
-  {'mfussenegger/nvim-jdtls', opt = true},
   'mfussenegger/nvim-dap',
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {
@@ -122,8 +120,8 @@ local packages = {
   'junegunn/limelight.vim',
   'brooth/far.vim',
   'searleser97/cpbooster.vim',
-  'ntpeters/vim-better-whitespace',
-  'tkmpypy/chowcho.nvim'
+  'tkmpypy/chowcho.nvim',
+  'phaazon/hop.nvim'
 }
 
 return packages

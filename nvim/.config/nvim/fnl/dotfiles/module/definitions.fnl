@@ -7,8 +7,7 @@
   (core.assoc nvim.g global_ value))
 
 (let [globals
-      [[:sneak#label 1]
-       [:indentLine_char "│"]
+      [[:indentLine_char "│"]
        [:indentLine_fileTypeExclude [:clojure :fennel :dashboard :help ""]]
        [:float_preview#docked 0]
        [:vista_default_executive "nvim_lsp"]

@@ -43,7 +43,6 @@ alias yeet='paru -Rsn'
 alias :q='exit'
 alias pins="paru -Slq | sk -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 alias lg="TERM=xterm-kitty lazygit"
-alias nvm="neovide --multiGrid"
 alias fzf='sk'
 
 # broot
