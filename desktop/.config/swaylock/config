@@ -1,6 +1,8 @@
 clock
 timestr=%H:%M
 indicator
+ignore-empty-password
+show-failed-attempts
 ring-color=D69060
 ring-ver-color=ffffff
 ring-wrong-color=FF4D4D
@@ -17,6 +19,7 @@ effect-greyscale
 font=Fantasque Sans Mono
 font-size=35
 indicator-radius=100
+daemonize
 
 line-color=00000000
 line-clear-color=00000000

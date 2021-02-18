@@ -10,6 +10,8 @@ return {
   adjust_window_size_when_changing_font_size = false,
   enable_wayland = true,
   window_close_confirmation = "NeverPrompt",
+  check_for_updates = false,
+  font_hinting = "Full", -- None, Vertical, VerticalSubpixel, Full
   colors = {
     foreground = "#D4D4D4",
     background = "#1e1e1e",

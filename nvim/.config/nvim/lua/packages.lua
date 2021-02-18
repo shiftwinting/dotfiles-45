@@ -121,7 +121,9 @@ local packages = {
   'brooth/far.vim',
   'searleser97/cpbooster.vim',
   'tkmpypy/chowcho.nvim',
-  'phaazon/hop.nvim'
+  'phaazon/hop.nvim',
+  {'alx741/neoman.vim', cmd = 'Neoman'},
+  {'ObserverOfTime/discord.nvim', branch = 'refactored', run = ':UpdateRemotePlugins'}
 }
 
 return packages

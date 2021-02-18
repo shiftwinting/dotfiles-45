@@ -3,9 +3,14 @@ exec autotiling
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
 exec emacs --daemon
 exec_always --no-startup-id workstyle &> /tmp/workstyle.log
+
 for_window [title="Firefox — Sharing Indicator"] floating enable, no_focus
 for_window [title="ptpython"] floating enable, border normal, resize set width 500 px height 500 px
-exec systemctl --user import-environment XDG_CURRENT_DESKTOP
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 font pango:JuliaMono 10
 # Colors
 
@@ -299,13 +304,15 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    swaybar_command waybar
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar 
 }
 
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+    gsettings set $gnome-schema icon-theme 'Adwaita++-Dark'
+    gsettings set $gnome-schema cursor-theme 'GoogleDot'
+    gsettings set $gnome-schema font-name 'Fira Sans 11'
+}
 include /etc/sway/config.d/*
