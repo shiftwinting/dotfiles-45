@@ -5,6 +5,7 @@
      {:default
       [{:complete_items [:tabnine
                          :lsp
+                         :tmux
                          :snippet]}
        {:mode "<c-p>"}
        {:mode "<c-n>"}]})

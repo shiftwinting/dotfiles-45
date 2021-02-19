@@ -49,7 +49,8 @@ local packages = {
     requires = {
       'nvim-treesitter/nvim-treesitter-refactor',
       'nvim-treesitter/nvim-treesitter-textobjects',
-      'nvim-treesitter/completion-treesitter'
+      'nvim-treesitter/completion-treesitter',
+      'albertoCaroM/completion-tmux'
     }
   },
   'nvim-treesitter/playground',
@@ -123,7 +124,7 @@ local packages = {
   'tkmpypy/chowcho.nvim',
   'phaazon/hop.nvim',
   {'alx741/neoman.vim', cmd = 'Neoman'},
-  {'ObserverOfTime/discord.nvim', branch = 'refactored', run = ':UpdateRemotePlugins'}
+--  {'ObserverOfTime/discord.nvim', branch = 'refactored', run = ':UpdateRemotePlugins'}
 }
 
 return packages
