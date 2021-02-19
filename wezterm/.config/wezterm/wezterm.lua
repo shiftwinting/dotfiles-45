@@ -11,6 +11,10 @@ return {
   enable_wayland = true,
   window_close_confirmation = "NeverPrompt",
   font_hinting = "Full", -- None, Vertical, VerticalSubpixel, Full
+  window_padding = {
+    left = 5,
+    top = 5
+  },
   colors = {
     foreground = "#D4D4D4",
     background = "#1e1e1e",
@@ -48,7 +52,7 @@ return {
       inactive_tab_hover = {
         bg_color = "#616161",
         fg_color = "#1e1e1e",
-        italic = true,
+        italic = true
       }
     }
   }
