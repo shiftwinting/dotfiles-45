@@ -16,7 +16,6 @@
     - [[#clojure-cookbook][Clojure cookbook]]
     - [[#tree-sitter][tree-sitter]]
     - [[#set-online-judge-directory][set online-judge directory]]
-    - [[#discord-rpc][Discord RPC]]
 
 * Configuration
 ** General config
@@ -48,7 +47,6 @@ There are two ways to load a theme. Both assume the theme is installed and avail
 (setq doom-modeline-major-mode-color-icon t)
 (setq doom-modeline-buffer-encoding t)
 (parrot-mode)
-(load "~/.config/doom/splash")
 #+END_SRC
 *** Relative line numbers
 #+BEGIN_SRC emacs-lisp
@@ -198,9 +196,4 @@ the next chapter, open Dired so you can find it manually."
 #+BEGIN_SRC emacs-lisp
 ;(use-package dap-gdb-lldb
 ;  :config (dap-gdb-lldb-setup))
-#+END_SRC
-*** Discord RPC
-#+BEGIN_SRC emacs-lisp
-(require 'elcord)
-(elcord-mode)
 #+END_SRC

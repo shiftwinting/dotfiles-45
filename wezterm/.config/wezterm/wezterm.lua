@@ -10,7 +10,6 @@ return {
   adjust_window_size_when_changing_font_size = false,
   enable_wayland = true,
   window_close_confirmation = "NeverPrompt",
-  check_for_updates = false,
   font_hinting = "Full", -- None, Vertical, VerticalSubpixel, Full
   colors = {
     foreground = "#D4D4D4",
@@ -34,13 +33,23 @@ return {
       "#daadd6",
       "#9cdcfe",
       "#e5e5e5"
-    }
-  },
-  mouse_bindings = {
-    {
-      event = {Down = {streak = 1, button = {WheelUp = 1}}},
-      mods = "CTRL",
-      action = "IncreaseFontSize"
+    },
+    tab_bar = {
+      background = "#151515",
+      active_tab = {
+        intensity = "Bold",
+        bg_color = "#363535",
+        fg_color = "#FFFFFF"
+      },
+      inactive_tab = {
+        bg_color = "#151515",
+        fg_color = "#737373"
+      },
+      inactive_tab_hover = {
+        bg_color = "#616161",
+        fg_color = "#1e1e1e",
+        italic = true,
+      }
     }
   }
 }

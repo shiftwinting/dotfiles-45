@@ -4,7 +4,7 @@ exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background
 exec emacs --daemon
 exec_always --no-startup-id workstyle &> /tmp/workstyle.log
 
-for_window [title="Firefox — Sharing Indicator"] floating enable, no_focus
+
 for_window [title="ptpython"] floating enable, border normal, resize set width 500 px height 500 px
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP

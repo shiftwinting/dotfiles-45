@@ -9,13 +9,14 @@
 (defn setopt [[opt value]]
   "Sets a vim option"
   (core.assoc nvim.o opt value))
+
 (nvim.ex.colorscheme :nvcode)
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
-(autocmd :BufWritePost :packages.lua "PackerCompile")
-(autocmd :FileType :java "lua require 'jdtls_setup'")
+
+(nvim.ex.highlight :TelescopeMatching "guifg=orange")
 
 (let [options
       [[:termguicolors true]
@@ -44,11 +45,12 @@
        [:cursorline true]
        [:incsearch true]
        [:hlsearch true]
-       [:autowrite true]]]
+       [:autowrite true]
+       [:fixeol true]]]
   (core.map setopt options))
 
 (if
-  nvim.g.gnvim          (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter:h11"])
+  nvim.g.gnvim          (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter:h12"])
   nvim.g.gonvim_running (setopt [:guifont "Delugia Nerd Font:h11:b"])
   nvim.g.neovide        (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"])
   nvim.g.uivonim        (setopt [:guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"]))
