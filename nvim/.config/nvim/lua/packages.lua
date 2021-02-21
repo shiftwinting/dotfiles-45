@@ -120,11 +120,11 @@ local packages = {
   'tjdevries/train.nvim',
   'junegunn/limelight.vim',
   'brooth/far.vim',
-  'searleser97/cpbooster.vim',
   'tkmpypy/chowcho.nvim',
   'phaazon/hop.nvim',
   {'alx741/neoman.vim', cmd = 'Neoman'},
---  {'ObserverOfTime/discord.nvim', branch = 'refactored', run = ':UpdateRemotePlugins'}
+  'andweeb/presence.nvim',
+  {'git@github.com:p00f/competitive-helper.nvim.git', rocks = 'http', requires = 'nvim-lua/plenary.nvim'}
 }
 
 return packages

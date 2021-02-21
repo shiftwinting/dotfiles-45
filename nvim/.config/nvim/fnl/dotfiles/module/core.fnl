@@ -15,7 +15,7 @@
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
-
+(autocmd "BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc")
 (nvim.ex.highlight :TelescopeMatching "guifg=orange")
 
 (let [options
@@ -24,7 +24,7 @@
        [:number true]
        [:relativenumber true]
        [:guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))]
-       [:listchars "tab:<->"]
+       [:listchars "tab:» ,trail:_"]
        [:showmode false]
        [:tabstop 2]
        [:shiftwidth 2]

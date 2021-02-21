@@ -7,4 +7,4 @@ ratios=20,30,49
 media_autostart=off
 media_mute=off
 media_previewer=hunter-media
-graphics=kitty
+graphics=sixel

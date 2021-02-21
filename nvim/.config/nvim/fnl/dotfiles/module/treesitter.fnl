@@ -10,7 +10,7 @@
    :rainbow {:enable true
              :disable []}
 
-   :indent {:enable false}
+   :indent {:enable true}
    :incremental_selection {:enable true
                            :disable {}
                            :keymaps {:init_selection "gnn"
@@ -43,7 +43,7 @@
                            "ad" "@comment.outer"
                            "am" "@call.outer"
                            "im" "@call.inner"}}
-   :ensure_installed [:java :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css]
+   :ensure_installed [:java :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css :jsonc]
    :playground {:enable true
                 :disable {}
                 :updatetime 25
