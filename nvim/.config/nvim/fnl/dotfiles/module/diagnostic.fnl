@@ -3,24 +3,20 @@
             lsp vim.lsp
             core aniseed.core}})
 
-(if (not nvim.g.neovide)
-  (let [diag_signs [[:Hint "💡"]
-                    [:Warning "⚠️"]
-                    [:Information "ℹ️"]
-                    [:Error "🚫"]]
-        setsign (fn [[group sign]]
-                  (nvim.call_function :sign_define [(.. "LspDiagnosticsSign" group)
-                                                    {:text sign
-                                                     :texthl (.. "LspDiagnosticsSign" group)}]))]
-     (core.map setsign diag_signs)))
-
-(let [diag_colors [[:Error "#d62828"]
-                   [:Warning "#fcbf49"]
-                   [:Hint "#3a86ff"]
-                   [:Information "#caffbf"]]
-      hldiag (fn [[group color]]
-                (nvim.ex.highlight (.. "LspDiagnosticsDefault" group) (.. "guifg=" color)))]
-     (core.map hldiag diag_colors))
+(let [diag_attrs [[:Hint "💡" "#3a86ff"]
+                  [:Warning "⚠️" "#fcbf49"]
+                  [:Information "ℹ️" "#caffbf"]
+                  [:Error "🚫" "#d62828"]]
+      setsign (fn [[group sign _]]
+                (nvim.fn.sign_define (.. "LspDiagnosticsSign" group) {:text sign
+                                                                      :texthl (.. "LspDiagnosticsSign" group)}))
+      hldiag (fn [[group _ color]]
+               (nvim.ex.highlight (.. "LspDiagnosticsDefault" group) (.. "guifg=" color)))]
+   (if (not nvim.g.neovide)
+    (do
+     (core.map setsign diag_attrs)
+     (nvim.fn.sign_define "LightBulbSign" {:text "✨"})))
+   (core.map hldiag diag_attrs))
 
 (tset lsp.handlers "textDocument/publishDiagnostics"
       (lsp.with lsp.diagnostic.on_publish_diagnostics {:virtual_text true
