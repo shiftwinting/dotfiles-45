@@ -16,6 +16,7 @@
 (autocmd :WinLeave :<buffer> "set showtabline=2")
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (autocmd "BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc")
+(autocmd :BufWritePost :wezterm.fnl "!fennel --compile wezterm.fnl > wezterm.lua")
 (nvim.ex.highlight :TelescopeMatching "guifg=orange")
 
 (let [options
@@ -42,7 +43,6 @@
        [:pumblend 15]
        [:winblend 15]
        [:title true]
-       [:cursorline true]
        [:incsearch true]
        [:hlsearch true]
        [:autowrite true]
