@@ -1,25 +1,27 @@
 (module dotfiles.module.diagnostic
   {require {nvim aniseed.nvim
-            lsp vim.lsp}})
-
-
+            lsp vim.lsp
+            core aniseed.core}})
 
 (if (not nvim.g.neovide)
-  (do
-    (nvim.call_function :sign_define [:LspDiagnosticsSignHint
-                                      {:text "💡"
-                                       :texthl "LspDiagnosticsSignHint"}])
-    (nvim.call_function :sign_define [:LspDiagnosticsSignWarning
-                                      {:text "⚠️"
-                                       :texthl "LspDiagnosticsSignWarning"}])
-    (nvim.call_function :sign_define [:LspDiagnosticsSignInformation
-                                      {:text "ℹ️"
-                                       :texthl "LspDiagnosticsSignInformation"}])
-    (nvim.call_function :sign_define [:LspDiagnosticsSignError
-                                      {:text "🚫"
-                                       :texthl "LspDiagnosticsSignError"}])
-    (nvim.call_function :sign_define [:LightBulbSign
-                                      {:text "✨"}])))
+  (let [diag_signs [[:Hint "💡"]
+                    [:Warning "⚠️"]
+                    [:Information "ℹ️"]
+                    [:Error "🚫"]]
+        setsign (fn [[group sign]]
+                  (nvim.call_function :sign_define [(.. "LspDiagnosticsSign" group)
+                                                    {:text sign
+                                                     :texthl (.. "LspDiagnosticsSign" group)}]))]
+     (core.map setsign diag_signs)))
+
+(let [diag_colors [[:Error "#d62828"]
+                   [:Warning "#fcbf49"]
+                   [:Hint "#3a86ff"]
+                   [:Information "#caffbf"]]
+      hldiag (fn [[group color]]
+                (nvim.ex.highlight (.. "LspDiagnosticsDefault" group) (.. "guifg=" color)))]
+     (core.map hldiag diag_colors))
+
 (tset lsp.handlers "textDocument/publishDiagnostics"
       (lsp.with lsp.diagnostic.on_publish_diagnostics {:virtual_text true
                                                        :signs true
