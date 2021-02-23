@@ -7,7 +7,7 @@
   (nvim.ex.autocmd event name todo))
 
 (defn setopt [opt value]
-  "Sets a vim optioioion"
+  "Sets a vim option"
   (core.assoc nvim.o opt value))
 
 (nvim.ex.colorscheme :nvcode)

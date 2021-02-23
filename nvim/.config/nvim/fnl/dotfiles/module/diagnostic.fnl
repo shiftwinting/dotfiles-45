@@ -12,10 +12,9 @@
                                                                       :texthl (.. "LspDiagnosticsSign" group)}))
       hldiag (fn [[group _ color]]
                (nvim.ex.highlight (.. "LspDiagnosticsDefault" group) (.. "guifg=" color)))]
-   (if (not nvim.g.neovide)
-    (do
+   (when (not nvim.g.neovide)
      (core.map setsign diag_attrs)
-     (nvim.fn.sign_define "LightBulbSign" {:text "✨"})))
+     (nvim.fn.sign_define "LightBulbSign" {:text "✨"}))
    (core.map hldiag diag_attrs))
 
 (tset lsp.handlers "textDocument/publishDiagnostics"
