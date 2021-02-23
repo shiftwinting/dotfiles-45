@@ -34,11 +34,13 @@ local packages = {
     'neovim/nvim-lspconfig',
     requires = {
       'nvim-lua/lsp-status.nvim',
-      'onsails/lspkind-nvim'
+      'onsails/lspkind-nvim',
+      'glepnir/lspsaga.nvim'
     },
     config = {[[
       require "ls_setup"
       require('lspkind').init()
+      require 'lspsaga'.init_lsp_saga()
     ]]}
   },
   {'kosayoda/nvim-lightbulb', config = "vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]"},
@@ -129,7 +131,8 @@ local packages = {
   'mhinz/vim-sayonara',
   'delphinus/vim-auto-cursorline',
   'omrisarig13/vim-auto-abbrev',
-  'axelf4/vim-strip-trailing-whitespace'
+  'axelf4/vim-strip-trailing-whitespace',
+  'searleser97/cpbooster.vim'
 }
 
 return packages

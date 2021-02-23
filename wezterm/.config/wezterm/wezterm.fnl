@@ -16,6 +16,7 @@
       :enable_wayland true
       :window_close_confirmation "NeverPrompt"
       :font_hinting "Full"
+      :keys [{:key "Enter" :mods "ALT" :action "DisableDefaultAssignment"}]
       :window_padding {:left 5
                        :top 5}
       :colors {:foreground "#D4D4D4"

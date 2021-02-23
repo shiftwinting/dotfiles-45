@@ -47,8 +47,8 @@
   (smap :n :<ScrollWheelUp> ":call comfortable_motion#flick(-40)<CR>")
   (smap :n :<Down> ":call comfortable_motion#flick(40)<CR>")
   (smap :n :<ScrollWheelDown> ":call comfortable_motion#flick(40)<CR>"))
-  
- 
+
+
 
 ;NvimTree
 (smap :n :<leader>v ":NvimTreeToggle<CR>")
@@ -62,8 +62,8 @@
 (smap :n :<leader>c ":ColorizerToggle<CR>")
 
 ;LSP
-(noremap :n :<M-CR> ":lua vim.lsp.buf.code_action()<CR>")
-(smap :n :K ":lua vim.lsp.buf.hover()<CR>")
+(noremap :n :<M-CR> ":lua require('lspsaga.codeaction').code_action()<CR>")
+(smap :n :K ":lua require('lspsaga.hover').render_hover_doc()<CR>")
 
 ;jdtls
 (noremap :v :<M-CR> "<Esc><Cmd>lua require('jdtls').code_action(true)<CR>")

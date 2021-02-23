@@ -5,7 +5,6 @@ local extensions = require("el.extensions")
 local sections = require("el.sections")
 local subscribe = require("el.subscribe")
 local lsp_statusline = require("el.plugins.lsp_status")
-local ts = require("nvim-treesitter")
 
 local git_icon =
   subscribe.buf_autocmd(
@@ -51,15 +50,6 @@ local fileformat =
   end
 )
 
-local ts_status =
-  subscribe.buf_autocmd(
-  "custom_treesitter_status",
-  "CursorMoved,CursorMovedI",
-  function()
-    return ts.statusline(50)
-  end
-)
-
 require("el").setup {
   generator = function(_, _)
     return {
@@ -68,6 +58,7 @@ require("el").setup {
         format_string = " %s "
       },
       git_branch,
+      lsp_statusline.segment,
       " ",
       sections.split,
       git_icon,
@@ -77,7 +68,6 @@ require("el").setup {
         builtin.modified_flag
       },
       sections.split,
-      ts_status,
       lsp_statusline.server_progress,
       git_changes,
       "[",

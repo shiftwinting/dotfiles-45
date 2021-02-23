@@ -1,7 +1,15 @@
 local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
+local lsp_status = require'lsp-status'
+lsp_status.register_progress()
+lsp_status.config({
+  indicator_errors = '🚫',
+  indicator_warnings = '⚠️',
+  indicator_info = 'ℹ️',
+  indicator_hint = '💡',
+  indicator_ok = '👌',
+})
 if vim.g.uivonim == 1 then
   local lsp_callbacks = require'uivonim/lsp'.callbacks
   lspconfig.bashls.setup {
@@ -23,10 +31,12 @@ if vim.g.uivonim == 1 then
   }
 else
   lspconfig.bashls.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_status.on_attach
   }
   lspconfig.vimls.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_status.on_attach
   }
   lspconfig.sumneko_lua.setup {
     cmd = {
@@ -44,12 +54,15 @@ else
         }
       }
     };
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_status.on_attach
   }
 require'lspconfig'.clojure_lsp.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_status.on_attach
   }
 require'lspconfig'.clangd.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_status.on_attach
   }
 end
