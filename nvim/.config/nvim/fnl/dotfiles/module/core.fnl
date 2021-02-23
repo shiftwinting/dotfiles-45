@@ -6,8 +6,8 @@
 (defn autocmd [event name todo]
   (nvim.ex.autocmd event name todo))
 
-(defn setopt [[opt value]]
-  "Sets a vim option"
+(defn setopt [opt value]
+  "Sets a vim optioioion"
   (core.assoc nvim.o opt value))
 
 (nvim.ex.colorscheme :nvcode)
@@ -17,46 +17,43 @@
 (autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (autocmd "BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc")
 (autocmd :BufWritePost :wezterm.fnl "!fennel --compile wezterm.fnl > wezterm.lua")
-(nvim.ex.highlight :TelescopeMatching "guifg=orange")
 
 (let [options
-      [[:termguicolors true]
-       [:mouse :a]
-       [:number true]
-       [:relativenumber true]
-       [:guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))]
-       [:listchars "tab:» ,trail:_"]
-       [:showmode false]
-       [:tabstop 2]
-       [:shiftwidth 2]
-       [:expandtab true]
-       [:softtabstop 2]
-       [:foldexpr "nvim_treesitter#foldexpr()"]
-       [:foldmethod "expr"]
-       [:clipboard "unnamedplus"]
-       [:completeopt "menuone,noinsert,noselect"]
-       [:hidden true]
-       [:autoindent true]
-       [:smartindent true]
-       [:emoji true]
-       [:list true]
-       [:pumblend 15]
-       [:winblend 15]
-       [:title true]
-       [:incsearch true]
-       [:hlsearch true]
-       [:autowrite true]
-       [:fixeol true]]]
-  (core.map setopt options))
+       {:termguicolors true
+        :mouse :a
+        :number true
+        :relativenumber true
+        :guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))
+        :listchars "tab:» ,trail:_"
+        :showmode false
+        :tabstop 2
+        :shiftwidth 2
+        :expandtab true
+        :softtabstop 2
+        :foldexpr "nvim_treesitter#foldexpr()"
+        :foldmethod "expr"
+        :clipboard "unnamedplus"
+        :completeopt "menuone,noinsert,noselect"
+        :hidden true
+        :autoindent true
+        :smartindent true
+        :emoji true
+        :list true
+        :pumblend 15
+        :winblend 15
+        :title true
+        :incsearch true
+        :hlsearch true
+        :autowrite true
+        :fixeol true}]
+     (each [option value (pairs options)]
+       (setopt option value)))
 
 (if
-  nvim.g.gnvim          (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter:h12"])
-  nvim.g.gonvim_running (setopt [:linespace 2])
-  nvim.g.neovide        (setopt [:guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15"])
-  nvim.g.uivonim        (setopt [:guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"]))
+  nvim.g.gnvim          (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter:h12")
+  nvim.g.gonvim_running (setopt :linespace 2)
+  nvim.g.neovide        (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
+  nvim.g.uivonim        (setopt :guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
 
 (when nvim.g.gnvim
-  (setopt [:completeopt "menuone,noinsert,noselect,preview"]))
-(nvim.ex.highlight :TSType "guifg=#c586c0")
-(nvim.ex.highlight :TSVariable "guifg=#9cdcfe")
-(nvim.ex.highlight :Normal "guifg=#d4d4d4")
+  (setopt :completeopt "menuone,noinsert,noselect,preview"))

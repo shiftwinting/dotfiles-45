@@ -6,7 +6,15 @@
                           "liga=1"]
       :font (font_with_fallback "Fira Code")
       :font_rules [{:italic true
-                    :font (font_with_fallback "Fira Mono" {:italic true})}]
+                    :font (font_with_fallback "Fira Mono" {:italic true})}
+                   {:intensity "Bold"
+                    :font (font_with_fallback "Fira Code" {:bold true})}
+                   {:intensity "Bold"
+                    :italic true
+                    :font (font_with_fallback "Victor Mono" {:intensity bold
+                                                             :italic true})}
+                   {:intensity "Half"
+                    :font (font_with_fallback "Fira Code Light")}]
       :font_size 11.0
       :enable_scroll_bar true
       :default_cursor_style "BlinkingUnderline"
