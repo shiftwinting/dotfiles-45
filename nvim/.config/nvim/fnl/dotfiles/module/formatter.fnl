@@ -2,8 +2,7 @@
   {require {formatter formatter}})
 
 (formatter.setup
-  {:filetype {
-              :lua
+  {:filetype {:lua
               [(fn [] {:exe "luafmt"
                        :args ["--indent-count"
                               2
@@ -16,4 +15,16 @@
               :java
               [(fn [] {:exe "google-java-format"
                        :args ["-"]
+                       :stdin true})]
+              :fennel
+              [(fn [] {:exe "fnlfmt"
+                       :args ["-"]
+                       :stdin true})]
+              :sh
+              [(fn [] {:exe "shfmt"
+                       :args ["-" "-i 2"]
+                       :stdin true})]
+              :zsh
+              [(fn [] {:exe "shfmt"
+                       :args ["-i 2"]
                        :stdin true})]}})

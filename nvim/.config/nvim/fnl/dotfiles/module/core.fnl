@@ -59,3 +59,4 @@
   (setopt [:completeopt "menuone,noinsert,noselect,preview"]))
 (nvim.ex.highlight :TSType "guifg=#c586c0")
 (nvim.ex.highlight :TSVariable "guifg=#9cdcfe")
+(nvim.ex.highlight :Normal "guifg=#d4d4d4")

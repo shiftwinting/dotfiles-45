@@ -1,9 +1,13 @@
-(let [wezterm (require :wezterm)]
+(let [wezterm (require :wezterm)
+      font_with_fallback (fn [name params]
+                            (let [names [name "Noto Color Emoji" "JetBrains Mono"]]
+                              (wezterm.font_with_fallback names params)))]
      {:harfbuzz_features ["clig=1"
                           "liga=1"]
-      :font (wezterm.font_with_fallback
-               ["JetBrains Mono" "Noto Color Emoji"])
-      :font_size 10.6
+      :font (font_with_fallback "Fira Code")
+      :font_rules [{:italic true
+                    :font (font_with_fallback "Fira Mono" {:italic true})}]
+      :font_size 11.0
       :enable_scroll_bar true
       :default_cursor_style "BlinkingUnderline"
       :line_height 1.04

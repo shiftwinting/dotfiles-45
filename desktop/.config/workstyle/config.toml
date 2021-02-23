@@ -9,8 +9,6 @@
 # Note if multiple patterns are present in the same application name,
 # precedence is given in order of apparition in this file.
 
-"kitty" = ""
-"zsh" = ""
 "github" = ""
 "amazon" = ""
 "reddit" = ""
@@ -26,6 +24,9 @@
 "rust" = ""
 "private browsing" = ""
 "firefox" = ""
+"kitty" = ""
+"wezterm" = ""
+"zsh" = ""
 "file manager" = ""
 "libreoffice calc" = ""
 "libreoffice writer" = ""

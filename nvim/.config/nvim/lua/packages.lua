@@ -88,6 +88,7 @@ local packages = {
       require('telescope').setup {
         defaults = {
           file_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+          prompt_prefix =  "🔭 "
         }
       }
       require('telescope').load_extension('fzy_native')
@@ -127,7 +128,8 @@ local packages = {
   {'~/stuff/competitive-helper.nvim', rocks = 'http', requires = 'nvim-lua/plenary.nvim'},
   'mhinz/vim-sayonara',
   'delphinus/vim-auto-cursorline',
-  'omrisarig13/vim-auto-abbrev'
+  'omrisarig13/vim-auto-abbrev',
+  'axelf4/vim-strip-trailing-whitespace'
 }
 
 return packages
