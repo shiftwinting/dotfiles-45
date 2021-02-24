@@ -11,24 +11,20 @@ local packages = {
   },
   'hardcoreplayers/dashboard-nvim',
   'jeffkreeftmeijer/vim-numbertoggle',
-  'jiangmiao/auto-pairs',
+--  'jiangmiao/auto-pairs',
   'justinmk/vim-gtfo',
   {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'},
   'liuchengxu/vista.vim',
   {'mattn/vim-sonictemplate', cmd = 'Template'},
   {
-    'nvim-lua/completion-nvim',
+    'hrsh7th/nvim-compe',
     requires = {
-      {'aca/completion-tabnine', run = './install.sh'},
-      {
-        'ncm2/float-preview.nvim',
-        cond = function()
-          return vim.g.gnvim ~= 1 and vim.g.uivonim ~= 1
-        end
-      },
       'hrsh7th/vim-vsnip',
-      'hrsh7th/vim-vsnip-integ'
-    }
+      {'tami5/compe-conjure', after = 'conjure'},
+      'tamago324/compe-zsh',
+      {'tzachar/compe-tabnine', run = './install.sh'}
+    },
+    config = 'require "compe_setup"'
   },
   {
     'neovim/nvim-lspconfig',
@@ -50,9 +46,7 @@ local packages = {
     'nvim-treesitter/nvim-treesitter',
     requires = {
       'nvim-treesitter/nvim-treesitter-refactor',
-      'nvim-treesitter/nvim-treesitter-textobjects',
-      'nvim-treesitter/completion-treesitter',
-      'albertoCaroM/completion-tmux'
+      'nvim-treesitter/nvim-treesitter-textobjects'
     }
   },
   'nvim-treesitter/playground',
@@ -61,9 +55,9 @@ local packages = {
   {'Olical/conjure', ft = {'fennel', 'clojure'}},
   'pbrisbin/vim-mkdir',
   {'yuttie/comfortable-motion.vim',
-        cond = function()
-          return (vim.g.neovide ~= true and vim.g.gonvim_running ~=1)
-        end
+    cond = function()
+      return (vim.g.neovide ~= true and vim.g.gonvim_running ~=1)
+    end
   },
   'tpope/vim-fugitive',
   'tpope/vim-surround',
@@ -72,10 +66,11 @@ local packages = {
   'tyru/caw.vim',
   {'reedes/vim-pencil', ft = {'txt', 'markdown', 'rst'}},
   'rhysd/git-messenger.vim',
-  {'Yggdroot/indentline', requires = 'lukas-reineke/indent-blankline.nvim'},
+  {'lukas-reineke/indent-blankline.nvim', branch = 'lua'},
   'takac/vim-hardtime',
-  'vigoux/architext.nvim',
-  {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
+--  'vigoux/architext.nvim',
+--  {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
+  {'glepnir/galaxyline.nvim', config = 'require [[eviline]]'},
   'antoinemadec/FixCursorHold.nvim',
   'numtostr/FTerm.nvim',
   {
@@ -126,7 +121,7 @@ local packages = {
   'tkmpypy/chowcho.nvim',
   'phaazon/hop.nvim',
   {'alx741/neoman.vim', cmd = 'Neoman'},
-  'andweeb/presence.nvim',
+--  'andweeb/presence.nvim', Diamond hands: install only when discord supports native wayland
   {'~/stuff/competitive-helper.nvim', rocks = 'http', requires = 'nvim-lua/plenary.nvim'},
   'mhinz/vim-sayonara',
   'delphinus/vim-auto-cursorline',

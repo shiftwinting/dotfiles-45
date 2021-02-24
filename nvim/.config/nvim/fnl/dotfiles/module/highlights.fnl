@@ -6,9 +6,16 @@
            :DiffChange "guifg=#dcdcaa guibg=#1e1e1e"
            :DiffDelete "guifg=#d16969 guibg=#1e1e1e"
            :DiffText "guifg=#dcdcaa guibg=#1e1e1e"
-           :TSType "guifg=#569cd6"
+           :TSConstMacro "guifg=#9cdcfe gui=Bold"
+           :Todo "guifg=#dcdcaa gui=Bold"
+           :TSParameter "gui=Italic"
            :TSVariable "guifg=#9cdcfe"
-           :TSKeyword "guifg=#c586c0"
+           :TSKeyword "guifg=#569cd6"
+           :TSConditional "guifg=#c586c0"
+           :TSType "guifg=#c586c0"
+           :TSBoolean "guifg=#c586c0"
+           :TSRepeat "guifg=#569cd6"
+           :TSInclude "guifg=#9cdcfe gui=Bold"
            :Normal "guifg=#d4d4d4"
            :ElNormal "guifg=#c586c0"
            :ElInsert "guifg=#4ec9b0"
@@ -19,7 +26,7 @@
            :ElCommand "guifg=#1e1e1e guibg=#d4d4d4"
            :ElCommandCV "guifg=#1e1e1e guibg=#d4d4d4"
            :ElCommandEx "guifg=#1e1e1e guibg=#d4d4d4"
-           :ElConfirm "guifg=#2472c8 guibg=#ce9178"
-           :Statusline "guifg=#d4d4d4 guibg=#6C2D6E"}]
+           :ElConfirm "guifg=#2472c8 guibg=#ce9178"}]
+           ;:Statusline "guifg=#d4d4d4 guibg=#6C2D6E"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))

@@ -66,7 +66,6 @@
 (smap :n :K ":lua require('lspsaga.hover').render_hover_doc()<CR>")
 
 ;jdtls
-(noremap :v :<M-CR> "<Esc><Cmd>lua require('jdtls').code_action(true)<CR>")
 (noremap :n :<M-r> ":lua require('jdtls').code_action(false, 'refactor')<CR>")
 (noremap :n :<M-o> ":lua require('jdtls').organize_imports()<CR>")
 (noremap :n :crv ":lua require('jdtls').extract_variable()<CR>")

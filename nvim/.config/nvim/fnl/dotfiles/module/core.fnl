@@ -3,8 +3,8 @@
             core aniseed.core
             str aniseed.string}})
 
-(defn autocmd [event name todo]
-  (nvim.ex.autocmd event name todo))
+(defn autocmd [event name action]
+      (nvim.ex.autocmd event name action))
 
 (defn setopt [opt value]
   "Sets a vim option"
@@ -14,9 +14,11 @@
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
-(autocmd :BufEnter :* "lua require'completion'.on_attach()")
+;(autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (autocmd "BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc")
 (autocmd :BufWritePost :wezterm.fnl "!fennel --compile wezterm.fnl > wezterm.lua")
+(autocmd :FileType :fennel "setlocal indentexpr=lisp")
+(autocmd :FileType :clojure "setlocal indentexpr=lisp")
 
 (let [options
        {:termguicolors true
@@ -33,7 +35,7 @@
         :foldexpr "nvim_treesitter#foldexpr()"
         :foldmethod "expr"
         :clipboard "unnamedplus"
-        :completeopt "menuone,noinsert,noselect"
+        :completeopt "menuone,noselect"
         :hidden true
         :autoindent true
         :smartindent true

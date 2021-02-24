@@ -13,11 +13,11 @@ lsp_status.config({
 if vim.g.uivonim == 1 then
   local lsp_callbacks = require'uivonim/lsp'.callbacks
   lspconfig.bashls.setup {
-    callbacks = lsp_callbacks;
+    callbacks = lsp_callbacks,
     capabilities = capabilities
   }
   lspconfig.vimls.setup {
-    callbacks = lsp_callbacks;
+    callbacks = lsp_callbacks,
     capabilities = capabilities
   }
   lspconfig.sumneko_lua.setup {
@@ -25,8 +25,8 @@ if vim.g.uivonim == 1 then
       '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/bin/Linux/lua-language-server',
       '-E',
       '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/main.lua'
-    };
-    callbacks = lsp_callbacks;
+    },
+    callbacks = lsp_callbacks,
     capabilities = capabilities
   }
 else
@@ -43,7 +43,7 @@ else
       '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/bin/Linux/lua-language-server',
       '-E',
       '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/main.lua'
-    };
+    },
     settings = {
       Lua = {
         diagnostics = {
@@ -53,7 +53,7 @@ else
           keywordSnippet = true
         }
       }
-    };
+    },
     capabilities = capabilities,
     on_attach = lsp_status.on_attach
   }
