@@ -11,7 +11,7 @@
                     :font (font_with_fallback "Fira Code" {:bold true})}
                    {:intensity "Bold"
                     :italic true
-                    :font (font_with_fallback "Victor Mono" {:intensity bold
+                    :font (font_with_fallback "Victor Mono" {:bold true
                                                              :italic true})}
                    {:intensity "Half"
                     :font (font_with_fallback "Fira Code Light")}]
