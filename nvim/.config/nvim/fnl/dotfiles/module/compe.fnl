@@ -24,7 +24,6 @@
             :nvim_lua true
             :spell true
             :tags true
-            :snippets_nvim true
             :treesitter true
             :conjure true
             :zsh true}})

@@ -64,3 +64,4 @@ compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/bit bit
 eval "$(zoxide init zsh)"
+zmodload zsh/zpty

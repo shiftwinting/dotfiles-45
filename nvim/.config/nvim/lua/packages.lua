@@ -29,13 +29,13 @@ local packages = {
     'neovim/nvim-lspconfig',
     requires = {
       'nvim-lua/lsp-status.nvim',
-      'onsails/lspkind-nvim',
-      'glepnir/lspsaga.nvim'
+      {'onsails/lspkind-nvim', cond = function() return vim.g.uivonim ~=1 end,
+        config = [[require('lspkind').init()]]},
+      {'glepnir/lspsaga.nvim', cond = function() return vim.g.uivonim ~=1 end,
+        config = [[require 'lspsaga'.init_lsp_saga()]]}
     },
     config = {[[
       require "ls_setup"
-      require('lspkind').init()
-      require 'lspsaga'.init_lsp_saga()
     ]]}
   },
   {'kosayoda/nvim-lightbulb', config = "vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]"},
@@ -119,8 +119,8 @@ local packages = {
   'tkmpypy/chowcho.nvim',
   'phaazon/hop.nvim',
   {'alx741/neoman.vim', cmd = 'Neoman'},
---  'andweeb/presence.nvim', Diamond hands: install only when discord supports native wayland
-  {'~/stuff/competitive-helper.nvim', rocks = 'http', requires = 'nvim-lua/plenary.nvim'},
+  'andweeb/presence.nvim',
+  {'~/stuff/competitive-helper.nvim', rocks = {'http', 'lunajson'}, requires = 'nvim-lua/plenary.nvim'},
   'mhinz/vim-sayonara',
   'delphinus/vim-auto-cursorline',
   'omrisarig13/vim-auto-abbrev',

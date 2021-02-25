@@ -17,7 +17,7 @@
                        :args ["-"]
                        :stdin true})]
               :fennel
-              [(fn [] {:exe "fnlfmt"
+              [(fn [] {:exe "fnlfmt.fnl"
                        :args ["-"]
                        :stdin true})]
               :sh

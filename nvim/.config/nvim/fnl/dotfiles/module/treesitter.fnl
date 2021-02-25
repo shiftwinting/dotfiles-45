@@ -7,7 +7,7 @@
                :disable ["clojure"]
                :use_languagetree true}
    :rainbow {:enable true
-             :disable []}
+             :disable ["cpp" "lua"]}
    :indent {:enable true}
    :incremental_selection {:enable true
                            :disable {}

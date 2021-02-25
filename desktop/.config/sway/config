@@ -11,32 +11,32 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CU
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-font JuliaMono 10
+font Fantasque Sans Mono 12
 # Colors
 
 set $black #1C1B19
-set $bright_black #918175
+set $bright_black #1e1e1e
 
-set $red #EF2F27
-set $bright_red #F75341
+set $red #cd3131
+set $bright_red #f14c4c
 
-set $green #519F50
-set $bright_green #98BC37
+set $green #608b4e
+set $bright_green #b5cea8
 
-set $yellow #FBB829
-set $bright_yellow #FED06E
+set $yellow #CE9178
+set $bright_yellow #DCDCAA
 
-set $blue #2C78BF
-set $bright_blue #68A8E4
+set $blue #2472c8
+set $bright_blue #569cd6
 
-set $magenta #E02C6D
-set $bright_magenta #FF5C8F
+set $magenta #C586C0
+set $bright_magenta #daadd6
 
-set $cyan #0AAEB3
-set $bright_cyan #53FDE9
+set $cyan #11a8cd
+set $bright_cyan #9cdcfe
 
-set $white #D0BFA1
-set $bright_white #FCE8C3
+set $white #e5e5e5
+set $bright_white #e5e5e5
 
 set $orange #D75F00
 set $bright_orange #FF8700
@@ -47,13 +47,13 @@ set $xgray3 #3A3A3A
 set $xgray4 #444444
 set $xgray5 #4E4E4E
 
-set $hard_black #121212
+set $hard_black #000000
 
 
 # Colors                border        background  text          indicator child_border
-client.focused          $bright_black $xgray3     $yellow       $yellow   $bright_black
+client.focused          $xgray5       $xgray1     $white        $yellow   $green
 client.focused_inactive $xgray3       $xgray3     $bright_black $xgray3   $xgray3
-client.unfocused        $xgray1       $xgray1     $bright_black $xgray1   $xgray1
+client.unfocused        $green        $xgray1     $bright_black $xgray1   $xgray1
 client.urgent           $red          $xgray1     $red          $red      $red
 client.placeholder      $xgray3       $hard_black $bright_black $xgray3   $xgray3
 client.background       $black
@@ -136,7 +136,7 @@ gaps inner 7
 
     # Start your launcher
     bindsym $mod+d exec $menu
-
+    bindsym $mod+o exec wofi --show=run | xargs swaymsg exec --
     # switch to csd
     bindsym $mod+g border csd
     # switch to no border
@@ -311,7 +311,7 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
     gsettings set $gnome-schema icon-theme 'Adwaita++-Dark'
-    gsettings set $gnome-schema cursor-theme 'GoogleDot'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema font-name 'Fira Sans 11'
 }
 include /etc/sway/config.d/*
