@@ -78,3 +78,8 @@
 
 ;Bufferline
 (smap :n :tt ":BufferLinePick<CR>")
+
+;Compe
+(nvim.set_keymap :i :<CR> "compe#confirm('<CR>')" {:noremap true
+                                                   :silent true
+                                                   :expr true})

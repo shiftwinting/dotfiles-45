@@ -11,7 +11,7 @@ local packages = {
   },
   'hardcoreplayers/dashboard-nvim',
   'jeffkreeftmeijer/vim-numbertoggle',
---  'jiangmiao/auto-pairs',
+  'jiangmiao/auto-pairs',
   'justinmk/vim-gtfo',
   {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'},
   'liuchengxu/vista.vim',
@@ -23,8 +23,7 @@ local packages = {
       {'tami5/compe-conjure', after = 'conjure'},
       'tamago324/compe-zsh',
       {'tzachar/compe-tabnine', run = './install.sh'}
-    },
-    config = 'require "compe_setup"'
+    }
   },
   {
     'neovim/nvim-lspconfig',
@@ -62,7 +61,6 @@ local packages = {
   'tpope/vim-fugitive',
   'tpope/vim-surround',
   'tpope/vim-repeat',
-  'tpope/vim-endwise',
   'tyru/caw.vim',
   {'reedes/vim-pencil', ft = {'txt', 'markdown', 'rst'}},
   'rhysd/git-messenger.vim',
