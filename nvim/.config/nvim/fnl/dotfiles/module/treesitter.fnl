@@ -45,4 +45,5 @@
    :playground {:enable true
                 :disable {}
                 :updatetime 25
-                :persist_queries false}})
+                :persist_queries false}
+   :context {:enable false}})

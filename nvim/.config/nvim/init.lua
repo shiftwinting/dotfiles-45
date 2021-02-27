@@ -13,4 +13,5 @@ packer.startup(
     end
   end
 )
+packer.use_rocks {'lunajson', 'http'}
 
