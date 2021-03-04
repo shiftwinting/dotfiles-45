@@ -68,8 +68,8 @@ local packages = {
   {'lukas-reineke/indent-blankline.nvim', branch = 'lua'},
   'takac/vim-hardtime',
 --  'vigoux/architext.nvim',
---  {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
-  {'glepnir/galaxyline.nvim', config = 'require [[eviline]]'},
+  {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
+--  {'glepnir/galaxyline.nvim', config = 'require [[eviline]]'},
   'antoinemadec/FixCursorHold.nvim',
   'numtostr/FTerm.nvim',
   {

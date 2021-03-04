@@ -27,7 +27,7 @@ local git_branch =
   function(window, buffer)
     local branch = extensions.git_branch(window, buffer)
     if branch then
-      return " " .. extensions.git_icon() .. " " .. branch
+      return " " .. "" .. " " .. branch
     end
   end
 )
@@ -62,7 +62,7 @@ require("el").setup {
       " ",
       sections.split,
       git_icon,
-      sections.maximum_width(builtin.responsive_file(140, 90), 0.30),
+      builtin.tail_file,
       sections.collapse_builtin {
         " ",
         builtin.modified_flag

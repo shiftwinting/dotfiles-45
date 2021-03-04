@@ -62,8 +62,12 @@
 (smap :n :<leader>c ":ColorizerToggle<CR>")
 
 ;LSP
-(noremap :n :<M-CR> ":lua require('lspsaga.codeaction').code_action()<CR>")
-(smap :n :K ":lua require('lspsaga.hover').render_hover_doc()<CR>")
+(noremap :n :<M-CR> ":Lspsaga code_action<CR>")
+(noremap :v :<M-CR> ":Lspsaga range_code_action<CR>")
+(smap :n :K ":Lspsaga hover_doc<CR>")
+(smap :n :pd ":Lspsaga preview_definition<CR>")
+(smap :n :dn ":Lspsaga diagnostic_jump_next<CR>")
+(smap :n :dp ":Lspsaga diagnostic_jump_prev<CR>")
 
 ;jdtls
 (noremap :n :<M-r> ":lua require('jdtls').code_action(false, 'refactor')<CR>")

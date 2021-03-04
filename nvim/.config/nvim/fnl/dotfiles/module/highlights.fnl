@@ -2,6 +2,9 @@
   {require {nvim aniseed.nvim}})
 
 (let [tbl {:TelescopeMatching "guifg=orange"
+           :TelescopeSelectionCaret "guifg=#2472c8"
+           :TelescopeSelection "guifg=#9cdcfe gui=Italic"
+           :TelescopeNormal "guifg=#818181"
            :DiffAdd "guifg=#608b4e guibg=#1e1e1e"
            :DiffChange "guifg=#dcdcaa guibg=#1e1e1e"
            :DiffDelete "guifg=#d16969 guibg=#1e1e1e"
