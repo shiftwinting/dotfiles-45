@@ -133,7 +133,10 @@ local packages = {
     {'tjdevries/manillua.nvim', ft = 'lua'},
     {'tjdevries/nlua.nvim', ft = 'lua'}
   },
-  {'tridactyl/vim-tridactyl'}
+  {'tridactyl/vim-tridactyl'},
+--'vigoux/oak',
+  'npxbr/gruvbox.nvim',
+  'yonlu/omni.vim'
 }
 
 return packages

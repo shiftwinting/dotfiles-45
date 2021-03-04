@@ -37,7 +37,7 @@ else
     },
     settings = {
       Lua = {
-        runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
+        --runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
         diagnostics = {globals = {'vim'}},
         completion = {keywordSnippet = true}
       }

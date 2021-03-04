@@ -7,9 +7,9 @@
   (core.assoc nvim.g global_ value))
 
 (let [globals
-       {:indent_blankline_char ""
+       {;:indent_blankline_char ""
         :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer]
-        :indent_blankline_char_highlight_list [:dummy]
+        :indent_blankline_char_highlight_list [:Conceal]
         :indent_blankline_use_treesitter true
         :float_preview#docked 0
         :vista_default_executive "nvim_lsp"

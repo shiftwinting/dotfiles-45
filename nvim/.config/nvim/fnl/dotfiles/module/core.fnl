@@ -10,7 +10,7 @@
   "Sets a vim option"
   (core.assoc nvim.o opt value))
 
-(nvim.ex.colorscheme :nvcode)
+(nvim.ex.colorscheme :omni)
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
