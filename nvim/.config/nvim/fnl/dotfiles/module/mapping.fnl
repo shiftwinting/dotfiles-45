@@ -23,7 +23,7 @@
 (map :n :<C-r>i ":luafile ~/.config/nvim/init.lua<CR>")
 
 ; hop.nvim
-(smap "" "\\w" ":lua require'hop'.hint_words()<CR>")
+(smap "" "\\w" ":HopWord<CR>")
 (smap "" "\\p" ":HopPattern<CR>")
 (smap "" "\\l" ":HopLine<CR>")
 (smap "" "\\c" ":HopChar1<CR>")

@@ -14,7 +14,8 @@ inside-wrong-color=FF4D4D70
 separator-color=E27950
 text-ver-color=2C2C2C
 fade-in=0.5
-image=~/Pictures/wall.jpg
+image= ~/Pictures/Wallpapers/wall.png
+scaling=fill
 effect-greyscale
 font=Fantasque Sans Mono
 font-size=35

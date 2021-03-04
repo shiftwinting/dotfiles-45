@@ -14,11 +14,11 @@
 
 (autocmd :FileType :dashboard "set showtabline=1")
 (autocmd :WinLeave :<buffer> "set showtabline=2")
-;(autocmd :BufEnter :* "lua require'completion'.on_attach()")
 (autocmd "BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc")
 (autocmd :BufWritePost :wezterm.fnl "!fennel --compile wezterm.fnl > wezterm.lua")
 (autocmd :FileType :fennel "setlocal indentexpr=lisp")
 (autocmd :FileType :clojure "setlocal indentexpr=lisp")
+(autocmd :CursorHoldI "lua require('lspsaga.signaturehelp').signature_help()")
 
 (let [options
        {:termguicolors true

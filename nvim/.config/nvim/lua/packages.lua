@@ -99,7 +99,7 @@ local packages = {
     end
   },
   'mhartington/formatter.nvim',
-  {'npxbr/glow.nvim', run = ':GlowInstall', ft = 'markdown'},
+  {'oknozor/illumination', run = '.install.sh', ft = 'markdown'},
   'wfxr/minimap.vim',
   'kdheepak/lazygit.nvim',
   'git@github.com:p00f/nvim-ts-rainbow',
@@ -121,12 +121,19 @@ local packages = {
   'phaazon/hop.nvim',
   {'alx741/neoman.vim', cmd = 'Neoman'},
   'andweeb/presence.nvim',
---  {'~/stuff/competitive-helper.nvim', rocks = {'http', 'lunajson'}, requires = 'nvim-lua/plenary.nvim'},
+  {'~/stuff/projects/cphelper/cphelper.nvim', rocks = {'http', 'lunajson', 'luafilesystem'}, requires = 'nvim-lua/plenary.nvim'},
   'mhinz/vim-sayonara',
   'delphinus/vim-auto-cursorline',
   'omrisarig13/vim-auto-abbrev',
   'axelf4/vim-strip-trailing-whitespace',
-  'searleser97/cpbooster.vim'
+  'searleser97/cpbooster.vim',
+  {
+    {'rafcamlet/nvim-luapad', ft = 'lua'},
+    --{'euclidianAce/BetterLua.vim', ft = 'lua'},
+    {'tjdevries/manillua.nvim', ft = 'lua'},
+    {'tjdevries/nlua.nvim', ft = 'lua'}
+  },
+  {'tridactyl/vim-tridactyl'}
 }
 
 return packages

@@ -3,10 +3,10 @@
 
 (formatter.setup
   {:filetype {:lua
-              [(fn [] {:exe "luafmt"
-                       :args ["--indent-count"
+              [(fn [] {:exe "lua-format"
+                       :args ["--indent-width"
                               2
-                              "--stdin"]
+                              "--no-use-tab"]
                        :stdin true})]
               :cpp
               [(fn [] {:exe "clang-format"

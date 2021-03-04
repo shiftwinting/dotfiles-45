@@ -2,7 +2,7 @@
 exec autotiling
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
 exec emacs --daemon
-exec_always --no-startup-id workstyle &> /tmp/workstyle.log
+exec_always workstyle &> /tmp/workstyle.log
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 for_window [title="ptpython"] floating enable, border normal, resize set width 500 px height 500 px

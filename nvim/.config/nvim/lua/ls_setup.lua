@@ -1,22 +1,18 @@
 local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-local lsp_status = require'lsp-status'
+local lsp_status = require 'lsp-status'
 lsp_status.register_progress()
 lsp_status.config({
   indicator_errors = '🚫',
   indicator_warnings = '⚠️',
   indicator_info = 'ℹ️',
   indicator_hint = '💡',
-  indicator_ok = '👌',
+  indicator_ok = '👌'
 })
 if vim.g.uivonim == 1 then
   local lsp_callbacks = require'uivonim/lsp'.callbacks
   lspconfig.bashls.setup {
-    callbacks = lsp_callbacks,
-    capabilities = capabilities
-  }
-  lspconfig.vimls.setup {
     callbacks = lsp_callbacks,
     capabilities = capabilities
   }
@@ -34,34 +30,26 @@ else
     capabilities = capabilities,
     on_attach = lsp_status.on_attach
   }
-  lspconfig.vimls.setup {
-    capabilities = capabilities,
-    on_attach = lsp_status.on_attach
-  }
   lspconfig.sumneko_lua.setup {
     cmd = {
-      '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/bin/Linux/lua-language-server',
-      '-E',
-      '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/main.lua'
+      "/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server", "-E",
+      "/home/p00f/bin/lua-language-server/main.lua"
     },
     settings = {
       Lua = {
-        diagnostics = {
-          globals = {'vim'}
-        },
-        completion = {
-          keywordSnippet = true
-        }
+        runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
+        diagnostics = {globals = {'vim'}},
+        completion = {keywordSnippet = true}
       }
     },
     capabilities = capabilities,
     on_attach = lsp_status.on_attach
   }
-require'lspconfig'.clojure_lsp.setup {
+  require'lspconfig'.clojure_lsp.setup {
     capabilities = capabilities,
     on_attach = lsp_status.on_attach
   }
-require'lspconfig'.clangd.setup {
+  require'lspconfig'.clangd.setup {
     capabilities = capabilities,
     on_attach = lsp_status.on_attach
   }

@@ -3,10 +3,13 @@
                             (let [names [name "Noto Color Emoji" "JetBrains Mono"]]
                               (wezterm.font_with_fallback names params)))]
      {:harfbuzz_features ["clig=1"
-                          "liga=1"]
+                          "liga=1"
+                          "ss03"
+                          "ss06"
+                          "ss07"]
       :font (font_with_fallback "Fira Code")
       :font_rules [{:italic true
-                    :font (font_with_fallback "Fira Mono" {:italic true})}
+                    :font (font_with_fallback "Fira Code" {:italic true})}
                    {:intensity "Bold"
                     :font (font_with_fallback "Fira Code" {:bold true})}
                    {:intensity "Bold"
