@@ -7,7 +7,8 @@
   (core.assoc nvim.g global_ value))
 
 (let [globals
-       {;:indent_blankline_char ""
+       {:indent_blankline_char ""
+        :cphlang "cpp"
         :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer]
         :indent_blankline_char_highlight_list [:Conceal]
         :indent_blankline_use_treesitter true

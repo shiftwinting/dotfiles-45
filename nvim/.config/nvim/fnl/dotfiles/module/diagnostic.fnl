@@ -10,7 +10,7 @@
    (each [group colour (pairs diag_hls)]
     (nvim.ex.highlight (.. "LspDiagnosticsDefault" group) (.. "guifg=" colour))))
 
-(when (not nvim.g.neovide)
+(when (not (or nvim.g.uivonim nvim.g.neovide))
   (nvim.fn.sign_define "LightBulbSign" {:text "✨"}))
 
 (tset lsp.handlers "textDocument/publishDiagnostics"

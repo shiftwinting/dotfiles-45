@@ -10,6 +10,7 @@ lsp_status.config({
   indicator_hint = '💡',
   indicator_ok = '👌'
 })
+
 if vim.g.uivonim == 1 then
   local lsp_callbacks = require'uivonim/lsp'.callbacks
   lspconfig.bashls.setup {
@@ -18,12 +19,28 @@ if vim.g.uivonim == 1 then
   }
   lspconfig.sumneko_lua.setup {
     cmd = {
-      '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/bin/Linux/lua-language-server',
-      '-E',
-      '/home/p00f/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/main.lua'
+      "/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server",
+      "/home/p00f/bin/lua-language-server/main.lua"
+    },
+    settings = {
+      Lua = {
+        -- runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
+        diagnostics = {globals = {'vim'}},
+        completion = {keywordSnippet = true}
+      }
     },
     callbacks = lsp_callbacks,
     capabilities = capabilities
+  }
+  lspconfig.clojure_lsp.setup {
+    capabilities = capabilities,
+    on_attach = lsp_status.on_attach,
+    callbacks = lsp_callbacks
+  }
+  lspconfig.clangd.setup {
+    capabilities = capabilities,
+    on_attach = lsp_status.on_attach,
+    callbacks = lsp_callbacks
   }
 else
   lspconfig.bashls.setup {
@@ -37,7 +54,7 @@ else
     },
     settings = {
       Lua = {
-        --runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
+        -- runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
         diagnostics = {globals = {'vim'}},
         completion = {keywordSnippet = true}
       }

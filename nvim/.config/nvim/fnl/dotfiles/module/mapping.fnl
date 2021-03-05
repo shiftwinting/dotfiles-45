@@ -34,6 +34,7 @@
 (smap :n :<leader>h ":Telescope frecency<CR>")
 (smap :n :<leader>b ":Telescope marks<CR>")
 (smap :n :<leader>g ":Telescope live_grep<CR>")
+(smap :n :<leader>gf ":Telescope git_files<CR>")
 (smap :n :<leader>ts ":Telescope treesitter<CR>")
 (smap :n :<leader>td ":lua require 'custom_telescope'.dotfiles()<CR>")
 (smap :n :<leader>tpp ":lua require('telescope').extensions.packer.plugins(opts)<CR>")

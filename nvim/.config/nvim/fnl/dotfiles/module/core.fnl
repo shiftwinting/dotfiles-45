@@ -55,7 +55,7 @@
   nvim.g.gnvim          (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter:h12")
   nvim.g.gonvim_running (setopt :linespace 2)
   nvim.g.neovide        (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
-  nvim.g.uivonim        (setopt :guifont "Delugia Nerd Font,Inter,Noto Color Emoji:h15"))
+  nvim.g.uivonim        (setopt :guifont "Fira Code,Delugia Nerd Font,Inter,Noto Color Emoji:h30"))
 
 (when nvim.g.gnvim
   (setopt :completeopt "menuone,noinsert,noselect,preview"))
