@@ -3,13 +3,13 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lsp_status = require 'lsp-status'
 lsp_status.register_progress()
-lsp_status.config({
+lsp_status.config {
   indicator_errors = '🚫',
   indicator_warnings = '⚠️',
   indicator_info = 'ℹ️',
   indicator_hint = '💡',
   indicator_ok = '👌'
-})
+}
 
 if vim.g.uivonim == 1 then
   local lsp_callbacks = require'uivonim/lsp'.callbacks

@@ -19,7 +19,7 @@ local packages = {
   {
     'hrsh7th/nvim-compe',
     requires = {
-      'hrsh7th/vim-vsnip',
+      'norcalli/snippets.nvim',
       {'tami5/compe-conjure', after = 'conjure'},
       'tamago324/compe-zsh',
       {'tzachar/compe-tabnine', run = './install.sh'}
@@ -43,10 +43,9 @@ local packages = {
   {'norcalli/nvim-colorizer.lua', config = {'require [[colorizer]].setup()'}},
   {
     'nvim-treesitter/nvim-treesitter',
-    requires = {
-      'nvim-treesitter/nvim-treesitter-refactor',
-      'nvim-treesitter/nvim-treesitter-textobjects'
-    }
+    '~/stuff/projects/nvim-ts-rainbow',
+    'nvim-treesitter/nvim-treesitter-refactor',
+    'nvim-treesitter/nvim-treesitter-textobjects'
   },
   'nvim-treesitter/playground',
   'romgrk/nvim-treesitter-context',
@@ -69,7 +68,6 @@ local packages = {
   'takac/vim-hardtime',
 --  'vigoux/architext.nvim',
   {'tjdevries/express_line.nvim', config = 'require [[expressline_setup]]'},
---  {'glepnir/galaxyline.nvim', config = 'require [[eviline]]'},
   'antoinemadec/FixCursorHold.nvim',
   'numtostr/FTerm.nvim',
   {
@@ -78,7 +76,9 @@ local packages = {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-packer.nvim',
-      'nvim-telescope/telescope-github.nvim'
+      'nvim-telescope/telescope-github.nvim',
+      'nvim-telescope/telescope-z.nvim',
+      'nvim-telescope/telescope-cheat.nvim'
       },
     config = [[
       require('telescope').setup {
@@ -89,6 +89,8 @@ local packages = {
       }
       require('telescope').load_extension('fzy_native')
       require('telescope').load_extension('gh')
+      require'telescope'.load_extension('z')
+      require'telescope'.load_extension("cheat")
     ]]
   },
   {
@@ -102,7 +104,6 @@ local packages = {
   {'oknozor/illumination', run = '.install.sh', ft = 'markdown'},
   'wfxr/minimap.vim',
   'kdheepak/lazygit.nvim',
-  'git@github.com:p00f/nvim-ts-rainbow',
   'andymass/vim-matchup',
   'KabbAmine/vCoolor.vim',
   {'lewis6991/gitsigns.nvim', config = [[require('gitsigns').setup{keymaps={}}]]},
@@ -121,22 +122,20 @@ local packages = {
   'phaazon/hop.nvim',
   {'alx741/neoman.vim', cmd = 'Neoman'},
   'andweeb/presence.nvim',
-  {'~/stuff/projects/cphelper/cphelper.nvim', rocks = {'http', 'lunajson', 'luafilesystem'}, requires = 'nvim-lua/plenary.nvim'},
+  {'~/stuff/projects/cphelper/cphelper.nvim', rocks = 'http', requires = 'nvim-lua/plenary.nvim'},
   'mhinz/vim-sayonara',
-  'delphinus/vim-auto-cursorline',
+--  'delphinus/vim-auto-cursorline',
   'omrisarig13/vim-auto-abbrev',
   'axelf4/vim-strip-trailing-whitespace',
-  'searleser97/cpbooster.vim',
   {
     {'rafcamlet/nvim-luapad', ft = 'lua'},
-    --{'euclidianAce/BetterLua.vim', ft = 'lua'},
     {'tjdevries/manillua.nvim', ft = 'lua'},
     {'tjdevries/nlua.nvim', ft = 'lua'}
   },
   {'tridactyl/vim-tridactyl'},
---'vigoux/oak',
-  'npxbr/gruvbox.nvim',
-  'yonlu/omni.vim'
+  'yonlu/omni.vim',
+  'skywind3000/vim-keysound',
+  '~/stuff/pp_test'
 }
 
 return packages

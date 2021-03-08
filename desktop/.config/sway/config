@@ -52,10 +52,10 @@ set $hard_black #000000
 
 # Colors                border        background  text          indicator child_border
 client.focused          $xgray5       $xgray1     $white        $yellow   $xgray1
-client.focused_inactive $xgray3       $xgray3     $bright_black $xgray3   $xgray3
-client.unfocused        $xgray1       $xgray1     $bright_black $xgray1   $xgray1
+client.focused_inactive $xgray3       $xgray3     $xgray5       $xgray3   $xgray3
+client.unfocused        $xgray1       $xgray1     $xgray5       $xgray1   $xgray1
 client.urgent           $red          $xgray1     $red          $red      $red
-client.placeholder      $xgray3       $hard_black $bright_black $xgray3   $xgray3
+client.placeholder      $xgray3       $hard_black $xgray5       $xgray3   $xgray3
 client.background       $black
 
 # Clipman
