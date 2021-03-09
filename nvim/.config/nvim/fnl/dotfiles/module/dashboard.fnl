@@ -9,7 +9,7 @@
       :change_colorscheme " • "
       :find_word "L g"
       :book_marks "L b"})
-(if (not (or nvim.g.neovide nvim.g.uivonim))
+(if (not (or nvim.g.neovide nvim.g.uivonim nvim.g.gonvim_running))
   (set nvim.g.dashboard_custom_shortcut_icon
     {:last_session "⏪ "
      :find_history "🕑 "

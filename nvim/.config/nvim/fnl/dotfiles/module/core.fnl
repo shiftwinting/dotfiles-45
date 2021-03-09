@@ -21,6 +21,7 @@
 (autocmd :CursorHoldI "lua require('lspsaga.signaturehelp').signature_help()")
 (autocmd "CursorHold,CursorHoldI" "*.rs" "lua require'lsp_extensions'.inlay_hints{ only_current_line = true }")
 (autocmd "BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints{}")
+(autocmd :FileType :Results "let b:auto_cursorline_disabled = 1")
 
 (let [options
        {:termguicolors true
@@ -30,7 +31,7 @@
         :guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))
         :listchars "tab:» ,trail:_"
         :showmode false
-        :tabstop 4
+        :tabstop 8
         :shiftwidth 4
         :expandtab true
         :softtabstop 4
@@ -57,7 +58,9 @@
 
 (if
   nvim.g.gnvim          (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter:h12")
-  nvim.g.gonvim_running (setopt :linespace 2)
+  nvim.g.gonvim_running (do
+                         (setopt :linespace 2)
+                         (setopt :guifont "Delugia Nerd Font:h11"))
   nvim.g.neovide        (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
   nvim.g.uivonim        (setopt :guifont "Fira Code,Delugia Nerd Font,Inter,Noto Color Emoji:h30"))
 

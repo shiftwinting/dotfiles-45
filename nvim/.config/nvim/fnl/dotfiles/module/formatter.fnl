@@ -3,14 +3,15 @@
 
 (formatter.setup
   {:filetype {:lua
-              [(fn [] {:exe "lua-format"
-                       :args ["--indent-width"
-                              4
-                              "--no-use-tab"]
+              [(fn [] {:exe "stylua"
+                       :args ["--config-path"
+                              "~/.config/stylua.toml"
+                              "-"]
                        :stdin true})]
               :cpp
               [(fn [] {:exe "clang-format"
-                       :args ["--style=Google"]
+                       :args ["--style"
+                              "\"{BasedOnStyle: Google, IndentWidth: 4}\""]
                        :stdin true})]
               :java
               [(fn [] {:exe "google-java-format"
@@ -26,9 +27,9 @@
                        :stdin true})]
               :sh
               [(fn [] {:exe "shfmt"
-                       :args ["-" "-i 2"]
+                       :args ["-" "-i 4"]
                        :stdin true})]
               :zsh
               [(fn [] {:exe "shfmt"
-                       :args ["-i 2"]
+                       :args ["-i 4"]
                        :stdin true})]}})

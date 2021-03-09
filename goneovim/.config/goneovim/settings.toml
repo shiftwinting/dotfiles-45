@@ -26,16 +26,16 @@ Height = 600
 ## is that the default value on the Neovim side is 0, which will be overwritten by the Neovim setting.
 ## Of course, these settings can also be changed by setting the guifont and linespace on the Neovim side.
 ## Fontfamily is
-## In MacOS,
-# FontFamily = "Monaco"
-## In Linux
-FontFamily = "JetBrains Mono Medium"
-## In Windows
-# FontFamily = "Windows"
-## Fontsize is
-FontSize = 11
-## linespace is
-Linespace = 3
+### In MacOS,
+## FontFamily = "Monaco"
+### In Linux
+#FontFamily = "Fira Code"
+### In Windows
+## FontFamily = "Windows"
+### Fontsize is
+#FontSize = 11
+### linespace is
+#Linespace = 3
 
 ## Neovim external UI features
 ## The following is the default value of goneovim.
@@ -75,8 +75,8 @@ WindowSeparatorTheme = "dark"
 
 ## Draw built-in indent guide
 ## Enabling this setting will have a slight impact on performance.
-# IndentGuide = false
-# IndentGuideIgnoreFtList = ["md"]
+IndentGuide = false
+IndentGuideIgnoreFtList = ["md" "fennel" "clojure" "lisp"]
 
 ## Animates the scrolling behavior of Neovim when the scroll command is entered.
 SmoothScroll = true
@@ -151,10 +151,10 @@ DiffChangePattern = 1
 ## If you want to use neovim's status line plugin, you should disable its display.
 [Statusline]
 ## Whether or not to display the external status line
-Visible = false
+Visible = true
 
 ## Options: "textLabel" / "icon" / "background" / "none"
-# ModeIndicatorType = "textLabel"
+ModeIndicatorType = "textLabel"
 
 ## Optional setting colors per Neovim editing modes
 # NormalModeColor = "#3cabeb"
@@ -165,15 +165,15 @@ Visible = false
 # TerminalModeColor = "#778899"
 
 ## Statusline components
-# Left = [ "mode", "filepath", "filename" ]
-# Right = [ "message", "git", "filetype", "fileformat", "fileencoding", "curpos", "lint" ]
+Left = [ "mode", "filepath", "filename" ]
+Right = [ "message", "git", "filetype", "fileformat", "fileencoding", "curpos", "lint" ]
 
 
 ### Configure externalized tabline UI.
 [Tabline]
 ### Whether or not to display the external tabline
-Visible = false
-ShowIcon = false
+Visible = true
+ShowIcon = true
 
 
 ## Configure externalized popupmenu UI.
