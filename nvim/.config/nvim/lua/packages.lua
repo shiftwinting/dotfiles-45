@@ -18,7 +18,12 @@ local packages = {
             "tamago324/compe-zsh",
             { "tzachar/compe-tabnine", run = "./install.sh" },
         },
-        config = { "require'snippets'.use_suggested_mappings()" },
+        config = {
+            [[
+            require'snippets'.use_suggested_mappings()
+            require'my_snippets'
+        ]],
+        },
     },
     { -- LSP
         "neovim/nvim-lspconfig",

@@ -42,6 +42,11 @@ if vim.g.uivonim == 1 then
         on_attach = lsp_status.on_attach,
         callbacks = lsp_callbacks,
     })
+    lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+        on_attach = lsp_status.on_attach,
+        callbacks = lsp_callbacks,
+    })
 else
     lspconfig.bashls.setup({
         capabilities = capabilities,
@@ -63,15 +68,15 @@ else
         capabilities = capabilities,
         on_attach = lsp_status.on_attach,
     })
-    require("lspconfig").clojure_lsp.setup({
+    lspconfig.clojure_lsp.setup({
         capabilities = capabilities,
         on_attach = lsp_status.on_attach,
     })
-    require("lspconfig").clangd.setup({
+    lspconfig.clangd.setup({
         capabilities = capabilities,
         on_attach = lsp_status.on_attach,
     })
-    require("lspconfig").rust_analyzer.setup({
+    lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
         on_attach = lsp_status.on_attach,
     })
