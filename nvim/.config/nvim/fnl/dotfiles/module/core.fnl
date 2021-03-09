@@ -19,6 +19,8 @@
 (autocmd :FileType :fennel "setlocal indentexpr=lisp")
 (autocmd :FileType :clojure "setlocal indentexpr=lisp")
 (autocmd :CursorHoldI "lua require('lspsaga.signaturehelp').signature_help()")
+(autocmd "CursorHold,CursorHoldI" "*.rs" "lua require'lsp_extensions'.inlay_hints{ only_current_line = true }")
+(autocmd "BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints{}")
 
 (let [options
        {:termguicolors true
@@ -28,10 +30,10 @@
         :guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))
         :listchars "tab:» ,trail:_"
         :showmode false
-        :tabstop 2
-        :shiftwidth 2
+        :tabstop 4
+        :shiftwidth 4
         :expandtab true
-        :softtabstop 2
+        :softtabstop 4
         :foldexpr "nvim_treesitter#foldexpr()"
         :foldmethod "expr"
         :clipboard "unnamedplus"
@@ -47,7 +49,9 @@
         :incsearch true
         :hlsearch true
         :autowrite true
-        :fixeol true}]
+        :fixeol true
+        :smarttab true
+        :smartindent true}]
      (each [option value (pairs options)]
        (setopt option value)))
 

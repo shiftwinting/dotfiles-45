@@ -5,7 +5,7 @@
   {:filetype {:lua
               [(fn [] {:exe "lua-format"
                        :args ["--indent-width"
-                              2
+                              4
                               "--no-use-tab"]
                        :stdin true})]
               :cpp
@@ -19,6 +19,10 @@
               :fennel
               [(fn [] {:exe "fnlfmt.fnl"
                        :args ["-"]
+                       :stdin true})]
+              :rust
+              [(fn [] {:exe "rustfmt"
+                       :args ["--emit stdout"]
                        :stdin true})]
               :sh
               [(fn [] {:exe "shfmt"

@@ -19,7 +19,7 @@
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime
         :sexp_filetypes "clojure,query,fennel"
         :sidekick_printable_def_types ["function" "class" "type" "module" "parameter" "method" "field"]
-        :rainbow_active 1
+        :rainbow_active 0
         :hardtime_default_on 0
         :list_of_normal_keys ["h" "j" "k" "l" "-" "+" "<LEFT>" "<RIGHT>"]
         :AutoPairsMapCR false}]
