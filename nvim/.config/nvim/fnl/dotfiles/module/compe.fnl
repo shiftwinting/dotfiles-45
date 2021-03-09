@@ -19,7 +19,7 @@
             :tabnine true
             :buffer true
             :calc true
-            :vsnip true
+            :snippets_nvim true
             :nvim_lsp true
             :nvim_lua true
             :spell true

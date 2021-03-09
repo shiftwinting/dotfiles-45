@@ -21,7 +21,7 @@ local packages = {
         config = {
             [[
             require'snippets'.use_suggested_mappings()
-            require'my_snippets'
+            require 'my_snippets'
         ]],
         },
     },
