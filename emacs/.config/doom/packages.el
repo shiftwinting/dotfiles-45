@@ -18,6 +18,8 @@
 (package! tree-sitter-langs)
 (package! dap-mode)
 (package! oj)
+(package! f)
+(package! dash)
 (package! sly)
 (package! evil-mu4e)
 (package! fennel-mode)

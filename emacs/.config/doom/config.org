@@ -73,7 +73,7 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
 - ~map!~ for binding new keys
 
 *** Email
-#+BEGIN_SRC emacs-lisp
+#BEGIN_SRC emacs-lisp
 (require 'smtpmail)
 
 (use-package mu4e
@@ -127,20 +127,20 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
                             (smtpmail-smtp-service        . 587)
                             (user-mail-address            . ,(college-mail))
                             (smtpmail-smtp-user           . ,(college-mail))))))))
-#+END_SRC
+#END_SRC
 
 #+RESULTS:
 : t
 
 Create org-mode tasks with links to emails
-#+BEGIN_SRC emacs-lisp
+#BEGIN_SRC emacs-lisp
 (require 'org-mu4e)
 ;;store link to message if in header view, not to header query
 (setq mu4e-org-link-query-in-headers-mode nil)
 (setq org-capture-templates
       '(("t" "todo" entry (file+headline "~/org/todo.org" "Tasks")
          "* TODO [#A] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n%a\n")))
-#+END_SRC
+#END_SRC
 
 *** Clojure cookbook
 #+BEGIN_SRC emacs-lisp

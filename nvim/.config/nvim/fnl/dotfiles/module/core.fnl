@@ -52,7 +52,8 @@
         :autowrite true
         :fixeol true
         :smarttab true
-        :smartindent true}]
+        :smartindent true
+        :undofile true}]
      (each [option value (pairs options)]
        (setopt option value)))
 

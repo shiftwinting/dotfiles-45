@@ -48,6 +48,31 @@ end]]),
         epoch = "${=os.time()}",
     },
     cpp = {
+        base = U.match_indentation([[
+#include <bits/stdc++.h>
+#include <vector>
+#define REP(i, n) for (int i = 0; (i) < (int)(n); ++(i))
+#define REP3(i, m, n) for (int i = (m); (i) < (int)(n); ++(i))
+#define REP_R(i, n) for (int i = (int)(n)-1; (i) >= 0; --(i))
+#define REP3R(i, m, n) for (int i = (int)(n)-1; (i) >= (int)(m); --(i))
+#define ALL(x) ::std::begin(x), ::std::end(x)
+#define PB push_back
+typedef vector<int> vi;
+typedef pair<int,int> pi;
+typedef long long ll;
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    constexpr char endl = '\n';
+    int T;
+    cin >> T;
+    REP3(ks, 1, T + 1) {
+        $0
+    }
+    return 0;
+}]]),
         REP = U.match_indentation([[
 REP( ${1:i}, ${2:i} ) {
     $0
