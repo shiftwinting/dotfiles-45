@@ -14,4 +14,9 @@ packer.startup(
   end
 )
 packer.use_rocks {'lunajson', 'http'}
-
+vim.cmd [[
+    command! -complete=file -nargs=* DebugC lua require "dap_setup".start_c_debugger({<f-args>}, "gdb")
+]]
+vim.cmd [[
+    command! -complete=file -nargs=* DebugRust lua require "dap_setup".start_c_debugger({<f-args>}, "gdb", "rust-gdb")
+]]

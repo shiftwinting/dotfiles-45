@@ -39,6 +39,7 @@ man() {
 
 # Aliases
 alias pkgtop='pkgtop -pacman paru'
+alias yay="paru"
 alias yeet='paru -Rsn'
 alias :q='exit'
 alias pins="paru -Slq | sk -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"

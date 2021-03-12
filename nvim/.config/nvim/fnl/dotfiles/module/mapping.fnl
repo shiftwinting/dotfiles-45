@@ -17,17 +17,16 @@
 (set nvim.g.maplocalleader ",")
 
 (map :c :<C-v> "<C-r>+")
-(map :n :<F8> "<Plug>(ale_fix)")
 
 ;reload init.lua
 (map :n :<C-r>i ":luafile ~/.config/nvim/init.lua<CR>")
 
 ; hop.nvim
-(smap "" "\\w" ":HopWord<CR>")
-(smap "" "\\p" ":HopPattern<CR>")
-(smap "" "\\l" ":HopLine<CR>")
-(smap "" "\\c" ":HopChar1<CR>")
-(smap "" "\\C" ":HopChar2<CR>")
+(smap "" "\\w" "<cmd>HopWord<CR>")
+(smap "" "\\p" "<cmd>HopPattern<CR>")
+(smap "" "\\l" "<cmd>HopLine<CR>")
+(smap "" "\\c" "<cmd>HopChar1<CR>")
+(smap "" "\\C" "<cmd>HopChar2<CR>")
 
 ;Telescope
 (smap :n :<leader>f ":Telescope find_files<CR>")
@@ -37,11 +36,12 @@
 (smap :n :<leader>gf ":Telescope git_files<CR>")
 (smap :n :<leader>ts ":Telescope treesitter<CR>")
 (smap :n :<leader>td ":lua require 'custom_telescope'.dotfiles()<CR>")
-(smap :n :<leader>tz ":Telescope z list<CR>")
+(smap :n :<leader>tz "<cmd>lua require'telescope'.extensions.z.list{cwd = {vim.o.shell, '-c', 'zi'}}<CR>")
 (smap :n :<leader>tpp ":lua require('telescope').extensions.packer.plugins(opts)<CR>")
 (smap :n :<leader>ch ":Telescope command_history<CR>")
 (smap :n :<leader>th ":Telescope help_tags<CR>")
 (smap :n :<leader> ":Telescope keymaps<CR>")
+(smap :n :<C-p> ":Telescope project<CR>")
 
 ; smooth scroll
 (when (and (not nvim.g.neovide) (not (= 1 nvim.g.gonvim_running)))
@@ -77,10 +77,6 @@
 (noremap :n :crv ":lua require('jdtls').extract_variable()<CR>")
 (noremap :v :crv "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
 (noremap :v :crm "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
-
-;DAP
-(noremap :n :<leader>dc ":lua require'jdtls'.test_class()<CR>")
-(noremap :n :<leader>dm ":lua require'jdtls'.test_nearest_method()<CR>")
 
 ;Bufferline
 (smap :n :tt ":BufferLinePick<CR>")

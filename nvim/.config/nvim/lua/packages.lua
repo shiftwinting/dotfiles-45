@@ -30,7 +30,9 @@ local packages = {
         requires = {
             "nvim-lua/lsp_extensions.nvim",
             "nvim-lua/lsp-status.nvim",
-            "mfussenegger/nvim-dap",
+            -- "mfussenegger/nvim-dap",
+            -- "theHamsta/nvim-dap-virtual-text",
+            { "sakhnik/nvim-gdb", run = "./install.sh", ft = "cpp" },
             {
                 "onsails/lspkind-nvim",
                 cond = function()
@@ -39,15 +41,14 @@ local packages = {
                 config = [[require('lspkind').init()]],
             },
             {
-                "kosayoda/nvim-lightbulb",
-                config = "vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]",
-            },
-            {
                 "glepnir/lspsaga.nvim",
                 cond = function()
                     return vim.g.uivonim ~= 1
                 end,
-                config = [[require 'lspsaga'.init_lsp_saga()]],
+                config = [[require 'lspsaga'.init_lsp_saga{
+                               use_saga_diagnostic_sign = true,
+                               code_action_icon = "✨",
+                           }]],
             },
         },
         config = [[
@@ -70,9 +71,8 @@ local packages = {
         "nvim-treesitter/playground",
         "ElPiloto/sidekick.nvim",
         "vigoux/architext.nvim", -- <--
-        "romgrk/nvim-treesitter-context",
+    -- "romgrk/nvim-treesitter-context",
     },
-    "wellle/context.vim",
     {
         "Olical/aniseed",
         config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]],
@@ -121,6 +121,8 @@ local packages = {
             "nvim-telescope/telescope-frecency.nvim",
             "tami5/sql.nvim",
             "nvim-telescope/telescope-cheat.nvim",
+            "nvim-telescope/telescope-project.nvim"
+        --  "nvim-telescope/telescope-dap.nvim",
         },
         config = [[
             require('telescope').setup {
@@ -134,6 +136,8 @@ local packages = {
             require'telescope'.load_extension('z')
             require'telescope'.load_extension("cheat")
             require'telescope'.load_extension('frecency')
+            require'telescope'.load_extension('project')
+          --  require('telescope').load_extension('dap')
         ]],
     },
     "mhartington/formatter.nvim",

@@ -3,6 +3,8 @@
 
 (let [tbl {:Whitespace "guifg=#424760 guibg=#191622"
            :EndOfBuffer "guifg=#424760"
-           :Statusline "guibg=#312C3E"}]
+           :Statusline "guibg=#312C3E"
+           :TelescopeBorder "guifg=#534A76"
+           :TelescopeMatching "guifg=#ff79c6"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))

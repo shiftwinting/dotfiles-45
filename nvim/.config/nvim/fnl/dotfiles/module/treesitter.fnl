@@ -24,7 +24,6 @@
                                      :list_definitions "gnD"}}}
    :textobjects {:select {:enable true
                           :keymaps {"iF" {:python "(function_definition) @function"
-                                          :cpp "(function_definition) @function"
                                           :c "(function_definition) @function"
                                           :java "(method_declaration) @function"
                                           :lua "(local_function) @function"}
@@ -47,4 +46,5 @@
                 :disable {}
                 :updatetime 25
                 :persist_queries false}
-   :context {:enable false}})
+   :context {:enable false}
+   :matchup {:enable true}})

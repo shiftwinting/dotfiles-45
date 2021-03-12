@@ -75,9 +75,9 @@ WindowSeparatorTheme = "dark"
 
 ## Draw built-in indent guide
 ## Enabling this setting will have a slight impact on performance.
-IndentGuide = false
-IndentGuideIgnoreFtList = ["md" "fennel" "clojure" "lisp"]
-
+IndentGuide = true
+IndentGuideIgnoreFtList = ["md", "fennel", "clojure", "lisp", "dashboard", "packer"]
+OptionsToUseGuideWidth = "shiftwidth"
 ## Animates the scrolling behavior of Neovim when the scroll command is entered.
 SmoothScroll = true
 ## Disables horizontal scrolling for smooth scrolling with the touchpad.
