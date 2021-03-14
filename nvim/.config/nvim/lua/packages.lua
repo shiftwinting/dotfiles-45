@@ -9,7 +9,6 @@ local packages = {
     "justinmk/vim-gtfo", -- <--
     { "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" },
     "liuchengxu/vista.vim",
-    { "mattn/vim-sonictemplate", cmd = "Template" },
     {
         "hrsh7th/nvim-compe",
         requires = {
@@ -46,7 +45,7 @@ local packages = {
                     return vim.g.uivonim ~= 1
                 end,
                 config = [[require 'lspsaga'.init_lsp_saga{
-                               use_saga_diagnostic_sign = true,
+                               use_saga_diagnostic_sign = false,
                                code_action_icon = "✨",
                            }]],
             },
@@ -121,14 +120,13 @@ local packages = {
             "nvim-telescope/telescope-frecency.nvim",
             "tami5/sql.nvim",
             "nvim-telescope/telescope-cheat.nvim",
-            "nvim-telescope/telescope-project.nvim"
+            "nvim-telescope/telescope-project.nvim",
         --  "nvim-telescope/telescope-dap.nvim",
         },
         config = [[
             require('telescope').setup {
                 defaults = {
                     file_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-                    prompt_prefix =  "🔭 "
                 }
             }
             require('telescope').load_extension('fzy_native')
@@ -173,6 +171,7 @@ local packages = {
     },
     "tridactyl/vim-tridactyl",
     "yonlu/omni.vim",
+    "tversteeg/registers.nvim",
 }
 
 return packages

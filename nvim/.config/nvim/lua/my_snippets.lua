@@ -57,10 +57,10 @@ end]]),
 #define REP3R(i, m, n) for (int i = (int)(n)-1; (i) >= (int)(m); --(i))
 #define ALL(x) ::std::begin(x), ::std::end(x)
 #define PB push_back
+using namespace std;
 typedef vector<int> vi;
 typedef pair<int,int> pi;
 typedef long long ll;
-using namespace std;
 
 int main() {
     ios::sync_with_stdio(false);

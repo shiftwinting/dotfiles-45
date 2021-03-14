@@ -70,6 +70,7 @@
 (smap :n :pd ":Lspsaga preview_definition<CR>")
 (smap :n :dn ":Lspsaga diagnostic_jump_next<CR>")
 (smap :n :dp ":Lspsaga diagnostic_jump_prev<CR>")
+(smap :n :gr ":Lspsaga rename<CR>")
 
 ;jdtls
 (noremap :n :<M-r> ":lua require('jdtls').code_action(false, 'refactor')<CR>")

@@ -9,9 +9,9 @@
 (let [globals
        {:indent_blankline_char ""
         :cphlang "cpp"
-        :cpp_compile_command "g++ -D XOX solution.cpp -o cpp.out &> ce.txt"
+        :cpp_compile_command "g++ -D XOX solution.cpp -o cpp.out"
         :dap_virtual_text "all frames"
-        :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer]
+        :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results]
         :indent_blankline_char_highlight_list [:Conceal]
         :indent_blankline_use_treesitter true
         :float_preview#docked 0

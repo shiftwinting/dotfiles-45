@@ -3,12 +3,15 @@
             lsp vim.lsp
             core aniseed.core}})
 
-(let [diag_hls {:Hint "#3a86ff"
-                :Warning "#fcbf49"
-                :Information "#caffbf"
-                :Error "#d62828"}]
-   (each [group colour (pairs diag_hls)]
-    (nvim.ex.highlight (.. "LspDiagnosticsDefault" group) (.. "guifg=" colour))))
+(let [diag-attrs  [[:Hint "#988bc7" "💡"]
+                   [:Warning "#BE5C19" ">>"]
+                   [:Information "#025A0D" "i"]
+                   [:Error "#e61f44" "X"]]
+      hl (fn [[diag colour _]] (nvim.ex.highlight (.. "LspDiagnosticsDefault" diag) (.. "guifg=" colour)))
+      set-sign (fn [[diag _ sign]] (nvim.fn.sign_define (.. "LspDiagnosticsSign" diag) {:text sign}))]
+   (do
+    (core.map hl diag-attrs)
+    (core.map set-sign diag-attrs)))
 
 (when (not (or nvim.g.uivonim nvim.g.neovide))
   (nvim.fn.sign_define "LightBulbSign" {:text "✨"}))
