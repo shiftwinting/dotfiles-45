@@ -7,7 +7,8 @@ local packages = {
     "jeffkreeftmeijer/vim-numbertoggle",
     "jiangmiao/auto-pairs",
     "justinmk/vim-gtfo", -- <--
-    { "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" },
+    {"yamatsum/nvim-nonicons", requires = "kyazdani42/nvim-web-devicons"},
+    { "kyazdani42/nvim-tree.lua"},
     "liuchengxu/vista.vim",
     {
         "hrsh7th/nvim-compe",

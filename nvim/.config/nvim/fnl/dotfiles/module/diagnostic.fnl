@@ -4,9 +4,9 @@
             core aniseed.core}})
 
 (let [diag-attrs  [[:Hint "#988bc7" "💡"]
-                   [:Warning "#BE5C19" ">>"]
-                   [:Information "#025A0D" "i"]
-                   [:Error "#e61f44" "X"]]
+                   [:Warning "#E4803A" ">>"]
+                   [:Information "#038013" "i"]
+                   [:Error "#ed4556" ">>"]]
       hl (fn [[diag colour _]] (nvim.ex.highlight (.. "LspDiagnosticsDefault" diag) (.. "guifg=" colour)))
       set-sign (fn [[diag _ sign]] (nvim.fn.sign_define (.. "LspDiagnosticsSign" diag) {:text sign}))]
    (do

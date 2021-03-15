@@ -68,7 +68,7 @@ int main() {
     constexpr char endl = '\n';
     int T;
     cin >> T;
-    REP3(ks, 1, T + 1) {
+    while(T--) {
         $0
     }
     return 0;
@@ -106,3 +106,20 @@ void debug_out(vector<string> args, int idx, int LINE_NUM, Head H, Tail... T) {
 #endif]])
     },
 }
+local s = [[let snippet-file-name = 'blah blah'
+fun FileSpecificSnippets()
+    if lines('$') == 0 && getline('.') == ''
+        set -l fname = expand('%')
+        " check this seperately, so you can easily add more of these in the future
+        if fname == 'your-filename.nvim'
+            " I don't actually use snippets.nvim, I'm certain this isn't how you use it,
+            " so just replace this line with whichever function from that plugin you'd like to call
+            execute 'r! cat ' . snippet-file-name
+        " elseif fname == '???'
+            " ...
+        end
+    end
+endf
+
+" feel free to change this hook, this is just the only reasonable one to me
+au bufRead * call FileSpecificSnippets()]]

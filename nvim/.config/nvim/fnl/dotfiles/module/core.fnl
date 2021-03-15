@@ -19,8 +19,10 @@
 (autocmd :FileType :fennel "setlocal indentexpr=lisp")
 (autocmd :FileType :clojure "setlocal indentexpr=lisp")
 (autocmd :CursorHoldI "lua require('lspsaga.signaturehelp').signature_help()")
-(autocmd "CursorHold,CursorHoldI" "*.rs" "lua require'lsp_extensions'.inlay_hints{ only_current_line = true }")
-(autocmd "BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints{}")
+(autocmd "CursorHold,CursorHoldI" "*.rs" "lua require'lsp_extensions'.inlay_hints {
+                                              prefix = ' » ',
+                                              only_current_line = true,}")
+(autocmd "BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}")
 (autocmd :FileType :Results "let b:auto_cursorline_disabled = 1")
 
 (let [options
@@ -62,7 +64,7 @@
   nvim.g.gonvim_running (do
                          (setopt :linespace 2)
                          (setopt :guifont "Delugia Nerd Font:h11"))
-  nvim.g.neovide        (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter,Noto Color Emoji:h15")
+  nvim.g.neovide        (setopt :guifont "Fira Code,Delugia Nerd Font,Inter,Noto Color Emoji:h17")
   nvim.g.uivonim        (setopt :guifont "Fira Code,Delugia Nerd Font,Inter,Noto Color Emoji:h30"))
 
 (when nvim.g.gnvim
