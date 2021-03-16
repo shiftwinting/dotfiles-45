@@ -7,8 +7,12 @@ local packages = {
     "jeffkreeftmeijer/vim-numbertoggle",
     "jiangmiao/auto-pairs",
     "justinmk/vim-gtfo", -- <--
-    {"yamatsum/nvim-nonicons", requires = "kyazdani42/nvim-web-devicons"},
-    { "kyazdani42/nvim-tree.lua"},
+    {
+        "yamatsum/nvim-nonicons",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = [[require'nvim-nonicons']],
+    },
+    { "kyazdani42/nvim-tree.lua" },
     "liuchengxu/vista.vim",
     {
         "hrsh7th/nvim-compe",
@@ -38,7 +42,7 @@ local packages = {
                 cond = function()
                     return vim.g.uivonim ~= 1
                 end,
-                config = [[require('lspkind').init()]],
+                config = "require 'lspkind_setup'",
             },
             {
                 "glepnir/lspsaga.nvim",
@@ -102,7 +106,7 @@ local packages = {
         "lukas-reineke/indent-blankline.nvim",
         branch = "lua",
         cond = function()
-            return (vim.g.uivonim ~= 1 and vim.g.gonvim_running ~= 1)
+            return (vim.g.uivonim ~= 1 and vim.g.gonvim_running ~= 1 and vim.g.neovide ~= true)
         end,
     },
     "takac/vim-hardtime",
@@ -125,11 +129,7 @@ local packages = {
         --  "nvim-telescope/telescope-dap.nvim",
         },
         config = [[
-            require('telescope').setup {
-                defaults = {
-                    file_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-                }
-            }
+            require "telescope_setup"
             require('telescope').load_extension('fzy_native')
             require('telescope').load_extension('gh')
             require'telescope'.load_extension('z')
@@ -173,6 +173,14 @@ local packages = {
     "tridactyl/vim-tridactyl",
     "yonlu/omni.vim",
     "tversteeg/registers.nvim",
+    {
+        "edluffy/specs.nvim",
+        cond = function()
+            return vim.g.neovide ~= true
+        end,
+        config = [[require('specs').setup{}]],
+    },
+    {"aouelete/sway-vim-syntax"}
 }
 
 return packages

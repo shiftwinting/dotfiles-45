@@ -1,6 +1,6 @@
 (let [wezterm (require :wezterm)
       font_with_fallback (fn [name params]
-                            (let [names [name "Noto Color Emoji" "JetBrains Mono"]]
+                            (let [names [name "nonicon" "Noto Color Emoji" "JetBrains Mono"]]
                               (wezterm.font_with_fallback names params)))]
      {:harfbuzz_features ["clig=1"
                           "liga=1"
@@ -27,6 +27,7 @@
       :enable_wayland true
       :window_close_confirmation "NeverPrompt"
       :font_hinting "Full"
+      :allow_square_glyphs_to_overflow_width "Always"
       :keys [{:key "Enter" :mods "ALT" :action "DisableDefaultAssignment"}]
       :window_padding {:left 5
                        :top 5}

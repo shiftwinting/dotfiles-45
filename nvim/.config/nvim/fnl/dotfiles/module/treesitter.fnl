@@ -4,12 +4,12 @@
 
 (tsconfigs.setup
   {:highlight {:enable true
-               :use_languagetree true}
+               :use_languagetree true
+               :disable ["clojure"]}
    :rainbow {:enable true
              :disable ["cpp"]}
    :indent {:enable true}
    :incremental_selection {:enable true
-                           :disable {}
                            :keymaps {:init_selection "gnn"
                                      :node_incremental "grn"
                                      :scope_incremental "grc"

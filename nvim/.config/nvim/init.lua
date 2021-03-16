@@ -6,6 +6,7 @@ vim.g["conjure#mapping#doc_word"] = "K"
 
 local packer = require("packer")
 local packages = require("packages")
+
 packer.startup(function()
     for _, value in pairs(packages) do
         packer.use(value)

@@ -9,12 +9,13 @@ local on_init = function(client)
     end
 end
 lsp_status.register_progress()
+local icons = require "nvim-nonicons"
 lsp_status.config({
-    indicator_errors = "🚫",
-    indicator_warnings = "⚠️",
-    indicator_info = "ℹ️",
-    indicator_hint = "💡",
-    indicator_ok = "👌",
+    indicator_errors = icons.get("stop"),
+    indicator_warnings = icons.get("alert"),
+    indicator_info = "i",
+    indicator_hint = "H",
+    indicator_ok = icons.get("check"),
 })
 
 if vim.g.uivonim == 1 then

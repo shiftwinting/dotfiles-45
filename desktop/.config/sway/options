@@ -1,0 +1,21 @@
+# vim: filetype=sway
+
+for_window [title="ptpython"] floating enable, border normal, resize set width 500 px height 500 px
+
+# Enable NumLock on start
+input * xkb_numlock enable
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+set $term wezterm
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu wofi --show=drun | xargs swaymsg exec --

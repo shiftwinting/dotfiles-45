@@ -9,3 +9,4 @@ music/.config/mopidy/auth.json
 emacs/.config/doom/mail-ids.el
 emacs/.config/doom/config.el
 wezterm/.config/wezterm/wezterm.lua
+music/.config/ncmpcpp/error.log

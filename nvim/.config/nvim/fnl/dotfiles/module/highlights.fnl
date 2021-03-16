@@ -11,3 +11,5 @@
            :TelescopeSelection "guifg=#67e480"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
+
+(nvim.ex.highlight :link :CompeDocumentation :NormalFloat)

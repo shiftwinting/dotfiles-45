@@ -24,6 +24,8 @@
                                               only_current_line = true,}")
 (autocmd "BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}")
 (autocmd :FileType :Results "let b:auto_cursorline_disabled = 1")
+(autocmd :FileType :query "ParinferOff")
+(autocmd :FileType :scheme "ParinferOff")
 
 (let [options
        {:termguicolors true
@@ -60,12 +62,12 @@
        (setopt option value)))
 
 (if
-  nvim.g.gnvim          (setopt :guifont "JetBrains Mono,Delugia Nerd Font,Inter:h12")
+  nvim.g.gnvim          (setopt :guifont "JetBrains Mono,nonicon,Delugia Mono Nerd Font,Inter:h12")
   nvim.g.gonvim_running (do
                          (setopt :linespace 2)
-                         (setopt :guifont "Delugia Nerd Font:h11"))
-  nvim.g.neovide        (setopt :guifont "Fira Code,Delugia Nerd Font,Inter,Noto Color Emoji:h17")
-  nvim.g.uivonim        (setopt :guifont "Fira Code,Delugia Nerd Font,Inter,Noto Color Emoji:h30"))
+                         (setopt :guifont "Delugia Mono Nerd Font:h11"))
+  nvim.g.neovide        (setopt :guifont "Fira Code,nonicon,Delugia Mono Nerd Font,Inter,Noto Color Emoji:h17")
+  nvim.g.uivonim        (setopt :guifont "Fira Code,nonicon,Delugia Mono Nerd Font,Inter,Noto Color Emoji:h30"))
 
 (when nvim.g.gnvim
   (setopt :completeopt "menuone,noinsert,noselect,preview"))
