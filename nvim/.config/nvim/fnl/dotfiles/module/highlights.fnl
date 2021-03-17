@@ -8,8 +8,7 @@
            :TelescopeMatching "guifg=#ff79c6"
            :TelescopePromptPrefix "guifg=#5a4b81"
            :TelescopeSelectionCaret "guifg=#ff79c6"
-           :TelescopeSelection "guifg=#67e480"}]
+           :TelescopeSelection "guifg=#67e480"
+           :Keyword "guifg=#ff79c6"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
-
-(nvim.ex.highlight :link :CompeDocumentation :NormalFloat)

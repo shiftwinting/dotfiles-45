@@ -27,8 +27,9 @@ if vim.g.uivonim == 1 then
     })
     lspconfig.sumneko_lua.setup({
         cmd = {
-            "/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server",
-            "/home/p00f/bin/lua-language-server/main.lua",
+            vim.fn.expand"~/bin/lua-language-server/bin/Linux/lua-language-server",
+            "-E",
+            vim.fn.expand"~/bin/lua-language-server/main.lua",
         },
         settings = {
             Lua = {
@@ -67,9 +68,9 @@ else
     })
     lspconfig.sumneko_lua.setup({
         cmd = {
-            "/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server",
+            vim.fn.expand"/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server",
             "-E",
-            "/home/p00f/bin/lua-language-server/main.lua",
+            vim.fn.expand"/home/p00f/bin/lua-language-server/main.lua",
         },
         settings = {
             Lua = {

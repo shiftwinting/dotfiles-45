@@ -1,3 +1,4 @@
+input * xkb_options "caps:swapescape"
 include ~/.config/sway/autostart
 include ~/.config/sway/options
 include ~/.config/sway/theming

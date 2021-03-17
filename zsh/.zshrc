@@ -60,7 +60,7 @@ source ~/.wezterm.sh
 
 # Command-not-found handler
 source /usr/share/doc/pkgfile/command-not-found.zsh
-
+fpath+=~/.zfunc
 autoload -Uz compinit
 compinit
 autoload -U +X bashcompinit && bashcompinit
