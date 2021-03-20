@@ -25,6 +25,7 @@ local git_changes = subscribe.buf_autocmd("el_git_changes", "BufWritePost", func
 local fileformat = subscribe.buf_autocmd("custom_file_format", "BufEnter", function(bufnr)
     return ("[" .. vim.api.nvim_buf_get_option(bufnr, "fileformat") .. "]")
 end)
+
 require("el").setup({
     generator = function(_, _)
         return {

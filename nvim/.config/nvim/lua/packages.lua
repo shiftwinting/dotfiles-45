@@ -12,8 +12,6 @@ local packages = {
         requires = "kyazdani42/nvim-web-devicons",
         config = [[require'nvim-nonicons']],
     },
-    { "kyazdani42/nvim-tree.lua" },
-    "liuchengxu/vista.vim",
     {
         "hrsh7th/nvim-compe",
         requires = {
@@ -26,7 +24,7 @@ local packages = {
             [[
             require'snippets'.use_suggested_mappings()
             require 'my_snippets'
-        ]],
+            ]],
         },
     },
     { -- LSP
@@ -50,8 +48,8 @@ local packages = {
                     return vim.g.uivonim ~= 1
                 end,
                 config = [[require 'lspsaga'.init_lsp_saga{
-                               use_saga_diagnostic_sign = false,
-                               code_action_icon = "✨",
+                                use_saga_diagnostic_sign = false,
+                                code_action_icon = "✨",
                            }]],
             },
         },
@@ -136,8 +134,8 @@ local packages = {
             require'telescope'.load_extension("cheat")
             require'telescope'.load_extension('frecency')
             require'telescope'.load_extension('project')
-          --  require('telescope').load_extension('dap')
-        ]],
+            --  require('telescope').load_extension('dap')
+            ]],
     },
     "mhartington/formatter.nvim",
     { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
@@ -180,7 +178,8 @@ local packages = {
         end,
         config = [[require('specs').setup{}]],
     },
-    {"aouelete/sway-vim-syntax"}
+    "aouelete/sway-vim-syntax",
+    { "alec-gibson/nvim-tetris", cmd = "Tetris" },
 }
 
 return packages

@@ -6,7 +6,7 @@
            :Statusline "guibg=#312C3E"
            :TelescopeBorder "guifg=#534A76"
            :TelescopeMatching "guifg=#ff79c6"
-           :TelescopePromptPrefix "guifg=#5a4b81"
+           :TelescopePromptPrefix "guifg=#78d1e1"
            :TelescopeSelectionCaret "guifg=#ff79c6"
            :TelescopeSelection "guifg=#67e480"
            :Keyword "guifg=#ff79c6"}]

@@ -17,7 +17,7 @@
    :find_file (.. (icons.get "telescope") " ")
    :new_file (.. (icons.get "file") " ")
    :change_colorscheme " "
-   :find_word " "
+   :find_word (.. (icons.get "search") " ")
    :book_marks (.. (icons.get "bookmark") " ")})
 (set nvim.g.dashboard_change_to_dir 1)
 (set nvim.g.dashboard_default_executive "telescope")

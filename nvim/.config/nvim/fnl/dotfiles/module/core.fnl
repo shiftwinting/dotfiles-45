@@ -3,8 +3,6 @@
             core aniseed.core
             str aniseed.string}})
 
-(defn autocmd [event name action]
-      (nvim.ex.autocmd event name action))
 
 (defn setopt [opt value]
   "Sets a vim option"
@@ -12,24 +10,23 @@
 
 (nvim.ex.colorscheme :omni)
 
-(autocmd :FileType :dashboard "set showtabline=1")
-(autocmd :WinLeave :<buffer> "set showtabline=2")
-(autocmd "BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc")
-(autocmd :BufWritePost :wezterm.fnl "!fennel --compile wezterm.fnl > wezterm.lua")
-(autocmd :FileType :fennel "setlocal indentexpr=lisp")
-(autocmd :FileType :clojure "setlocal indentexpr=lisp")
-(autocmd :CursorHoldI "lua require('lspsaga.signaturehelp').signature_help()")
-(autocmd "CursorHold,CursorHoldI" "*.rs" "lua require'lsp_extensions'.inlay_hints {
-                                              prefix = ' » ',
-                                              only_current_line = true,}")
-(autocmd "BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}")
-(autocmd :FileType :Results "let b:auto_cursorline_disabled = 1")
-(autocmd :FileType :query "ParinferOff")
-(autocmd :FileType :scheme "ParinferOff")
-
+(let [autocmds [[:WinLeave :<buffer> "set showtabline=2"]
+                ["BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc"]
+                [:BufWritePost :wezterm.fnl "!fennel --compile wezterm.fnl > wezterm.lua"]
+                [:FileType :fennel "setlocal indentexpr=lisp"]
+                [:FileType :clojure "setlocal indentexpr=lisp"]
+                [:CursorHoldI "lua require('lspsaga.signaturehelp').signature_help()"]
+                ["CursorHold,CursorHoldI" "*.rs" "lua require'lsp_extensions'.inlay_hints {
+                                                      prefix = ' » ',
+                                                      only_current_line = true,}"]
+                ["BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}"]
+                [:FileType :Results "let b:auto_cursorline_disabled = 1"]
+                [:FileType :query "ParinferOff"]
+                [:FileType :scheme "ParinferOff"]]]
+     (core.map (fn [event name action]
+                  (nvim.ex.autocmd event name action)) autocmds))
 (let [options
-       {:termguicolors true
-        :mouse :a
+       {:mouse :a
         :number true
         :relativenumber true
         :guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))
@@ -46,10 +43,10 @@
         :hidden true
         :autoindent true
         :smartindent true
-        :emoji true
+        :emoji false
         :list true
-        :pumblend 15
-        :winblend 15
+        :pumblend 0
+        :winblend 0
         :title true
         :incsearch true
         :hlsearch true
@@ -57,17 +54,17 @@
         :fixeol true
         :smarttab true
         :smartindent true
-        :undofile true}]
+        :undofile true :guifont "Fira Code,nonicon:h11"}]
      (each [option value (pairs options)]
        (setopt option value)))
 
 (if
-  nvim.g.gnvim          (setopt :guifont "JetBrains Mono,nonicon,Delugia Mono Nerd Font,Inter:h12")
+  nvim.g.gnvim          (setopt :guifont "JetBrains Mono,nonicon,FantasqueSansMono Nerd Font,Inter:h12")
   nvim.g.gonvim_running (do
                          (setopt :linespace 2)
                          (setopt :guifont "Delugia Mono Nerd Font:h11"))
-  nvim.g.neovide        (setopt :guifont "Fira Code,nonicon,Delugia Mono Nerd Font,Inter,Noto Color Emoji:h17")
-  nvim.g.uivonim        (setopt :guifont "Fira Code,nonicon,Delugia Mono Nerd Font,Inter,Noto Color Emoji:h30"))
+  nvim.g.neovide        (setopt :guifont "Fira Code,nonicon,FantasqueSansMono Nerd Font,Inter:h15")
+  nvim.g.uivonim        (setopt :guifont "Fira Code,nonicon,FantasqueSansMono Nerd Font,Inter,Noto Color Emoji:h30"))
 
 (when nvim.g.gnvim
   (setopt :completeopt "menuone,noinsert,noselect,preview"))

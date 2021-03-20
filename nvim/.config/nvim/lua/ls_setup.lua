@@ -9,13 +9,14 @@ local on_init = function(client)
     end
 end
 lsp_status.register_progress()
-local icons = require "nvim-nonicons"
+local icons = require("nvim-nonicons")
 lsp_status.config({
     indicator_errors = icons.get("stop"),
     indicator_warnings = icons.get("alert"),
     indicator_info = "i",
     indicator_hint = "H",
     indicator_ok = icons.get("check"),
+    status_symbol = "",
 })
 
 if vim.g.uivonim == 1 then
@@ -27,9 +28,9 @@ if vim.g.uivonim == 1 then
     })
     lspconfig.sumneko_lua.setup({
         cmd = {
-            vim.fn.expand"~/bin/lua-language-server/bin/Linux/lua-language-server",
+            vim.fn.expand("~/bin/lua-language-server/bin/Linux/lua-language-server"),
             "-E",
-            vim.fn.expand"~/bin/lua-language-server/main.lua",
+            vim.fn.expand("~/bin/lua-language-server/main.lua"),
         },
         settings = {
             Lua = {
@@ -68,9 +69,9 @@ else
     })
     lspconfig.sumneko_lua.setup({
         cmd = {
-            vim.fn.expand"/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server",
+            vim.fn.expand("/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server"),
             "-E",
-            vim.fn.expand"/home/p00f/bin/lua-language-server/main.lua",
+            vim.fn.expand("/home/p00f/bin/lua-language-server/main.lua"),
         },
         settings = {
             Lua = {
