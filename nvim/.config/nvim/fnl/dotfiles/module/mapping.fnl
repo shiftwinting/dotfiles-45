@@ -57,9 +57,6 @@
 (smap :n :<leader>n ":NvimTreeFindFile<CR>")
 (smap :n :<leader>r ":NvimTreeRefresh<CR>")
 
-;nvim-treesitter
-(smap :n :<C-h> ":w | e | TSBufEnable highlight<CR>")
-
 ;nvim-colorizer
 (smap :n :<leader>c ":ColorizerToggle<CR>")
 

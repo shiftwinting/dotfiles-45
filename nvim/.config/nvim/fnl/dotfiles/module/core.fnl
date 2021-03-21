@@ -23,7 +23,7 @@
                 [:FileType :Results "let b:auto_cursorline_disabled = 1"]
                 [:FileType :query "ParinferOff"]
                 [:FileType :scheme "ParinferOff"]]]
-     (core.map (fn [event name action]
+     (core.map (fn [[event name action]]
                   (nvim.ex.autocmd event name action)) autocmds))
 (let [options
        {:mouse :a
@@ -54,7 +54,8 @@
         :fixeol true
         :smarttab true
         :smartindent true
-        :undofile true :guifont "Fira Code,nonicon:h11"}]
+        :undofile true
+        :guifont "Fira Code,nonicon:h11"}]
      (each [option value (pairs options)]
        (setopt option value)))
 

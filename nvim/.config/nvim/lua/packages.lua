@@ -7,6 +7,7 @@ local packages = {
     "jeffkreeftmeijer/vim-numbertoggle",
     "jiangmiao/auto-pairs",
     "justinmk/vim-gtfo", -- <--
+    { "kyazdani42/nvim-tree.lua" },
     {
         "yamatsum/nvim-nonicons",
         requires = "kyazdani42/nvim-web-devicons",
@@ -108,7 +109,7 @@ local packages = {
         end,
     },
     "takac/vim-hardtime",
-    { "tjdevries/express_line.nvim", config = "require [[expressline_setup]]" },
+    { "glepnir/galaxyline.nvim/", config = "require [[statusline]]" },
     "antoinemadec/FixCursorHold.nvim",
     "numtostr/FTerm.nvim",
     {

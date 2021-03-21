@@ -1,29 +1,31 @@
 local gl = require("galaxyline")
+local icons = require("nvim-nonicons")
 local colors = {
-    bg = "#282c34",
-    yellow = "#fabd2f",
-    cyan = "#008080",
-    darkblue = "#081633",
-    green = "#608B4E",
+    bg = "#312C3E",
+    yellow = "#e7de79",
+    cyan = "#a1efe4",
+    darkblue = "#13111b",
+    green = "#67e480",
     orange = "#FF8800",
-    purple = "#5d4d7a",
-    magenta = "#d16d9e",
+    purple = "#988bc7",
+    magenta = "#ff79c6",
     grey = "#c0c0c0",
-    blue = "#569CD6",
-    red = "#D16969",
+    blue = "#78d1e1",
+    red = "#ed4556",
 }
 local condition = require("galaxyline.condition")
 local gls = gl.section
-gl.short_line_list = { "NvimTree", "vista", "dbui" }
+gl.short_line_list = { "NvimTree" }
 
 gls.left[1] = {
-    RainbowRed = {
+    Separator = {
         provider = function()
-            return " "
+            return "// "
         end,
-        highlight = { colors.blue, colors.darkblue },
+        highlight = { colors.purple, colors.darkblue },
     },
 }
+
 gls.left[2] = {
     ViMode = {
         provider = function()
@@ -53,7 +55,7 @@ gls.left[2] = {
             return mode_letters[vim.fn.mode()]
         end,
         separator = " ",
-        highlight = { colors.red, colors.darkblue },
+        highlight = { colors.blue, colors.darkblue },
         separator_highlight = { colors.darkblue, colors.darkblue },
     },
 }
@@ -88,53 +90,53 @@ gls.left[5] = {
 }
 
 gls.left[6] = {
+    DiagnosticError = {
+        provider = "DiagnosticError",
+        icon = " " .. icons.get("stop") .. " ",
+        highlight = { colors.red, colors.bg },
+    },
+}
+
+gls.left[7] = {
+    DiagnosticWarn = {
+        provider = "DiagnosticWarn",
+        icon = " " .. icons.get("alert") .. " ",
+        highlight = { colors.yellow, colors.bg },
+    },
+}
+
+gls.left[8] = {
+    DiagnosticHint = {
+        provider = "DiagnosticHint",
+        icon = " " .. "H" .. " ",
+        highlight = { colors.cyan, colors.bg },
+    },
+}
+
+gls.left[9] = {
+    DiagnosticInfo = {
+        provider = "DiagnosticInfo",
+        icon = " " .. "i" .. " ",
+        highlight = { colors.blue, colors.bg },
+    },
+}
+
+gls.mid[1] = {
     FileIcon = {
         provider = "FileIcon",
         condition = condition.buffer_not_empty,
         highlight = {
             require("galaxyline.provider_fileinfo").get_file_icon_color,
-            colors.darkblue,
+            colors.bg,
         },
     },
 }
 
-gls.left[7] = {
+gls.mid[2] = {
     FileName = {
         provider = { "FileName" },
         condition = condition.buffer_not_empty,
-        highlight = { colors.magenta, colors.darkblue },
-    },
-}
-
-gls.left[8] = {
-    DiagnosticError = {
-        provider = "DiagnosticError",
-        icon = "  🚫 ",
-        highlight = { colors.red, colors.bg },
-    },
-}
-
-gls.left[9] = {
-    DiagnosticWarn = {
-        provider = "DiagnosticWarn",
-        icon = " ⚠️ ",
-        highlight = { colors.yellow, colors.bg },
-    },
-}
-
-gls.left[10] = {
-    DiagnosticHint = {
-        provider = "DiagnosticHint",
-        icon = " 💡",
-        highlight = { colors.cyan, colors.bg },
-    },
-}
-
-gls.left[11] = {
-    DiagnosticInfo = {
-        provider = "DiagnosticInfo",
-        icon = " ℹ️ ",
-        highlight = { colors.blue, colors.bg },
+        highlight = { colors.magenta, colors.bg },
     },
 }
 
@@ -142,7 +144,7 @@ gls.right[1] = {
     DiffAdd = {
         provider = "DiffAdd",
         condition = condition.hide_in_width,
-        icon = "  ",
+        icon = icons.get("diff-added"),
         highlight = { colors.green, colors.bg },
     },
 }
@@ -150,7 +152,7 @@ gls.right[2] = {
     DiffModified = {
         provider = "DiffModified",
         condition = condition.hide_in_width,
-        icon = " 柳",
+        icon = icons.get("diff-modified"),
         highlight = { colors.orange, colors.bg },
     },
 }
@@ -158,7 +160,7 @@ gls.right[3] = {
     DiffRemove = {
         provider = "DiffRemove",
         condition = condition.hide_in_width,
-        icon = "  ",
+        icon = icons.get("diff-removed"),
         highlight = { colors.red, colors.bg },
     },
 }
