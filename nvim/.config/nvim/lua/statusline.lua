@@ -1,5 +1,6 @@
 local gl = require("galaxyline")
 local icons = require("nvim-nonicons")
+local has_lsp_status, lsp_status = pcall(require, "lsp-status")
 local colors = {
     bg = "#312C3E",
     yellow = "#e7de79",
@@ -73,7 +74,7 @@ gls.left[4] = {
             return ""
         end,
         condition = condition.check_git_workspace,
-        highlight = { colors.orange, colors.darkblue },
+        highlight = { colors.green, colors.darkblue },
         separator = " ",
         separator_highlight = { colors.bg, colors.darkblue },
     },
@@ -84,7 +85,7 @@ gls.left[5] = {
         provider = "GitBranch",
         separator = " ",
         condition = condition.check_git_workspace,
-        highlight = { colors.orange, colors.darkblue },
+        highlight = { colors.green, colors.darkblue },
         separator_highlight = { colors.bg, colors.darkblue },
     },
 }
@@ -139,8 +140,43 @@ gls.mid[2] = {
         highlight = { colors.magenta, colors.bg },
     },
 }
-
 gls.right[1] = {
+    ServerProgress = {
+        provider = function()
+            if has_lsp_status then
+                local buffer_clients = vim.lsp.buf_get_clients(0)
+                local buffer_client_set = {}
+                for _, v in pairs(buffer_clients) do
+                    buffer_client_set[v.name] = true
+                end
+                local all_messages = lsp_status.messages()
+                for _, msg in ipairs(all_messages) do
+                    if msg.name and buffer_client_set[msg.name] then
+                        local contents = ""
+                        if msg.progress then
+                            contents = msg.title
+                            if msg.message then
+                                contents = contents .. " " .. msg.message
+                            end
+                            if msg.percentage then
+                                contents = contents .. " (" .. msg.percentage .. ")"
+                            end
+                        elseif msg.status then
+                            contents = msg.content
+                        else
+                            contents = msg.content
+                        end
+                        return " " .. contents .. " "
+                    end
+                end
+            else
+                return ""
+            end
+        end,
+        highlight = { colors.orange, colors.bg },
+    },
+}
+gls.right[2] = {
     DiffAdd = {
         provider = "DiffAdd",
         condition = condition.hide_in_width,
@@ -148,7 +184,7 @@ gls.right[1] = {
         highlight = { colors.green, colors.bg },
     },
 }
-gls.right[2] = {
+gls.right[3] = {
     DiffModified = {
         provider = "DiffModified",
         condition = condition.hide_in_width,
@@ -156,7 +192,7 @@ gls.right[2] = {
         highlight = { colors.orange, colors.bg },
     },
 }
-gls.right[3] = {
+gls.right[4] = {
     DiffRemove = {
         provider = "DiffRemove",
         condition = condition.hide_in_width,
@@ -164,7 +200,7 @@ gls.right[3] = {
         highlight = { colors.red, colors.bg },
     },
 }
-gls.right[4] = {
+gls.right[5] = {
     LineInfo = {
         separator = " ",
         provider = "LineColumn",
@@ -173,7 +209,7 @@ gls.right[4] = {
     },
 }
 
-gls.right[5] = {
+gls.right[6] = {
     FileEncode = {
         provider = "FileEncode",
         separator = " ",
@@ -182,7 +218,7 @@ gls.right[5] = {
     },
 }
 
-gls.right[6] = {
+gls.right[7] = {
     FileFormat = {
         provider = "FileFormat",
         separator = " ",
@@ -190,7 +226,7 @@ gls.right[6] = {
         highlight = { colors.green, colors.bg },
     },
 }
-gls.right[7] = {
+gls.right[8] = {
     PerCent = {
         provider = "LinePercent",
         separator = " ",
@@ -199,7 +235,7 @@ gls.right[7] = {
     },
 }
 
-gls.right[8] = {
+gls.right[9] = {
     RainbowBlue = {
         provider = function()
             return " ▊"

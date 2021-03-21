@@ -9,9 +9,6 @@
            :TelescopePromptPrefix "guifg=#78d1e1"
            :TelescopeSelectionCaret "guifg=#ff79c6"
            :TelescopeSelection "guifg=#67e480"
-           :Keyword "guifg=#ff79c6"
-           :Diag "guifg=#FF6B00 guibg=#312C3E"
-           :Filename "guifg=#78d1e1 guibg=#312C3E"
-           :Gitbranch "guifg=#67e480 guibg=#312C3E"}]
+           :Keyword "guifg=#ff79c6"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
