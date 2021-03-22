@@ -8,10 +8,12 @@
 
 (let [globals
        {:indent_blankline_char ""
+        :indent_blankline_show_current_context true
+        :indent_blankline_context_patterns ["class" "function" "method" "repeat" "conditional"]
         :cphlang "cpp"
         :cpp_compile_command "g++ -D XOX solution.cpp -o cpp.out -g -O0"
         :dap_virtual_text "all frames"
-        :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results]
+        :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus]
         :indent_blankline_char_highlight_list [:Conceal]
         :indent_blankline_use_treesitter true
         :float_preview#docked 0

@@ -21,7 +21,7 @@ lsp_status.config({
     indicator_errors = icons.get("stop"),
     indicator_warnings = icons.get("alert"),
     indicator_info = "i",
-    indicator_hint = "H",
+    indicator_hint = "?",
     indicator_ok = icons.get("check"),
     status_symbol = "",
 })
@@ -58,9 +58,13 @@ if vim.g.uivonim == 1 then
     })
     lspconfig.clangd.setup({
         capabilities = capabilities,
+        handlers = lsp_status.extensions.clangd.setup(),
         on_attach = lsp_status.on_attach,
         callbacks = lsp_callbacks,
         on_init = on_init,
+        init_options = {
+            clangdFileStatus = true,
+        },
     })
     lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
@@ -99,7 +103,11 @@ else
     lspconfig.clangd.setup({
         capabilities = capabilities,
         on_attach = lsp_status.on_attach,
+        handlers = lsp_status.extensions.clangd.setup(),
         on_init = on_init,
+        init_options = {
+            clangdFileStatus = true,
+        },
     })
     lspconfig.rust_analyzer.setup({
         capabilities = capabilities,

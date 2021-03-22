@@ -142,6 +142,7 @@ local packages = {
     { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
     "wfxr/minimap.vim",
     "kdheepak/lazygit.nvim",
+    "TimUntersberger/neogit",
     "andymass/vim-matchup",
     "KabbAmine/vCoolor.vim",
     { "lewis6991/gitsigns.nvim", config = [[require('gitsigns').setup{keymaps={}}]] },

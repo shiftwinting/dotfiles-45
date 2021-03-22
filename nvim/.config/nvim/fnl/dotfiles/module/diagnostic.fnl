@@ -3,7 +3,7 @@
             lsp vim.lsp
             core aniseed.core}})
 
-(let [diag-attrs  [[:Hint "#988bc7" "H"]
+(let [diag-attrs  [[:Hint "#988bc7" "?"]
                    [:Warning "#E4803A" ">>"]
                    [:Information "#038013" "i"]
                    [:Error "#ed4556" ">>"]]
