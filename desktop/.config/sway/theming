@@ -60,5 +60,5 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
     gsettings set $gnome-schema icon-theme 'Adwaita++-Dark'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
-    gsettings set $gnome-schema font-name 'Fira Sans 11'
+    gsettings set $gnome-schema font-name 'Cantarell 10.8'
 }

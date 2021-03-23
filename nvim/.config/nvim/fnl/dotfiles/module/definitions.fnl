@@ -19,7 +19,7 @@
         :float_preview#docked 0
         :vista_default_executive "nvim_lsp"
         :neovide_window_floating_blur false
-        :neovide_window_floating_opacity 0.8
+        :neovide_window_floating_opacity 0.7
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime
         :sexp_filetypes "clojure,query,fennel"
         :sidekick_printable_def_types ["function" "class" "type" "module" "parameter" "method" "field"]

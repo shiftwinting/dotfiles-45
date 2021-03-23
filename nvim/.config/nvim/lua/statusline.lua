@@ -7,7 +7,7 @@ local colors = {
     cyan = "#a1efe4",
     darkblue = "#13111b",
     green = "#67e480",
-    orange = "#FF8800",
+    orange = "#FFB86C",
     purple = "#988bc7",
     magenta = "#ff79c6",
     grey = "#c0c0c0",
@@ -180,7 +180,7 @@ gls.right[2] = {
     DiffAdd = {
         provider = "DiffAdd",
         condition = condition.hide_in_width,
-        icon = icons.get("diff-added"),
+        icon = icons.get("diff-added") .. " ",
         highlight = { colors.green, colors.bg },
     },
 }
@@ -188,7 +188,7 @@ gls.right[3] = {
     DiffModified = {
         provider = "DiffModified",
         condition = condition.hide_in_width,
-        icon = icons.get("diff-modified"),
+        icon = icons.get("diff-modified") .. " ",
         highlight = { colors.orange, colors.bg },
     },
 }
@@ -196,7 +196,7 @@ gls.right[4] = {
     DiffRemove = {
         provider = "DiffRemove",
         condition = condition.hide_in_width,
-        icon = icons.get("diff-removed"),
+        icon = icons.get("diff-removed") .. " ",
         highlight = { colors.red, colors.bg },
     },
 }
