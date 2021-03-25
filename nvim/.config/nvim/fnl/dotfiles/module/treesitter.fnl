@@ -5,7 +5,7 @@
 (tsconfigs.setup
   {:highlight {:enable true
                :use_languagetree true
-               :disable ["clojure"]}
+               :disable ["clojure" "css"]}
    :rainbow {:enable true
              :disable ["cpp"]}
    :indent {:enable true}

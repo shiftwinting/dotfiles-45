@@ -10,7 +10,8 @@
       :clojure [:joker]
       :fennel [:joker]
       :cpp []
-      :rust []})
+      :rust []
+      :c []})
 
 (set nvim.g.ale_fixers
      {:* [:remove_trailing_lines :trim_whitespace]})

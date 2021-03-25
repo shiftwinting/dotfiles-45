@@ -1,6 +1,12 @@
 (module dotfiles.module.formatter
   {require {formatter formatter}})
 
+(defn- prettier [lang]
+ (fn [] {:exe "prettier"
+         :args ["--tab-width 4"
+                (.. "--parser " lang)]
+         :stdin true}))
+
 (formatter.setup
     {:filetype {:lua
                 [(fn [] {:exe "stylua"
@@ -32,4 +38,9 @@
                 :zsh
                 [(fn [] {:exe "shfmt"
                          :args ["-i 4"]
-                         :stdin true})]}})
+                         :stdin true})]
+                :css  [(prettier "css")]
+                :json [(prettier "json")]
+                :less [(prettier "less")]
+                :xml  [(prettier "xml")]
+                :toml [(prettier "toml")]}})

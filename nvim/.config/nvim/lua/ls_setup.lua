@@ -44,6 +44,8 @@ if vim.g.uivonim == 1 then
                 -- runtime = {version = 'LuaJIT', path = vim.split(package.path, ';')},
                 diagnostics = { globals = { "vim" } },
                 completion = { keywordSnippet = true },
+                hint = { enable = true },
+                telemetry = { enable = true },
             },
         },
         callbacks = lsp_callbacks,

@@ -30,7 +30,14 @@ Used by GPG configuration, email clients, file templates and snippets.
 
 *** Org directory
 #+BEGIN_SRC emacs-lisp
+(require 'org)
 (setq org-directory "~/org/")
+(require 'ox-latex)
+(setq org-latex-listings 'minted)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(setq org-export-use-babel nil)
+(setq org-latex-pdf-process
+      '("pdflatex -shell-escape %f"))
 #+END_SRC
 
 
