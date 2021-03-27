@@ -1,3 +1,25 @@
+@keyframes blink-warning {
+    70% {
+        color: @theme_fg_color;
+    }
+
+    to {
+        color: @theme_fg_color;
+        background-color: orange;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+        color: @theme_fg_color;
+    }
+
+    to {
+        color: @theme_fg_color;
+        background-color: red;
+    }
+}
+
 * {
     border: none;
     border-radius: 0;
@@ -8,21 +30,7 @@
     padding: 0;
 }
 
-@define-color dark #3c3836;
-@define-color network #67e480;
-@define-color white #bbbbbb;
-@define-color brightwhite #FCE8C3;
-@define-color pulseaudio #ff79c6;
-@define-color temperature #78d1e1;
-@define-color pacman #e7de79;
-@define-color firefox_media #FFB86C;
-@define-color idle_black #daadd6;
-@define-color clock white;
-@define-color workspaces #78d1e1;
-
 window#waybar {
-    background: black;
-    color: #bbbbbb;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
@@ -38,40 +46,31 @@ window#waybar.hidden {
     font-size: 14.5px;
 }
 
-/*
-window#waybar.empty {
-background-color: @black;
-}
-window#waybar.solo {
-background-color: #FFFFFF;
-}
- */
-
 #workspaces button {
-    padding: 0 5px;
-    color: @white;
-    background: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    color: #888888;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: @workspaces;
-    color: @dark;
+    background: #4c7899;
+    color: @theme_fg_color;
     text-shadow: inherit;
 }
 
 #workspaces button.focused {
-    background: black;
-    color: @workspaces;
+    color: @theme_fg_color;
+    background-color: @theme_selected_bg_color;
 }
 
 #workspaces button.urgent {
-    color: #eb4d4b;
+    color: @warning_color;
 }
 
 #mode {
-    color: #64727d;
-    border-bottom: 3px solid #fbf1c7;
+    background: #64727d;
 }
 
 #clock,
@@ -86,83 +85,38 @@ background-color: #FFFFFF;
 #idle_inhibitor,
 #custom-firefox_media,
 #custom-power,
+
 #mpd {
     padding: 0 10px;
-    margin: 0 0px;
 }
 
-@keyframes blink {
-    to {
-        background-color: white;
-        color: black;
-    }
-}
-
-label:focus {
-    background-color: black;
-}
 #clock {
-    color: @clock;
-    background: black;
-}
-
-#custom-pacman {
-    color: @pacman;
-    background: black;
-}
-
-#network {
-    color: @network;
-    background: black;
-}
-
-#network.disconnected {
-    color: #d79921;
-}
-
-#pulseaudio {
-    color: @pulseaudio;
-    background: black;
-}
-
-#temperature {
-    color: @temperature;
-    background: black;
+    font-weight: bold;
 }
 
 #temperature.critical {
-    color: #ef2f27;
+    background-color: @error_color;
+    color: @theme_fg_color;
 }
 
 #tray {
     background-color: #2c78bf;
 }
 
-#idle_inhibitor {
-    color: @dark;
-    background: @idle_black;
-}
-
-#idle_inhibitor.activated {
-    color: white;
-}
-
 #custom-firefox_media {
-    color: @firefox_media;
-    background: black;
     font-family: Fira Sans;
     font-size: 13px;
 }
 
 #custom-power {
-    color: #cc241d;
-    background: black;
+    color: red;
 }
 
 #mpd {
-    color: @firefox_media;
-    background: black;
     font-family: Cantarell;
     font-size: 12.5px;
-    font-weight: 600;
+}
+
+#network.disconnected {
+    color: @warning_color;
 }
