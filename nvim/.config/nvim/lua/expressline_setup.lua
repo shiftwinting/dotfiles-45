@@ -31,7 +31,6 @@ end)]]
 
 local separators = { left = "  ", right = "  " }
 
-
 require("el").setup({
     generator = function(_, _)
         return {

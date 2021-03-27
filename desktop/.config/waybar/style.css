@@ -2,30 +2,29 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Fantasque Sans Mono, all-the-icons, "FontAwesome 5 Free",
-        FantasqueSansMono Nerd Font;
-    font-size: 18px;
+    font-family: JetBrains Mono, all-the-icons, FantasqueSansMono Nerd Font;
+    font-size: 13px;
     min-height: 0;
     margin: 0;
     padding: 0;
 }
 
-@define-color bg #282828;
+@define-color bg #000000;
 @define-color dark #3c3836;
-@define-color network #608b4e;
-@define-color white #D0BFA1;
+@define-color network #67e480;
+@define-color white #bbbbbb;
 @define-color brightwhite #FCE8C3;
-@define-color pulseaudio #C586C0;
+@define-color pulseaudio #ff79c6;
 @define-color temperature #569cd6;
-@define-color pacman #CE9178;
-@define-color firefox_media #E55D1D;
+@define-color pacman #e7de79;
+@define-color firefox_media #FFB86C;
 @define-color idle_bg #daadd6;
 @define-color clock @white;
 @define-color workspaces #11a8cd;
 @define-color workspace_hover #9cdcfe;
-@define-color bct rgba(50, 50, 50, 0.5);
+@define-color bct #000000;
 window#waybar {
-    background: rgba(50, 50, 50, 0.5);
+    background: #000000;
     color: #bbbbbb;
     transition-property: background-color;
     transition-duration: 0.5s;

@@ -103,7 +103,7 @@ void debug_out(vector<string> args, int idx, int LINE_NUM, Head H, Tail... T) {
 #define debug(...) debug_out(vec_splitter(#__VA_ARGS__), 0, __LINE__, __VA_ARGS__)
 #else
 #define debug(...) 42
-#endif]])
+#endif]]),
     },
 }
 local s = [[let snippet-file-name = 'blah blah'

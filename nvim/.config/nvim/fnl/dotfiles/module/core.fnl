@@ -21,6 +21,7 @@
                                                       only_current_line = true,}"]
                 ["BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}"]
                 [:FileType :Results "let b:auto_cursorline_disabled = 1"]
+                [:FileType :NeogitStatus "let b:auto_cursorline_disabled = 1"]
                 [:FileType :query "ParinferOff"]
                 [:FileType :scheme "ParinferOff"]]]
      (core.map (fn [[event name action]]

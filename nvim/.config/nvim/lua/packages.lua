@@ -35,7 +35,6 @@ local packages = {
             "nvim-lua/lsp-status.nvim",
             -- "mfussenegger/nvim-dap",
             -- "theHamsta/nvim-dap-virtual-text",
-            { "sakhnik/nvim-gdb", run = "./install.sh", ft = "cpp" },
             {
                 "onsails/lspkind-nvim",
                 cond = function()
@@ -43,16 +42,16 @@ local packages = {
                 end,
                 config = "require 'lspkind_setup'",
             },
-            {
-                "glepnir/lspsaga.nvim",
-                cond = function()
-                    return vim.g.uivonim ~= 1
-                end,
-                config = [[require 'lspsaga'.init_lsp_saga{
-                                use_saga_diagnostic_sign = false,
-                                code_action_icon = "✨",
-                           }]],
-            },
+            --{
+            --    "glepnir/lspsaga.nvim",
+            --    cond = function()
+            --        return vim.g.uivonim ~= 1
+            --    end,
+            --    config = [[require 'lspsaga'.init_lsp_saga{
+            --                    use_saga_diagnostic_sign = false,
+            --                    code_action_icon = "✨",
+            --               }]],
+            --},
         },
         config = [[
             require 'ls_setup'
@@ -72,7 +71,6 @@ local packages = {
         "nvim-treesitter/nvim-treesitter-refactor",
         "nvim-treesitter/nvim-treesitter-textobjects", -- <--
         "nvim-treesitter/playground",
-        "ElPiloto/sidekick.nvim",
         "vigoux/architext.nvim", -- <--
     -- "romgrk/nvim-treesitter-context",
     },
@@ -109,9 +107,8 @@ local packages = {
         end,
     },
     "takac/vim-hardtime",
-    { "glepnir/galaxyline.nvim/", config = "require [[statusline]]" },
+    { "glepnir/galaxyline.nvim", config = "require [[statusline]]" },
     "antoinemadec/FixCursorHold.nvim",
-    "numtostr/FTerm.nvim",
     {
         "nvim-telescope/telescope.nvim",
         requires = {
@@ -125,8 +122,10 @@ local packages = {
             "tami5/sql.nvim",
             "nvim-telescope/telescope-cheat.nvim",
             "nvim-telescope/telescope-project.nvim",
+            "nvim-telescope/telescope-arecibo.nvim",
         --  "nvim-telescope/telescope-dap.nvim",
         },
+        rocks = { "openssl", "lua-http-parser" },
         config = [[
             require "telescope_setup"
             require('telescope').load_extension('fzy_native')
@@ -135,6 +134,7 @@ local packages = {
             require'telescope'.load_extension("cheat")
             require'telescope'.load_extension('frecency')
             require'telescope'.load_extension('project')
+            require 'telescope'.load_extension("arecibo")
             --  require('telescope').load_extension('dap')
             ]],
     },
@@ -142,13 +142,12 @@ local packages = {
     { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
     "wfxr/minimap.vim",
     "kdheepak/lazygit.nvim",
-    "TimUntersberger/neogit",
+    { "TimUntersberger/neogit", config = [[require('neogit').setup{}]] },
     "andymass/vim-matchup",
     "KabbAmine/vCoolor.vim",
     { "lewis6991/gitsigns.nvim", config = [[require('gitsigns').setup{keymaps={}}]] },
     "mtdl9/vim-log-highlighting",
     { "glacambre/firenvim", run = ":call firenvim#install(0)" },
-    "luochen1990/rainbow",
     "notomo/helpeek.vim",
     "tjdevries/train.nvim",
     "junegunn/limelight.vim",
@@ -181,7 +180,7 @@ local packages = {
         config = [[require('specs').setup{}]],
     },
     "aouelete/sway-vim-syntax",
-    { "alec-gibson/nvim-tetris", cmd = "Tetris" },
+    "monaqa/dial.nvim",
 }
 
 return packages

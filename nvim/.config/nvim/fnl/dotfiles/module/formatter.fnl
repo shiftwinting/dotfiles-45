@@ -19,6 +19,11 @@
                          :args ["--style"
                                 "\"{BasedOnStyle: Google, IndentWidth: 4}\""]
                          :stdin true})]
+                :c
+                [(fn [] {:exe "clang-format"
+                         :args ["--style"
+                                "\"{BasedOnStyle: Google, IndentWidth: 4}\""]
+                         :stdin true})]
                 :java
                 [(fn [] {:exe "google-java-format"
                          :args ["-"]
