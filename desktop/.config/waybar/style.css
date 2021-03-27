@@ -1,7 +1,6 @@
 * {
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrains Mono, all-the-icons, FantasqueSansMono Nerd Font;
     font-size: 13px;
     min-height: 0;
@@ -9,22 +8,20 @@
     padding: 0;
 }
 
-@define-color bg #000000;
 @define-color dark #3c3836;
 @define-color network #67e480;
 @define-color white #bbbbbb;
 @define-color brightwhite #FCE8C3;
 @define-color pulseaudio #ff79c6;
-@define-color temperature #569cd6;
+@define-color temperature #78d1e1;
 @define-color pacman #e7de79;
 @define-color firefox_media #FFB86C;
-@define-color idle_bg #daadd6;
-@define-color clock @white;
-@define-color workspaces #11a8cd;
-@define-color workspace_hover #9cdcfe;
-@define-color bct #000000;
+@define-color idle_black #daadd6;
+@define-color clock white;
+@define-color workspaces #78d1e1;
+
 window#waybar {
-    background: #000000;
+    background: black;
     color: #bbbbbb;
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -43,7 +40,7 @@ window#waybar.hidden {
 
 /*
 window#waybar.empty {
-background-color: @bg;
+background-color: @black;
 }
 window#waybar.solo {
 background-color: #FFFFFF;
@@ -53,18 +50,18 @@ background-color: #FFFFFF;
 #workspaces button {
     padding: 0 5px;
     color: @white;
-    background: @bct;
+    background: black;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: @workspace_hover;
+    background: @workspaces;
     color: @dark;
     text-shadow: inherit;
 }
 
 #workspaces button.focused {
-    background: @bct;
+    background: black;
     color: @workspaces;
 }
 
@@ -93,33 +90,30 @@ background-color: #FFFFFF;
     padding: 0 10px;
     margin: 0 0px;
 }
-/* #clock {
-  background-color: #585123;
-  } */
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: white;
+        color: black;
     }
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: black;
 }
 #clock {
     color: @clock;
-    background: @bct;
+    background: black;
 }
 
 #custom-pacman {
     color: @pacman;
-    background: @bct;
+    background: black;
 }
 
 #network {
     color: @network;
-    background: @bct;
+    background: black;
 }
 
 #network.disconnected {
@@ -128,12 +122,12 @@ label:focus {
 
 #pulseaudio {
     color: @pulseaudio;
-    background: @bct;
+    background: black;
 }
 
 #temperature {
     color: @temperature;
-    background: @bct;
+    background: black;
 }
 
 #temperature.critical {
@@ -146,28 +140,29 @@ label:focus {
 
 #idle_inhibitor {
     color: @dark;
-    background: @idle_bg;
+    background: @idle_black;
 }
 
 #idle_inhibitor.activated {
-    color: #ffffff;
+    color: white;
 }
 
 #custom-firefox_media {
     color: @firefox_media;
-    background: @bct;
+    background: black;
     font-family: Fira Sans;
     font-size: 13px;
 }
 
 #custom-power {
     color: #cc241d;
-    background: @bct;
+    background: black;
 }
 
 #mpd {
     color: @firefox_media;
-    background: @bct;
-    font-family: Fira Sans;
-    font-size: 13px;
+    background: black;
+    font-family: Cantarell;
+    font-size: 12.5px;
+    font-weight: 600;
 }
