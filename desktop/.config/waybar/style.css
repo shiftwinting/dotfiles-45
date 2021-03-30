@@ -5,7 +5,7 @@
 
     to {
         color: @theme_fg_color;
-        background-color: orange;
+        background-color: @warning_color;
     }
 }
 
@@ -16,7 +16,7 @@
 
     to {
         color: @theme_fg_color;
-        background-color: red;
+        background-color: @error_color;
     }
 }
 
@@ -85,7 +85,6 @@ window#waybar.hidden {
 #idle_inhibitor,
 #custom-firefox_media,
 #custom-power,
-
 #mpd {
     padding: 0 10px;
 }
@@ -104,8 +103,8 @@ window#waybar.hidden {
 }
 
 #custom-firefox_media {
-    font-family: Fira Sans;
-    font-size: 13px;
+    font-family: Cantarell;
+    font-size: 12.5px;
 }
 
 #custom-power {

@@ -6,16 +6,12 @@
 - [[#configuration][Configuration]]
   - [[#general-config][General config]]
     - [[#personal-info][Personal info]]
-    - [[#org-directory][Org directory]]
+    - [[#org-config][Org config]]
   - [[#doom-config][Doom config]]
     - [[#theme][Theme]]
     - [[#relative-line-numbers][Relative line numbers]]
     - [[#fonts][Fonts]]
-  - [[#package-config][Package config]]
     - [[#email][Email]]
-    - [[#clojure-cookbook][Clojure cookbook]]
-    - [[#tree-sitter][tree-sitter]]
-    - [[#set-online-judge-directory][set online-judge directory]]
 
 * Configuration
 ** General config
@@ -28,31 +24,23 @@ Used by GPG configuration, email clients, file templates and snippets.
 #+END_SRC
 
 
-*** Org directory
+*** Org config
 #+BEGIN_SRC emacs-lisp
 (require 'org)
 (setq org-directory "~/org/")
-(require 'ox-latex)
-(setq org-latex-listings 'minted)
-(add-to-list 'org-latex-packages-alist '("" "minted"))
-(setq org-export-use-babel nil)
-(setq org-latex-pdf-process
-      '("pdflatex -shell-escape %f"))
+;;(require 'ox-latex)
+;;(setq org-latex-listings 'minted)
+;;(add-to-list 'org-latex-packages-alist '("" "minted"))
+;;(setq org-export-use-babel nil)
+;;(setq org-latex-pdf-process
+;;      '("pdflatex -shell-escape %f"))
 #+END_SRC
 
 
 ** Doom config
 *** Theme
-There are two ways to load a theme. Both assume the theme is installed and available. You can either set ~doom-theme~ or manually load a theme with the ~load-theme~ function. This is the default:
 #+BEGIN_SRC emacs-lisp
 (setq doom-theme 'doom-dark+)
-(setq doom-modeline-github t)
-(setq all-the-icons-color-icons t)
-(setq doom-modeline-icon (display-graphic-p))
-(setq doom-modeline-buffer-modification-icon t)
-(setq doom-modeline-major-mode-icon t)
-(setq doom-modeline-major-mode-color-icon t)
-(setq doom-modeline-buffer-encoding t)
 #+END_SRC
 *** Relative line numbers
 #+BEGIN_SRC emacs-lisp
@@ -71,16 +59,8 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
       doom-big-font (font-spec :family "Fira Code" :size 19))
 #+END_SRC
 
-
-** Package config
-- ~load!~ for loading external *.el files relative to this one
-- ~use-package!~ for configuring packages
-- ~after!~ for running code after a package has loaded
-- ~add-load-path!~ for adding directories to the ~load-path~, relative to this file. Emacs searches the ~load-path~ when you load packages with ~require~ or ~use-package~.
-- ~map!~ for binding new keys
-
 *** Email
-#BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (require 'smtpmail)
 
 (use-package mu4e
@@ -134,64 +114,15 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
                             (smtpmail-smtp-service        . 587)
                             (user-mail-address            . ,(college-mail))
                             (smtpmail-smtp-user           . ,(college-mail))))))))
-#END_SRC
+#+END_SRC
 
-#+RESULTS:
-: t
 
 Create org-mode tasks with links to emails
-#BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (require 'org-mu4e)
 ;;store link to message if in header view, not to header query
 (setq mu4e-org-link-query-in-headers-mode nil)
 (setq org-capture-templates
       '(("t" "todo" entry (file+headline "~/org/todo.org" "Tasks")
          "* TODO [#A] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n%a\n")))
-#END_SRC
-
-*** Clojure cookbook
-#+BEGIN_SRC emacs-lisp
-(defun increment-clojure-cookbook ()
-  "When reading the Clojure cookbook, find the next section, and
-close the buffer. If the next section is a sub-directory or in
-the next chapter, open Dired so you can find it manually."
-  (interactive)
-  (let* ((cur (buffer-name))
-         (split-cur (split-string cur "[-_]"))
-         (chap (car split-cur))
-         (rec (car (cdr split-cur)))
-         (rec-num (string-to-number rec))
-         (next-rec-num (1+ rec-num))
-         (next-rec-s (number-to-string next-rec-num))
-         (next-rec (if (< next-rec-num 10)
-                       (concat "0" next-rec-s)
-                     next-rec-s))
-         (target (file-name-completion (concat chap "-" next-rec) "")))
-    (progn
-      (if (equal target nil)
-          (dired (file-name-directory (buffer-file-name)
-
-        (find-file target))))
-      (kill-buffer cur))))
-(map! :map adoc-mode-map "M-+" #'increment-clojure-cookbook)
-#+END_SRC
-*** tree-sitter
-#+BEGIN_SRC emacs-lisp
-(use-package tree-sitter
-  :config
-  (progn (require 'tree-sitter-langs)
-         (global-tree-sitter-mode)
-         (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-         (load "~/.config/doom/queries.el")))
-#+END_SRC
-
-*** set online-judge directory
-#+BEGIN_SRC emacs-lisp
-(setq oj-home-dir "~/cp-contests/oj")
-#+END_SRC
-
-**** (not needed rn)
-#+BEGIN_SRC emacs-lisp
-;(use-package dap-gdb-lldb
-;  :config (dap-gdb-lldb-setup))
 #+END_SRC

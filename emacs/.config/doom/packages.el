@@ -7,28 +7,13 @@
 
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-;(package! some-package)
-(package! adoc-mode)
-(package! quelpa)
-(package! quelpa-use-package)
-(package! cider)
-(package! all-the-icons)
-(package! org-mime)
-(package! tree-sitter)
-(package! tree-sitter-langs)
-(package! dap-mode)
-(package! oj)
-(package! f)
-(package! dash)
-(package! sly)
+                                        ;(package! some-package)
+
 (package! evil-mu4e)
-(package! fennel-mode)
-(package! ghub)
-(package! elcord)
-(package! parrot)
 (package! htmlize)
 (package! rust-mode)
 (package! ob-rust)
+(package! org-mime)
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
 ;; https://github.com/raxod502/straight.el#the-recipe-format
