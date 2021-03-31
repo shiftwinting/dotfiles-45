@@ -42,16 +42,16 @@ local packages = {
                 end,
                 config = "require 'lspkind_setup'",
             },
-            --{
-            --    "glepnir/lspsaga.nvim",
-            --    cond = function()
-            --        return vim.g.uivonim ~= 1
-            --    end,
-            --    config = [[require 'lspsaga'.init_lsp_saga{
-            --                    use_saga_diagnostic_sign = false,
-            --                    code_action_icon = "✨",
-            --               }]],
-            --},
+            {
+                "glepnir/lspsaga.nvim",
+                cond = function()
+                    return vim.g.uivonim ~= 1
+                end,
+                config = [[require 'lspsaga'.init_lsp_saga{
+                                use_saga_diagnostic_sign = false,
+                                code_action_icon = "✨",
+                           }]],
+            },
         },
         config = [[
             require 'ls_setup'
@@ -88,12 +88,6 @@ local packages = {
         },
     },
     "pbrisbin/vim-mkdir",
-    {
-        "yuttie/comfortable-motion.vim",
-        cond = function()
-            return (vim.g.neovide ~= true and vim.g.gonvim_running ~= 1)
-        end,
-    },
     "tpope/vim-surround",
     "tpope/vim-repeat", -- <--
     "tyru/caw.vim",
@@ -181,6 +175,7 @@ local packages = {
     },
     "aouelete/sway-vim-syntax",
     "monaqa/dial.nvim",
+    "karb94/neoscroll.nvim",
 }
 
 return packages

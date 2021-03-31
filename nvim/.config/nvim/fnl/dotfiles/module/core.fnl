@@ -55,7 +55,6 @@
         :fixeol true
         :smarttab true
         :smartindent true
-        :undofile true
         :guifont "Fira Code,nonicon:h11"}]
      (each [option value (pairs options)]
        (setopt option value)))
