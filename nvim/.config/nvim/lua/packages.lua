@@ -33,7 +33,7 @@ local packages = {
         requires = {
             "nvim-lua/lsp_extensions.nvim",
             "nvim-lua/lsp-status.nvim",
-            -- "mfussenegger/nvim-dap",
+            { "mfussenegger/nvim-dap" },
             -- "theHamsta/nvim-dap-virtual-text",
             {
                 "onsails/lspkind-nvim",
@@ -72,14 +72,23 @@ local packages = {
         "nvim-treesitter/nvim-treesitter-textobjects", -- <--
         "nvim-treesitter/playground",
         "vigoux/architext.nvim", -- <--
-    -- "romgrk/nvim-treesitter-context",
+        -- "romgrk/nvim-treesitter-context",
     },
     {
         "Olical/aniseed",
         config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]],
     },
     { -- Lisp
-        { "Olical/conjure", ft = { "fennel", "clojure" } },
+        {
+            "Olical/conjure",
+            ft = { "fennel", "clojure" },
+            config = [[
+                vim.g["conjure#highlight#enabled"] = 1
+                vim.g["conjure#highlight#timeout"] = 500
+                vim.g["conjure#highlight#group"] = "IncSearch"
+                vim.g["conjure#mapping#doc_word"] = "K"
+            ]],
+        },
         { "clojure-vim/vim-jack-in", ft = "clojure" },
         {
             "eraserhd/parinfer-rust",
@@ -117,7 +126,7 @@ local packages = {
             "nvim-telescope/telescope-cheat.nvim",
             "nvim-telescope/telescope-project.nvim",
             "nvim-telescope/telescope-arecibo.nvim",
-        --  "nvim-telescope/telescope-dap.nvim",
+            --  "nvim-telescope/telescope-dap.nvim",
         },
         rocks = { "openssl", "lua-http-parser" },
         config = [[
@@ -176,6 +185,7 @@ local packages = {
     "aouelete/sway-vim-syntax",
     "monaqa/dial.nvim",
     "karb94/neoscroll.nvim",
+    "novakne/kosmikoa.nvim",
 }
 
 return packages

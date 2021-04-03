@@ -26,7 +26,6 @@
         :rainbow_active 0
         :hardtime_default_on 0
         :list_of_normal_keys ["h" "j" "k" "l" "-" "+" "<LEFT>" "<RIGHT>"]
-        :AutoPairsMapCR false
-        :conjure#extract#tree_sitter#enabled true}]
+        :AutoPairsMapCR false}]
   (each [global_ value (pairs globals)]
        (set-global global_ value)))

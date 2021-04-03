@@ -18,7 +18,7 @@
                                                              :italic true})}
                    {:intensity "Half"
                     :font (font_with_fallback "Fira Code Light")}]
-      :font_size 11.0
+      :font_size 12.0
       :enable_scroll_bar true
       :default_cursor_style "BlinkingUnderline"
       :line_height 1.04

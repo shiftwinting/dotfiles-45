@@ -1,4 +1,3 @@
--- In a file lua/my_debug.lua
 local M = {}
 local last_gdb_config
 
@@ -13,7 +12,6 @@ M.start_c_debugger = function(args, mi_mode, mi_debugger_path)
             program = table.remove(args, 1),
             args = args,
             cwd = vim.fn.getcwd(),
-            env = { "VAR1=value1", "VAR2=value" },
             externalConsole = true,
             MIMode = mi_mode or "gdb",
             MIDebuggerPath = mi_debugger_path,

@@ -1,21 +1,21 @@
 @keyframes blink-warning {
     70% {
-        color: @theme_fg_color;
+        color: white;
     }
 
     to {
-        color: @theme_fg_color;
+        color: white;
         background-color: @warning_color;
     }
 }
 
 @keyframes blink-critical {
     70% {
-        color: @theme_fg_color;
+        color: white;
     }
 
     to {
-        color: @theme_fg_color;
+        color: white;
         background-color: @error_color;
     }
 }
@@ -23,7 +23,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrains Mono, all-the-icons, FantasqueSansMono Nerd Font;
+    font-family: JetBrains Mono, all-the-icons, "FontAwesome 5 Free", FantasqueSansMono Nerd Font;
     font-size: 13px;
     min-height: 0;
     margin: 0;
@@ -32,6 +32,7 @@
 
 window#waybar {
     transition-property: background-color;
+    background-color: black;
     transition-duration: 0.5s;
 }
 
@@ -42,6 +43,7 @@ window#waybar.hidden {
 #window {
     padding: 0 10px;
     font-family: Cantarell;
+    background-color: black;
     font-weight: 500;
     font-size: 14.5px;
 }
@@ -55,14 +57,14 @@ window#waybar.hidden {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: #4c7899;
-    color: @theme_fg_color;
+    background: #45a1ff;
+    color: white;
     text-shadow: inherit;
 }
 
 #workspaces button.focused {
-    color: @theme_fg_color;
-    background-color: @theme_selected_bg_color;
+    color: white;
+    background-color: #0060df;
 }
 
 #workspaces button.urgent {
@@ -95,7 +97,7 @@ window#waybar.hidden {
 
 #temperature.critical {
     background-color: @error_color;
-    color: @theme_fg_color;
+    color: white;
 }
 
 #tray {

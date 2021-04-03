@@ -28,12 +28,12 @@ Used by GPG configuration, email clients, file templates and snippets.
 #+BEGIN_SRC emacs-lisp
 (require 'org)
 (setq org-directory "~/org/")
-;;(require 'ox-latex)
-;;(setq org-latex-listings 'minted)
-;;(add-to-list 'org-latex-packages-alist '("" "minted"))
-;;(setq org-export-use-babel nil)
-;;(setq org-latex-pdf-process
-;;      '("pdflatex -shell-escape %f"))
+(require 'ox-latex)
+(setq org-latex-listings 'minted)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(setq org-export-use-babel nil)
+(setq org-latex-pdf-process
+      '("pdflatex -interaction nonstopmode -shell-escape %f" "pdflatex -interaction nonstopmode -shell-escape %f" "pdflatex -interaction nonstopmode -shell-escape %f"))
 #+END_SRC
 
 
@@ -69,7 +69,7 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
   :config
   (progn (setq mail-user-agent 'mu4e-user-agent
                sendmail-program "/usr/bin/msmtp"
-               mu4e-get-mail-command "offlineimap"
+               mu4e-get-mail-command "mbsync"
                message-send-mail-function 'smtpmail-send-it
                message-sendmail-f-is-evil t
                message-sendmail-extra-arguments '("--read-envelope-from")
@@ -89,10 +89,10 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
                     :match-func (lambda (msg) (when msg
                                                 (string-prefix-p "/GMail" (mu4e-message-field msg :maildir))))
                     :vars `(
-                            (mu4e-refile-folder           . "/GMail/[Gmail].Archive")
-                            (mu4e-drafts-folder           . "/GMail/[Gmail].Drafts")
-                            (mu4e-sent-folder             . "/GMail/[Gmail].Sent Mail")
-                            (mu4e-trash-folder            . "/GMail/Trash")
+                            (mu4e-refile-folder           . "/GMail/[Gmail]/Archive")
+                            (mu4e-drafts-folder           . "/GMail/[Gmail]/Drafts")
+                            (mu4e-sent-folder             . "/GMail/[Gmail]/Sent Mail")
+                            (mu4e-trash-folder            . "/GMail/[Gmail]/Bin")
                             (smtpmail-stream-type         . tls)
                             (smtpmail-default-smtp-server . "smtp.gmail.com")
                             (smtpmail-smtp-server         . "smtp.gmail.com")
@@ -104,10 +104,10 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
                     :match-func (lambda (msg) (when msg
                                                 (string-prefix-p "/BITS" (mu4e-message-field msg :maildir))))
                     :vars `(
-                            (mu4e-refile-folder           . "/BITS/[Gmail].Archive")
-                            (mu4e-drafts-folder           . "/BITS/[Gmail].Drafts")
-                            (mu4e-sent-folder             . "/BITS/[Gmail].Sent Mail")
-                            (mu4e-trash-folder            . "/BITS/Trash")
+                            (mu4e-refile-folder           . "/BITS/[Gmail]/Archive")
+                            (mu4e-drafts-folder           . "/BITS/[Gmail]/Drafts")
+                            (mu4e-sent-folder             . "/BITS/[Gmail]/Sent Mail")
+                            (mu4e-trash-folder            . "/BITS/[Gmail]/Trash")
                             (smtpmail-stream-type         . tls)
                             (smtpmail-default-smtp-server . "smtp.gmail.com")
                             (smtpmail-smtp-server         . "smtp.gmail.com")

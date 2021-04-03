@@ -104,6 +104,10 @@ void debug_out(vector<string> args, int idx, int LINE_NUM, Head H, Tail... T) {
 #else
 #define debug(...) 42
 #endif]]),
+        debugin = U.match_indentation([[
+#ifdef XOX
+freopen("input1", "r", stdin);
+#endif]]),
     },
 }
 local s = [[let snippet-file-name = 'blah blah'

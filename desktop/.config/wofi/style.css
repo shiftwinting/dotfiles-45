@@ -3,11 +3,13 @@ window {
     border: 2px;
     border-radius: 7px;
     padding: 0;
+    background-color: #0f1126;
 }
 
 #input {
     margin: 5px;
     border: 2px;
+    background-color: #202340;
 }
 
 #inner-box {
@@ -29,4 +31,8 @@ window {
 #text:selected {
     border: 2px;
     border-radius: 2px;
+}
+
+#entry:selected {
+    background-color: #0060df;
 }
