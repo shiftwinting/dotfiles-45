@@ -25,3 +25,7 @@
   path = meld
 [commit]
   gpgsign = true
+[sendemail]
+  smtpserver = /usr/bin/msmtp
+  smtpserveroption = -a
+  smtpserveroption = GMail
