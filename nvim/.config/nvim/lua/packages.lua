@@ -184,8 +184,14 @@ local packages = {
     },
     "aouelete/sway-vim-syntax",
     "monaqa/dial.nvim",
-    "karb94/neoscroll.nvim",
-    "novakne/kosmikoa.nvim",
+    {
+        "karb94/neoscroll.nvim",
+        cond = function()
+            return vim.g.neovide ~= true
+        end,
+        config = [[require('neoscroll').setup({hide_cursor = true})]],
+    },
+    { "nacro90/numb.nvim", config = [[require('numb').setup()]] },
 }
 
 return packages

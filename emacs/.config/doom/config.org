@@ -20,7 +20,7 @@ Used by GPG configuration, email clients, file templates and snippets.
 #+BEGIN_SRC emacs-lisp
 (load "~/.config/doom/mail-ids")
 (setq user-full-name "Chinmay Dalal")
-(setq user-mail-address (personal-mail))
+(setq user-mail-address "dalal.chinmay.0101@gmail.com")
 #+END_SRC
 
 
@@ -97,8 +97,8 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
                             (smtpmail-default-smtp-server . "smtp.gmail.com")
                             (smtpmail-smtp-server         . "smtp.gmail.com")
                             (smtpmail-smtp-service        . 587)
-                            (smtpmail-smtp-user           . ,(personal-mail))
-                            (user-mail-address            . ,(personal-mail))))
+                            (smtpmail-smtp-user           . "dalal.chinmay.0101@gmail.com")
+                            (user-mail-address            . "dalal.chinmay.0101@gmail.com")))
                   ,(make-mu4e-context
                     :name "BITS"
                     :match-func (lambda (msg) (when msg

@@ -43,12 +43,13 @@
 (smap :n :<leader> ":Telescope keymaps<CR>")
 (smap :n :<C-p> ":Telescope project<CR>")
 
-; smooth scroll <-- revisit this when trying gui
-
-(smap :n :<Up> ":lua require('neoscroll').scroll(-vim.wo.scroll, false)<CR>")
-(smap :n :<ScrollWheelUp> "<cmd>lua require('neoscroll').scroll(-10, false)<CR>")
-(smap :n :<Down> ":lua require('neoscroll').scroll(vim.wo.scroll, false)<CR>")
-(smap :n :<ScrollWheelDown> "<cmd>lua require('neoscroll').scroll(10, false)<CR>")
+; smooth scroll
+(when (not nvim.g.neovide)
+ (do
+  (smap :n :<Up> ":lua require('neoscroll').scroll(-vim.wo.scroll, false, 20)<CR>")
+  (smap :n :<ScrollWheelUp> "<cmd>lua require('neoscroll').scroll(-10, false, 20)<CR>")
+  (smap :n :<Down> ":lua require('neoscroll').scroll(vim.wo.scroll, false, 20)<CR>")
+  (smap :n :<ScrollWheelDown> "<cmd>lua require('neoscroll').scroll(10, false, 20)<CR>")))
 
 ;NvimTree
 (smap :n :<leader>v ":NvimTreeToggle<CR>")
