@@ -18,7 +18,7 @@ source ~/.zsh_plugins.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export EDITOR="nvim"
-
+export NAVI_FINDER="skim"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -45,7 +45,6 @@ alias :q='exit'
 alias pins="paru -Slq | sk -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 alias lg="TERM=xterm-256color lazygit"
 alias n="nvim"
-#alias fzf='sk'
 
 # broot
 source /home/p00f/.config/broot/launcher/bash/br
@@ -67,3 +66,4 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/bit bit
 eval "$(zoxide init zsh)"
 zmodload zsh/zpty
+eval "$(navi widget zsh)"

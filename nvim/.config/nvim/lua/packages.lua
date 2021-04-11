@@ -1,6 +1,6 @@
 local packages = {
     { "wbthomason/packer.nvim", opt = true },
-    { "Akin909/nvim-bufferline.lua", config = "require [[bufferline]].setup()" },
+    { "Akin909/nvim-bufferline.lua", config = "require [[bufferline]].setup({options={separator_style='slant'}})" },
     "dense-analysis/ale",
     "editorconfig/editorconfig-vim",
     "hardcoreplayers/dashboard-nvim",
@@ -67,6 +67,7 @@ local packages = {
     { "norcalli/nvim-colorizer.lua", config = { "require [[colorizer]].setup()" } },
     { -- Treesitter
         "nvim-treesitter/nvim-treesitter",
+        --"kil0meters/nvim-ts-rainbow",
         "~/stuff/projects/nvim-ts-rainbow",
         "nvim-treesitter/nvim-treesitter-refactor",
         "nvim-treesitter/nvim-treesitter-textobjects", -- <--

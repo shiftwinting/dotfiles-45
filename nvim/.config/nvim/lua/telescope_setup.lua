@@ -3,6 +3,7 @@ require("telescope").setup({
     defaults = {
         file_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         prompt_prefix = icons.get("telescope") .. " ",
+        selection_caret = "❯ ",
     },
     extensions = {
         arecibo = {
@@ -12,5 +13,4 @@ require("telescope").setup({
             ["show_domain_icons"] = false,
         },
     },
-
 })
