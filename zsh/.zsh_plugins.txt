@@ -5,3 +5,4 @@ romkatv/powerlevel10k
 peterhurford/git-it-on.zsh
 jeffreytse/zsh-vi-mode
 NullSense/fuzzy-sys
+hlissner/zsh-autopair

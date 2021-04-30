@@ -1,0 +1,3 @@
+bind generic + !git commit --amend
+bind status P !git push origin
+bind main B !git rebase -i %(commit)

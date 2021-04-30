@@ -1,132 +1,127 @@
 {
-  "outputMode": "active",
-  "scale": 1,
-  "background": {
-    "red": 0.0,
-    "green": 0.0,
-    "blue": 0.0,
-    "opacity": 0.9
-  },
-  "widget": {
-    "margin": {
-      "margins": [
-        20,
-        20,
-        20,
-        20
-      ],
-      "widget": {
-        "verticalLayout": [
-          {
-            "horizontalLayout": [
-              {
+        "outputMode": "active",
+        "scale": 1,
+        "background": {
+                "red": 0.0,
+                "green": 0.0,
+                "blue": 0.0,
+                "opacity": 0.9
+        },
+        "widget": {
                 "margin": {
-                  "margins": [
-                    0,
-                    88,
-                    0,
-                    32
-                  ],
-                  "widget": {
-                    "verticalLayout": [
-                      {
-                        "date": {
-                          "font": null,
-                          "font_size": 64.0
+                        "margins": [20, 20, 20, 20],
+                        "widget": {
+                                "verticalLayout": [
+                                        {
+                                                "horizontalLayout": [
+                                                        {
+                                                                "margin": {
+                                                                        "margins": [
+                                                                                0,
+                                                                                88,
+                                                                                0,
+                                                                                32
+                                                                        ],
+                                                                        "widget": {
+                                                                                "verticalLayout": [
+                                                                                        {
+                                                                                                "date": {
+                                                                                                        "font": null,
+                                                                                                        "font_size": 64.0
+                                                                                                }
+                                                                                        },
+                                                                                        {
+                                                                                                "clock": {
+                                                                                                        "font": null,
+                                                                                                        "font_size": 256.0
+                                                                                                }
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                }
+                                                        },
+                                                        {
+                                                                "verticalLayout": [
+                                                                        {
+                                                                                "margin": {
+                                                                                        "margins": [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                8
+                                                                                        ],
+                                                                                        "widget": {
+                                                                                                "battery": {
+                                                                                                        "font": null,
+                                                                                                        "font_size": 24.0,
+                                                                                                        "length": 0
+                                                                                                }
+                                                                                        }
+                                                                                }
+                                                                        },
+                                                                        {
+                                                                                "margin": {
+                                                                                        "margins": [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                8
+                                                                                        ],
+                                                                                        "widget": {
+                                                                                                "backlight": {
+                                                                                                        "device": "ddcci3",
+                                                                                                        "font": null,
+                                                                                                        "font_size": 24.0,
+                                                                                                        "length": 0
+                                                                                                }
+                                                                                        }
+                                                                                }
+                                                                        },
+                                                                        {
+                                                                                "margin": {
+                                                                                        "margins": [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0,
+                                                                                                8
+                                                                                        ],
+                                                                                        "widget": {
+                                                                                                "pulseAudio": {
+                                                                                                        "font": null,
+                                                                                                        "font_size": 24.0,
+                                                                                                        "length": 0
+                                                                                                }
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                ]
+                                                        }
+                                                ]
+                                        },
+                                        {
+                                                "calendar": {
+                                                        "font_primary": null,
+                                                        "font_secondary": null,
+                                                        "font_size": 16.0,
+                                                        "sections": 3
+                                                }
+                                        },
+                                        {
+                                                "launcher": {
+                                                        "font": null,
+                                                        "font_size": 32.0,
+                                                        "length": 0,
+                                                        "app_opener": "",
+                                                        "term_opener": "kitty",
+                                                        "url_opener": "firefox"
+                                                }
+                                        }
+                                ]
                         }
-                      },
-                      {
-                        "clock": {
-                          "font": null,
-                          "font_size": 256.0
-                        }
-                      }
-                    ]
-                  }
                 }
-              },
-              {
-                "verticalLayout": [
-                  {
-                    "margin": {
-                      "margins": [
-                        0,
-                        0,
-                        0,
-                        8
-                      ],
-                      "widget": {
-                        "battery": {
-                          "font": null,
-                          "font_size": 24.0,
-                          "length": 0
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "margin": {
-                      "margins": [
-                        0,
-                        0,
-                        0,
-                        8
-                      ],
-                      "widget": {
-                        "backlight": {
-                          "device": "ddcci3",
-                          "font": null,
-                          "font_size": 24.0,
-                          "length": 0
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "margin": {
-                      "margins": [
-                        0,
-                        0,
-                        0,
-                        8
-                      ],
-                      "widget": {
-                        "pulseAudio": {
-                          "font": null,
-                          "font_size": 24.0,
-                          "length": 0
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "calendar": {
-              "font_primary": null,
-              "font_secondary": null,
-              "font_size": 16.0,
-              "sections": 3
-            }
-          },
-          {
-            "launcher": {
-              "font": null,
-              "font_size": 32.0,
-              "length": 0,
-              "app_opener": "",
-              "term_opener": "kitty",
-              "url_opener": "firefox"
-            }
-          }
-        ]
-      }
-    }
-  },
-  "fonts": {
-    "mono": "Fantasque Sans Mono",
-    "sans": "sans"
-  }
+        },
+        "fonts": {
+                "mono": "Fantasque Sans Mono",
+                "sans": "sans"
+        }
 }

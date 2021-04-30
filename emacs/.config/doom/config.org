@@ -67,6 +67,12 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
   :init
   (add-load-path! "/usr/share/emacs/site-lisp/mu4e")
   :config
+  (add-hook 'message-mode-hook 'auto-fill-mode)
+  (setq mu4e-compose-format-flowed t)
+  (setq message-cite-reply-position 'below)
+  (setq-default fill-column 72)
+  (setq fill-flowed-encode-column fill-column)
+
   (progn (setq mail-user-agent 'mu4e-user-agent
                sendmail-program "/usr/bin/msmtp"
                mu4e-get-mail-command "mbsync"

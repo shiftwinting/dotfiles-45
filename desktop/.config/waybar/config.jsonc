@@ -1,139 +1,141 @@
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 25, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["sway/mode" ,"sway/workspaces", "sway/window"],
-    "modules-center": [],
-    "modules-right": ["custom/firefox_media",
-                      "mpd",
-                      "pulseaudio",
-                      "network",
-                      "temperature",
-                      "custom/pacman",
-                      "clock",
-                      "custom/power",
-                      "tray"],
-
-    // Modules configuration
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "custom/firefox_media": {
-        "interval": 1,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/firefox_media.sh",
-        "on-click": "playerctl -p $(playerctl -l | grep firefox) play-pause",
-        "escape": true,
-        "max-length": 25,
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {title} ⸨{songPosition}|{queueLength}⸩",
-        "max-length": 25,
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        // "timezone": "Asia/Kokata",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% "
-    },
-    "memory": {
-        "interval": 5,
-        "format": " {}%", // Icon: memory
-        "states": {
-            "warning": 70,
-            "critical": 90
-        }
-    },
-    "temperature": {
-      "thermal-zone": 2,
-      "critical-threshold": 90,
-        "interval": 5,
-        //"format": "{icon} {temperatureC}°C",
-	    "format": "{icon} {temperatureC}°",
-        "format-icons": [
-            "", // Icon: temperature-empty
-            "", // Icon: temperature-quarter
-            "", // Icon: temperature-half
-            "", // Icon: temperature-three-quarters
-            ""  // Icon: temperature-full
+        // "layer": "top", // Waybar at top layer
+        // "position": "bottom", // Waybar position (top|bottom|left|right)
+        "height": 25, // Waybar height (to be removed for auto height)
+        // "width": 1280, // Waybar width
+        // Choose the order of the modules
+        "modules-left": ["sway/mode", "sway/workspaces", "sway/window"],
+        "modules-center": [],
+        "modules-right": [
+                "custom/firefox_media",
+                "mpd",
+                "pulseaudio",
+                "network",
+                "temperature",
+                "custom/pacman",
+                "clock",
+                "custom/power",
+                "tray"
         ],
-        "tooltip": false
-    },
-    "custom/pacman": {
-        "format": "{} ",
-        "interval": 3600,                     // every hour
-        "exec": "checkupdates | wc -l",       // # of updates
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "wezterm start -- paru", // update system
-        "signal": 8
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
-        "format": "{volume:2}% {icon:2}{format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+
+        // Modules configuration
+        "sway/mode": {
+                "format": "<span style=\"italic\">{}</span>"
         },
-        "on-click": "pavucontrol"
-    },
-    "custom/power": {
-      "format":"",
-      "on-click":"nwgbar"
-    }
+        "custom/firefox_media": {
+                "interval": 1,
+                "return-type": "json",
+                "exec": "~/.config/waybar/modules/firefox_media.sh",
+                "on-click": "playerctl -p $(playerctl -l | grep firefox) play-pause",
+                "escape": true,
+                "max-length": 25
+        },
+        "mpd": {
+                "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {title} ⸨{songPosition}|{queueLength}⸩",
+                "max-length": 25,
+                "format-disconnected": "Disconnected ",
+                "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+                "unknown-tag": "N/A",
+                "interval": 2,
+                "consume-icons": {
+                        "on": " "
+                },
+                "random-icons": {
+                        "off": "<span color=\"#f53c3c\"></span> ",
+                        "on": " "
+                },
+                "repeat-icons": {
+                        "on": " "
+                },
+                "single-icons": {
+                        "on": "1 "
+                },
+                "state-icons": {
+                        "paused": "",
+                        "playing": ""
+                },
+                "tooltip-format": "MPD (connected)",
+                "tooltip-format-disconnected": "MPD (disconnected)"
+        },
+        "idle_inhibitor": {
+                "format": "{icon}",
+                "format-icons": {
+                        "activated": "",
+                        "deactivated": ""
+                }
+        },
+        "tray": {
+                // "icon-size": 21,
+                "spacing": 10
+        },
+        "clock": {
+                // "timezone": "Asia/Kokata",
+                "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+                "format-alt": "{:%Y-%m-%d}"
+        },
+        "cpu": {
+                "format": "{usage}% "
+        },
+        "memory": {
+                "interval": 5,
+                "format": " {}%", // Icon: memory
+                "states": {
+                        "warning": 70,
+                        "critical": 90
+                }
+        },
+        "temperature": {
+                "thermal-zone": 2,
+                "critical-threshold": 90,
+                "interval": 5,
+                //"format": "{icon} {temperatureC}°C",
+                "format": "{icon} {temperatureC}°",
+                "format-icons": [
+                        "", // Icon: temperature-empty
+                        "", // Icon: temperature-quarter
+                        "", // Icon: temperature-half
+                        "", // Icon: temperature-three-quarters
+                        "" // Icon: temperature-full
+                ],
+                "tooltip": false
+        },
+        "custom/pacman": {
+                "format": "{} ",
+                "interval": 3600, // every hour
+                "exec": "checkupdates | wc -l", // # of updates
+                "exec-if": "exit 0", // always run; consider advanced run conditions
+                "on-click": "wezterm start -- paru", // update system
+                "signal": 8
+        },
+        "network": {
+                // "interface": "wlp2*", // (Optional) To force the use of this interface
+                "format-wifi": "{essid} ({signalStrength}%) ",
+                "format-ethernet": "{ifname} ",
+                "format-linked": "{ifname} (No IP) ",
+                "format-disconnected": "Disconnected",
+                "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        },
+        "pulseaudio": {
+                "scroll-step": 1, // %, can be a float
+                "format": "{volume:2}% {icon:2}{format_source}",
+                "format-bluetooth": "{volume}% {icon} {format_source}",
+                "format-bluetooth-muted": " {icon} {format_source}",
+                "format-muted": " {format_source}",
+                "format-source": "{volume}% ",
+                "format-source-muted": "",
+                "format-icons": {
+                        "headphone": "",
+                        "hands-free": "",
+                        "headset": "",
+                        "phone": "",
+                        "portable": "",
+                        "car": "",
+                        "default": ["", "", ""]
+                },
+                "on-click": "pavucontrol"
+        },
+        "custom/power": {
+                "format": "",
+                "on-click": "nwgbar"
+        }
 }

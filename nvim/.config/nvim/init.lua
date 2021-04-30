@@ -7,12 +7,11 @@ local packer = require("packer")
 local packages = require("packages")
 
 packer.startup(function()
-    for _, value in pairs(packages) do
-        packer.use(value)
-    end
+        for _, value in pairs(packages) do
+                packer.use(value)
+        end
 end)
 
-packer.use_rocks({ "lunajson", "http" })
 vim.cmd([[
     command! -complete=file -nargs=* DebugC lua require "dap_setup".start_c_debugger({<f-args>}, "lldb")
 ]])

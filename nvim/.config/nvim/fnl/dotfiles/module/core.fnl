@@ -34,9 +34,9 @@
         :listchars "tab:» ,trail:_"
         :showmode false
         :tabstop 8
-        :shiftwidth 4
+        :shiftwidth 8
         :expandtab true
-        :softtabstop 4
+        :softtabstop 8
         :foldexpr "nvim_treesitter#foldexpr()"
         :foldmethod "expr"
         :clipboard "unnamedplus"
@@ -55,6 +55,7 @@
         :fixeol true
         :smarttab true
         :smartindent true
+        :inccommand "nosplit"
         :guifont "Fira Code,nonicon:h11"}]
      (each [option value (pairs options)]
        (setopt option value)))

@@ -186,19 +186,19 @@ ShowIcon = true
 ## The following options specify whether to display a dedicated column in the popupmenu
 ## to display the long text displayed in the `info` part.
 ShowDetail = true
- 
+
 ## total number to display item
 # Total = 20
- 
+
 ## width of `menu` column
 # MenuWidth = 400
- 
+
 ## width of `info` column
 # InfoWidth = 1
- 
+
 ## width of `detail` column
 # DetailWidth = 250
- 
+
 ## Show digit number which can select item for popupmenu
 ShowDigit = true
 
@@ -213,7 +213,7 @@ Visible = true
 # ## setting Disable to true will not launch this additional nvim instance
 # ## and will completely disable the minimap feature.
 # Disable = false
-# 
+#
 # ## Specifies whether to show the minimap or not.
 # Visible = true
 

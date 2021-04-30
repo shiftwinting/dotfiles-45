@@ -3,7 +3,7 @@
 
 (defn- prettier [lang]
  (fn [] {:exe "prettier"
-         :args ["--tab-width 4"
+         :args ["--tab-width 8"
                 (.. "--parser " lang)]
          :stdin true}))
 
@@ -17,12 +17,12 @@
                 :cpp
                 [(fn [] {:exe "clang-format"
                          :args ["--style"
-                                "\"{BasedOnStyle: Google, IndentWidth: 4}\""]
+                                "\"{BasedOnStyle: WebKit, IndentWidth: 8}\""]
                          :stdin true})]
                 :c
                 [(fn [] {:exe "clang-format"
                          :args ["--style"
-                                "\"{BasedOnStyle: Google, IndentWidth: 4}\""]
+                                "\"{BasedOnStyle: WebKit, IndentWidth: 8}\""]
                          :stdin true})]
                 :java
                 [(fn [] {:exe "google-java-format"
@@ -38,11 +38,11 @@
                          :stdin true})]
                 :sh
                 [(fn [] {:exe "shfmt"
-                         :args ["-i 4"]
+                         :args ["-i 8"]
                          :stdin true})]
                 :zsh
                 [(fn [] {:exe "shfmt"
-                         :args ["-i 4"]
+                         :args ["-i 8"]
                          :stdin true})]
                 :css  [(prettier "css")]
                 :json [(prettier "json")]
