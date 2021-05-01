@@ -1,7 +1,6 @@
-[include]
-  path = ~/.config/git/local
 [user]
   name = Chinmay Dalal
+  email = dalal.chinmay.0101@gmail.com
   signingkey = 2C930DF41C88D2A3
 [core]
   pager = delta

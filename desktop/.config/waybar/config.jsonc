@@ -9,11 +9,17 @@
         "modules-right": [
                 "custom/firefox_media",
                 "mpd",
+                "custom/sep6",
                 "pulseaudio",
+                "custom/sep5",
                 "network",
+                "custom/sep4",
                 "temperature",
+                "custom/sep3",
                 "custom/pacman",
+                "custom/sep2",
                 "clock",
+                "custom/sep1",
                 "custom/power",
                 "tray"
         ],
@@ -100,10 +106,9 @@
                 "tooltip": false
         },
         "custom/pacman": {
-                "format": "{} ",
+                "format": "{}",
                 "interval": 3600, // every hour
-                "exec": "checkupdates | wc -l", // # of updates
-                "exec-if": "exit 0", // always run; consider advanced run conditions
+                "exec": "checkupdates.sh",
                 "on-click": "wezterm start -- paru", // update system
                 "signal": 8
         },
@@ -137,5 +142,23 @@
         "custom/power": {
                 "format": "",
                 "on-click": "nwgbar"
+        },
+        "custom/sep1": {
+                "format": ""
+        },
+        "custom/sep2": {
+                "format": ""
+        },
+        "custom/sep3": {
+                "format": ""
+        },
+        "custom/sep4": {
+                "format": ""
+        },
+        "custom/sep5": {
+                "format": ""
+        },
+        "custom/sep6": {
+                "format": ""
         }
 }
