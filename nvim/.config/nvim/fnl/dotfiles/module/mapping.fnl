@@ -42,6 +42,7 @@
 (smap :n :<leader>th ":Telescope help_tags<CR>")
 (smap :n :<leader> ":Telescope keymaps<CR>")
 (smap :n :<C-p> ":Telescope project<CR>")
+(smap :n :<leader>cb ":lua require 'custom_telescope'.curbuf()<CR>")
 
 ;;; smooth scroll
 ;;(when (not nvim.g.neovide)

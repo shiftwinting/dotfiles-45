@@ -9,7 +9,7 @@ local packages = {
         "hardcoreplayers/dashboard-nvim",
         "jeffkreeftmeijer/vim-numbertoggle",
         "jiangmiao/auto-pairs",
-        "justinmk/vim-gtfo", -- <--
+        "justinmk/vim-gtfo",
         { "kyazdani42/nvim-tree.lua" },
         {
                 "yamatsum/nvim-nonicons",
@@ -36,6 +36,8 @@ local packages = {
                 requires = {
                         "nvim-lua/lsp_extensions.nvim",
                         "nvim-lua/lsp-status.nvim",
+
+                        { "folke/lsp-trouble.nvim", config = [[require("trouble").setup()]] },
                         {
                                 "mfussenegger/nvim-dap",
                                 { "rcarriga/nvim-dap-ui", config = 'require("dapui").setup()' },
@@ -55,7 +57,7 @@ local packages = {
                                 end,
                                 config = [[require 'lspsaga'.init_lsp_saga{
                                 use_saga_diagnostic_sign = false,
-                                code_action_icon = "✨",
+                                -- code_action_icon = "✨",
                                 }]],
                         },
                 },
@@ -75,7 +77,7 @@ local packages = {
                 "nvim-treesitter/nvim-treesitter",
                 --"kil0meters/nvim-ts-rainbow",
                 "~/stuff/projects/nvim-ts-rainbow",
-                "nvim-treesitter/nvim-treesitter-refactor",
+                "nvim-treesitter/nvim-treesitter-refactor", --  <--
                 "nvim-treesitter/nvim-treesitter-textobjects", -- <--
                 "nvim-treesitter/playground",
                 "haringsrob/nvim_context_vt",
@@ -109,7 +111,7 @@ local packages = {
         "tpope/vim-repeat", -- <--
         "b3nj5m1n/kommentary",
         { "reedes/vim-pencil", ft = { "txt", "markdown", "rst" } },
-        "rhysd/git-messenger.vim",
+        { "rhysd/git-messenger.vim", cmd = "GitMessenger" },
         {
                 "lukas-reineke/indent-blankline.nvim",
                 branch = "lua",
@@ -163,7 +165,6 @@ local packages = {
         { "lewis6991/gitsigns.nvim", config = [[require('gitsigns').setup{keymaps={}}]] },
         "mtdl9/vim-log-highlighting",
         { "glacambre/firenvim", run = ":call firenvim#install(0)" },
-        "notomo/helpeek.vim",
         "tjdevries/train.nvim",
         "junegunn/limelight.vim",
         "brooth/far.vim", -- <--
@@ -187,18 +188,11 @@ local packages = {
         "tridactyl/vim-tridactyl",
         "yonlu/omni.vim",
         "tversteeg/registers.nvim",
-        {
-                "edluffy/specs.nvim",
-                cond = function()
-                        return vim.g.neovide ~= true
-                end,
-                config = [[require('specs').setup{}]],
-        },
         "aouelete/sway-vim-syntax",
         "monaqa/dial.nvim",
         { "nacro90/numb.nvim", config = [[require('numb').setup()]] },
         { "sunjon/shade.nvim", config = [[require "shade".setup()]] },
-        { "folke/lsp-trouble.nvim", config = [[require("trouble").setup()]] },
+        { "sindrets/diffview.nvim", cmd = "DiffviewLoad" },
 }
 
 return packages

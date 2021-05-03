@@ -28,6 +28,7 @@
                   (nvim.ex.autocmd event name action)) autocmds))
 (let [options
        {:mouse :a
+        :splitbelow true
         :number true
         :relativenumber true
         :guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))
