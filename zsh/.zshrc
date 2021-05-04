@@ -43,6 +43,7 @@ alias pins="paru -Slq | sk -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | aw
 alias n="nvim"
 alias sc="systemctl"
 alias sudo="sudo "
+alias cat="bat"
 
 # broot
 source /home/p00f/.config/broot/launcher/bash/br
