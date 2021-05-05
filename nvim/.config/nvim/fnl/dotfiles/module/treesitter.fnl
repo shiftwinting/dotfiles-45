@@ -7,7 +7,8 @@
                :use_languagetree true
                :disable ["clojure" "css"]}
    :rainbow {:enable true
-             :extended_mode ["latex" "html"]}
+             :extended_mode ["latex" "html"]
+             :disable ["cpp"]}
    :indent {:enable true}
    :incremental_selection {:enable true
                            :keymaps {:init_selection "gnn"

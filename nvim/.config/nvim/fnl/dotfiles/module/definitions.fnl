@@ -17,7 +17,7 @@
         :neovide_window_floating_blur true
         :neovide_window_floating_opacity 0.7
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime
-        :hardtime_default_on 1
+        :hardtime_default_on 0
         :gtfo#terminals {:unix "wezterm start --cwd "}
         :list_of_normal_keys ["h" "j" "k" "l" "-" "+" "<LEFT>" "<RIGHT>"]
         :AutoPairsMapCR false}]
