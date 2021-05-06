@@ -2,6 +2,7 @@
 
 for_window [title="ptpython"] floating enable, border normal, resize set width 500 px height 500 px
 for_window [title="Firefox — Sharing Indicator"] floating enable, move absolute position 720 0, resize set 60 20, focus parent
+for_window [title="Network Connections"] floating enable
 
 # Enable NumLock on start
 input * xkb_numlock enable

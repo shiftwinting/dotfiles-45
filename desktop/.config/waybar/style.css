@@ -1,4 +1,5 @@
 @define-color pink #ff79c6;
+@define-color dark_grey #353b52;
 @define-color bold_purple #5a4b81;
 @define-color orange #FFB86C;
 @define-color purple #988bc7;
@@ -94,10 +95,26 @@ window#waybar.hidden {
 #idle_inhibitor,
 #custom-firefox_media,
 #custom-power,
-
 #mpd {
         padding: 0 10px;
         color: #ff9400;
+}
+/* Right to left order for right side of bar */
+#custom-power {
+        background-color: @red;
+        color: white;
+}
+#custom-sep1 {
+        background-color: @dark_grey;
+        color: @red;
+}
+
+#tray {
+        background-color: @dark_grey;
+}
+#custom-sep2 {
+        background-color: @bold_purple;
+        color: @dark_grey;
 }
 
 #clock {
@@ -105,9 +122,19 @@ window#waybar.hidden {
         background-color: @bold_purple;
         color: white;
 }
-#custom-sep2 {
+#custom-sep3 {
         background-color: @orange;
         color: @bold_purple;
+}
+
+#custom-pacman {
+        font-weight: bold;
+        background-color: @orange;
+        color: @dracula;
+}
+#custom-sep4 {
+        background-color: @purple;
+        color: @orange;
 }
 
 #temperature {
@@ -119,44 +146,9 @@ window#waybar.hidden {
         background-color: @error_color;
         color: white;
 }
-#custom-sep4 {
-        background-color: @green;
-        color: @purple;
-}
-#tray {
-        background-color: #2c78bf;
-}
-
-#custom-firefox_media {
-        font-family: Cantarell;
-        font-size: 12.5px;
-}
-
-#custom-power {
-        background-color: @red;
-        color: white;
-}
-#custom-sep1 {
-        background-color: @bold_purple;
-        color: @red;
-}
-
-#mpd {
-        font-family: Cantarell;
-        font-size: 12.5px;
-}
-
-#network {
-        font-weight: bold;
-        background-color: @green;
-        color: @dracula;
-}
-#network.disconnected {
-        color: @warning_color;
-}
 #custom-sep5 {
         background-color: @pink;
-        color: @green;
+        color: @purple;
 }
 
 #pulseaudio {
@@ -168,12 +160,11 @@ window#waybar.hidden {
         color: @pink;
 }
 
-#custom-pacman {
-        font-weight: bold;
-        background-color: @orange;
-        color: @dracula;
+#mpd {
+        font-family: Cantarell;
+        font-size: 12.5px;
 }
-#custom-sep3 {
-        background-color: @purple;
-        color: @orange;
+#custom-firefox_media {
+        font-family: Cantarell;
+        font-size: 12.5px;
 }

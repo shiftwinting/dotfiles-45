@@ -12,16 +12,15 @@
                 "custom/sep6",
                 "pulseaudio",
                 "custom/sep5",
-                "network",
-                "custom/sep4",
                 "temperature",
-                "custom/sep3",
+                "custom/sep4",
                 "custom/pacman",
-                "custom/sep2",
+                "custom/sep3",
                 "clock",
+                "custom/sep2",
+                "tray",
                 "custom/sep1",
                 "custom/power",
-                "tray"
         ],
 
         // Modules configuration
