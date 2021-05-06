@@ -193,6 +193,7 @@ local packages = {
         { "nacro90/numb.nvim", config = [[require('numb').setup()]] },
         { "sunjon/shade.nvim", config = [[require "shade".setup()]] },
         { "sindrets/diffview.nvim", cmd = "DiffviewLoad" },
+        { "akinsho/nvim-toggleterm.lua", config = [[require("toggleterm").setup{shade_terminals = false}]] },
 }
 
 return packages

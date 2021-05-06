@@ -135,8 +135,13 @@ unordered_map<int, int> freq_intarr(vector<int> src)
 	}
 	return freqs;
 }
-]])
+]]),
         },
+        ceil = U.match_indentation([[
+int ceil_div(int x, int y)
+{
+        return (x + y - 1) / y;
+}]]),
 }
 local s = [[let snippet-file-name = 'blah blah'
 fun FileSpecificSnippets()
