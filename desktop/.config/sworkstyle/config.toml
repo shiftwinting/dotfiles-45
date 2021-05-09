@@ -24,7 +24,6 @@ fallback = ''
 
 [matching]
 "github" = { type = "generic", value = "" }
-"rust" = { type = "generic", value = "" }
 "npm" = { type = "generic", value = "" }
 "nodejs" = { type = "generic", value = "" }
 "yarn" = { type = "generic", value = "" }

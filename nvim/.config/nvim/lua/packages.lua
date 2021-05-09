@@ -40,7 +40,9 @@ local packages = {
                         { "folke/lsp-trouble.nvim", config = [[require("trouble").setup()]] },
                         {
                                 "mfussenegger/nvim-dap",
+                                config = "require('dap_setup')",
                                 { "rcarriga/nvim-dap-ui", config = 'require("dapui").setup()' },
+                                { "jbyuki/one-small-step-for-vimkind" },
                         },
                         -- "theHamsta/nvim-dap-virtual-text",
                         {
@@ -140,7 +142,7 @@ local packages = {
                         "nvim-telescope/telescope-cheat.nvim",
                         "nvim-telescope/telescope-project.nvim",
                         "nvim-telescope/telescope-arecibo.nvim",
-                        --  "nvim-telescope/telescope-dap.nvim",
+                        "nvim-telescope/telescope-dap.nvim",
                 },
                 rocks = { "openssl", "lua-http-parser" },
                 config = [[
@@ -151,8 +153,8 @@ local packages = {
                 require'telescope'.load_extension("cheat")
                 require'telescope'.load_extension('frecency')
                 require'telescope'.load_extension('project')
-                require 'telescope'.load_extension("arecibo")
-                --  require('telescope').load_extension('dap')
+             --   require 'telescope'.load_extension("arecibo")
+                require('telescope').load_extension('dap')
                 ]],
         },
         "mhartington/formatter.nvim",
@@ -191,9 +193,11 @@ local packages = {
         "aouelete/sway-vim-syntax",
         "monaqa/dial.nvim",
         { "nacro90/numb.nvim", config = [[require('numb').setup()]] },
-        { "sunjon/shade.nvim", config = [[require "shade".setup()]] },
         { "sindrets/diffview.nvim", cmd = "DiffviewLoad" },
-        { "akinsho/nvim-toggleterm.lua", config = [[require("toggleterm").setup{shade_terminals = false}]] },
+        {
+                "akinsho/nvim-toggleterm.lua",
+                config = [[require("toggleterm").setup()]],
+        },
 }
 
 return packages

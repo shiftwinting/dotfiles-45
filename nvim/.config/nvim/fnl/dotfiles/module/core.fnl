@@ -23,7 +23,13 @@
                 [:FileType :Results "let b:auto_cursorline_disabled = 1"]
                 [:FileType :NeogitStatus "let b:auto_cursorline_disabled = 1"]
                 [:FileType :query "ParinferOff"]
-                [:FileType :scheme "ParinferOff"]]]
+                [:FileType :scheme "ParinferOff"]
+                [:FileType :python "nnoremap <F4> :w <bar> exec '!python '.shellescape('%')<CR>"]
+                [:FileType :lua "nnoremap <F4> :w <bar> exec '!lua '.shellescape('%')<CR>"]
+                [:FileType :c "nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')' && rm '.shellescape('%:r')<CR>"]
+                [:FileType :cpp "nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')' && rm '.shellescape('%:r')<CR>"]
+                [:FileType :rust "nnoremap <F4> :w <bar> exec '!rustc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')' && rm '.shellescape('%:r')<CR>"]]]
+
      (core.map (fn [[event name action]]
                   (nvim.ex.autocmd event name action)) autocmds))
 (let [options
@@ -71,3 +77,7 @@
 
 (when nvim.g.gnvim
   (setopt :completeopt "menuone,noinsert,noselect,preview"))
+
+(nvim.ex.command :CD ":lcd %:p:h")
+(nvim.ex.command "-complete=file" "-nargs=*" :DebugC "lua require 'dap_functions'.start_c_debugger({<f-args>}, 'lldb')")
+(nvim.ex.command "-complete=file" "-nargs=*" :DebugRust "lua require 'dap_functions'.start_c_debugger({<f-args>}, 'lldb', 'rust-lldb')")

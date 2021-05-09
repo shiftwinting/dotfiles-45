@@ -9,8 +9,10 @@
 (let [globals
        {:indent_blankline_char ""
         :indent_blankline_context_patterns ["class" "function" "method" "repeat" "conditional"]
-        :cphlang "cpp"
+        :cphlang "rust"
         :cpp_compile_command "g++ -D XOX solution.cpp -o cpp.out -g -O0"
+        :rust_compile_comman "rustc -g solution.rs -o rust.out"
+        :cph_rust_createjson true
         :dap_virtual_text "all frames"
         :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus]
         :indent_blankline_char_highlight_list [:Conceal]
@@ -20,6 +22,11 @@
         :hardtime_default_on 0
         :gtfo#terminals {:unix "wezterm start --cwd "}
         :list_of_normal_keys ["h" "j" "k" "l" "-" "+" "<LEFT>" "<RIGHT>"]
-        :AutoPairsMapCR false}]
+        :AutoPairsMapCR false
+        "conjure#highlight#enabled" 1
+        "conjure#highlight#timeout" 500
+        "conjure#highlight#group" "IncSearch"
+        "conjure#mapping#doc_word" "K"
+        "conjure#extract#tree_sitter#enabled" true}]
   (each [global_ value (pairs globals)]
        (set-global global_ value)))

@@ -29,20 +29,20 @@
 (smap "" "\\C" "<cmd>HopChar2<CR>")
 
 ;Telescope
-(smap :n :<leader>f ":Telescope find_files<CR>")
-(smap :n :<leader>h ":Telescope frecency<CR>")
-(smap :n :<leader>b ":Telescope marks<CR>")
-(smap :n :<leader>lg ":Telescope live_grep<CR>")
-(smap :n :<leader>gf ":Telescope git_files<CR>")
-(smap :n :<leader>ts ":Telescope treesitter<CR>")
-(smap :n :<leader>d ":lua require 'custom_telescope'.dotfiles()<CR>")
+(smap :n :<leader>f "<cmd>Telescope find_files<CR>")
+(smap :n :<leader>h "<cmd>Telescope frecency<CR>")
+(smap :n :<leader>m "<cmd>Telescope marks<CR>")
+(smap :n :<leader>lg "<cmd>Telescope live_grep<CR>")
+(smap :n :<leader>gf "<cmd>Telescope git_files<CR>")
+(smap :n :<leader>ts "<cmd>Telescope treesitter<CR>")
+(smap :n :<leader>d "<cmd>lua require 'custom_telescope'.dotfiles()<CR>")
 (smap :n :<leader>z "<cmd>lua require'telescope'.extensions.z.list{ cmd = { vim.o.shell, '-c', 'zoxide query -sl' } }<CR>")
-(smap :n :<leader>pp ":lua require('telescope').extensions.packer.plugins(opts)<CR>")
-(smap :n :<leader>ch ":Telescope command_history<CR>")
-(smap :n :<leader>th ":Telescope help_tags<CR>")
-(smap :n :<leader> ":Telescope keymaps<CR>")
-(smap :n :<C-p> ":Telescope project<CR>")
-(smap :n :<leader>cb ":lua require 'custom_telescope'.curbuf()<CR>")
+(smap :n :<leader>pp "<cmd>lua require('telescope').extensions.packer.plugins(opts)<CR>")
+(smap :n :<leader>ch "<cmd>Telescope command_history<CR>")
+(smap :n :<leader>th "<cmd>Telescope help_tags<CR>")
+(smap :n :<leader> "<cmd>Telescope keymaps<CR>")
+(smap :n :<C-p> "<cmd>Telescope project<CR>")
+(smap :n :<leader>cb "<cmd>lua require 'custom_telescope'.curbuf()<CR>")
 
 ;;; smooth scroll
 ;;(when (not nvim.g.neovide)
@@ -61,20 +61,13 @@
 (smap :n :<leader>c ":ColorizerToggle<CR>")
 
 ;LSP
-(noremap :n :<M-CR> ":Lspsaga code_action<CR>")
+(noremap :n :<M-CR> "<cmd>lua require 'custom_telescope'.lsp_code_actions()<CR>")
 (noremap :v :<M-CR> ":Lspsaga range_code_action<CR>")
 (smap :n :K ":Lspsaga hover_doc<CR>")
 (smap :n :pd ":Lspsaga preview_definition<CR>")
 (smap :n :dn ":Lspsaga diagnostic_jump_next<CR>")
 (smap :n :dp ":Lspsaga diagnostic_jump_prev<CR>")
 (smap :n :gr ":Lspsaga rename<CR>")
-
-;jdtls
-(noremap :n :<M-r> ":lua require('jdtls').code_action(false, 'refactor')<CR>")
-(noremap :n :<M-o> ":lua require('jdtls').organize_imports()<CR>")
-(noremap :n :crv ":lua require('jdtls').extract_variable()<CR>")
-(noremap :v :crv "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
-(noremap :v :crm "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
 
 ;Bufferline
 (smap :n :tt ":BufferLinePick<CR>")
@@ -83,3 +76,14 @@
 (nvim.set_keymap :i :<CR> "compe#confirm('<CR>')" {:noremap true
                                                    :silent true
                                                    :expr true})
+
+;nvim-dap
+(noremap :n :<F5> "<cmd>lua require'dap'.continue()<CR>")
+(noremap :n :<F10> "<cmd>lua require'dap'.step_over()<CR>")
+(noremap :n :<F11> "<cmd>lua require'dap'.step_into()<CR>")
+(noremap :n :<F12> "<cmd>lua require'dap'.step_out()<CR>")
+(noremap :n :<leader>b "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
+(noremap :n :<leader>B "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+(noremap :n :<leader>lp "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
+(noremap :n :<leader>dr "<cmd>lua require'dap'.repl.open()<CR>")
+(noremap :n :<leader>dl "<cmd>lua require'dap'.run_last()<CR>")

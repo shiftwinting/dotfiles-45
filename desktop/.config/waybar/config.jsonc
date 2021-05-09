@@ -91,7 +91,7 @@
         },
         "temperature": {
                 "thermal-zone": 2,
-                "critical-threshold": 90,
+                "critical-threshold": 80,
                 "interval": 5,
                 //"format": "{icon} {temperatureC}°C",
                 "format": "{icon} {temperatureC}°",
@@ -110,14 +110,6 @@
                 "exec": "checkupdates.sh",
                 "on-click": "wezterm start -- paru", // update system
                 "signal": 8
-        },
-        "network": {
-                // "interface": "wlp2*", // (Optional) To force the use of this interface
-                "format-wifi": "{essid} ({signalStrength}%) ",
-                "format-ethernet": "{ifname} ",
-                "format-linked": "{ifname} (No IP) ",
-                "format-disconnected": "Disconnected",
-                "format-alt": "{ifname}: {ipaddr}/{cidr}"
         },
         "pulseaudio": {
                 "scroll-step": 1, // %, can be a float

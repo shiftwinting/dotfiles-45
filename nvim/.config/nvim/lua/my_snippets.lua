@@ -136,12 +136,84 @@ unordered_map<int, int> freq_intarr(vector<int> src)
 	return freqs;
 }
 ]]),
-        },
-        ceil = U.match_indentation([[
+                ceil = U.match_indentation([[
 int ceil_div(int x, int y)
 {
         return (x + y - 1) / y;
 }]]),
+        },
+        rust = {
+                parse_int = "scan.token::<${1:usize}>();",
+                parse_intvec = "(0..${1:n}).map(|_| scan.token()).collect();",
+                freqmap = U.match_indentation([[
+let mut ${1:freqs} = HashMap::new();
+for x in &${2:v} {
+    let count = $1.entry(x).or_insert(0);
+    *count += 1;
+}]]),
+                ncr = U.match_indentation([[
+fn count_combinations(n: u64, r: u64) -> u64 {
+    if r > n {
+        0
+    } else {
+        (1..=r.min(n - r)).fold(1, |acc, val| acc * (n - val + 1) / val)
+    }
+}]]),
+                npr = U.match_indentation([[
+fn count_permutations(n: u64, r: u64) -> u64 {
+    (n - r + 1..=n).product()
+}]]),
+                file_stdin =  U.match_indentation([[
+let f = File::open("input1").unwrap(); // DELET THIS 🔫
+let f = BufReader::new(f); // DELET THIS 🔫
+let mut scan = Scanner::new(f); // CHANGE THIS BACK 🔫]]),
+                base = U.match_indentation([[
+#![allow(unused_imports)]
+use std::{io::{self, prelude::*}, str};
+
+fn solve<R: BufRead, W: Write>(scan: &mut Scanner<R>, w: &mut W) {
+    for _ in 0..scan.token::<usize>() {
+        $0
+    }
+}
+
+fn main() {
+    let (stdin, stdout) = (io::stdin(), io::stdout());
+    let mut scan = Scanner::new(stdin.lock());
+    let mut out = io::BufWriter::new(stdout.lock());
+    solve(&mut scan, &mut out);
+}
+
+struct Scanner<R> {
+    reader: R,
+    buf_str: Vec<u8>,
+    buf_iter: str::SplitWhitespace<'static>,
+}
+impl<R: BufRead> Scanner<R> {
+    fn new(reader: R) -> Self {
+        Self {
+            reader,
+            buf_str: vec![],
+            buf_iter: "".split_whitespace(),
+        }
+    }
+    fn token<T: str::FromStr>(&mut self) -> T {
+        loop {
+            if let Some(token) = self.buf_iter.next() {
+                return token.parse().ok().expect("Failed parse");
+            }
+            self.buf_str.clear();
+            self.reader
+                .read_until(b'\n', &mut self.buf_str)
+                .expect("Failed to read");
+            self.buf_iter = unsafe {
+                let slice = str::from_utf8_unchecked(&self.buf_str);
+                std::mem::transmute(slice.split_whitespace())
+            }
+        }
+    }
+}]]),
+        },
 }
 local s = [[let snippet-file-name = 'blah blah'
 fun FileSpecificSnippets()
