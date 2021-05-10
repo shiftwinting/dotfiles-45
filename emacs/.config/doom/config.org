@@ -40,7 +40,7 @@ Used by GPG configuration, email clients, file templates and snippets.
 ** Doom config
 *** Theme
 #+BEGIN_SRC emacs-lisp
-(setq doom-theme 'doom-dark+)
+(setq doom-theme 'ewal-doom-vibrant)
 #+END_SRC
 *** Relative line numbers
 #+BEGIN_SRC emacs-lisp

@@ -56,6 +56,8 @@ set_title() {
 precmd_functions+=(set_title)
 source ~/.wezterm.sh
 
+setopt extendedglob
+
 # Command-not-found handler
 source /usr/share/doc/pkgfile/command-not-found.zsh
 fpath+=~/.zfunc

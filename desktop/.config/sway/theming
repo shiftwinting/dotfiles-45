@@ -8,47 +8,11 @@ gaps outer 3
 gaps inner 7
 default_border pixel 2
 
-# Colours
-set $black #1C1B19
-set $bright_black #1e1e1e
+include ~/.cache/wal/colors-sway
 
-set $red #ed4556
-set $bright_red #e61f44
-
-set $green #67e480
-set $bright_green #67e480
-
-set $yellow #e7de79
-set $bright_yellow #e7de79
-
-set $blue #78d1e1
-set $bright_blue #78d1e1
-
-set $magenta #ff79c6
-set $bright_magenta #ff79c6
-
-set $cyan #a1efe4
-set $bright_cyan #a1efe4
-
-set $white #e1e1e6
-set $bright_white #e1e1e6
-
-set $orange #FFB86C
-set $bright_orange #FFB86C
-
-set $xgray1 #262626
-set $xgray2 #303030
-set $xgray3 #3A3A3A
-set $xgray4 #444444
-set $xgray5 #8796b0
-
-set $hard_black #000000
-
-set $dracula #282a36
-# Colors                border        background  text          indicator child_border
-client.focused          $xgray5       $dracula    $white        $xgray5   $xgray5
-client.focused_inactive $xgray3       $xgray3     $xgray5       $xgray3   $xgray3
-client.urgent           $red          $red        $white        $red      $red
+### Colors                border      background     text               indicator child_border
+client.focused          $color8       $background    $foreground        $color8   $color8
+client.urgent           $color8       $color8        $foreground        $color8   $color8
 
 
 # GTK
