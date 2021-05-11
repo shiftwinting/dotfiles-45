@@ -120,6 +120,18 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
                             (smtpmail-smtp-service        . 587)
                             (user-mail-address            . ,(college-mail))
                             (smtpmail-smtp-user           . ,(college-mail))))))))
+
+
+(mu4e-alert-set-default-style 'libnotify)
+(add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
+(setq mu4e-alert-interesting-mail-query
+      (concat
+       "flag:unread"
+       " AND NOT flag:trashed"
+       " AND NOT maildir:"
+       "/BITS/[Gmail].All Mail"
+       " AND NOT maildir:"
+       "/GMail/[Gmail].All Mail"))
 #+END_SRC
 
 

@@ -163,7 +163,7 @@ fn count_combinations(n: u64, r: u64) -> u64 {
 fn count_permutations(n: u64, r: u64) -> u64 {
     (n - r + 1..=n).product()
 }]]),
-                file_stdin =  U.match_indentation([[
+                file_stdin = U.match_indentation([[
 let f = File::open("input1").unwrap(); // DELET THIS 🔫
 let f = BufReader::new(f); // DELET THIS 🔫
 let mut scan = Scanner::new(f); // CHANGE THIS BACK 🔫]]),

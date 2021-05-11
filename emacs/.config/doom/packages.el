@@ -15,6 +15,7 @@
 (package! ob-rust)
 (package! org-mime)
 (package! ewal-doom-themes)
+(package! mu4e-alert)
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
 ;; https://github.com/raxod502/straight.el#the-recipe-format

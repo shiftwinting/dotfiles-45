@@ -13,7 +13,8 @@ require("telescope").setup({
                 prompt_position = "top",
                 sorting_strategy = "ascending",
                 shorten_path = true,
-                results_width = 0.1
+                results_width = 0.1,
+                winblend = 20,
         },
         extensions = {
                 arecibo = {
