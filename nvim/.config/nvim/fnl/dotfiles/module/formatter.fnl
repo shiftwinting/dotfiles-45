@@ -3,7 +3,7 @@
 
 (defn- prettier [lang]
  (fn [] {:exe "prettier"
-         :args ["--tab-width 8"
+         :args ["--tab-width 4"
                 (.. "--parser " lang)]
          :stdin true}))
 
@@ -38,11 +38,11 @@
                          :stdin true})]
                 :sh
                 [(fn [] {:exe "shfmt"
-                         :args ["-i 8"]
+                         :args ["-i 4"]
                          :stdin true})]
                 :zsh
                 [(fn [] {:exe "shfmt"
-                         :args ["-i 8"]
+                         :args ["-i 4"]
                          :stdin true})]
                 :css  [(prettier "css")]
                 :json [(prettier "json")]

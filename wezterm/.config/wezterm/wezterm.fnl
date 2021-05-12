@@ -24,7 +24,7 @@
       :line_height 1.04
       :hide_tab_bar_if_only_one_tab true
       :adjust_window_size_when_changing_font_size false
-      :enable_wayland true
+      ;:enable_wayland true
       :window_close_confirmation "NeverPrompt"
       :font_hinting "Full"
       :allow_square_glyphs_to_overflow_width "Always"

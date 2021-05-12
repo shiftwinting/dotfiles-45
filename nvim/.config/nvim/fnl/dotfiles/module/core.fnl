@@ -22,8 +22,8 @@
                 ["BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}"]
                 [:FileType :Results "let b:auto_cursorline_disabled = 1"]
                 [:FileType :NeogitStatus "let b:auto_cursorline_disabled = 1"]
-                [:FileType :query "ParinferOff"]
-                [:FileType :scheme "ParinferOff"]
+                [:FileType "c,cpp" "set shiftwidth=8"]
+                [:FileType "c,cpp" "set softtabstop=8"]
                 [:FileType :python "nnoremap <F4> :w <bar> exec '!python '.shellescape('%')<CR>"]
                 [:FileType :lua "nnoremap <F4> :w <bar> exec '!lua '.shellescape('%')<CR>"]
                 [:FileType :c "nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')' && rm '.shellescape('%:r')<CR>"]
@@ -41,9 +41,9 @@
         :listchars "tab:» ,trail:_"
         :showmode false
         :tabstop 8
-        :shiftwidth 8
+        :shiftwidth 4
         :expandtab true
-        :softtabstop 8
+        :softtabstop 4
         :foldexpr "nvim_treesitter#foldexpr()"
         :foldmethod "expr"
         :clipboard "unnamedplus"

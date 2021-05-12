@@ -2,6 +2,6 @@
 updates=$(checkupdates | wc -l)
 output=""
 if [[ $updates != "0" ]]; then
-	output=$updates" "
+    output=$updates" "
 fi
 echo -e "$output"
