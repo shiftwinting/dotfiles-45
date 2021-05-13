@@ -85,15 +85,14 @@
 (noremap :n :<F10> "<cmd>lua require'dap'.step_over()<CR>")
 (noremap :n :<F11> "<cmd>lua require'dap'.step_into()<CR>")
 (noremap :n :<F12> "<cmd>lua require'dap'.step_out()<CR>")
-(noremap :n :<leader>b "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
-(noremap :n :<leader>B
-         "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+(noremap :n "?b" "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
+(noremap :n "?B" "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 
-(noremap :n :<leader>lp
+(noremap :n "?l"
          "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
 
-(noremap :n :<leader>dr "<cmd>lua require'dap'.repl.open()<CR>")
-(noremap :n :<leader>dl "<cmd>lua require'dap'.run_last()<CR>")
+(noremap :n "?r" "<cmd>lua require'dap'.repl.toggle()<CR>")
+(noremap :n "?el" "<cmd>lua require'dap'.run_last()<CR>")
 
 
 ;Neogit

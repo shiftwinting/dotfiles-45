@@ -7,17 +7,17 @@
                           "ss03"
                           "ss06"
                           "ss07"]
-      :font (font_with_fallback "Fira Code")
+      :font (font_with_fallback "Source Code Pro")
       :font_rules [{:italic true
-                    :font (font_with_fallback "Fira Code" {:italic true})}
+                    :font (font_with_fallback "Source Code Pro" {:italic true})}
                    {:intensity "Bold"
-                    :font (font_with_fallback "Fira Code" {:bold true})}
+                    :font (font_with_fallback "Source Code Pro" {:bold true})}
                    {:intensity "Bold"
                     :italic true
-                    :font (font_with_fallback "Victor Mono" {:bold true
-                                                             :italic true})}
+                    :font (font_with_fallback "Source Code Pro" {:bold true}
+                                                         :italic true)}
                    {:intensity "Half"
-                    :font (font_with_fallback "Fira Code Light")}]
+                    :font (font_with_fallback "Source Code Pro Light")}]
       :window_background_opacity 0.9
       :font_size 11.0
       :default_cursor_style "BlinkingUnderline"

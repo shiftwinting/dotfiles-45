@@ -72,7 +72,7 @@
   nvim.g.gonvim_running (do
                          (setopt :linespace 2)
                          (setopt :guifont "Delugia Mono Nerd Font:h11"))
-  nvim.g.neovide        (setopt :guifont "Fira Code,nonicon,FantasqueSansMono Nerd Font,Inter:h17")
+  nvim.g.neovide        (setopt :guifont "Fira Code,nonicon,FantasqueSansMono Nerd Font,Inter:h15")
   nvim.g.uivonim        (setopt :guifont "Fira Code,nonicon,FantasqueSansMono Nerd Font,Inter,Noto Color Emoji:h30"))
 
 (when nvim.g.gnvim

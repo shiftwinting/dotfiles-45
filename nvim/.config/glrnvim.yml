@@ -1,0 +1,3 @@
+backend: wezterm
+font_size: 11
+load_term_conf: true

@@ -9,7 +9,7 @@
       :new_file " • "
       :change_colorscheme " • "
       :find_word "L g"
-      :book_marks "L b"})
+      :book_marks "L m"})
 
 (set nvim.g.dashboard_custom_shortcut_icon
   {:last_session "<< "

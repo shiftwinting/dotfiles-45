@@ -11,7 +11,7 @@
         :indent_blankline_context_patterns ["class" "function" "method" "repeat" "conditional"]
         :cphlang "rust"
         :cpp_compile_command "g++ -D XOX solution.cpp -o cpp.out -g -O0"
-        :rust_compile_comman "rustc -g solution.rs -o rust.out"
+        :rust_compile_command "rustc -g solution.rs -o rust.out"
         :cph_rust_createjson true
         :dap_virtual_text "all frames"
         :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus]
