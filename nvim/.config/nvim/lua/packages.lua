@@ -1,4 +1,4 @@
-return {
+local packages =  {
     { "wbthomason/packer.nvim", opt = true },
     {
         "Akin909/nvim-bufferline.lua",
@@ -10,7 +10,7 @@ return {
     "jeffkreeftmeijer/vim-numbertoggle",
     "jiangmiao/auto-pairs",
     "justinmk/vim-gtfo",
-    { "kyazdani42/nvim-tree.lua" },
+    "kyazdani42/nvim-tree.lua",
     {
         "yamatsum/nvim-nonicons",
         requires = "kyazdani42/nvim-web-devicons",
@@ -22,13 +22,13 @@ return {
             "norcalli/snippets.nvim",
             { "tami5/compe-conjure", after = "conjure" },
             "tamago324/compe-zsh",
-            { "tzachar/compe-tabnine", run = "./install.sh" },
+--            { "tzachar/compe-tabnine", run = "./install.sh" },
         },
         config = {
             [[
             require'snippets'.use_suggested_mappings()
             require 'my_snippets'
-            ]],
+            ]]
         },
     },
     { -- LSP
@@ -74,7 +74,7 @@ return {
                 }
                 ]],
     },
-    { "norcalli/nvim-colorizer.lua", config = { "require [[colorizer]].setup()" } },
+    { "norcalli/nvim-colorizer.lua", config = "require [[colorizer]].setup()" },
     { -- Treesitter
         "nvim-treesitter/nvim-treesitter",
         "~/stuff/projects/nvim-ts-rainbow",
@@ -152,35 +152,35 @@ return {
                 require('telescope').load_extension('dap')
                 ]],
     },
-    "mhartington/formatter.nvim",
-    { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
-    "wfxr/minimap.vim",
-    { "iberianpig/tig-explorer.vim", requires = "rbgrouleff/bclose.vim" },
-    { "TimUntersberger/neogit", config = [[require('neogit').setup{}]] },
-    "andymass/vim-matchup",
-    "KabbAmine/vCoolor.vim",
-    { "lewis6991/gitsigns.nvim", config = [[require('gitsigns').setup{keymaps={}}]] },
-    "mtdl9/vim-log-highlighting",
-    { "glacambre/firenvim", run = ":call firenvim#install(0)" },
-    "tjdevries/train.nvim",
-    "junegunn/limelight.vim",
-    "tkmpypy/chowcho.nvim",
-    "phaazon/hop.nvim",
-    { "alx741/neoman.vim", cmd = "Neoman" },
-    {
-        "~/stuff/projects/cphelper/cphelper.nvim",
-        rocks = "http",
-        requires = "nvim-lua/plenary.nvim",
-    },
-    "mhinz/vim-sayonara",
-    "delphinus/vim-auto-cursorline",
-    "omrisarig13/vim-auto-abbrev",
-    "axelf4/vim-strip-trailing-whitespace",
-    { -- Lua
-        { "rafcamlet/nvim-luapad", ft = "lua" },
-        { "tjdevries/manillua.nvim", ft = "lua" },
-        { "tjdevries/nlua.nvim", ft = "lua" },
-    },
+--    "mhartington/formatter.nvim",
+--    { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
+--    "wfxr/minimap.vim",
+--    { "iberianpig/tig-explorer.vim", requires = "rbgrouleff/bclose.vim" },
+--    { "TimUntersberger/neogit", config = [[require('neogit').setup{}]] },
+--    "andymass/vim-matchup",
+--    "KabbAmine/vCoolor.vim",
+--    { "lewis6991/gitsigns.nvim", config = [[require('gitsigns').setup{keymaps={}}]] },
+--    "mtdl9/vim-log-highlighting",
+--    { "glacambre/firenvim", run = ":call firenvim#install(0)" },
+--    "tjdevries/train.nvim",
+--    "junegunn/limelight.vim",
+--    "tkmpypy/chowcho.nvim",
+--    "phaazon/hop.nvim",
+--    { "alx741/neoman.vim", cmd = "Neoman" },
+--    {
+--        "~/stuff/projects/cphelper/cphelper.nvim",
+--        rocks = "http",
+--        requires = "nvim-lua/plenary.nvim",
+--    },
+--    "mhinz/vim-sayonara",
+--    "delphinus/vim-auto-cursorline",
+--    "omrisarig13/vim-auto-abbrev",
+--    "axelf4/vim-strip-trailing-whitespace",
+--    { -- Lua
+--        { "rafcamlet/nvim-luapad", ft = "lua" },
+--        { "tjdevries/manillua.nvim", ft = "lua" },
+--        { "tjdevries/nlua.nvim", ft = "lua" },
+--    },
     "tridactyl/vim-tridactyl",
     "yonlu/omni.vim",
     "tversteeg/registers.nvim",
@@ -192,5 +192,7 @@ return {
         "akinsho/nvim-toggleterm.lua",
         config = [[require("toggleterm").setup()]],
     },
-    --{ "tjdevries/express_line.nvim", config = [[require("el").setup()]] },
+    { "folke/todo-comments.nvim", config = [[require("todo-comments").setup]] },
+--    --{ "tjdevries/express_line.nvim", config = [[require("el").setup()]] },
 }
+return packages

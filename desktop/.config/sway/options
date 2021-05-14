@@ -20,4 +20,4 @@ set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show=drun -W 800 -H 400 | xargs swaymsg exec --
+set $menu rofi -modi "drun" -show drun | xargs swaymsg exec --

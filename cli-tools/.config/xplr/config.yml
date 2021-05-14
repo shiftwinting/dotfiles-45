@@ -57,10 +57,10 @@ modes:
 node_types:
   directory:
     meta:
-      icon: 
+      icon: 
   file:
     meta:
       icon: 
   symlink:
     meta:
-      icon: 
+      icon: 

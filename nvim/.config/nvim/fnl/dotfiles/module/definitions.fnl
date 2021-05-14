@@ -7,15 +7,14 @@
   (core.assoc nvim.g global_ value))
 
 (let [globals
-       {:indent_blankline_char ""
-        :indent_blankline_context_patterns ["class" "function" "method" "repeat" "conditional"]
+       {:indent_blankline_char "▏"
+        :indent_blankline_show_current_context false
         :cphlang "rust"
         :cpp_compile_command "g++ -D XOX solution.cpp -o cpp.out -g -O0"
         :rust_compile_command "rustc -g solution.rs -o rust.out"
         :cph_rust_createjson true
         :dap_virtual_text "all frames"
         :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus]
-        :indent_blankline_char_highlight_list [:Conceal]
         :neovide_window_floating_blur true
         :neovide_window_floating_opacity 0.7
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime

@@ -14,7 +14,7 @@
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+o exec wofi --show=run | xargs swaymsg exec --
+    bindsym $mod+o exec rofi -show run | xargs swaymsg exec --
     # switch to csd
     bindsym $mod+g border csd
     # switch to no border
@@ -31,7 +31,7 @@
     bindsym $mod+Shift+c reload
 
     # Clipman
-    bindsym $mod+c exec clipman pick -t wofi
+    bindsym $mod+c exec clipman pick -t rofi
 
     # grimshot
     bindsym Print exec grim - | swappy -f -
@@ -57,7 +57,7 @@
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec nwgbar
-    bindsym $mod+n exec makoctl menu wofi -d -p 'Choose Action: '
+    bindsym $mod+n exec makoctl menu rofi -d -p 'Choose Action: '
     bindsym $mod+x exec makoctl dismiss
     bindsym $mod+Shift+d exec wldash
 
@@ -126,7 +126,8 @@
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+f exec rofi -modi "file-browser" -show file-browser | xargs swaymsg exec --
+    bindsym $mod+Shift+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
