@@ -1,4 +1,4 @@
-local packages = {
+return {
     { "wbthomason/packer.nvim", opt = true },
     {
         "Akin909/nvim-bufferline.lua",
@@ -79,11 +79,9 @@ local packages = {
         "nvim-treesitter/nvim-treesitter",
         "~/stuff/projects/nvim-ts-rainbow",
         "nvim-treesitter/nvim-treesitter-refactor", --  <--
-        "nvim-treesitter/nvim-treesitter-textobjects", -- <--
+        "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/playground",
---        "haringsrob/nvim_context_vt",
         "vigoux/architext.nvim", -- <--
-        -- "romgrk/nvim-treesitter-context",
     },
     {
         "Olical/aniseed",
@@ -134,6 +132,7 @@ local packages = {
             "nvim-telescope/telescope-z.nvim",
             "nvim-telescope/telescope-frecency.nvim",
             "tami5/sql.nvim",
+            "nvim-telescope/telescope-fzf-writer.nvim",
             "nvim-telescope/telescope-cheat.nvim",
             "nvim-telescope/telescope-project.nvim",
             "nvim-telescope/telescope-arecibo.nvim",
@@ -148,6 +147,7 @@ local packages = {
                 require'telescope'.load_extension("cheat")
                 require'telescope'.load_extension('frecency')
                 require'telescope'.load_extension('project')
+                require'telescope'.load_extension('packer')
              --   require 'telescope'.load_extension("arecibo")
                 require('telescope').load_extension('dap')
                 ]],
@@ -164,7 +164,6 @@ local packages = {
     { "glacambre/firenvim", run = ":call firenvim#install(0)" },
     "tjdevries/train.nvim",
     "junegunn/limelight.vim",
-    "brooth/far.vim", -- <--
     "tkmpypy/chowcho.nvim",
     "phaazon/hop.nvim",
     { "alx741/neoman.vim", cmd = "Neoman" },
@@ -195,5 +194,3 @@ local packages = {
     },
     --{ "tjdevries/express_line.nvim", config = [[require("el").setup()]] },
 }
-
-return packages

@@ -16,7 +16,7 @@
    :find_history (.. (icons.get "history") " ")
    :find_file (.. (icons.get "telescope") " ")
    :new_file (.. (icons.get "file") " ")
-   :change_colorscheme " "
+   :change_colorscheme (.. (icons.get "paintbrush") " ")
    :find_word (.. (icons.get "search") " ")
    :book_marks (.. (icons.get "bookmark") " ")})
 (set nvim.g.dashboard_change_to_dir 1)

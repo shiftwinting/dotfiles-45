@@ -28,20 +28,16 @@
 (smap "" "\\C" :<cmd>HopChar2<CR>)
 
 ;Telescope
-(smap :n :<leader>f "<cmd>Telescope find_files<CR>")
+(smap :n :<leader>f "<cmd>lua require('telescope').extensions.fzf_writer.files()<CR>")
 (smap :n :<leader>h "<cmd>Telescope frecency<CR>")
 (smap :n :<leader>m "<cmd>Telescope marks<CR>")
-(smap :n :<leader>lg "<cmd>Telescope live_grep<CR>")
+(smap :n :<leader>lg "<cmd>lua require('telescope').extensions.fzf_writer.grep()<CR>")
+(smap :n :<leader>sg "<cmd>lua require('telescope').extensions.fzf_writer.staged_grep()<CR>")
 (smap :n :<leader>gf "<cmd>Telescope git_files<CR>")
 (smap :n :<leader>ts "<cmd>Telescope treesitter<CR>")
 (smap :n :<leader>d "<cmd>lua require 'custom_telescope'.dotfiles()<CR>")
 (smap :n :<leader>z
       "<cmd>lua require'telescope'.extensions.z.list{ cmd = { vim.o.shell, '-c', 'zoxide query -sl' } }<CR>")
-
-(smap :n :<leader>pp
-      "<cmd>lua require('telescope').extensions.packer.plugins(opts)<CR>")
-
-(smap :n :<leader>ch "<cmd>Telescope command_history<CR>")
 (smap :n :<leader>th "<cmd>Telescope help_tags<CR>")
 (smap :n :<leader> "<cmd>Telescope keymaps<CR>")
 (smap :n :<C-p> "<cmd>Telescope project<CR>")
