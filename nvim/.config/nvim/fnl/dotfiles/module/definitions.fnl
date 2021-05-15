@@ -15,7 +15,7 @@
         :cph_rust_createjson true
         :dap_virtual_text "all frames"
         :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus]
-        :neovide_window_floating_blur true
+        :neovide_window_floating_blur false
         :neovide_window_floating_opacity 0.7
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime
         :hardtime_default_on 0

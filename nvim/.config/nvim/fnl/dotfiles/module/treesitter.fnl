@@ -41,7 +41,7 @@
                                     "ad" "@comment.outer"
                                     "am" "@call.outer"
                                     "im" "@call.inner"}}}
-   :ensure_installed [:java :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css :jsonc :rust]
+   :ensure_installed [:yaml :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css :jsonc :rust]
    :playground {:enable true
                 :disable {}
                 :updatetime 25

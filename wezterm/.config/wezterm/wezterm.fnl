@@ -18,8 +18,8 @@
                                                          :italic true)}
                    {:intensity "Half"
                     :font (font_with_fallback "Source Code Pro Light")}]
-      :window_background_opacity 0.9
-      :font_size 11.0
+      :window_background_opacity 0.95
+      :font_size 11.5
       :default_cursor_style "BlinkingUnderline"
       :line_height 1.04
       :hide_tab_bar_if_only_one_tab true

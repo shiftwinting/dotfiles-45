@@ -98,7 +98,6 @@ local packages =  {
                         vim.g["conjure#mapping#doc_word"] = "K"
                         ]],
         },
-        { "clojure-vim/vim-jack-in", ft = "clojure" },
         {
             "eraserhd/parinfer-rust",
             run = "cargo build --release",
@@ -115,7 +114,9 @@ local packages =  {
         "lukas-reineke/indent-blankline.nvim",
         branch = "lua",
         cond = function()
-            return (vim.g.uivonim ~= 1 and vim.g.gonvim_running ~= 1 and vim.g.neovide ~= true)
+            return (vim.g.uivonim ~= 1 and vim.g.gonvim_running ~= 1
+            --and vim.g.neovide ~= true
+            )
         end,
     },
     "takac/vim-hardtime",
@@ -152,35 +153,35 @@ local packages =  {
                 require('telescope').load_extension('dap')
                 ]],
     },
---    "mhartington/formatter.nvim",
---    { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
---    "wfxr/minimap.vim",
---    { "iberianpig/tig-explorer.vim", requires = "rbgrouleff/bclose.vim" },
---    { "TimUntersberger/neogit", config = [[require('neogit').setup{}]] },
---    "andymass/vim-matchup",
---    "KabbAmine/vCoolor.vim",
---    { "lewis6991/gitsigns.nvim", config = [[require('gitsigns').setup{keymaps={}}]] },
---    "mtdl9/vim-log-highlighting",
---    { "glacambre/firenvim", run = ":call firenvim#install(0)" },
---    "tjdevries/train.nvim",
---    "junegunn/limelight.vim",
---    "tkmpypy/chowcho.nvim",
---    "phaazon/hop.nvim",
---    { "alx741/neoman.vim", cmd = "Neoman" },
---    {
---        "~/stuff/projects/cphelper/cphelper.nvim",
---        rocks = "http",
---        requires = "nvim-lua/plenary.nvim",
---    },
---    "mhinz/vim-sayonara",
---    "delphinus/vim-auto-cursorline",
---    "omrisarig13/vim-auto-abbrev",
---    "axelf4/vim-strip-trailing-whitespace",
---    { -- Lua
---        { "rafcamlet/nvim-luapad", ft = "lua" },
---        { "tjdevries/manillua.nvim", ft = "lua" },
---        { "tjdevries/nlua.nvim", ft = "lua" },
---    },
+    "mhartington/formatter.nvim",
+    { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
+    "wfxr/minimap.vim",
+    { "iberianpig/tig-explorer.vim", requires = "rbgrouleff/bclose.vim" },
+    { "TimUntersberger/neogit", config = [[require('neogit').setup{}]] },
+    "andymass/vim-matchup",
+    "KabbAmine/vCoolor.vim",
+    { "lewis6991/gitsigns.nvim", config = [[require('gitsigns').setup{keymaps={}}]] },
+    "mtdl9/vim-log-highlighting",
+    { "glacambre/firenvim", run = ":call firenvim#install(0)" },
+    "tjdevries/train.nvim",
+    "junegunn/limelight.vim",
+    "tkmpypy/chowcho.nvim",
+    "phaazon/hop.nvim",
+    { "alx741/neoman.vim", cmd = "Neoman" },
+    {
+        "~/stuff/projects/cphelper/cphelper.nvim",
+        rocks = "http",
+        requires = "nvim-lua/plenary.nvim",
+    },
+    "mhinz/vim-sayonara",
+    "delphinus/vim-auto-cursorline",
+    "omrisarig13/vim-auto-abbrev",
+    "axelf4/vim-strip-trailing-whitespace",
+    { -- Lua
+        { "rafcamlet/nvim-luapad", ft = "lua" },
+        { "tjdevries/manillua.nvim", ft = "lua" },
+        { "tjdevries/nlua.nvim", ft = "lua" },
+    },
     "tridactyl/vim-tridactyl",
     "yonlu/omni.vim",
     "tversteeg/registers.nvim",
@@ -192,7 +193,7 @@ local packages =  {
         "akinsho/nvim-toggleterm.lua",
         config = [[require("toggleterm").setup()]],
     },
-    { "folke/todo-comments.nvim", config = [[require("todo-comments").setup]] },
---    --{ "tjdevries/express_line.nvim", config = [[require("el").setup()]] },
+    {"folke/todo-comments.nvim", config = [[require("todo-comments").setup()]], disable = true},
+----    --{ "tjdevries/express_line.nvim", config = [[require("el").setup()]] },
 }
 return packages
