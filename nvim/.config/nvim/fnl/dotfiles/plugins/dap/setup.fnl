@@ -1,9 +1,9 @@
-(module dap_setup
+(module dotfiles.plugins.dap.setup
  {require {nvim aniseed.nvim
            dap dap
            icons nvim-nonicons}})
 
-(dap.adapters
+(set dap.adapters
  {:rust {:type "executable"
          :attach {:pidProperty "pid" :pidSelect "ask"}
          :command "lldb-vscode"

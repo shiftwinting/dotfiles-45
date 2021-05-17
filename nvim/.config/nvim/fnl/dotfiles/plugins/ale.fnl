@@ -1,4 +1,4 @@
-(module dotfiles.module.ale
+(module dotfiles.plugins.ale
   {require {nvim aniseed.nvim}})
 
 (set nvim.g.ale_linters

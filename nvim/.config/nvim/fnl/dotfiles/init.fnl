@@ -1,9 +1,10 @@
 (module dotfiles.init
-  {require {core aniseed.core
-            nvim aniseed.nvim
-            util dotfiles.util}})
+        {autoload {nvim aniseed.nvim}})
 
-;; Load all modules in no particular order.
-(->> (util.glob (.. util.config-path "/lua/dotfiles/module/*.lua"))
-     (core.run! (fn [path]
-                  (require (string.gsub path ".*/(.-)/(.-)/(.-)%.lua" "%1.%2.%3")))))
+(require :dotfiles.options)
+(require :dotfiles.mappings)
+(require :dotfiles.commands)
+(require :dotfiles.autocmd)
+(require :dotfiles.definitions)
+(require :dotfiles.highlights)
+(require :dotfiles.plugins.diagnostic)

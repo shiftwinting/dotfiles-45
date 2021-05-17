@@ -1,4 +1,4 @@
-(module dotfiles.module.dashboard
+(module dotfiles.plugins.dashboard
   {require {nvim aniseed.nvim
             icons nvim-nonicons}})
 

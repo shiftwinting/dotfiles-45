@@ -1,4 +1,4 @@
-(module dotfiles.module.treesitter
+(module dotfiles.plugins.treesitter
   {require {nvim aniseed.nvim
             tsconfigs nvim-treesitter.configs}})
 

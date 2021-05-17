@@ -1,4 +1,4 @@
-(module dotfiles.module.highlights
+(module dotfiles.highlights
   {require {nvim aniseed.nvim}})
 
 (let [tbl {:Whitespace "guifg=#424760 guibg=#191622"
@@ -9,7 +9,12 @@
            :TelescopePromptPrefix "guifg=#78d1e1"
            :TelescopeSelectionCaret "guifg=#ff79c6"
            :TelescopeSelection "guifg=#67e480"
-           :Keyword "guifg=#ff79c6"}]
+           :Keyword "guifg=#ff79c6"
+           :IndentBlanklineChar "guifg=#424760 guibg=#191622 gui=nocombine"
+           :TSParameter "guifg=#FFb86C guibg=#191622 gui=Italic"
+           :Gitbranch "guifg=#67e480 guibg=None"
+           :Statusdiag "guifg=#FFB86C guibg=#312C3E"
+           :Curfile "guifg=#ff79c6 guibg=#312C3E"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
 

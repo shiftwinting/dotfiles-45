@@ -1,4 +1,4 @@
-(module dotfiles.module.autocmd
+(module dotfiles.autocmd
         {require {core aniseed.core
                   nvim aniseed.nvim}})
 

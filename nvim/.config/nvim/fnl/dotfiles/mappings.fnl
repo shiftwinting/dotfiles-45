@@ -1,4 +1,5 @@
-(module dotfiles.module.mapping {require {nvim aniseed.nvim}})
+(module dotfiles.mappings
+        {require {nvim aniseed.nvim}})
 
 (defn- map [mode from to]
   "Sets a mapping"
@@ -35,13 +36,13 @@
 (smap :n :<leader>sg "<cmd>lua require('telescope').extensions.fzf_writer.staged_grep()<CR>")
 (smap :n :<leader>gf "<cmd>Telescope git_files<CR>")
 (smap :n :<leader>ts "<cmd>Telescope treesitter<CR>")
-(smap :n :<leader>d "<cmd>lua require 'custom_telescope'.dotfiles()<CR>")
+(smap :n :<leader>d "<cmd>lua require 'dotfiles.plugins.telescope.custom'.dotfiles()<CR>")
 (smap :n :<leader>z
       "<cmd>lua require'telescope'.extensions.z.list{ cmd = { vim.o.shell, '-c', 'zoxide query -sl' } }<CR>")
 (smap :n :<leader>th "<cmd>Telescope help_tags<CR>")
 (smap :n :<leader> "<cmd>Telescope keymaps<CR>")
 (smap :n :<C-p> "<cmd>Telescope project<CR>")
-(smap :n :<leader>cb "<cmd>lua require 'custom_telescope'.curbuf()<CR>")
+(smap :n :<leader>cb "<cmd>lua require 'dotfiles.plugins.telescope.custom'.curbuf()<CR>")
 (smap :n :<M-x> "<cmd>lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))<cr>")
 (let [n 2]
  (do
@@ -60,7 +61,7 @@
 
 ;LSP
 (noremap :n :<M-CR>
-         "<cmd>lua require 'custom_telescope'.lsp_code_actions()<CR>")
+         "<cmd>lua require 'dotfiles.plugins.telescope.custom'.lsp_code_actions()<CR>")
 
 (noremap :v :<M-CR> ":Lspsaga range_code_action<CR>")
 (smap :n :K ":Lspsaga hover_doc<CR>")

@@ -1,12 +1,12 @@
-local packages =  {
+local packages = {
     { "wbthomason/packer.nvim" },
     {
         "Akin909/nvim-bufferline.lua",
         config = "require [[bufferline]].setup({options={separator_style='slant'}})",
     },
-    "dense-analysis/ale",
+    { "dense-analysis/ale", config = [[require "dotfiles.plugins.ale"]] },
     "editorconfig/editorconfig-vim",
-    "hardcoreplayers/dashboard-nvim",
+    { "hardcoreplayers/dashboard-nvim", config = [[require "dotfiles.plugins.dashboard"]] },
     "jeffkreeftmeijer/vim-numbertoggle",
     "jiangmiao/auto-pairs",
     "justinmk/vim-gtfo",
@@ -22,13 +22,14 @@ local packages =  {
             "norcalli/snippets.nvim",
             { "tami5/compe-conjure", after = "conjure" },
             "tamago324/compe-zsh",
---            { "tzachar/compe-tabnine", run = "./install.sh" },
+            { "tzachar/compe-tabnine", run = "./install.sh" },
         },
         config = {
             [[
+            require 'dotfiles.plugins.compe'
             require'snippets'.use_suggested_mappings()
-            require 'my_snippets'
-            ]]
+            require 'dotfiles.snippets'
+            ]],
         },
     },
     { -- LSP
@@ -40,9 +41,8 @@ local packages =  {
             { "folke/lsp-trouble.nvim", config = [[require("trouble").setup()]] },
             {
                 "mfussenegger/nvim-dap",
-                config = "require('dap_setup')",
+                config = "require('dotfiles.plugins.dap.setup')",
                 { "rcarriga/nvim-dap-ui", config = 'require("dapui").setup()' },
-                { "jbyuki/one-small-step-for-vimkind" },
             },
             -- "theHamsta/nvim-dap-virtual-text",
             {
@@ -50,7 +50,7 @@ local packages =  {
                 cond = function()
                     return vim.g.uivonim ~= 1
                 end,
-                config = "require 'lspkind_setup'",
+                config = "require 'dotfiles.plugins.lspkind'",
             },
             {
                 "glepnir/lspsaga.nvim",
@@ -64,7 +64,7 @@ local packages =  {
             },
         },
         config = [[
-                require 'ls_setup'
+                require 'dotfiles.lsp'
                 require'lsp_extensions'.inlay_hints {
                 highlight = "NonText",
                 prefix = " » ",
@@ -76,17 +76,14 @@ local packages =  {
     },
     { "norcalli/nvim-colorizer.lua", config = "require [[colorizer]].setup()" },
     { -- Treesitter
-        "nvim-treesitter/nvim-treesitter",
+        { "nvim-treesitter/nvim-treesitter", config = [[require "dotfiles.plugins.treesitter"]] },
         "~/stuff/projects/nvim-ts-rainbow",
         "nvim-treesitter/nvim-treesitter-refactor", --  <--
         "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/playground",
         "vigoux/architext.nvim", -- <--
     },
-    {
-        "Olical/aniseed",
-        config = [[require('aniseed.env').init({ module = 'dotfiles.init' })]],
-    },
+    { "Olical/aniseed" },
     { -- Lisp
         {
             "Olical/conjure",
@@ -113,14 +110,12 @@ local packages =  {
     {
         "lukas-reineke/indent-blankline.nvim",
         branch = "lua",
+        setup = [[require "definitions"]],
         cond = function()
-            return (vim.g.uivonim ~= 1 and vim.g.gonvim_running ~= 1
-            --and vim.g.neovide ~= true
-            )
+            return (vim.g.uivonim ~= 1 and vim.g.gonvim_running ~= 1)
         end,
     },
     "takac/vim-hardtime",
-    { "glepnir/galaxyline.nvim", config = "require [[statusline]]" },
     "antoinemadec/FixCursorHold.nvim",
     {
         "nvim-telescope/telescope.nvim",
@@ -139,7 +134,7 @@ local packages =  {
             "nvim-telescope/telescope-dap.nvim",
         },
         config = [[
-                require "telescope_setup"
+                require "dotfiles.plugins.telescope.setup"
                 require('telescope').load_extension('fzy_native')
                 require('telescope').load_extension('gh')
                 require'telescope'.load_extension('z')
@@ -150,7 +145,7 @@ local packages =  {
                 require('telescope').load_extension('dap')
                 ]],
     },
-    "mhartington/formatter.nvim",
+    { "mhartington/formatter.nvim", config = [[require "dotfiles.plugins.formatter"]] },
     { "oknozor/illumination", run = ".install.sh", ft = "markdown" },
     "wfxr/minimap.vim",
     { "iberianpig/tig-explorer.vim", requires = "rbgrouleff/bclose.vim" },
@@ -175,12 +170,11 @@ local packages =  {
     "omrisarig13/vim-auto-abbrev",
     "axelf4/vim-strip-trailing-whitespace",
     { -- Lua
-        { "rafcamlet/nvim-luapad", ft = "lua" },
         { "tjdevries/manillua.nvim", ft = "lua" },
         { "tjdevries/nlua.nvim", ft = "lua" },
     },
     "tridactyl/vim-tridactyl",
-    "yonlu/omni.vim",
+    { "yonlu/omni.vim", setup = [[vim.o.termguicolors = true]] },
     "tversteeg/registers.nvim",
     "aouelete/sway-vim-syntax",
     "monaqa/dial.nvim",
@@ -190,7 +184,7 @@ local packages =  {
         "akinsho/nvim-toggleterm.lua",
         config = [[require("toggleterm").setup()]],
     },
-    {"folke/todo-comments.nvim", config = [[require('aniseed.env').init({ module = 'todo' })]] },
-----    --{ "tjdevries/express_line.nvim", config = [[require("el").setup()]] },
+    { "folke/todo-comments.nvim", config = [[require "dotfiles.plugins.todo"]] },
+    { "tjdevries/express_line.nvim", config = [[require "dotfiles.plugins.el"]] },
 }
 return packages

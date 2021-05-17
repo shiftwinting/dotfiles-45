@@ -44,6 +44,14 @@ alias n="nvim"
 alias sc="systemctl"
 alias sudo="sudo "
 alias cat="bat"
+alias gp="git pull"
+alias gP="git push"
+alias gpf="git push --force"
+alias gco="git checkout"
+alias gf="git fetch"
+alias gc="git commit"
+alias gca="git commmit --amend"
+alias ga="git add"
 
 # broot
 source /home/p00f/.config/broot/launcher/bash/br

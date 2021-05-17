@@ -1,4 +1,4 @@
-(module dotfiles.module.formatter
+(module dotfiles.plugins.formatter
   {require {formatter formatter}})
 
 (defn- prettier [lang]

@@ -1,4 +1,4 @@
-(module dotfiles.module.diagnostic
+(module dotfiles.plugins.diagnostic
   {require {nvim aniseed.nvim
             lsp vim.lsp
             core aniseed.core

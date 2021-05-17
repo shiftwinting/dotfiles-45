@@ -1,4 +1,4 @@
-(module ale
+(module dotfiles.plugins.todo
   {require {nvim aniseed.nvim
             tdcmt todo-comments
             icons nvim-nonicons}})

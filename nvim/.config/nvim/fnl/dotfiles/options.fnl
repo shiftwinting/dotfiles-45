@@ -1,4 +1,4 @@
-(module dotfiles.module.core
+(module dotfiles.options
   {require {nvim aniseed.nvim
             core aniseed.core
             str aniseed.string}})
@@ -55,7 +55,3 @@
 
 (when nvim.g.gnvim
   (setopt :completeopt "menuone,noinsert,noselect,preview"))
-
-(nvim.ex.command :CD ":lcd %:p:h")
-(nvim.ex.command "-complete=file" "-nargs=*" :DebugC "lua require 'dap_functions'.start_c_debugger({<f-args>}, 'lldb')")
-(nvim.ex.command "-complete=file" "-nargs=*" :DebugRust "lua require 'dap_functions'.start_c_debugger({<f-args>}, 'lldb', 'rust-lldb')")

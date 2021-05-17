@@ -1,4 +1,4 @@
-(module dotfiles.module.compe
+(module dotfiles.plugins.compe
   {require {nvim aniseed.nvim
             compe compe}})
 
