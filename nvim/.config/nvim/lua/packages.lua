@@ -1,5 +1,5 @@
 local packages =  {
-    { "wbthomason/packer.nvim", opt = true },
+    { "wbthomason/packer.nvim" },
     {
         "Akin909/nvim-bufferline.lua",
         config = "require [[bufferline]].setup({options={separator_style='slant'}})",
@@ -136,10 +136,8 @@ local packages =  {
             "nvim-telescope/telescope-fzf-writer.nvim",
             "nvim-telescope/telescope-cheat.nvim",
             "nvim-telescope/telescope-project.nvim",
-            "nvim-telescope/telescope-arecibo.nvim",
             "nvim-telescope/telescope-dap.nvim",
         },
-        rocks = { "openssl", "lua-http-parser" },
         config = [[
                 require "telescope_setup"
                 require('telescope').load_extension('fzy_native')
@@ -149,7 +147,6 @@ local packages =  {
                 require'telescope'.load_extension('frecency')
                 require'telescope'.load_extension('project')
                 require'telescope'.load_extension('packer')
-             --   require 'telescope'.load_extension("arecibo")
                 require('telescope').load_extension('dap')
                 ]],
     },
@@ -193,7 +190,7 @@ local packages =  {
         "akinsho/nvim-toggleterm.lua",
         config = [[require("toggleterm").setup()]],
     },
-    {"folke/todo-comments.nvim", config = [[require("todo-comments").setup()]], disable = true},
+    {"folke/todo-comments.nvim", config = [[require('aniseed.env').init({ module = 'todo' })]] },
 ----    --{ "tjdevries/express_line.nvim", config = [[require("el").setup()]] },
 }
 return packages

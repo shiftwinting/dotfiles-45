@@ -143,8 +143,8 @@ int ceil_div(int x, int y)
 }]]),
     },
     rust = {
-        parse_int = "scan.token::<${1:usize}>();",
-        parse_intvec = "(0..${1:n}).map(|_| scan.token()).collect();",
+        read_int = "scan.token::<${1:usize}>();",
+        read_intvec = "(0..${1:n}).map(|_| scan.token()).collect();",
         freqmap = U.match_indentation([[
 let mut ${1:freqs} = HashMap::new();
 for x in &${2:v} {
@@ -152,7 +152,7 @@ for x in &${2:v} {
     *count += 1;
 }]]),
         ncr = U.match_indentation([[
-fn count_combinations(n: u64, r: u64) -> u64 {
+fn nCr(n: u64, r: u64) -> u64 {
     if r > n {
         0
     } else {
@@ -160,8 +160,17 @@ fn count_combinations(n: u64, r: u64) -> u64 {
     }
 }]]),
         npr = U.match_indentation([[
-fn count_permutations(n: u64, r: u64) -> u64 {
+fn nPr(n: u64, r: u64) -> u64 {
     (n - r + 1..=n).product()
+}]]),
+        gcd = U.match_indentation([[
+fn gcd(mut x: u32, mut y: u32) -> u32 { // max is 4.2e9
+    while y != 0 {
+        let t = y;
+        y = x % y;
+        x = t;
+    }
+    x
 }]]),
         file_stdin = U.match_indentation([[
 let f = File::open("input1").unwrap(); // DELET THIS 🔫

@@ -42,7 +42,7 @@
 (smap :n :<leader> "<cmd>Telescope keymaps<CR>")
 (smap :n :<C-p> "<cmd>Telescope project<CR>")
 (smap :n :<leader>cb "<cmd>lua require 'custom_telescope'.curbuf()<CR>")
-
+(smap :n :<M-x> "<cmd>lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))<cr>")
 (let [n 2]
  (do
   (noremap :n :<Up> (.. n "<C-Y>"))
