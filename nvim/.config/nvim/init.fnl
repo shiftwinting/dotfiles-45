@@ -2,7 +2,7 @@
       {: stdpath : empty : glob} vim.fn
       {: format} string]
   (tset g "aniseed#env" {:module "dotfiles.init"
-  			 :compile true})
+                         :compile true})
 
   (fn ensure [user repo]
     "Ensures that a specified module is downloaded and then loaded"
@@ -17,5 +17,6 @@
 (let [packer (require :packer)
       packages (require :packages)]
   (packer.startup (fn [use]
-  		    (each [_ value (pairs packages)]
-		      (use value)))))
+                    (each [_ value (pairs packages)]
+                      (use value)))))
+true
