@@ -6,7 +6,7 @@
 
 {:start_c_debugger
    (fn [args mi-mode mi-debugger-path]
-     (require "plugins.dap.setup")
+     (require "dotfiles.plugins.dap.setup")
      (when (and args (> (# args) 0))
        (set last-gdb-config
          {:type "rust"

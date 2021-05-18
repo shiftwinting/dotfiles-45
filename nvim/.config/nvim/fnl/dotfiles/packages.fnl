@@ -35,7 +35,7 @@
   :rcarriga/nvim-dap-ui {:config "require 'dapui'.setup()"}
 
 ; Treesitter
-  :nvim-treesittter/nvim-treesitter {:config "require 'dotfiles.plugins.treesitter'"}
+  :nvim-treesitter/nvim-treesitter {:config "require 'dotfiles.plugins.treesitter'"}
   "~/stuff/projects/nvim-ts-rainbow" {}
   :nvim-treesitter/nvim-treesitter-refactor {}
   :nvim-treesitter/nvim-treesitter-textobjects {}
@@ -86,11 +86,11 @@
   :nacro90/numb.nvim {:config "require 'numb'.setup()"}
   :sindrets/diffview.nvim {:cmd "DiffviewLoad"}
   :akinsho/nvim-toggleterm.lua {:config "require 'toggleterm'.setup()"}
-  :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'.setup()"}
+  :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'"}
   :tjdevries/express_line.nvim {:config "require 'dotfiles.plugins.el'"}
 
   ; Telescope
-  :nvim-telscope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}
+  :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}
   :nvim-lua/popup.nvim {}
   :nvim-telescope/telescope-fzy-native.nvim {:config "require 'telescope'.load_extension('fzy_native')"}
   :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}
@@ -103,5 +103,4 @@
 (packer.startup (fn []
                    (each [key value (pairs packages)]
                       (let [p {1 key}]
-                         (vim.tbl_deep_extend p value)
-                         (use p)))))
+                         (use (vim.tbl_deep_extend "error" p value))))))
