@@ -50,7 +50,7 @@ alias gpf="git push --force"
 alias gco="git checkout"
 alias gf="git fetch"
 alias gc="git commit"
-alias gca="git commmit --amend"
+alias gca="git commit --amend"
 alias ga="git add"
 
 # broot
