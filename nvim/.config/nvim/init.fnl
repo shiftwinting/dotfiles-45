@@ -14,9 +14,4 @@
   (ensure :wbthomason "packer.nvim")
   (ensure :Olical "aniseed"))
 
-(let [packer (require :packer)
-      packages (require :packages)]
-  (packer.startup (fn [use]
-                    (each [_ value (pairs packages)]
-                      (use value)))))
 true

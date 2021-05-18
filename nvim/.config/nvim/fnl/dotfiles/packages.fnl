@@ -63,14 +63,14 @@
   :iberianpig/tig-explorer.vim {:requires "rbgrouleff/bclose.vim"}
   :TimUntersberger/neogit {:config "require 'neogit'.setup()"}
   :tanvirtin/vgit.nvim {:config "require 'vgit'.setup()"}
-  
+
   :andymass/vim-matchup {}
   :KabbAmine/vCoolor.vim {}
   :mtdl9/vim-log-highlighting {}
   :junegunn/limelight.vim {}
   :tkmpypy/chowcho.nvim {}
   :phaazon/hop.nvim {}
-  :alx741/neoman.vim {:cmd "Neoman"} 
+  :alx741/neoman.vim {:cmd "Neoman"}
   "~/stuff/projects/cphelper/cphelper.nvim" {:rocks "http"
                                              :requires "nvim-lua/plenary.nvim"}
   :mhinz/vim-sayonara {}
@@ -88,8 +88,10 @@
   :akinsho/nvim-toggleterm.lua {:config "require 'toggleterm'.setup()"}
   :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'.setup()"}
   :tjdevries/express_line.nvim {:config "require 'dotfiles.plugins.el'"}
-  
-  :nvim-telscope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}  :nvim-lua/popup.nvim {}
+
+  ; Telescope
+  :nvim-telscope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}
+  :nvim-lua/popup.nvim {}
   :nvim-telescope/telescope-fzy-native.nvim {:config "require 'telescope'.load_extension('fzy_native')"}
   :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}
   :nvim-telescope/telescope-frecency.nvim {:requires "tami5/sql.nvim"
@@ -98,15 +100,8 @@
   :nvim-telescope/telescope-project.nvim {:config "require'telescope'.load_extension('project')"}
   :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"}})
 
-
-
-
-
-
-
-
-
-
-;  (packer.startup (fn [use]
-;                    (each [_ value (pairs packages)]
-;                      (use value))})
+(packer.startup (fn []
+                   (each [key value (pairs packages)]
+                      (let [p {1 key}]
+                         (vim.tbl_deep_extend p value)
+                         (use p)))))
