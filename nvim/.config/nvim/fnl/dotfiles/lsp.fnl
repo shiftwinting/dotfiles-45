@@ -22,7 +22,8 @@
             :indicator_info "i"
             :indicator_hint "!"
             :indicator_ok (icons.get "check")
-            :status_symbol ""})
+            :status_symbol ""
+            :component_separator "|"})
 
       (lspconfig.clangd.setup
                 {:capabilities capabilities

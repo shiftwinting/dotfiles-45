@@ -62,7 +62,7 @@
 ; Git
   :iberianpig/tig-explorer.vim {:requires "rbgrouleff/bclose.vim"}
   :TimUntersberger/neogit {:config "require 'neogit'.setup()"}
-  :tanvirtin/vgit.nvim {:config "require 'vgit'.setup()"}
+  :tanvirtin/vgit.nvim {:config "require 'vgit'.setup{blames_enabled=false}"}
 
   :andymass/vim-matchup {}
   :KabbAmine/vCoolor.vim {}
@@ -98,7 +98,8 @@
                                            :config "require'telescope'.load_extension('frecency')"}
   :nvim-telescope/telescope-fzf-writer.nvim {}
   :nvim-telescope/telescope-project.nvim {:config "require'telescope'.load_extension('project')"}
-  :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"}})
+  :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"}
+  :nvim-telescope/telescope-media-files.nvim {:config "require('telescope').load_extension('media_files')"}})
 
 (packer.startup (fn []
                    (each [key value (pairs packages)]

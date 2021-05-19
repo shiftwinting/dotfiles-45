@@ -14,7 +14,10 @@
            :TSParameter "guifg=#FFb86C guibg=#191622 gui=Italic"
            :Gitbranch "guifg=#67e480 guibg=None"
            :Statusdiag "guifg=#FFB86C guibg=#312C3E"
-           :Curfile "guifg=#ff79c6 guibg=#312C3E"}]
+           :Curfile "guifg=#ff79c6 guibg=#312C3E"
+           :VGitSignAdd "guifg=#67e480 guibg=#191622"
+           :VGitSignRemove "guifg=#ed4556 guibg=#191622"
+           :VGitSignChange "guifg=#e7de79 guibg=#191622"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
 
