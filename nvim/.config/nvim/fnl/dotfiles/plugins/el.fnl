@@ -26,15 +26,16 @@
    {:generator
     (fn [_ _]
      [(extensions.gen_mode {:format_string " %s "})
-      (sections.highlight "Gitbranch" git-branch)
+      (sections.highlight "ElBranch" git-branch)
       " "
       file-icon
-      (sections.highlight "Curfile" builtin.tail_file)
+      (sections.highlight "ELFile" builtin.tail_file)
       (sections.collapse_builtin [" " builtin.modified_flag])
       sections.split
-      (sections.highlight "Statusdiag" lsp-statusline.segment)
+      (sections.highlight "ElLsp" lsp-statusline.segment)
       git-changes
-      "[" builtin.line ":" builtin.column "]"
+      "|" builtin.line ":" builtin.column
+      "|" (vim.fn.SleuthIndicator)
       (sections.collapse_builtin
-         ["[" builtin.help_list builtin.readonly_list "]"])
-      builtin.filetype])}))
+          ["|" builtin.help_list builtin.readonly_list])
+      "|" builtin.filetype])}))

@@ -14,8 +14,8 @@
                     :font (font_with_fallback "Source Code Pro" {:bold true})}
                    {:intensity "Bold"
                     :italic true
-                    :font (font_with_fallback "Source Code Pro" {:bold true}
-                                                         :italic true)}
+                    :font (font_with_fallback "Source Code Pro" {:bold true
+                                                                 :italic true})}
                    {:intensity "Half"
                     :font (font_with_fallback "Source Code Pro Light")}]
       :window_background_opacity 0.95

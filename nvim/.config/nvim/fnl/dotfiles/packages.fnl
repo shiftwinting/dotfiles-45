@@ -10,6 +10,7 @@
   :hardcoreplayers/dashboard-nvim {:config "require 'dotfiles.plugins.dashboard'"}
   :jeffkreeftmeijer/vim-numbertoggle {}
   :jiangmiao/auto-pairs {}
+  :tpope/vim-sleuth {}
   :justinmk/vim-gtfo {}
   :yamatsum/nvim-nonicons {:requires "kyazdani42/nvim-web-devicons"
                            :config "require 'nvim-nonicons'"}
@@ -31,8 +32,10 @@
   ;TODO: lspsaga or alternatives
 
 ; DAP
-  :mfussenegger/nvim-dap {:config "require 'dotfiles.plugins.dap.setup'"}
-  :rcarriga/nvim-dap-ui {:config "require 'dapui'.setup()"}
+  :mfussenegger/nvim-dap {:config "require 'dotfiles.plugins.dap.setup'"
+                          :opt true}
+  :rcarriga/nvim-dap-ui {:config "require 'dapui'.setup()"
+                         :after "nvim-dap"}
 
 ; Treesitter
   :nvim-treesitter/nvim-treesitter {:config "require 'dotfiles.plugins.treesitter'"}
@@ -41,7 +44,6 @@
   :nvim-treesitter/nvim-treesitter-textobjects {}
   :nvim-treesitter/playground {}
   :vigoux/architext.nvim {}
-; TODO: Telescope
   :Olical/conjure {:ft ["fennel" "clojure"]}
   :eraserhd/parinfer-rust {:run "cargo build --release"
                            :ft ["clojure" "fennel" "lisp" "scheme"]}
@@ -61,7 +63,8 @@
                          :ft "markdown"}
 ; Git
   :iberianpig/tig-explorer.vim {:requires "rbgrouleff/bclose.vim"}
-  :TimUntersberger/neogit {:config "require 'neogit'.setup()"}
+  :TimUntersberger/neogit {:config "require 'neogit'.setup()"
+                           :cmd "Neogit"}
   :tanvirtin/vgit.nvim {:config "require 'vgit'.setup{blames_enabled=false}"}
 
   :andymass/vim-matchup {}
@@ -98,8 +101,8 @@
                                            :config "require'telescope'.load_extension('frecency')"}
   :nvim-telescope/telescope-fzf-writer.nvim {}
   :nvim-telescope/telescope-project.nvim {:config "require'telescope'.load_extension('project')"}
-  :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"}
-  :nvim-telescope/telescope-media-files.nvim {:config "require('telescope').load_extension('media_files')"}})
+  :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"
+                                      :after "nvim-dap"}})
 
 (packer.startup (fn []
                    (each [key value (pairs packages)]
