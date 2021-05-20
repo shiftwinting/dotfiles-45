@@ -12,8 +12,7 @@
                                                       prefix = ' » ',
                                                       only_current_line = true,}"]
                 ["BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}"]
-                [:FileType :Results "let b:auto_cursorline_disabled = 1"]
-                [:FileType :NeogitStatus "let b:auto_cursorline_disabled = 1"]
+                [:FileType "Results,lspinfo,NeogitStatus" "let b:auto_cursorline_disabled = 1"]
                 [:FileType "c,cpp" "set shiftwidth=8"]
                 [:FileType "c,cpp" "set softtabstop=8"]
                 [:FileType :python "nnoremap <F4> :w <bar> exec '!python '.shellescape('%')<CR>"]

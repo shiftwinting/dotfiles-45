@@ -9,7 +9,7 @@
 (let [globals
        {:indent_blankline_char "▏"
         :indent_blankline_show_current_context false
-        :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus]
+        :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus :lspinfo]
 
         :cphlang "rust"
         :cph_rust_createjson true

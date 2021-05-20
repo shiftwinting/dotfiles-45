@@ -69,6 +69,7 @@
 (smap :n :dn ":Lspsaga diagnostic_jump_next<CR>")
 (smap :n :dp ":Lspsaga diagnostic_jump_prev<CR>")
 (smap :n :gr ":Lspsaga rename<CR>")
+(smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
 
 ;Bufferline
 (smap :n :tt ":BufferLinePick<CR>")

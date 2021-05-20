@@ -21,6 +21,7 @@
   :tami5/compe-conjure {:after "conjure"}
   :tamago324/compe-zsh {}
   :tzachar/compe-tabnine {:run "./install.sh"}
+  :norcalli/snippets.nvim {:config "require 'dotfiles.snippets'"}
 ; LSP
   :neovim/nvim-lspconfig {:config "require 'dotfiles.lsp'"}
   :nvim-lua/lsp_extensions.nvim {:config
@@ -29,6 +30,7 @@
   :folke/lsp-trouble.nvim {:config "require 'trouble'.setup()"}
   :onsails/lspkind-nvim {:cond (fn [] (not (= 1 vim.g.uivonim)))
                          :config "require 'dotfiles.plugins.lspkind'"}
+  :glepnir/lspsaga.nvim {}
   ;TODO: lspsaga or alternatives
 
 ; DAP
@@ -39,7 +41,7 @@
 
 ; Treesitter
   :nvim-treesitter/nvim-treesitter {:config "require 'dotfiles.plugins.treesitter'"}
-  "~/stuff/projects/nvim-ts-rainbow" {}
+  "~/stuff/projects/nvim-ts-rainbow" {:branch "incremental_updates"}
   :nvim-treesitter/nvim-treesitter-refactor {}
   :nvim-treesitter/nvim-treesitter-textobjects {}
   :nvim-treesitter/playground {}
@@ -78,6 +80,7 @@
                                              :requires "nvim-lua/plenary.nvim"}
   :mhinz/vim-sayonara {}
   :delphinus/vim-auto-cursorline {}
+  :lewis6991/foldsigns.nvim {:config "require 'foldsigns'.setup()"}
   :omrisarig13/vim-auto-abbrev {}
   :axelf4/vim-strip-trailing-whitespace {}
   :tjdevries/nlua.nvim {:ft "lua"}

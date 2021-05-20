@@ -18,7 +18,6 @@
                                                                  :italic true})}
                    {:intensity "Half"
                     :font (font_with_fallback "Source Code Pro Light")}]
-      :window_background_opacity 0.95
       :font_size 11.5
       :default_cursor_style "BlinkingUnderline"
       :line_height 1.04
@@ -27,8 +26,8 @@
       ;:enable_wayland true
       :window_close_confirmation "NeverPrompt"
       :font_hinting "Full"
-      :allow_square_glyphs_to_overflow_width "Always"
+      :allow_square_glyphs_to_overflow_width "WhenFollowedBySpace"
       :keys [{:key "Enter" :mods "ALT" :action "DisableDefaultAssignment"}]
       :window_padding {:left 5
                        :top 5}
-      :color_scheme "Duotone Dark"})
+      :color_scheme "Solarized Dark Higher Contrast"})

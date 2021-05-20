@@ -4,7 +4,8 @@
                   extensions el.extensions
                   sections el.sections
                   subscribe el.subscribe
-                  lsp-statusline el.plugins.lsp_status}})
+                  lsp-statusline el.plugins.lsp_status
+                  icons nvim-nonicons}})
 
 (el.reset_windows)
 
@@ -18,7 +19,7 @@
                    (fn [window buffer]
                      (let [branch (extensions.git_branch window buffer)]
                        (if branch
-                         (.. " " "git:" branch " ")))))
+                         (.. " " (icons.get "git-branch") " " branch " ")))))
       git-changes (subscribe.buf_autocmd "el_git_changes" "BufWritePost"
                     (fn [window buffer]
                       (extensions.git_changes window buffer)))]
@@ -34,8 +35,8 @@
       sections.split
       (sections.highlight "ElLsp" lsp-statusline.segment)
       git-changes
-      "|" builtin.line ":" builtin.column
-      "|" (vim.fn.SleuthIndicator)
+      "[" builtin.line ":" builtin.column "]"
+      "[" (vim.fn.SleuthIndicator) "]"
       (sections.collapse_builtin
-          ["|" builtin.help_list builtin.readonly_list])
-      "|" builtin.filetype])}))
+          ["[" builtin.help_list builtin.readonly_list "]"])
+      builtin.filetype])}))
