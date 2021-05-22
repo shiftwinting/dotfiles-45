@@ -83,7 +83,7 @@
   :lewis6991/foldsigns.nvim {:config "require 'foldsigns'.setup()"}
   :omrisarig13/vim-auto-abbrev {}
   :axelf4/vim-strip-trailing-whitespace {}
-  :tjdevries/nlua.nvim {:ft "lua"}
+  :folke/lua-dev.nvim {}
   :tridactyl/vim-tridactyl {}
   :yonlu/omni.vim {:setup "vim.o.termguicolors = true"}
   :tversteeg/registers.nvim {}

@@ -4,7 +4,7 @@
             core aniseed.core
             icons nvim-nonicons}})
 
-(let [diag-attrs  [[:Hint "#988bc7" "?"]
+(let [diag-attrs  [[:Hint "#988bc7" "!"]
                    [:Warning "#E4803A" (icons.get "alert")]
                    [:Information "#038013" "i"]
                    [:Error "#ed4556" (icons.get "stop")]]

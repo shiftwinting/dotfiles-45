@@ -21,7 +21,7 @@
             :calc true
             :snippets_nvim true
             :nvim_lsp true
-            :nvim_lua true
+            :nvim_lua false
             :spell true
             :tags true
             :treesitter true
