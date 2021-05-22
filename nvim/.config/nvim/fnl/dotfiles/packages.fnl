@@ -93,6 +93,7 @@
   :sindrets/diffview.nvim {:cmd "DiffviewLoad"}
   :akinsho/nvim-toggleterm.lua {:config "require 'toggleterm'.setup()"}
   :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'"}
+  :folke/lsp-colors.nvim {}
   :tjdevries/express_line.nvim {:config "require 'dotfiles.plugins.el'"}
 
   ; Telescope

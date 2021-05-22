@@ -4,11 +4,12 @@
             core aniseed.core
             icons nvim-nonicons}})
 
-(let [diag-attrs  [[:Hint "#988bc7" "!"]
-                   [:Warning "#E4803A" (icons.get "alert")]
-                   [:Information "#038013" "i"]
-                   [:Error "#ed4556" (icons.get "stop")]]
-      hl (fn [[diag colour _]] (nvim.ex.highlight (.. "LspDiagnosticsDefault" diag) (.. "guifg=" colour)))
+(let [diag-attrs  [[:Hint "#10B981" "!"]
+                   [:Warning "#e0af68" (icons.get "alert")]
+                   [:Information "#0db9d7" "i"]
+                   [:Error "#db4b4b" (icons.get "stop")]]
+      hl (fn [[diag colour _]]
+             (nvim.ex.highlight (.. "LspDiagnosticsVirtualText" diag) (.. "guifg=" colour " guibg=#353b52")))
       set-sign (fn [[diag _ sign]] (nvim.fn.sign_define (.. "LspDiagnosticsSign" diag) {:text sign}))]
    (do
     (core.map hl diag-attrs)
