@@ -14,8 +14,12 @@
            :TSParameter "guifg=#FFb86C guibg=#191622 gui=Italic"
 
            :ElBranch "guifg=#67e480 guibg=None"
-           :ElLsp "guifg=#e7de79 guibg=#312C3E"
+           :ElLsp "guifg=#e7de79 guibg=#312c3e"
            :ElFile "guifg=#ff79c6 guibg=#312C3E"
+           :ElLine "guibg=#312c3e guifg=#78d1e1 "
+           :ElChanges "guibg=#312c3e guifg=#67e480"
+           :ElSleuth "guibg=#312c3e guifg=#FFb86C"
+           :ElFt "guifg=#988bc7 guibg=#312c3e"
 
            :VGitSignAdd "guifg=#67e480 guibg=#191622"
            :VGitSignRemove "guifg=#ed4556 guibg=#191622"

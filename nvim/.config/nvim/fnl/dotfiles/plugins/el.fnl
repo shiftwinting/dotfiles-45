@@ -34,9 +34,9 @@
       (sections.collapse_builtin [" " builtin.modified_flag])
       sections.split
       (sections.highlight "ElLsp" lsp-statusline.segment)
-      git-changes
-      "[" builtin.line ":" builtin.column "]"
-      "[" (vim.fn.SleuthIndicator) "]"
+      (sections.highlight "ElLine" (.. " " builtin.line ":" builtin.column " "))
+      (sections.highlight "ElChanges" git-changes)
+      (sections.highlight "ElSleuth" (.. " " (vim.fn.SleuthIndicator) " "))
       (sections.collapse_builtin
           ["[" builtin.help_list builtin.readonly_list "]"])
-      builtin.filetype])}))
+      (sections.highlight "ElFt" builtin.filetype)])}))

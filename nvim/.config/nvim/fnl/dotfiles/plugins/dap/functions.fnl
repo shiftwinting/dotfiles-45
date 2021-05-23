@@ -9,7 +9,7 @@
      (require "dotfiles.plugins.dap.setup")
      (when (and args (> (# args) 0))
        (set last-gdb-config
-         {:type "rust"
+         {:type "cpp"
           :name (. args 1)
           :request "launch"
           :program (table.remove args 1)

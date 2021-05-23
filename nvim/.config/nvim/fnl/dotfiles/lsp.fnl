@@ -14,7 +14,7 @@
       diag_handler {"textDocument/publishDiagnostics"
                      (vim.lsp.with
                                vim.lsp.diagnostic.on_publish_diagnostics
-                               {:virtual_text {:prefix "●"}
+                               {:virtual_text {:prefix " 🞶"}
                                 :severity_sort true
                                 :update_in_insert false
                                 :underline true})}
@@ -27,7 +27,8 @@
                                                             {:globals ["vim" "wezterm"]}
                                                           :completion {:keywordSnippet true}
                                                           :workspace {:preloadFileSize 170}
-                                                          :telemetry {:enable true}}}
+                                                          :telemetry {:enable true}
+                                                          :window {:progressBar false}}}
                                          :capabilities capabilities
                                          :on_attach on_attach
                                          :handlers diag_handler
@@ -45,7 +46,7 @@
             :indicator_warnings (icons.get "alert")
             :indicator_info "i"
             :indicator_hint "!"
-            :indicator_ok "👍"
+            :indicator_ok "✓"
             :status_symbol ""
             :component_separator "|"})
 
