@@ -14,8 +14,7 @@
       diag_handler {"textDocument/publishDiagnostics"
                      (vim.lsp.with
                                vim.lsp.diagnostic.on_publish_diagnostics
-                               {:virtual_text {:prefix " 🞶"}
-                                :severity_sort true
+                               {:severity_sort true
                                 :update_in_insert false
                                 :underline true})}
       luadev (lua-dev.setup {:lspconfig {:cmd [(vim.fn.expand
