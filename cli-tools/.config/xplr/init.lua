@@ -1,4 +1,5 @@
 version = "0.10.2"
+local xplr = xplr
 local keys = xplr.config.modes.builtin.default.key_bindings.on_key
 keys["ctrl-f"] = {
     help = "search with preview",
