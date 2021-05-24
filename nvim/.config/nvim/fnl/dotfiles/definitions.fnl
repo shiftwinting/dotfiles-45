@@ -8,8 +8,9 @@
 
 (let [globals
        {:indent_blankline_char "▏"
-        :indent_blankline_show_current_context false
+        :indent_blankline_show_current_context true
         :indent_blankline_filetype_exclude [:clojure :fennel :dashboard :help "" :packer :Results :NeogitStatus :lspinfo]
+        :indent_blankline_context_patterns [:class :function :method :if :for :while :struct :impl :loop :call_expression :table]
 
         :cphlang "rust"
         :cph_rust_createjson true

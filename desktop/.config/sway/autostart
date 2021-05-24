@@ -1,6 +1,6 @@
 # vim: filetype=sway
 
-exec autotiling
+exec autotiling-rs
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border=0 --background-color=#c01d2021 --bar-color=#80ebdbb2 --padding=2
 exec emacs --daemon
 exec sworkstyle &> /tmp/sworkstyle.log

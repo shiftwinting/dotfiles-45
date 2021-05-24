@@ -26,13 +26,3 @@
            :VGitSignChange "guifg=#e7de79 guibg=#191622"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
-
-(let [rainbow_colours ["#e1e1e6"
-                       "#8796b0"
-                       "#ff79c6"
-                       "#FFB86C"
-                       "#67e480"
-                       "#988bc7"
-                       "#78d1e1"]]
-     (each [number colour (pairs rainbow_colours)]
-      (nvim.ex.highlight (.. "rainbowcol" number) (.. "guifg=" colour))))
