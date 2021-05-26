@@ -31,6 +31,7 @@
   :onsails/lspkind-nvim {:cond (fn [] (not (= 1 vim.g.uivonim)))
                          :config "require 'dotfiles.plugins.lspkind'"}
   :glepnir/lspsaga.nvim {}
+  :simrat39/symbols-outline.nvim {:cmd "SymbolsOutline"}
   ;TODO: lspsaga or alternatives
 
 ; DAP
@@ -95,6 +96,7 @@
   :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'"}
   :folke/lsp-colors.nvim {}
   :tjdevries/express_line.nvim {:config "require 'dotfiles.plugins.el'"}
+  :sayanarijit/xplr.vim {:cmd "XplrPicker"}
 
   ; Telescope
   :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}

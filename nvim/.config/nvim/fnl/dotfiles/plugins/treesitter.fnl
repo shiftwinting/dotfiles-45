@@ -5,7 +5,7 @@
 (tsconfigs.setup
   {:highlight {:enable true
                :use_languagetree true
-               :disable ["clojure" "css"]}
+               :disable ["latex" "clojure" "css"]}
    :rainbow {:enable true
              :extended_mode ["latex" "html"]
              :disable []
