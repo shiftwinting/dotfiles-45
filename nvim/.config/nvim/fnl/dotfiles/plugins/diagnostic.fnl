@@ -9,7 +9,9 @@
                    [:Information "#12343A" "#0db9d7" "i"]
                    [:Error "#3F1E1E" "#db4b4b" (icons.get "stop")]]
       hl (fn [[diag bg fg _]]
-             (nvim.ex.highlight (.. "LspDiagnosticsVirtualText" diag) (.. "guifg=" fg " guibg=" bg)))
+             (nvim.ex.highlight
+               (.. "LspDiagnosticsVirtualText" diag)
+               (.. "guifg=" fg " guibg=" bg)))
       set-sign (fn [[diag _ _ sign]] (nvim.fn.sign_define (.. "LspDiagnosticsSign" diag) {:text sign}))]
    (do
     (core.map hl diag-attrs)

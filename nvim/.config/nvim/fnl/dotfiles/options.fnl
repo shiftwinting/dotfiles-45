@@ -40,8 +40,7 @@
         :fixeol true
         :smarttab true
         :smartindent true
-        :inccommand "nosplit"
-        :guifont "Source Code Pro,nonicon:h11"}]
+        :inccommand "nosplit"}]
      (each [option value (pairs options)]
        (setopt option value)))
 
@@ -49,7 +48,7 @@
   nvim.g.gnvim          (setopt :guifont "JetBrains Mono,nonicon,FantasqueSansMono Nerd Font,Inter:h12")
   nvim.g.gonvim_running (do
                          (setopt :linespace 2)
-                         (setopt :guifont "Delugia Mono Nerd Font:h11"))
+                         (setopt :guifont "Fira Code:h11"))
   nvim.g.neovide        (setopt :guifont "Source Code Pro,nonicon,FantasqueSansMono Nerd Font,Inter Regular:h15")
   nvim.g.uivonim        (setopt :guifont "Fira Code,nonicon,FantasqueSansMono Nerd Font,Inter,Noto Color Emoji:h30"))
 

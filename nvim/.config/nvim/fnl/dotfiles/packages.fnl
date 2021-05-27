@@ -22,16 +22,16 @@
   :tamago324/compe-zsh {}
   :tzachar/compe-tabnine {:run "./install.sh"}
   :norcalli/snippets.nvim {:config "require 'dotfiles.snippets'"}
+
 ; LSP
   :neovim/nvim-lspconfig {:config "require 'dotfiles.lsp'"}
-  :nvim-lua/lsp_extensions.nvim {:config
-                                 "require'lsp_extensions'.inlay_hints {prefix =  '»'}"}
   :nvim-lua/lsp-status.nvim {}
   :folke/lsp-trouble.nvim {:config "require 'trouble'.setup()"}
   :onsails/lspkind-nvim {:cond (fn [] (not (= 1 vim.g.uivonim)))
                          :config "require 'dotfiles.plugins.lspkind'"}
   :glepnir/lspsaga.nvim {}
   :simrat39/symbols-outline.nvim {:cmd "SymbolsOutline"}
+  :simrat39/rust-tools.nvim {}
   ;TODO: lspsaga or alternatives
 
 ; DAP

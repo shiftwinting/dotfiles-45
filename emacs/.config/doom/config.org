@@ -78,7 +78,7 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
 
   (progn (setq mail-user-agent 'mu4e-user-agent
                sendmail-program "/usr/bin/msmtp"
-               mu4e-get-mail-command "mbsync"
+               mu4e-get-mail-command "mbsync -Va"
                message-send-mail-function 'smtpmail-send-it
                message-sendmail-f-is-evil t
                message-sendmail-extra-arguments '("--read-envelope-from")

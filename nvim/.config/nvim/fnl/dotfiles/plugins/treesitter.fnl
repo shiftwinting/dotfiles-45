@@ -7,7 +7,7 @@
                :use_languagetree true
                :disable ["latex" "clojure" "css"]}
    :rainbow {:enable true
-             :extended_mode ["latex" "html"]
+             :extended_mode ["latex" "html" "lua"]
              :disable []
              :colors ["#ff79c6"
                       "#FFB86C"

@@ -3,7 +3,8 @@
             lsp-status lsp-status
             icons nvim-nonicons
             lspsaga lspsaga
-            lua-dev lua-dev}})
+            lua-dev lua-dev
+            rust-tools rust-tools}})
 
 (let [on-init (fn [client]
                 (set client.config.flags [])
@@ -16,7 +17,8 @@
                                vim.lsp.diagnostic.on_publish_diagnostics
                                {:severity_sort true
                                 :update_in_insert false
-                                :underline true})}
+                                :underline true
+                                :virtual_text {:prefix (icons.get "square-fill")}})}
       luadev (lua-dev.setup {:lspconfig {:cmd [(vim.fn.expand
                                                  "/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server")
                                                "-E"
@@ -45,7 +47,7 @@
             :indicator_warnings (icons.get "alert")
             :indicator_info "i"
             :indicator_hint "!"
-            :indicator_ok "✓"
+            :indicator_ok (icons.get "check-circle-fill")
             :status_symbol ""
             :component_separator "|"})
 
@@ -58,11 +60,11 @@
                  :cmd ["clangd" "--background-index" "--suggest-missing-includes" "--header-insertion=iwyu"]})
 
       (lspconfig.sumneko_lua.setup luadev)
-      (lspconfig.rust_analyzer.setup
-                {:capabilities capabilities
-                 :on_attach on_attach
-                 :handlers diag_handler
-                 :on_init on-init})
+      (rust-tools.setup {:server
+                          {:capabilities capabilities
+                           :on_attach on_attach
+                           :handlers diag_handler
+                           :on_init on-init}})
       (lspconfig.bashls.setup
                 {:capabilities capabilities
                  :on_attach on_attach

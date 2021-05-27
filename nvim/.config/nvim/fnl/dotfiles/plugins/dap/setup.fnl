@@ -9,26 +9,15 @@
          :command "lldb-vscode"
          :env {:LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY "YES"}
          :name "lldb"}
-  :cpp dap.adapters.rust
+  :cpp {:type "executable"
+         :attach {:pidProperty "pid" :pidSelect "ask"}
+         :command "lldb-vscode"
+         :env {:LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY "YES"}
+         :name "lldb"}
   :nlua (fn [callback config]
           (callback {:type "server"
                      :host config.host
                      :port config.port}))})
-
-;(dap.configurations
-;  {:lua
-;    {:type "nlua"
-;     :request "attach"
-;        :name "Attach to running Neovim instance",
-;        :host (fn []
-;                (let [value (nvim.fn.input "Host [127.0.0.1]: ")]
-;                  (if (not (= value "")
-;                       value
-;                       "127.0.0.1"))))
-;        :port (fn []
-;                (let [val (tonumber (nvim.fn.input "Port: "))]
-;                  (assert val "Please provide a port number"
-;                   val)))}})
 
 (nvim.fn.sign_define "DapBreakpoint"
                      {:text "🛑"
