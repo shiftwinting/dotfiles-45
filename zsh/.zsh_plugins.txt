@@ -1,7 +1,6 @@
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-autosuggestions
-romkatv/powerlevel10k
 peterhurford/git-it-on.zsh
 jeffreytse/zsh-vi-mode
 NullSense/fuzzy-sys
