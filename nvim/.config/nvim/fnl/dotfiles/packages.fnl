@@ -2,9 +2,9 @@
         {require {packer packer}})
 
 (local packages
- {:wbthomasson/packer.nvim {}
+ {:wbthomason/packer.nvim {}
   :Olical/aniseed {}
-  :Akin909/nvim-bufferline.lua {:config "require 'bufferline'.setup()"}
+;  :Akin909/nvim-bufferline.lua {:config "require 'bufferline'.setup()"}
   :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}
   :editorconfig/editorconfig-vim {}
   :hardcoreplayers/dashboard-nvim {:config "require 'dotfiles.plugins.dashboard'"}
@@ -12,9 +12,11 @@
   :jiangmiao/auto-pairs {}
   :tpope/vim-sleuth {}
   :justinmk/vim-gtfo {}
+  :matbme/JABS.nvim {}
   :yamatsum/nvim-nonicons {:requires "kyazdani42/nvim-web-devicons"
                            :config "require 'nvim-nonicons'"}
-  :norcalli/nvim-colorizer.lua {:config "require 'colorizer'.setup()"}
+  :norcalli/nvim-colorizer.lua {:config "require 'colorizer'.setup()"
+                                :cmd "ColorizerToggle"}
 
 ; Completion
   :hrsh7th/nvim-compe {:config "require 'dotfiles.plugins.compe'"}
@@ -26,7 +28,8 @@
 ; LSP
   :neovim/nvim-lspconfig {:config "require 'dotfiles.lsp'"}
   :nvim-lua/lsp-status.nvim {}
-  :folke/lsp-trouble.nvim {:config "require 'trouble'.setup()"}
+  :folke/lsp-trouble.nvim {:config "require 'trouble'.setup()"
+                           :cmd "Trouble"}
   :onsails/lspkind-nvim {:cond (fn [] (not (= 1 vim.g.uivonim)))
                          :config "require 'dotfiles.plugins.lspkind'"}
   :glepnir/lspsaga.nvim {}
@@ -61,7 +64,8 @@
                                                           (not= 1 vim.g.gonvim_running)))}
   :takac/vim-hardtime {}
   :antoinemadec/FixCursorHold.nvim {}
-  :mhartington/formatter.nvim {:config "require 'dotfiles.plugins.formatter'"}
+  :mhartington/formatter.nvim {:config "require 'dotfiles.plugins.formatter'"
+                               :cmd "Format"}
   :oknozor/illumination {:run "./insttall.sh"
                          :ft "markdown"}
 ; Git
@@ -74,15 +78,15 @@
   :KabbAmine/vCoolor.vim {}
   :mtdl9/vim-log-highlighting {}
   :junegunn/limelight.vim {}
+  :chrisbra/NrrwRgn {}
   :tkmpypy/chowcho.nvim {}
   :phaazon/hop.nvim {}
-  :alx741/neoman.vim {:cmd "Neoman"}
   "~/stuff/projects/cphelper/cphelper.nvim" {:rocks "http"
                                              :requires "nvim-lua/plenary.nvim"}
   :mhinz/vim-sayonara {}
   :delphinus/vim-auto-cursorline {}
   :lewis6991/foldsigns.nvim {:config "require 'foldsigns'.setup()"}
-  :omrisarig13/vim-auto-abbrev {}
+  :Pocco81/ISuckAtSpelling.nvim {:config "require 'isas'.setup()"}
   :axelf4/vim-strip-trailing-whitespace {}
   :folke/lua-dev.nvim {}
   :tridactyl/vim-tridactyl {}
@@ -92,7 +96,8 @@
   :monaqa/dial.nvim {}
   :nacro90/numb.nvim {:config "require 'numb'.setup()"}
   :sindrets/diffview.nvim {:cmd "DiffviewLoad"}
-  :akinsho/nvim-toggleterm.lua {:config "require 'toggleterm'.setup()"}
+  :akinsho/nvim-toggleterm.lua {:config "require 'toggleterm'.setup()"
+                                :cmd "ToggleTerm"}
   :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'"}
   :folke/lsp-colors.nvim {}
   :tjdevries/express_line.nvim {:config "require 'dotfiles.plugins.el'"}
@@ -100,8 +105,10 @@
 
   ; Telescope
   :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}
+  :nvim-telescope/telescope-fzf-native.nvim {:run "make"
+                                             :config "require('telescope').load_extension('fzf')"
+                                             :after "telescope.nvim"}
   :nvim-lua/popup.nvim {}
-  :nvim-telescope/telescope-fzy-native.nvim {:config "require 'telescope'.load_extension('fzy_native')"}
   :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}
   :nvim-telescope/telescope-frecency.nvim {:requires "tami5/sql.nvim"
                                            :config "require'telescope'.load_extension('frecency')"}

@@ -72,7 +72,7 @@
 (smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
 
 ;Bufferline
-(smap :n :tt ":BufferLinePick<CR>")
+(smap :n :tt "<cmd>JABSOpen<CR>")
 
 ;Compe
 (nvim.set_keymap :i :<CR> "compe#confirm('<CR>')"

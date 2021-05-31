@@ -8,10 +8,6 @@
                 [:FileType :fennel "setlocal indentexpr=lisp"]
                 [:FileType :clojure "setlocal indentexpr=lisp"]
                 [:CursorHoldI "lua require('lspsaga.signaturehelp').signature_help()"]
-                ["CursorHold,CursorHoldI" "*.rs" "lua require'lsp_extensions'.inlay_hints {
-                                                      prefix = ' » ',
-                                                      only_current_line = true,}"]
-                ["BufEnter,BufWinEnter,TabEnter,BufWritePost" "*.rs" "lua require'lsp_extensions'.inlay_hints {prefix = ' » ', aligned = true}"]
                 [:FileType "Results,lspinfo,NeogitStatus" "let b:auto_cursorline_disabled = 1"]
                 [:FileType "c,cpp" "set shiftwidth=8"]
                 [:FileType "c,cpp" "set softtabstop=8"]

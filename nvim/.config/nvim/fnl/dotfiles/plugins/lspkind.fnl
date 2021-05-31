@@ -4,27 +4,28 @@
 
 (lspkind.init
    {:with_text true
-    :symbol_map {:Text (icons.get :typography)
-                 :Method "ƒ"
-                 :Function ""
+    :symbol_map {:Class (icons.get :class)
+                 :Color (icons.get :paintbrush)
+                 :Constant (icons.get :constant)
                  :Constructor ""
-                 :Variable (icons.get :variable)
-                 :Class (icons.get :class)
-                 :Interface (icons.get :interface)
-                 :Module "{}"
-                 :Property (icons.get :tools)
-                 :Unit (icons.get :note)
-                 :Value (icons.get :note)
                  :Enum (icons.get :list-unordered)
-                 :Keyword (icons.get :list-unordered)
-                 :Snippet (icons.get :snippet)
-                 :Color (icons.get :heart)
+                 :EnumMember (icons.get :list-unordered)
+                 :Event (icons.get :zap)
+                 :Field (icons.get :field)
                  :File (icons.get :file)
                  :Folder (icons.get :file-directory-outline)
-                 :EnumMember (icons.get :list-unordered)
-                 :Constant (icons.get :constant)
-                 :Struct (icons.get :struct)
-                 :TypeParameter (icons.get :type)
-                 :Field (icons.get :field)
+                 :Function "ƒ"
+                 :Interface (icons.get :interface)
+                 :Keyword (icons.get :typography)
+                 :Method "ƒ"
+                 :Module "{}"
+                 :Operator (icons.get :diff)
+                 :Property (icons.get :tools)
                  :Reference (icons.get :file-symlink-file)
-                 :Event (icons.get :zap)}})
+                 :Snippet (icons.get :snippet)
+                 :Struct (icons.get :struct)
+                 :Text (icons.get :typography)
+                 :TypeParameter (icons.get :type)
+                 :Unit (icons.get :note)
+                 :Value (icons.get :note)
+                 :Variable (icons.get :variable)}})
