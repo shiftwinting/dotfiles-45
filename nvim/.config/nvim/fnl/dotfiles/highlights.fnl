@@ -23,6 +23,8 @@
 
            :VGitSignAdd "guifg=#67e480 guibg=#191622"
            :VGitSignRemove "guifg=#ed4556 guibg=#191622"
-           :VGitSignChange "guifg=#e7de79 guibg=#191622"}]
+           :VGitSignChange "guifg=#e7de79 guibg=#191622"
+
+           :BufferlineNonCurrent "guifg=#8796b0 guibg=None"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))

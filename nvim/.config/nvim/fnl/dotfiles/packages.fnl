@@ -4,7 +4,11 @@
 (local packages
  {:wbthomason/packer.nvim {}
   :Olical/aniseed {}
-;  :Akin909/nvim-bufferline.lua {:config "require 'bufferline'.setup()"}
+  :jose-elias-alvarez/buftabline.nvim {:config "require('buftabline').setup{
+                                                  icons = true,
+                                                  icon_colors = true,
+                                                  hlgroup_normal = 'BufferlineNonCurrent',
+                                                }"}
   :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}
   :editorconfig/editorconfig-vim {}
   :hardcoreplayers/dashboard-nvim {:config "require 'dotfiles.plugins.dashboard'"}
@@ -66,7 +70,7 @@
   :antoinemadec/FixCursorHold.nvim {}
   :mhartington/formatter.nvim {:config "require 'dotfiles.plugins.formatter'"
                                :cmd "Format"}
-  :oknozor/illumination {:run "./insttall.sh"
+  :oknozor/illumination {:run "./install.sh"
                          :ft "markdown"}
 ; Git
   :iberianpig/tig-explorer.vim {:requires "rbgrouleff/bclose.vim"}
@@ -86,7 +90,10 @@
   :mhinz/vim-sayonara {}
   :delphinus/vim-auto-cursorline {}
   :lewis6991/foldsigns.nvim {:config "require 'foldsigns'.setup()"}
-  :Pocco81/ISuckAtSpelling.nvim {:config "require 'isas'.setup()"}
+  :Pocco81/AbbrevMan.nvim {:config "require 'abbrev-man'.setup{
+                                      load_natural_dictionaries_at_startup = true,
+                                      natural_dictionaries = {[\"nt_en\"]={}}
+                                    }"}
   :axelf4/vim-strip-trailing-whitespace {}
   :folke/lua-dev.nvim {}
   :tridactyl/vim-tridactyl {}

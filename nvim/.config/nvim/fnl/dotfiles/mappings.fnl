@@ -31,7 +31,6 @@
 ;Telescope
 (smap :n :<leader>f "<cmd>lua require('telescope').extensions.fzf_writer.files()<CR>")
 (smap :n :<leader>h "<cmd>Telescope frecency<CR>")
-(smap :n :<leader>m "<cmd>Telescope marks<CR>")
 (smap :n :<leader>lg "<cmd>lua require('telescope').extensions.fzf_writer.grep()<CR>")
 (smap :n :<leader>sg "<cmd>lua require('telescope').extensions.fzf_writer.staged_grep()<CR>")
 (smap :n :<leader>gf "<cmd>Telescope git_files<CR>")
@@ -51,13 +50,6 @@
   (noremap :n :<Down> (.. n "<C-E>"))
   (noremap :n :<ScrollWheelDown> (.. n "<C-E>"))))
 
-;NvimTree
-(smap :n :<leader>v ":NvimTreeToggle<CR>")
-(smap :n :<leader>n ":NvimTreeFindFile<CR>")
-(smap :n :<leader>r ":NvimTreeRefresh<CR>")
-
-;nvim-colorizer
-(smap :n :<leader>c ":ColorizerToggle<CR>")
 
 ;LSP
 (noremap :n :<M-CR>
