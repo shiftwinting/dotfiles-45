@@ -40,7 +40,7 @@ disabled = false
 
 [git_branch]
 format = "[$symbol $branch]($style) "
-symbol = ""
+symbol = ""
 
 [cmd_duration]
 format = "[$duration]($style) "

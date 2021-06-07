@@ -40,15 +40,15 @@
       "<cmd>lua require'telescope'.extensions.z.list{ cmd = { vim.o.shell, '-c', 'zoxide query -sl' } }<CR>")
 (smap :n :<leader>th "<cmd>Telescope help_tags<CR>")
 (smap :n :<leader> "<cmd>Telescope keymaps<CR>")
-(smap :n :<C-p> "<cmd>Telescope project<CR>")
+(smap :n :<C-M-p> "<cmd>Telescope project<CR>")
 (smap :n :<leader>cb "<cmd>lua require 'dotfiles.plugins.telescope.custom'.curbuf()<CR>")
 (smap :n :<M-x> "<cmd>lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))<cr>")
 (let [n 2]
  (do
-  (noremap :n :<Up> (.. n "<C-Y>"))
-  (noremap :n :<ScrollWheelUp> (.. n "<C-Y>"))
-  (noremap :n :<Down> (.. n "<C-E>"))
-  (noremap :n :<ScrollWheelDown> (.. n "<C-E>"))))
+  (smap :n :<Up> (.. n "<C-Y>"))
+  (smap :n :<ScrollWheelUp> (.. n "<C-Y>"))
+  (smap :n :<Down> (.. n "<C-E>"))
+  (smap :n :<ScrollWheelDown> (.. n "<C-E>"))))
 
 
 ;LSP
@@ -87,3 +87,7 @@
 
 ;Neogit
 (noremap :n :<C-g> "<cmd>lua require 'neogit'.open({kind = 'split'})<CR>")
+
+;Switching buffers
+(smap :n :<C-n> ":bnext<CR>")
+(smap :n :<C-p> ":bprevious<CR>")

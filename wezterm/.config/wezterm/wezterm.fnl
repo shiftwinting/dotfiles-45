@@ -16,4 +16,4 @@
       :keys [{:key "Enter" :mods "ALT" :action "DisableDefaultAssignment"}]
       :window_padding {:left 5
                        :top 5}
-      :color_scheme "Solarized Dark Higher Contrast"})
+      :color_scheme "falcon"})

@@ -43,12 +43,12 @@
 
 ; DAP
   :mfussenegger/nvim-dap {:config "require 'dotfiles.plugins.dap.setup'"
-                          :opt true}
-  :rcarriga/nvim-dap-ui {:config "require 'dapui'.setup()"
-                         :after "nvim-dap"}
+                          :opt false}
+  :theHamsta/nvim-dap-virtual-text {:config "vim.g.dap_virtual_text = true"}
 
 ; Treesitter
-  :nvim-treesitter/nvim-treesitter {:config "require 'dotfiles.plugins.treesitter'"}
+  :nvim-treesitter/nvim-treesitter {:config "require 'dotfiles.plugins.treesitter'"
+                                    :run ":TSUpdate"}
   "~/stuff/projects/nvim-ts-rainbow" {:branch "incremental_updates"}
   :nvim-treesitter/nvim-treesitter-refactor {}
   :nvim-treesitter/nvim-treesitter-textobjects {}
@@ -90,10 +90,7 @@
   :mhinz/vim-sayonara {}
   :delphinus/vim-auto-cursorline {}
   :lewis6991/foldsigns.nvim {:config "require 'foldsigns'.setup()"}
-  :Pocco81/AbbrevMan.nvim {:config "require 'abbrev-man'.setup{
-                                      load_natural_dictionaries_at_startup = true,
-                                      natural_dictionaries = {[\"nt_en\"]={}}
-                                    }"}
+  :omrisarig13/vim-auto-abbrev {}
   :axelf4/vim-strip-trailing-whitespace {}
   :folke/lua-dev.nvim {}
   :tridactyl/vim-tridactyl {}
@@ -112,6 +109,7 @@
 
   ; Telescope
   :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}
+  :cwebster2/github-coauthors.nvim {:config "require('telescope').load_extension('githubcoauthors')"}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"
                                              :config "require('telescope').load_extension('fzf')"
                                              :after "telescope.nvim"}

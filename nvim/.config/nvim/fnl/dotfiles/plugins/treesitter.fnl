@@ -28,24 +28,21 @@
                            :keymaps {:goto_definition "gnd"
                                      :list_definitions "gnD"}}}
    :textobjects {:select {:enable true
-                          :keymaps {"iF" {:python "(function_definition) @function"
-                                          :c "(function_definition) @function"
-                                          :java "(method_declaration) @function"
-                                          :lua "(local_function) @function"}
-                                    "af" "@function.outer"
-                                    "if" "@function.inner"
-                                    "aC" "@class.outer"
-                                    "iC" "@class.inner"
-                                    "ac" "@conditional.outer"
-                                    "ae" "@block.outer"
-                                    "ie" "@block.inner"
-                                    "al" "@loop.outer"
-                                    "il" "@loop.inner"
-                                    "is" "@statement.inner"
-                                    "as" "@statement.outer"
-                                    "ad" "@comment.outer"
-                                    "am" "@call.outer"
-                                    "im" "@call.inner"}}}
+                          :keymaps {:af "@function.outer"
+                                    :if "@function.inner"
+                                    :aC "@class.outer"
+                                    :iC "@class.inner"
+                                    :ac "@conditional.outer"
+                                    :ic "@conditional.inner"
+                                    :ae "@block.outer"
+                                    :ie "@block.inner"
+                                    :al "@loop.outer"
+                                    :il "@loop.inner"
+                                    :is "@statement.inner"
+                                    :as "@statement.outer"
+                                    :ad "@comment.outer"
+                                    :am "@call.outer"
+                                    :im "@call.inner"}}}
    :ensure_installed [:yaml :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css :jsonc :rust]
    :playground {:enable true
                 :disable {}

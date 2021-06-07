@@ -3,7 +3,6 @@
       {: format} string]
   (tset g "aniseed#env" {:module "dotfiles.init"
                          :compile true})
-
   (fn ensure [user repo]
     "Ensures that a specified module is downloaded and then loaded"
     (local path (format "%s/site/pack/packer/start/%s" (stdpath :data) repo))

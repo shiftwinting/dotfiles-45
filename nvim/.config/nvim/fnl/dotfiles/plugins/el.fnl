@@ -19,7 +19,7 @@
                    (fn [window buffer]
                      (let [branch (extensions.git_branch window buffer)]
                        (if branch
-                         (.. " " (icons.get "git-branch") " " branch " ")))))
+                         (.. "  " branch " ")))))
       git-changes (subscribe.buf_autocmd "el_git_changes" "BufWritePost"
                     (fn [window buffer]
                       (extensions.git_changes window buffer)))]

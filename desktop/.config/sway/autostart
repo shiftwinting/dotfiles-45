@@ -11,3 +11,4 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 exec wl-paste -t text --watch clipman store
 exec ~/.azotebg
 exec nm-applet --indicator
+exec cms_notifs

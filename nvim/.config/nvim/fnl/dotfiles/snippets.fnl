@@ -152,22 +152,28 @@ let f = BufReader::new(f); // DELET THIS 🔫
 let mut scan = Scanner::new(f); // CHANGE THIS BACK 🔫")
         :base (U.match_indentation "#![allow(unused_imports)]
 use std::{io::{self, prelude::*}, str};
+
 fn solve<R: BufRead, W: Write>(scan: &mut Scanner<R>, w: &mut W) {
-    for _ in 0..scan.token::<usize>() {
-        $0
-    }
+    $0
 }
+
 fn main() {
     let (stdin, stdout) = (io::stdin(), io::stdout());
     let mut scan = Scanner::new(stdin.lock());
     let mut out = io::BufWriter::new(stdout.lock());
-    solve(&mut scan, &mut out);
+
+    for _ in 0..scan.token::<usize>() {
+        solve(&mut scan, &mut out);
+    }
 }
+
+
 struct Scanner<R> {
     reader: R,
     buf_str: Vec<u8>,
     buf_iter: str::SplitWhitespace<'static>,
 }
+
 impl<R: BufRead> Scanner<R> {
     fn new(reader: R) -> Self {
         Self {
