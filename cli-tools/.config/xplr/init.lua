@@ -1,4 +1,4 @@
-version = "0.13.0"
+version = "0.14.0"
 local xplr = xplr
 local keys = xplr.config.modes.builtin.default.key_bindings.on_key
 keys["ctrl-f"] = {

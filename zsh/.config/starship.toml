@@ -1,6 +1,7 @@
 format = """
 ┌ $username\
 $hostname\
+$shell\
 $shlvl\
 $directory\
 $git_branch\
@@ -9,13 +10,11 @@ $git_state\
 $git_status\
 $hg_branch\
 $package\
-$python\
 $nix_shell\
 $cmd_duration\
 $status\
 $line_break\
 $jobs\
-$shell\
 └$character"""
 
 [character]
@@ -44,3 +43,8 @@ symbol = ""
 
 [cmd_duration]
 format = "[$duration]($style) "
+
+[shell]
+disabled = false
+zsh_indicator = ""
+format = "[$indicator ](cyan)"

@@ -26,7 +26,6 @@
   :hrsh7th/nvim-compe {:config "require 'dotfiles.plugins.compe'"}
   :tami5/compe-conjure {:after "conjure"}
   :tamago324/compe-zsh {}
-  :tzachar/compe-tabnine {:run "./install.sh"}
   :norcalli/snippets.nvim {:config "require 'dotfiles.snippets'"}
 
 ; LSP

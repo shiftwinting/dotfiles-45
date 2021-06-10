@@ -16,7 +16,6 @@
    :max_menu_width 100
    :documentation true
    :source {:path true
-            :tabnine true
             :buffer true
             :calc true
             :snippets_nvim true
