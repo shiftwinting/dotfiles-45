@@ -4,13 +4,15 @@
 (let [tbl {:Whitespace "guifg=#424760 guibg=#191622"
            :EndOfBuffer "guifg=#424760"
            :Statusline "guibg=#312C3E"
+           :IndentBlanklineChar "guifg=#424760 guibg=#191622 gui=nocombine"
+
            :TelescopeBorder "guifg=#534A76"
            :TelescopeMatching "guifg=#ff79c6"
            :TelescopePromptPrefix "guifg=#78d1e1"
            :TelescopeSelectionCaret "guifg=#ff79c6"
            :TelescopeSelection "guifg=#67e480"
+
            :Keyword "guifg=#ff79c6"
-           :IndentBlanklineChar "guifg=#424760 guibg=#191622 gui=nocombine"
            :TSParameter "guifg=#FFb86C guibg=#191622 gui=Italic"
 
            :ElBranch "guifg=#67e480 guibg=None"
@@ -25,6 +27,7 @@
            :VGitSignRemove "guifg=#ed4556 guibg=#191622"
            :VGitSignChange "guifg=#e7de79 guibg=#191622"
 
-           :BufferlineNonCurrent "guifg=#8796b0 guibg=None"}]
+           :BufferlineNonCurrent "guifg=#8796b0 guibg=None"
+           :NvimDapVirtualText "guifg=#8871E2 guibg=None"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))

@@ -20,6 +20,7 @@
                                 (exptab-lua)
                                 "--align-args"
                                 "--align-parameter"
+                                "--extra-sep-at-table-end"
                                 (.. "--indent-width=" (sw))]
                          :stdin true})]
                 :cpp

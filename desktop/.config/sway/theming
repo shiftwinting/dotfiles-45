@@ -8,7 +8,25 @@ gaps outer 3
 gaps inner 7
 default_border pixel 2
 
-include ~/.cache/wal/colors-sway
+set $background #191622
+set $foreground #ffffff
+
+set $color0 #191622
+set $color1 #e61f44
+set $color2 #67e480
+set $color3 #FFB86C
+set $color4 #78d1e1
+set $color5 #988bc7
+set $color6 #78d1e1
+set $color7 #c5c8c6
+set $color8 #8796b0
+set $color9 #e61f44
+set $color10 #67e480
+set $color11 #FFB86C
+set $color12 #78d1e1
+set $color13 #988bc7
+set $color14 #78d1e1
+set $color15 #ffffff
 
 ### Colors                border      background     text               indicator child_border
 client.focused          $color8       $background    $foreground        $color8   $color8

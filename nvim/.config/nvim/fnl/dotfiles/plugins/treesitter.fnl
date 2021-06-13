@@ -8,7 +8,7 @@
                :disable ["latex" "clojure" "css"]}
    :rainbow {:enable true
              :extended_mode true
-             :disable []
+             :disable ["c" "cpp" "lua" "rust"]
              :colors ["#ff79c6"
                       "#FFB86C"
                       "#67e480"

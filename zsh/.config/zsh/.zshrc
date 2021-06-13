@@ -2,7 +2,7 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.zsh_history
+HISTFILE="$XDG_DATA_HOME"/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 # End of lines configured by zsh-newuser-install
@@ -14,6 +14,8 @@ export EDITOR="nvim"
 export NAVI_FINDER="skim"
 setopt extendedglob
 
+export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 # Colourful man
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
@@ -53,7 +55,7 @@ source /home/p00f/.config/broot/launcher/bash/br
 source /usr/share/doc/pkgfile/command-not-found.zsh
 fpath+=~/.zfunc
 autoload -Uz compinit
-compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 autoload -U +X bashcompinit && bashcompinit
 
 eval "$(zoxide init zsh)"
