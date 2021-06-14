@@ -4,7 +4,7 @@
     "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/mode", "sway/workspaces", "sway/window"],
+    "modules-left": ["custom/lambda", "sway/mode", "sway/workspaces", "sway/window"],
     "modules-center": [],
     "modules-right": [
         "custom/firefox_media",
@@ -24,6 +24,7 @@
     ],
 
     // Modules configuration
+    "custom/lambda": {"format": " λ "},
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },

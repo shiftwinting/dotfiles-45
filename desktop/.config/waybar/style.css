@@ -168,3 +168,11 @@ window#waybar.hidden {
     font-family: Cantarell;
     font-size: 12.5px;
 }
+
+#custom-lambda {
+    font-family: FantasqueSansMono Nerd Font;
+    font-size: 18px;
+    color: #E39E3C;
+    background-color: #2A5229;
+    border-radius: 3px;
+}

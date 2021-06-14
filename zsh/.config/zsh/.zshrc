@@ -2,7 +2,7 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # Lines configured by zsh-newuser-install
-HISTFILE="$XDG_DATA_HOME"/zsh/history
+HISTFILE="$XDG_STATE_HOME"/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 # End of lines configured by zsh-newuser-install
