@@ -8,7 +8,7 @@ SAVEHIST=100000
 # End of lines configured by zsh-newuser-install
 
 # Antibody
-source ~/.zsh_plugins.sh
+source $ZDOTDIR/plugins.sh
 
 export EDITOR="nvim"
 export NAVI_FINDER="skim"
@@ -18,15 +18,16 @@ export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 # Colourful man
 man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-        LESS_TERMCAP_me=$'\e[0m' \
-        LESS_TERMCAP_se=$'\e[0m' \
-        LESS_TERMCAP_so=$'\e[01;44;33m' \
-        LESS_TERMCAP_ue=$'\e[0m' \
-        LESS_TERMCAP_us=$'\e[01;32m' \
-        command man "$@"
+    LESS_TERMCAP_mb=$'\e[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;97m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;48;5;117;30m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[04;94m' \
+    command man "$@"
 }
-export LS_COLORS="$(vivid generate snazzy)"
+export LS_COLORS="$(vivid generate one-dark)"
 
 # Aliases
 alias ls="ls --color=auto"

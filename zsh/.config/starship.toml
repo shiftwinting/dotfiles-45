@@ -29,6 +29,10 @@ behind = "↓${count}"
 modified = "!${count}"
 staged = "+${count}"
 untracked = "?${count}"
+deleted = "✘${count}"
+renamed = "»${count}"
+stashed = "$${count}"
+conflicted = "=${count}"
 style = "green"
 
 [status]
@@ -47,4 +51,9 @@ format = "[$duration]($style) "
 [shell]
 disabled = false
 zsh_indicator = ""
-format = "[$indicator ](cyan)"
+format = " [$indicator](bold green) "
+
+[username]
+show_always = true
+style_user = "cyan"
+format = "[$user]($style)"

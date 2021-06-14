@@ -15,7 +15,7 @@
            :Keyword "guifg=#ff79c6"
            :TSParameter "guifg=#FFb86C guibg=#191622 gui=Italic"
 
-           :ElBranch "guifg=#67e480 guibg=None"
+           :ElBranch "guifg=#67e480"
            :ElLsp "guifg=#e7de79 guibg=#312c3e"
            :ElFile "guifg=#ff79c6 guibg=#312C3E"
            :ElLine "guibg=#312c3e guifg=#78d1e1 "
@@ -27,7 +27,7 @@
            :VGitSignRemove "guifg=#ed4556 guibg=#191622"
            :VGitSignChange "guifg=#e7de79 guibg=#191622"
 
-           :BufferlineNonCurrent "guifg=#8796b0 guibg=None"
-           :NvimDapVirtualText "guifg=#8871E2 guibg=None"}]
+           :BufferlineNonCurrent "guifg=#8796b0"
+           :NvimDapVirtualText "guifg=#8871E2"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))

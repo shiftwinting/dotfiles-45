@@ -53,6 +53,8 @@
   :nvim-treesitter/nvim-treesitter-textobjects {}
   :nvim-treesitter/playground {}
   :vigoux/architext.nvim {}
+  :mfussenegger/nvim-ts-hint-textobject {}
+
   :Olical/conjure {:ft ["fennel" "clojure"]}
   :eraserhd/parinfer-rust {:run "cargo build --release"
                            :ft ["clojure" "fennel" "lisp" "scheme"]}
@@ -83,7 +85,7 @@
   :junegunn/limelight.vim {}
   :chrisbra/NrrwRgn {}
   :tkmpypy/chowcho.nvim {}
-  :phaazon/hop.nvim {}
+  :phaazon/hop.nvim {:config "require 'hop'.setup{}"}
   "~/stuff/projects/cphelper/cphelper.nvim" {:rocks "http"
                                              :requires "nvim-lua/plenary.nvim"}
   :mhinz/vim-sayonara {}

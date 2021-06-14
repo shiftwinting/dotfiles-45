@@ -28,6 +28,9 @@
 (smap "" "\\c" :<cmd>HopChar1<CR>)
 (smap "" "\\C" :<cmd>HopChar2<CR>)
 
+(smap :o :m ":<C-U>lua require('tsht').nodes()<CR>")
+(smap :v :m ":lua require('tsht').nodes()<CR>")
+
 ;Telescope
 (smap :n :<leader>f "<cmd>lua require('telescope').extensions.fzf_writer.files()<CR>")
 (smap :n :<leader>h "<cmd>Telescope frecency<CR>")

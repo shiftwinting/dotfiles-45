@@ -36,7 +36,7 @@ end")
       :_global
        {:date "${=os.date()}" :epoch "${=os.time()}"}
       :cpp
-       {:base (U.match_indentation "#include <bits/stdc++.h>
+       {:cc_base (U.match_indentation "#include <bits/stdc++.h>
 #include <vector>
 #define REP(i, n) for (int i = 0; (i) < (int)(n); ++(i))
 #define REP3(i, m, n) for (int i = (m); (i) < (int)(n); ++(i))
@@ -147,10 +147,30 @@ for x in &${2:v} {
     }
     x
 }")
+        :factorize (U.match_indentation "fn factorise(m: &u64) -> HashMap<u64, u64> {
+    let mut n = *m;
+    let mut factors = HashMap::new();
+
+    while n % 2 == 0 {
+        *factors.entry(2).or_insert(0) += 1;
+        n /= 2;
+    }
+    for i in (3..(n as f64).sqrt() as u64 + 1).step_by(2) {
+        while n % i == 0 {
+            *factors.entry(i).or_insert(0) += 1;
+            n /= i;
+        }
+    }
+    if n > 2 {
+        *factors.entry(n).or_insert(0) += 1;
+    }
+
+    factors
+}")
         :file_stdin (U.match_indentation "let f = File::open(\"input1\").unwrap(); // DELET THIS 🔫
 let f = BufReader::new(f); // DELET THIS 🔫
 let mut scan = Scanner::new(f); // CHANGE THIS BACK 🔫")
-        :base (U.match_indentation "#![allow(unused_imports)]
+        :cc_base (U.match_indentation "#![allow(unused_imports)]
 use std::{io::{self, prelude::*}, str};
 
 fn solve<R: BufRead, W: Write>(scan: &mut Scanner<R>, w: &mut W) {
