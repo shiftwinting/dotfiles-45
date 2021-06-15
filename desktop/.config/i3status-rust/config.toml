@@ -1,0 +1,40 @@
+theme = "modern"
+icons = "material-nf"
+
+[[block]]
+block = "focused_window"
+show_marks = "visible"
+
+[[block]]
+block = "music"
+buttons = ["play", "next"]
+format = "{title}"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_total_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+chip = "coretemp-isa-0000"
+format = "{average}"
+interval = 5
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "maildir"
+interval = 40
+inboxes = ["/home/p00f/Mail/BITS/INBOX", "/home/p00f/Mail/GMail/INBOX"]
+
+[[block]]
+block = "pacman"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
