@@ -14,7 +14,6 @@
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+o exec rofi -show run | xargs swaymsg exec --
     # switch to csd
     bindsym $mod+g border csd
     # switch to no border
@@ -31,8 +30,7 @@
     bindsym $mod+Shift+c reload
 
     # Clipman
-    bindsym $mod+c exec clipman pick -t rofi
-
+    bindsym $mod+c exec alacritty --class=clipman --title=clipman -e clipman pick --print0 --tool=CUSTOM --tool-args="fzf --prompt 'clipboard > ' --read0 --layout=reverse --cycle"
     # grimshot
     bindsym Print exec grim - | swappy -f -
     bindsym Ctrl+Print exec grim -g "$(slurp)" - | swappy -f -
@@ -56,7 +54,7 @@
     bindsym $mod+Shift+m exec swaylock -i ~/Pictures/wall.png --effect-greyscale
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec nwgbar
+    bindsym $mod+Shift+e exec waylogout.sh
     bindsym $mod+n exec makoctl menu rofi -d -p 'Choose Action: '
     bindsym $mod+x exec makoctl dismiss
     bindsym $mod+Shift+d exec wldash

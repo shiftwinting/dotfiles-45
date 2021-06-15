@@ -147,8 +147,7 @@ for x in &${2:v} {
     }
     x
 }")
-        :factorize (U.match_indentation "fn factorise(m: &u64) -> HashMap<u64, u64> {
-    let mut n = *m;
+        :factorise (U.match_indentation "fn factorise(mut n: u64) -> HashMap<u64, u64> {
     let mut factors = HashMap::new();
 
     while n % 2 == 0 {

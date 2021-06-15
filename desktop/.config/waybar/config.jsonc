@@ -133,7 +133,7 @@
     },
     "custom/power": {
         "format": "",
-        "on-click": "nwgbar"
+        "on-click": "waylogout.sh"
     },
     "custom/sep1": {
         "format": ""
