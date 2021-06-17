@@ -21,7 +21,7 @@
             :snippets_nvim true
             :nvim_lsp true
             :nvim_lua false
-            :spell true
+            :spell false
             :tags true
             :treesitter true
             :conjure true

@@ -1,9 +1,10 @@
-theme = "modern"
+theme = "semi-native"
 icons = "material-nf"
 
 [[block]]
 block = "focused_window"
 show_marks = "visible"
+max_width = 70
 
 [[block]]
 block = "music"
@@ -13,8 +14,8 @@ format = "{title}"
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{mem_total_used_percents}"
-format_swap = "{swap_used_percents}"
+icons = false
+format_mem = "{mem_used}"
 
 [[block]]
 block = "temperature"
@@ -32,9 +33,12 @@ interval = 40
 inboxes = ["/home/p00f/Mail/BITS/INBOX", "/home/p00f/Mail/GMail/INBOX"]
 
 [[block]]
-block = "pacman"
+block = "networkmanager"
+device_format = "{icon}{name}{ap}"
 
 [[block]]
 block = "time"
+icons_format = " "
 interval = 60
 format = "%a %d/%m %R"
+on_click ="wldash"
