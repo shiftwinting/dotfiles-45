@@ -4,8 +4,8 @@
                           "ss03"
                           "ss06"
                           "ss07"]
-      :font (wezterm.font_with_fallback ["Fira Code" "nonicon" "Noto Color Emoji"])
-      :font_size 11.3
+      :font (wezterm.font_with_fallback ["JetBrains Mono" "nonicon" "Noto Color Emoji"])
+      :font_size 10.875
       :default_cursor_style "BlinkingUnderline"
       :hide_tab_bar_if_only_one_tab true
       :adjust_window_size_when_changing_font_size false

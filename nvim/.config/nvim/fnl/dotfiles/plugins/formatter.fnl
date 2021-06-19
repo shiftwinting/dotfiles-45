@@ -21,6 +21,10 @@
                                 "--align-args"
                                 "--align-parameter"
                                 "--extra-sep-at-table-end"
+                                "--spaces-inside-table-braces"
+                                "--align-table-field"
+                                "--single-quote-to-double-quote"
+                                "--spaces-around-equals-in-field"
                                 (.. "--indent-width=" (sw))]
                          :stdin true})]
                 :cpp

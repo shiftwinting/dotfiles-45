@@ -46,6 +46,35 @@ keys["ctrl-n"] = {
     messages = {{BashExecSilently = [[wezterm start -- xplr &]]}, "Refresh"},
 }
 keys.P = {help = "paste.rs", messages = {"PopMode", {SwitchModeCustom = "paste.rs"}, "Refresh"}}
+keys.Z = {
+    help = "zoxide jump",
+    messages = {
+        {
+            BashExec = [===[
+      PTH=$(zoxide query -i)
+      if [ "$PTH" ]; then
+        echo ChangeDirectory: "'"${PTH:?}"'" >> "${XPLR_PIPE_MSG_IN:?}"
+      fi
+    ]===],
+        },
+    },
+}
+keys.S = {
+    help = "serve $PWD",
+    messages = {
+        {
+            BashExec = [[
+        IP=$(ip addr | grep -w inet | cut -d/ -f1 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | fzf --prompt 'Select IP > ')
+        echo "IP: ${IP:?}"
+        read -p "Port (default 5000): " PORT
+        echo
+        sfz --all --cors --no-ignore --bind ${IP:?} --port ${PORT:-5000} . &
+        sleep 1 && read -p '[press enter to exit]'
+        kill -9 %1
+      ]],
+        },
+    },
+}
 xplr.config.modes.custom = {
     ["paste.rs"] = {
         name = "paste.rs",

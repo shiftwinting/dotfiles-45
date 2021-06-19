@@ -22,4 +22,4 @@ set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu exec alacritty --class=launcher --title=launcher -e env TERMINAL_COMMAND="kitty -e" HIST_FILE="~/.local/state/swaylauncher_history" sway-launcher-desktop
+set $menu exec alacritty --class=launcher --title=launcher -e env TERMINAL_COMMAND="wezterm start" HIST_FILE="~/.local/state/swaylauncher_history" sway-launcher-desktop

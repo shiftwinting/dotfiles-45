@@ -94,3 +94,7 @@
 ;Switching buffers
 (smap :n :<C-n> ":bnext<CR>")
 (smap :n :<C-p> ":bprevious<CR>")
+
+;Toggleterm
+(smap :n "<C-\\>" "<cmd>ToggleTerm<CR>")
+(smap :i "<C-\\>" "<cmd>ToggleTerm<CR>")

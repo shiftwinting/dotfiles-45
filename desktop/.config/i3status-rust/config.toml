@@ -26,6 +26,7 @@ interval = 5
 
 [[block]]
 block = "sound"
+on_click = "wezterm start ncpamixer"
 
 [[block]]
 block = "maildir"
@@ -34,7 +35,8 @@ inboxes = ["/home/p00f/Mail/BITS/INBOX", "/home/p00f/Mail/GMail/INBOX"]
 
 [[block]]
 block = "networkmanager"
-device_format = "{icon}{name}{ap}"
+device_format = "{icon}{name} {ap}"
+on_click = "networkmanager_dmenu"
 
 [[block]]
 block = "time"

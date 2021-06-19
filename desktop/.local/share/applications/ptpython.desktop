@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=ptpython
-Exec=wezterm start ptpython
-Icon=steam_icon_730
-Terminal=false
-Type=Application

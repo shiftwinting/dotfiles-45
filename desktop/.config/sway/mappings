@@ -7,8 +7,6 @@
     # Start a terminal
     bindsym $mod+Return exec $term
 
-    #wofer
-    bindsym $mod+p exec ~/wofer/wofer.sh
     # Kill focused window
     bindsym $mod+q kill
 

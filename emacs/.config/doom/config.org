@@ -52,7 +52,7 @@ Variables accept either a font-spec, font string ("Input Mono-12"), or xlfd font
 ;(setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;      doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 15)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
       doom-variable-pitch-font (font-spec :family "Overpass" :size 15)
       doom-unicode-font (font-spec :family "FontAwesome 5 Free" :size 12)
       doom-serif-font (font-spec :family "IBM Plex Mono" :weight 'light)

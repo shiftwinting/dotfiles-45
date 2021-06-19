@@ -121,7 +121,9 @@
   :nvim-telescope/telescope-fzf-writer.nvim {}
   :nvim-telescope/telescope-project.nvim {:config "require'telescope'.load_extension('project')"}
   :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"
-                                      :after "nvim-dap"}})
+                                      :after "nvim-dap"}
+
+  :mhinz/neovim-remote {}})
 
 (packer.startup (fn []
                    (each [key value (pairs packages)]
