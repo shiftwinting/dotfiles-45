@@ -9,5 +9,4 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec wl-paste -t text --watch clipman store
 exec ~/.azotebg
-exec nm-applet --indicator
 exec cms_notifs

@@ -6,3 +6,4 @@ peterhurford/git-it-on.zsh
 NullSense/fuzzy-sys
 wfxr/forgit
 hlissner/zsh-autopair
+olets/zsh-abbr

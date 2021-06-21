@@ -16,8 +16,8 @@ keys["ctrl-f"] = {
         }, "Refresh",
     },
 }
-keys.O = {help = "xdg-open", messages = {{BashExec = [[xdg-open ${XPLR_FOCUS_PATH:?}]]}}}
-keys.y = {help = "copy", messages = {"PopMode", {SwitchModeCustom = "copy"}, "Refresh"}}
+keys.O = { help = "xdg-open", messages = { { BashExec = [[xdg-open ${XPLR_FOCUS_PATH:?}]] } } }
+keys.y = { help = "copy", messages = { "PopMode", { SwitchModeCustom = "copy" }, "Refresh" } }
 keys.p = {
     help = "paste",
     messages = {
@@ -40,12 +40,13 @@ keys.R = {
         }, "Refresh",
     },
 }
-keys.D = {help = "disk usage", messages = {{BashExec = [[dua i]]}, "ClearScreen", "Refresh"}}
+keys.D = { help = "disk usage", messages = { { BashExec = [[dua i]] }, "ClearScreen", "Refresh" } }
 keys["ctrl-n"] = {
     help = "new session",
-    messages = {{BashExecSilently = [[wezterm start -- xplr &]]}, "Refresh"},
+    messages = { { BashExecSilently = [[wezterm start -- xplr &]] }, "Refresh" },
 }
-keys.P = {help = "paste.rs", messages = {"PopMode", {SwitchModeCustom = "paste.rs"}, "Refresh"}}
+keys.P = { help = "paste.rs",
+           messages = { "PopMode", { SwitchModeCustom = "paste.rs" }, "Refresh" } }
 keys.Z = {
     help = "zoxide jump",
     messages = {
@@ -134,7 +135,7 @@ xplr.config.modes.custom = {
                         }, "PopMode", "Refresh",
                     },
                 },
-                esc = {help = "cancel", messages = {"PopMode", "Refresh"}},
+                esc = { help = "cancel", messages = { "PopMode", "Refresh" } },
             },
         },
     },
@@ -145,17 +146,17 @@ xplr.config.modes.custom = {
                 y = {
                     help = "copy focused file",
                     messages = {
-                        {BashExecSilently = [[xclip-copyfile $(cat "${XPLR_PIPE_RESULT_OUT:?}")]]},
+                        { BashExecSilently = [[xclip-copyfile $(cat "${XPLR_PIPE_RESULT_OUT:?}")]] },
                         "PopMode", "Refresh",
                     },
                 },
-                esc = {help = "cancel", messages = {"PopMode", "Refresh"}},
+                esc = { help = "cancel", messages = { "PopMode", "Refresh" } },
             },
         },
     },
 }
 xplr.config.node_types = {
-    directory = {meta = {icon = ""}},
-    file = {meta = {icon = ""}},
-    symlink = {meta = {icon = ""}},
+    directory = { meta = { icon = "" } },
+    file = { meta = { icon = "" } },
+    symlink = { meta = { icon = "" } },
 }

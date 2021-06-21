@@ -122,8 +122,8 @@ freopen(\"input1\", \"r\", stdin);
         return (x + y - 1) / y;
 }")}
       :rust
-       {:read_int "scan.token::<${1:usize}>();"
-        :read_intvec "(0..${1:n}).map(|_| scan.token()).collect();"
+       {:ri "scan.token::<${1:usize}>();"
+        :rv "(0..${1:n}).map(|_| scan.token()).collect();"
         :freqmap (U.match_indentation "let mut ${1:freqs} = HashMap::new();
 for x in &${2:v} {
     let count = $1.entry(x).or_insert(0);
