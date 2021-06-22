@@ -39,6 +39,9 @@
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime
         :gtfo#terminals {:unix "wezterm start --cwd "}
         :AutoPairsMapCR false
-        :auto_abbrev_file_path "~/.local/share/nvim/abbrevatives"}]
+        :auto_abbrev_file_path "~/.local/share/nvim/abbrevatives"
+        :minimap_git_colors 1
+        :minimap_highlight_range 1
+        :minimap_highlight "Search"}]
   (each [global_ value (pairs globals)]
        (set-global global_ value)))

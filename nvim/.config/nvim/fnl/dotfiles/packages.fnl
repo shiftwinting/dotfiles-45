@@ -122,6 +122,7 @@
   :nvim-telescope/telescope-project.nvim {:config "require'telescope'.load_extension('project')"}
   :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"
                                       :after "nvim-dap"}
+  :wfxr/minimap.vim {:cmd "Minimap"}
 
   :mhinz/neovim-remote {}})
 
