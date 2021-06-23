@@ -13,6 +13,7 @@
   :editorconfig/editorconfig-vim {}
   :hardcoreplayers/dashboard-nvim {:config "require 'dotfiles.plugins.dashboard'"}
   :jeffkreeftmeijer/vim-numbertoggle {}
+  :AndrewRadev/splitjoin.vim {}
   :jiangmiao/auto-pairs {}
   :tpope/vim-sleuth {}
   :justinmk/vim-gtfo {}
@@ -35,11 +36,9 @@
                            :cmd "Trouble"}
   :onsails/lspkind-nvim {:cond (fn [] (not (= 1 vim.g.uivonim)))
                          :config "require 'dotfiles.plugins.lspkind'"}
-  :glepnir/lspsaga.nvim {}
   :simrat39/symbols-outline.nvim {:cmd "SymbolsOutline"}
   :simrat39/rust-tools.nvim {}
-  ;TODO: lspsaga or alternatives
-
+  :ray-x/lsp_signature.nvim {:config "require 'lsp_signature'.on_attach()"}
 ; DAP
   :mfussenegger/nvim-dap {:config "require 'dotfiles.plugins.dap.setup'"
                           :opt false}
@@ -109,11 +108,10 @@
   :sayanarijit/xplr.vim {:cmd "XplrPicker"}
 
   ; Telescope
-  :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'"}
+  :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'
+                                           require('telescope').load_extension('fzf')"}
   :cwebster2/github-coauthors.nvim {:config "require('telescope').load_extension('githubcoauthors')"}
-  :nvim-telescope/telescope-fzf-native.nvim {:run "make"
-                                             :config "require('telescope').load_extension('fzf')"
-                                             :after "telescope.nvim"}
+  :nvim-telescope/telescope-fzf-native.nvim {:run "make"}
   :nvim-lua/popup.nvim {}
   :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}
   :nvim-telescope/telescope-frecency.nvim {:requires "tami5/sql.nvim"

@@ -1,8 +1,8 @@
 (module dotfiles.lsp
   {require {lspconfig lspconfig
             lsp-status lsp-status
+            signature lsp_signature
             icons nvim-nonicons
-            lspsaga lspsaga
             lua-dev lua-dev
             rust-tools rust-tools}})
 
@@ -11,7 +11,7 @@
                 (if (. "flags" client.config)
                     (tset client.config.flags "allow_incremental_sync" true)))
       capabilities (vim.lsp.protocol.make_client_capabilities)
-      on_attach lsp-status.on_attach
+      on_attach (fn [client bufnr] (do (lsp-status.on_attach client bufnr) (signature.on_attach)))
       diag_handler {"textDocument/publishDiagnostics"
                      (vim.lsp.with
                                vim.lsp.diagnostic.on_publish_diagnostics
@@ -69,8 +69,5 @@
                 {:capabilities capabilities
                  :on_attach on_attach
                  :handlers diag_handler
-                 :on_init on-init})
-      (lspsaga.init_lsp_saga {:use_saga_diagnostic_sign false
-                              :code_action_icon (icons.get "light-bulb")
-                              :dianostic_header_icon (.. (icons.get "bug") " ")}))
+                 :on_init on-init}))
  true)

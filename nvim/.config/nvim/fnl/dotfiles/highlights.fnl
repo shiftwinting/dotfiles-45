@@ -4,6 +4,7 @@
 (let [tbl {:Whitespace "guifg=#424760 guibg=#191622"
            :EndOfBuffer "guifg=#424760"
            :Statusline "guibg=#312C3E"
+           :NormalFloat "guibg=#282A36"
            :IndentBlanklineChar "guifg=#424760 guibg=#191622 gui=nocombine"
 
            :TelescopeBorder "guifg=#534A76"

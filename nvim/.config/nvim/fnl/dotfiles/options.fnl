@@ -50,7 +50,7 @@
                          (setopt :linespace 2)
                          (setopt :guifont "Fira Code:h11"))
   nvim.g.neovide        (setopt :guifont "Source Code Pro,nonicon,FantasqueSansMono Nerd Font,Inter Regular:h15")
-  nvim.g.uivonim        (setopt :guifont "Fira Code,nonicon,FantasqueSansMono Nerd Font,Inter,Noto Color Emoji:h30"))
+  nvim.g.uivonim        (setopt :guifont "JetBrains Mono,nonicon,FantasqueSansMono Nerd Font,Inter,Noto Color Emoji:h30"))
 
 (when nvim.g.gnvim
   (setopt :completeopt "menuone,noinsert,noselect,preview"))

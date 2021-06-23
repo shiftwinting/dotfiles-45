@@ -32,7 +32,7 @@
 (smap :v :m ":lua require('tsht').nodes()<CR>")
 
 ;Telescope
-(smap :n :<leader>f "<cmd>lua require('telescope').extensions.fzf_writer.files()<CR>")
+(smap :n :<leader>f "<cmd>lua require('telescope.builtin').find_files()<CR>")
 (smap :n :<leader>h "<cmd>Telescope frecency<CR>")
 (smap :n :<leader>lg "<cmd>lua require('telescope').extensions.fzf_writer.grep()<CR>")
 (smap :n :<leader>sg "<cmd>lua require('telescope').extensions.fzf_writer.staged_grep()<CR>")
@@ -58,13 +58,13 @@
 (noremap :n :<M-CR>
          "<cmd>lua require 'dotfiles.plugins.telescope.custom'.lsp_code_actions()<CR>")
 
-(noremap :v :<M-CR> ":Lspsaga range_code_action<CR>")
-(smap :n :K ":Lspsaga hover_doc<CR>")
-(smap :n :pd ":Lspsaga preview_definition<CR>")
-(smap :n :dn ":Lspsaga diagnostic_jump_next<CR>")
-(smap :n :dp ":Lspsaga diagnostic_jump_prev<CR>")
-(smap :n :gr ":Lspsaga rename<CR>")
+(noremap :v :<M-CR> "<cmd>Telescope lsp_range_code_actions<CR>")
+(smap :n :K "<cmd>lua vim.lsp.buf.hover()<CR>")
+(smap :n :dn ":lua vim.lsp.diagnostic.goto_next()<CR>")
+(smap :n :dp ":lua vim.lsp.diagnostic.goto_prev()<CR>")
+(smap :n :gr "<cmd>lua vim.lsp.buf.rename()<CR>")
 (smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
+(smap :n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 
 ;Bufferline
 (smap :n :tt "<cmd>JABSOpen<CR>")
