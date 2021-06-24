@@ -18,9 +18,4 @@
     (core.map set-sign diag-attrs)))
 
 (when (not (or nvim.g.uivonim nvim.g.neovide))
-  (nvim.fn.sign_define "LightBulbSign" {:text "a"}))
-
-(tset lsp.handlers "textDocument/publishDiagnostics"
-      (lsp.with lsp.diagnostic.on_publish_diagnostics {:virtual_text true
-                                                       :signs true
-                                                       :update_in_insert false}))
+  (nvim.fn.sign_define "LightBulbSign" {:text (icons.get "light-bulb")}))

@@ -18,7 +18,8 @@
                                {:severity_sort true
                                 :update_in_insert false
                                 :underline true
-                                :virtual_text {:prefix (icons.get "square-fill")}})}
+                                :virtual_text false})}
+
       luadev (lua-dev.setup {:lspconfig {:cmd [(vim.fn.expand
                                                  "/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server")
                                                "-E"

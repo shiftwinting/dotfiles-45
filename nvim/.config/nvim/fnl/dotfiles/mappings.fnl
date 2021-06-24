@@ -65,6 +65,7 @@
 (smap :n :gr "<cmd>lua vim.lsp.buf.rename()<CR>")
 (smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
 (smap :n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+(smap :n :sd "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
 
 ;Bufferline
 (smap :n :tt "<cmd>JABSOpen<CR>")

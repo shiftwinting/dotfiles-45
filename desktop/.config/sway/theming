@@ -1,7 +1,7 @@
 # vim: filetype=sway
 
 # Font
-font Delugia Nerd Font 10.5
+font Source Code Pro 12
 
 # Gaps and border
 gaps outer 3
@@ -29,9 +29,8 @@ set $color14 #78d1e1
 set $color15 #ffffff
 
 ### Colors                border      background     text               indicator child_border
-client.focused          $color8       $background    $foreground        $color8   $color8
-client.urgent           $color8       $color8        $foreground        $color8   $color8
-
+client.focused          $color0       $background    $foreground        $color8   $color8
+client.urgent           $color0       $color8        $foreground        $color8   $color8
 
 # GTK
 

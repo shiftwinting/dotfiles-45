@@ -39,6 +39,7 @@
   :simrat39/symbols-outline.nvim {:cmd "SymbolsOutline"}
   :simrat39/rust-tools.nvim {}
   :ray-x/lsp_signature.nvim {:config "require 'lsp_signature'.on_attach()"}
+  :kosayoda/nvim-lightbulb {}
 ; DAP
   :mfussenegger/nvim-dap {:config "require 'dotfiles.plugins.dap.setup'"
                           :opt false}
