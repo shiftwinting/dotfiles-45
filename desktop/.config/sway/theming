@@ -8,7 +8,7 @@ gaps outer 3
 gaps inner 7
 default_border pixel 2
 
-set $background #191622
+set $background #161821
 set $foreground #ffffff
 
 set $color0 #191622

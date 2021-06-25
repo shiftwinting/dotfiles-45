@@ -123,7 +123,8 @@
                                       :after "nvim-dap"}
   :wfxr/minimap.vim {:cmd "Minimap"}
 
-  :mhinz/neovim-remote {}})
+  :mhinz/neovim-remote {}
+  :junegunn/vim-easy-align {}})
 
 (packer.startup (fn []
                    (each [key value (pairs packages)]
