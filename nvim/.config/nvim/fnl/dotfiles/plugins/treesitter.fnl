@@ -10,10 +10,10 @@
              :extended_mode true
              :disable ["c" "cpp" "lua"]
              :colors ["#ff79c6"
-                      "#FFB86C"
-                      "#67e480"
-                      "#988bc7"
-                      "#78d1e1"]}
+                      "#21c7a8"
+                      "#82aaff"
+                      "#ecc48d"
+                      "#ae81ff"]}
    :indent {:enable true}
    :incremental_selection {:enable true
                            :keymaps {:init_selection "gnn"

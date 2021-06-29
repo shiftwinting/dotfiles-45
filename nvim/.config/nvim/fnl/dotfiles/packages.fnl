@@ -7,7 +7,8 @@
   :jose-elias-alvarez/buftabline.nvim {:config "require('buftabline').setup{
                                                   icons = true,
                                                   icon_colors = true,
-                                                  hlgroup_normal = 'BufferlineNonCurrent',
+                                                  hlgroup_current = 'BufferlineCurrent',
+                                                  hlgroup_normal = 'BufferlineNormal',
                                                 }"}
   :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}
   :editorconfig/editorconfig-vim {}
@@ -21,6 +22,7 @@
                            :config "require 'nvim-nonicons'"}
   :norcalli/nvim-colorizer.lua {:config "require 'colorizer'.setup()"
                                 :cmd "ColorizerToggle"}
+  :mhinz/vim-startify {:config "vim.api.nvim_exec([[source ~/.config/nvim/startify_conf.vim]], true)"}
 
 ; Completion
   :hrsh7th/nvim-compe {:config "require 'dotfiles.plugins.compe'"}
@@ -94,7 +96,7 @@
   :axelf4/vim-strip-trailing-whitespace {}
   :folke/lua-dev.nvim {}
   :tridactyl/vim-tridactyl {}
-  :yonlu/omni.vim {:setup "vim.o.termguicolors = true"}
+  :bluz71/vim-nightfly-guicolors {:setup "vim.o.termguicolors = true"}
   :tversteeg/registers.nvim {}
   :aouelete/sway-vim-syntax {}
   :monaqa/dial.nvim {}

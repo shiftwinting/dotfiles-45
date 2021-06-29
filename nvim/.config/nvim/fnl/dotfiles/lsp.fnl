@@ -14,13 +14,21 @@
       on_attach (fn [client bufnr]
                   (do (lsp-status.on_attach client bufnr)
                       (signature.on_attach)))
-      diag_handler {"textDocument/publishDiagnostics"
-                     (vim.lsp.with
-                               vim.lsp.diagnostic.on_publish_diagnostics
-                               {:severity_sort true
-                                :update_in_insert false
-                                :underline true
-                                :virtual_text false})}
+      handlers {"textDocument/publishDiagnostics"
+                 (vim.lsp.with
+                           vim.lsp.diagnostic.on_publish_diagnostics
+                           {:severity_sort true
+                            :update_in_insert false
+                            :underline true
+                            :virtual_text false})
+                "textDocument/hover"
+                 (vim.lsp.with
+                           vim.lsp.handlers.hover
+                           {:border "single"})
+                "textDocument/signatureHelp"
+                 (vim.lsp.with
+                           vim.lsp.handlers.signatureHelp
+                           {:border "single"})}
 
       luadev (lua-dev.setup {:lspconfig {:cmd [(vim.fn.expand
                                                  "/home/p00f/bin/lua-language-server/bin/Linux/lua-language-server")
@@ -35,7 +43,7 @@
                                                           :window {:progressBar false}}}
                                          :capabilities capabilities
                                          :on_attach on_attach
-                                         :handlers diag_handler
+                                         :handlers handlers
                                          :on_init on-init}})]
 
   (do
@@ -58,7 +66,7 @@
                 {:capabilities capabilities
                  :on_attach on_attach
                  :on_init on-init
-                 :handlers (vim.tbl_deep_extend "error" diag_handler (lsp-status.extensions.clangd.setup))
+                 :handlers (vim.tbl_deep_extend "error" handlers (lsp-status.extensions.clangd.setup))
                  :init_options {:clangdFileStatus true}
                  :cmd ["clangd" "--background-index" "--suggest-missing-includes" "--header-insertion=iwyu"]})
 
@@ -66,11 +74,11 @@
       (rust-tools.setup {:server
                           {:capabilities capabilities
                            :on_attach on_attach
-                           :handlers diag_handler
+                           :handlers handlers
                            :on_init on-init}})
       (lspconfig.bashls.setup
                 {:capabilities capabilities
                  :on_attach on_attach
-                 :handlers diag_handler
+                 :handlers handlers
                  :on_init on-init}))
  true)

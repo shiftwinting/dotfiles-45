@@ -9,7 +9,7 @@
 (let [globals
        {:indent_blankline_char "▏"
         :indent_blankline_show_current_context true
-        :indent_blankline_filetype_exclude [:clojure :fennel :help "" :packer :Results :NeogitStatus :lspinfo]
+        :indent_blankline_filetype_exclude [:clojure :fennel :help "" :packer :Results :NeogitStatus :lspinfo :startify]
         :indent_blankline_context_patterns [:class :function :method
                                             :if :for :while :struct
                                             :impl :loop :call_expression
@@ -42,6 +42,12 @@
         :auto_abbrev_file_path "~/.local/share/nvim/abbrevatives"
         :minimap_git_colors 1
         :minimap_highlight_range 1
-        :minimap_highlight "Search"}]
+        :minimap_highlight "Search"
+
+        :startify_files_number 3
+
+        :nightflyCursorColor 1
+        :nightflyUnderlineMatchParen 1
+        :nightflyNormalFloat 1}]
   (each [global_ value (pairs globals)]
        (set-global global_ value)))

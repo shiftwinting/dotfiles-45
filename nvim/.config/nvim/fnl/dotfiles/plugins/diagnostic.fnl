@@ -14,7 +14,6 @@
                (.. "guifg=" fg " guibg=" bg)))
       set-sign (fn [[diag _ _ sign]] (nvim.fn.sign_define (.. "LspDiagnosticsSign" diag) {:text sign}))]
    (do
-    (core.map hl diag-attrs)
     (core.map set-sign diag-attrs)))
 
 (when (not (or nvim.g.uivonim nvim.g.neovide))
