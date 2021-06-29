@@ -11,7 +11,6 @@
                                                 }"}
   :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}
   :editorconfig/editorconfig-vim {}
-  :hardcoreplayers/dashboard-nvim {:config "require 'dotfiles.plugins.dashboard'"}
   :jeffkreeftmeijer/vim-numbertoggle {}
   :AndrewRadev/splitjoin.vim {}
   :jiangmiao/auto-pairs {}

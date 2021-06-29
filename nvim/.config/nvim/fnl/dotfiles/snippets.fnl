@@ -122,8 +122,8 @@ freopen(\"input1\", \"r\", stdin);
         return (x + y - 1) / y;
 }")}
       :rust
-       {:ri "scan.token::<${1:usize}>();"
-        :rv "(0..${1:n}).map(|_| scan.token()).collect();"
+       {:ri "scan.token::<${1:u}>();"
+        :rv "scan.vector::<${1:u}>(${2:n});"
         :freqmap (U.match_indentation "let mut ${1:freqs} = HashMap::new();
 for x in &${2:v} {
     let count = $1.entry(x).or_insert(0);
@@ -215,5 +215,9 @@ impl<R: BufRead> Scanner<R> {
                 std::mem::transmute(slice.split_whitespace())
             }
         }
+    }
+    fn vector<T: str::FromStr>(&mut self, n: usize) -> Vec<T> {
+        let v: Vec<T> = (0..n).map(|_| self.token()).collect();
+        v
     }
 }")}})

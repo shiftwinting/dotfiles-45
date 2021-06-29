@@ -7,6 +7,7 @@
       :hide_tab_bar_if_only_one_tab true
       :adjust_window_size_when_changing_font_size false
       :window_close_confirmation "NeverPrompt"
+      :enable_wayland true
       :allow_square_glyphs_to_overflow_width "WhenFollowedBySpace"
       :keys [{:key "Enter" :mods "ALT" :action "DisableDefaultAssignment"}]
       :window_padding {:left 5

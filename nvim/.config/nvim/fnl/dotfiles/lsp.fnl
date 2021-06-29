@@ -11,7 +11,9 @@
                 (if (. "flags" client.config)
                     (tset client.config.flags "allow_incremental_sync" true)))
       capabilities (vim.lsp.protocol.make_client_capabilities)
-      on_attach (fn [client bufnr] (do (lsp-status.on_attach client bufnr) (signature.on_attach)))
+      on_attach (fn [client bufnr]
+                  (do (lsp-status.on_attach client bufnr)
+                      (signature.on_attach)))
       diag_handler {"textDocument/publishDiagnostics"
                      (vim.lsp.with
                                vim.lsp.diagnostic.on_publish_diagnostics
@@ -48,7 +50,7 @@
             :indicator_warnings (icons.get "alert")
             :indicator_info "i"
             :indicator_hint "!"
-            :indicator_ok (icons.get "check-circle-fill")
+            :indicator_ok "OK"
             :status_symbol ""
             :component_separator "|"})
 
