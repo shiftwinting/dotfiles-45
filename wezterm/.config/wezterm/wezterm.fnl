@@ -12,4 +12,4 @@
       :keys [{:key "Enter" :mods "ALT" :action "DisableDefaultAssignment"}]
       :window_padding {:left 5
                        :top 5}
-      :color_scheme "iceberg-dark"})
+      :color_scheme "nightfly"})

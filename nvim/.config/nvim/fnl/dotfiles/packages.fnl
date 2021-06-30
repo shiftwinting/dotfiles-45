@@ -4,7 +4,7 @@
 (local packages
  {:wbthomason/packer.nvim {}
   :Olical/aniseed {}
-  :jose-elias-alvarez/buftabline.nvim {:config "require('buftabline').setup{
+  :jose-elias-alvarez/buftabline.nvim {:config "require('buftabline').setup {
                                                   icons = true,
                                                   icon_colors = true,
                                                   hlgroup_current = 'BufferlineCurrent',
@@ -22,7 +22,7 @@
                            :config "require 'nvim-nonicons'"}
   :norcalli/nvim-colorizer.lua {:config "require 'colorizer'.setup()"
                                 :cmd "ColorizerToggle"}
-  :mhinz/vim-startify {:config "vim.api.nvim_exec([[source ~/.config/nvim/startify_conf.vim]], true)"}
+  :mhinz/vim-startify {:config "require 'dotfiles.plugins.startify'"}
 
 ; Completion
   :hrsh7th/nvim-compe {:config "require 'dotfiles.plugins.compe'"}

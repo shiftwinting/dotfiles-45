@@ -24,10 +24,6 @@
                 "textDocument/hover"
                  (vim.lsp.with
                            vim.lsp.handlers.hover
-                           {:border "single"})
-                "textDocument/signatureHelp"
-                 (vim.lsp.with
-                           vim.lsp.handlers.signatureHelp
                            {:border "single"})}
 
       luadev (lua-dev.setup {:lspconfig {:cmd [(vim.fn.expand
