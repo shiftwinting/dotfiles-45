@@ -67,7 +67,7 @@
 (smap :n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 (smap :n :sd "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
 
-;Bufferline
+;JABS
 (smap :n :tt "<cmd>JABSOpen<CR>")
 
 ;Compe

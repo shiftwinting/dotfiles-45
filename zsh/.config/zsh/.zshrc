@@ -44,6 +44,7 @@ zmodload zsh/zpty
 eval "$(navi widget zsh)"
 eval "$(starship init zsh)"
 source $ZDOTDIR/fzf.zsh
+source $ZDOTDIR/fzf_nightfly.zsh
 source /home/p00f/.config/broot/launcher/bash/br
 
 # Set terminal window title

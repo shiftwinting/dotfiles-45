@@ -28,7 +28,7 @@
     bindsym $mod+Shift+c reload
 
     # Clipman
-    bindsym $mod+c exec alacritty --class=clipman --title=clipman -e clipman pick --print0 --tool=CUSTOM --tool-args="fzf --prompt 'clipboard > ' --read0 --layout=reverse --cycle"
+    bindsym $mod+c exec clipman pick -t wofi
     # grimshot
     bindsym Print exec grim - | swappy -f -
     bindsym Ctrl+Print exec grim -g "$(slurp)" - | swappy -f -

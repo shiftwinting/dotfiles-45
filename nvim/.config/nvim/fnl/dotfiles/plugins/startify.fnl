@@ -13,7 +13,7 @@
    {:type "commands" :header ["   Commands"]}
    {:type "files" :header ["   MRU"]}
    {:type "dir" :header [(.. "   MRU " (vim.fn.getcwd))]}])
-
+(set nvim.g.startify_files_number 5)
 (def v (vim.version))
 (set nvim.g.startify_custom_header
   (vim.fn.startify#pad

@@ -44,8 +44,6 @@
         :minimap_highlight_range 1
         :minimap_highlight "Search"
 
-        :startify_files_number 3
-
         :nightflyCursorColor 1
         :nightflyUnderlineMatchParen 1
         :nightflyNormalFloat 1}]

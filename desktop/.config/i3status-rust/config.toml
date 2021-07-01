@@ -1,5 +1,9 @@
-theme = "semi-native"
 icons = "material-nf"
+
+[theme]
+name = "solarized-dark"
+[theme.overrides]
+separator = ""
 
 [[block]]
 block = "focused_window"
