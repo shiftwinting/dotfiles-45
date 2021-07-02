@@ -18,7 +18,7 @@
         :guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))
         :listchars "tab:» ,trail:_"
         :showmode false
-        :tabstop 8
+        :tabstop 4
         :shiftwidth 4
         :expandtab true
         :softtabstop 4

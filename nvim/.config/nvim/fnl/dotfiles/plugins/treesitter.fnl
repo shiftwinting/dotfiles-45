@@ -28,6 +28,7 @@
                            :keymaps {:goto_definition "gnd"
                                      :list_definitions "gnD"}}}
    :textobjects {:select {:enable true
+                          :lookahead true
                           :keymaps {:af "@function.outer"
                                     :if "@function.inner"
                                     :aC "@class.outer"
@@ -42,7 +43,22 @@
                                     :as "@statement.outer"
                                     :ad "@comment.outer"
                                     :am "@call.outer"
-                                    :im "@call.inner"}}}
+                                    :im "@call.inner"}}
+                 :swap {:enable true
+                        :swap_next {"<M-l>" "@parameter.inner"
+                                    "<M-j>" "@function.outer"}
+                        :swap_previous {"<M-h>" "@parameter.inner"
+                                        "<M-k>" "@function.outer"}}
+                 :move {:enable true
+                        :set_jumps true
+                        :goto_next_start {"]m" "@function.outer"
+                                          "]]" "@class.outer"}
+                        :goto_next_end {"]M" "@function.outer"
+                                        "][" "@class.outer"}
+                        :goto_previous_start {"[m" "@function.outer"
+                                              "[[" "@class.outer"}
+                        :goto_previous_end {"[M" "@function.outer"
+                                            "[]" "@class.outer"}}}
    :ensure_installed [:yaml :query :lua :fennel :python :c :cpp :bash :json :regex :toml :css :jsonc :rust]
    :playground {:enable true
                 :disable {}

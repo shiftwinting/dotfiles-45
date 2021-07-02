@@ -5,13 +5,13 @@
      {:python [:flake8]
       :sh []
       :java []
-      :vim []
       :lua []
       :clojure [:joker]
       :fennel [:joker]
       :cpp []
       :rust []
-      :c []})
+      :c []
+      :typescript []})
 
 (set nvim.g.ale_fixers
      {:* [:remove_trailing_lines :trim_whitespace]})

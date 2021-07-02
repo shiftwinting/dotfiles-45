@@ -87,6 +87,8 @@
 
 (noremap :n "?r" "<cmd>lua require'dap'.repl.toggle()<CR>")
 (noremap :n "?el" "<cmd>lua require'dap'.run_last()<CR>")
+(noremap :n "?ss" "<cmd>lua require('dotfiles.plugins.dap.setup').scopes_sidebar()<CR>")
+(noremap :n "?sf" "<cmd>lua require('dotfiles.plugins.dap.setup').scopes_float()<CR>")
 
 
 ;Neogit
