@@ -123,7 +123,7 @@ freopen(\"input1\", \"r\", stdin);
 }")}
       :rust
        {:ri "scan.token::<${1:u}>();"
-        :rv "scan.vector::<${1:u}>(${2:n});"
+        :rv "read_vector!(scan -> u${1:u}, ${2:n})"
         :freqmap (U.match_indentation "let mut ${1:freqs} = HashMap::new();
 for x in &${2:v} {
     let count = $1.entry(x).or_insert(0);
@@ -172,8 +172,10 @@ let mut scan = Scanner::new(f); // CHANGE THIS BACK 🔫")
         :cc_base (U.match_indentation "#![allow(unused_imports)]
 use std::{io::{self, prelude::*}, str};
 
-fn solve<R: BufRead, W: Write>(scan: &mut Scanner<R>, w: &mut W) {
-    $0
+macro_rules! read_vector {
+    (\\$scanner:ident -> \\$type:ty, \\$n:ident) => {
+        (0..\\$n).map(|_| \\$scanner.token()).collect::<Vec<\\$type>>()
+    };
 }
 
 fn main() {
@@ -182,7 +184,7 @@ fn main() {
     let mut out = io::BufWriter::new(stdout.lock());
 
     for _ in 0..scan.token::<usize>() {
-        solve(&mut scan, &mut out);
+        $0
     }
 }
 
@@ -215,9 +217,5 @@ impl<R: BufRead> Scanner<R> {
                 std::mem::transmute(slice.split_whitespace())
             }
         }
-    }
-    fn vector<T: str::FromStr>(&mut self, n: usize) -> Vec<T> {
-        let v: Vec<T> = (0..n).map(|_| self.token()).collect();
-        v
     }
 }")}})

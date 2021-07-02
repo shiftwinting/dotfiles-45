@@ -18,6 +18,7 @@
   :tpope/vim-sleuth {}
   :justinmk/vim-gtfo {}
   :matbme/JABS.nvim {}
+  :mhinz/vim-tree {}
   :yamatsum/nvim-nonicons {:requires "kyazdani42/nvim-web-devicons"
                            :config "require 'nvim-nonicons'"}
   :norcalli/nvim-colorizer.lua {:config "require 'colorizer'.setup()"
@@ -39,6 +40,7 @@
                          :config "require 'dotfiles.plugins.lspkind'"}
   :simrat39/symbols-outline.nvim {:cmd "SymbolsOutline"}
   :simrat39/rust-tools.nvim {}
+  :jose-elias-alvarez/nvim-lsp-ts-utils {}
   :ray-x/lsp_signature.nvim {:config "require 'lsp_signature'.on_attach()"}
   :kosayoda/nvim-lightbulb {}
 ; DAP
@@ -111,8 +113,8 @@
 
   ; Telescope
   :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'
-                                           require('telescope').load_extension('fzf')"}
-  :cwebster2/github-coauthors.nvim {:config "require('telescope').load_extension('githubcoauthors')"}
+                                           require('telescope').load_extension('fzf')"
+                                  :commit "e5bd4963da8"}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"}
   :nvim-lua/popup.nvim {}
   :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}

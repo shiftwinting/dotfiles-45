@@ -9,7 +9,7 @@ SAVEHIST=100000
 
 # Aliases
 export forgit_add=gaa
-alias pins="paru -Slq | sk -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
+alias pins="paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
 alias sudo="sudo "
 
 source $ZDOTDIR/plugins.sh

@@ -13,7 +13,7 @@
       capabilities (vim.lsp.protocol.make_client_capabilities)
       on_attach (fn [client bufnr]
                   (do (lsp-status.on_attach client bufnr)
-                      (signature.on_attach)))
+                      (signature.on_attach client bufnr)))
       handlers {"textDocument/publishDiagnostics"
                  (vim.lsp.with
                            vim.lsp.diagnostic.on_publish_diagnostics
@@ -76,5 +76,13 @@
                 {:capabilities capabilities
                  :on_attach on_attach
                  :handlers handlers
-                 :on_init on-init}))
- true)
+                 :on_init on-init})
+      (lspconfig.tsserver.setup
+                {:capabilities capabilities
+                 :on_attach (fn [client bufnr]
+                              (on_attach client bufnr)
+                              (let [ts-utils (require :nvim-lsp-ts-utils)]
+                                (ts-utils.setup {})
+                                (ts-utils.setup_client client)))
+                 :handlers handlers
+                 :on_init on-init})))

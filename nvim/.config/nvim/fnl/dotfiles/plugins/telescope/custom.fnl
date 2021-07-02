@@ -5,14 +5,14 @@
  (fn []
    (builtin.git_files {:shorten_path false
                        :cwd "~/dotfiles"
-                       :prompt "~ dotfiles ~"
-                       :height 10}))
+                       :prompt "~ dotfiles ~"}))
+                       ;:height 10}))
  :cc
  (fn []
    (builtin.find_files {:shorten_path false
                         :cwd "~/contests"
-                        :prompt "~ cc ~"
-                        :height 10}))
+                        :prompt "~ cc ~"}))
+                        ;:height 10}))
  :curbuf
  (fn []
    (builtin.current_buffer_fuzzy_find
