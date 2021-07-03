@@ -4,36 +4,41 @@
            icons nvim-nonicons}})
 
 (set dap.adapters
- {:rust {:type "executable"
-         :attach {:pidProperty "pid" :pidSelect "ask"}
+ {:lldb {:type "executable"
          :command "lldb-vscode"
-         :env {:LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY "YES"}
-         :name "lldb"}
-  :cpp {:type "executable"
-         :attach {:pidProperty "pid" :pidSelect "ask"}
-         :command "lldb-vscode"
-         :env {:LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY "YES"}
          :name "lldb"}
   :nlua (fn [callback config]
           (callback {:type "server"
                      :host config.host
                      :port config.port}))})
+(set dap.configurations
+      {:rust [{:name "Launch"
+               :type "lldb"
+               :request "launch"
+               :program (fn []
+                          (vim.fn.input
+                            "Path to executable: "
+                            (.. (vim.fn.getcwd) "/")
+                            "file"))
+               :cwd "${workspaceFolder}"
+               :stopOnEntry false
+               :args []
+               :runInTerminal false}]
+       :c dap.configurations.rust
+       :cpp dap.configurations.rust})
 
 (nvim.fn.sign_define "DapBreakpoint"
-                     {:text "🛑"
-                      :texthl ""
+                     {:text "•"
+                      :texthl "NightflyRed"
                       :linehl ""
                       :numhl ""})
-(nvim.fn.sign_define "DapLogpoint"
+(nvim.fn.sign_define "DapLogPoint"
                      {:text (icons.get "file-code")
-                      :texthl ""
+                      :texthl "NightflyBlue"
                       :linehl ""
                       :numhl ""})
-
-{:scopes_sidebar (fn []
-                   (let [widgets (require :dap.ui.widgets)
-                         my_sidebar (widgets.sidebar widgets.scopes)]
-                    (my_sidebar.open)))
- :scopes_float (fn []
-                 (let [widgets (require :dap.ui.widgets)]
-                  (widgets.centered_float widgets.scopes)))}
+(nvim.fn.sign_define "DapStopped"
+                     {:text "‣"
+                      :texthl "NightflyYellow"
+                      :linehl ""
+                      :numhl ""})

@@ -26,7 +26,10 @@
                              :keymaps {:smart_rename "grr"}}
               :navigation {:enable true
                            :keymaps {:goto_definition "gnd"
-                                     :list_definitions "gnD"}}}
+                                     :list_definitions "gnD"
+                                     :list_defintions_toc "gO"
+                                     :goto_next_usage "<M-2>"
+                                     :goto_previous_usage "<M-1>"}}}
    :textobjects {:select {:enable true
                           :lookahead true
                           :keymaps {:af "@function.outer"

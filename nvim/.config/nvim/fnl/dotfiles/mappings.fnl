@@ -66,6 +66,8 @@
 (smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
 (smap :n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 (smap :n :sd "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
+(smap :n :<leader>e "<cmd>Telescope lsp_workspace_diagnostics<CR>")
+(smap :n :<leader>r "<cmd>Telescope lsp_references<CR>")
 
 ;JABS
 (smap :n :tt "<cmd>JABSOpen<CR>")
@@ -87,8 +89,8 @@
 
 (noremap :n "?r" "<cmd>lua require'dap'.repl.toggle()<CR>")
 (noremap :n "?el" "<cmd>lua require'dap'.run_last()<CR>")
-(noremap :n "?ss" "<cmd>lua require('dotfiles.plugins.dap.setup').scopes_sidebar()<CR>")
-(noremap :n "?sf" "<cmd>lua require('dotfiles.plugins.dap.setup').scopes_float()<CR>")
+(noremap :n "?ss" "<cmd>lua require('dotfiles.plugins.dap.functions').scopes_sidebar()<CR>")
+(noremap :n "?sf" "<cmd>lua require('dotfiles.plugins.dap.functions').scopes_float()<CR>")
 
 
 ;Neogit

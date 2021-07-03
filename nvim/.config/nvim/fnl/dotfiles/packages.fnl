@@ -55,8 +55,8 @@
   :nvim-treesitter/nvim-treesitter-refactor {}
   :nvim-treesitter/nvim-treesitter-textobjects {}
   :nvim-treesitter/playground {}
-  :vigoux/architext.nvim {}
   :mfussenegger/nvim-ts-hint-textobject {}
+  :nvim-treesitter/nvim-tree-docs {}
 
   :Olical/conjure {:ft ["fennel" "clojure"]}
   :eraserhd/parinfer-rust {:run "cargo build --release"
@@ -66,8 +66,7 @@
   :tpope/vim-repeat {}
   :b3nj5m1n/kommentary {}
   :reedes/vim-pencil {:ft ["txt" "makrdown"]}
-  :lukas-reineke/indent-blankline.nvim {:branch "lua"
-                                        :setup "require 'dotfiles.definitions'"
+  :lukas-reineke/indent-blankline.nvim {:setup "require 'dotfiles.definitions'"
                                         :cond (fn [] (and (not= 1 vim.g.uivonim)
                                                           (not= 1 vim.g.gonvim_running)))}
   :takac/vim-hardtime {}

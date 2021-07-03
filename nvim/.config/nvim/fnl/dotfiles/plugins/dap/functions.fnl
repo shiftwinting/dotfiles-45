@@ -1,23 +1,10 @@
-(module dotfiles.plugins.dap.functions
-        {require {dap dap
-                  nvim aniseed.nvim}})
+(module dotfiles.plugins.dap.functions)
 
-(var last-gdb-config nil)
-
-{:start_c_debugger
-   (fn [args mi-mode mi-debugger-path]
-     (require "dotfiles.plugins.dap.setup")
-     (when (and args (> (# args) 0))
-       (set last-gdb-config
-         {:type "cpp"
-          :name (. args 1)
-          :request "launch"
-          :program (table.remove args 1)
-          :args args
-          :cwd (nvim.fn.getcwd)
-          :externalConsole true
-          :MIMode mi-mode
-          :MIDebuggerPath mi-debugger-path}))
-     (if (not last-gdb-config)
-       (print "No binary to debug set! Use \":DebugC <binary> <args>\" or \":DebugRust <binary> <args>")
-       (dap.run last-gdb-config)))}
+{:scopes_sidebar (fn []
+                   (let [widgets (require :dap.ui.widgets)
+                         my_sidebar (widgets.sidebar widgets.scopes)]
+                    (my_sidebar.open)))
+ :scopes_float (fn []
+                 (let [widgets (require :dap.ui.widgets)]
+                  (widgets.centered_float widgets.scopes)))
+ :pick_process (fn [] {})}
