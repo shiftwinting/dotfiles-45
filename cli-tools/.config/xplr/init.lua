@@ -5,14 +5,14 @@ keys["ctrl-f"] = {
     help = "search with preview",
     messages = {
         {
-            BashExec = [===[
+            BashExec = [[
                 PTH=$(cat "${XPLR_PIPE_DIRECTORY_NODES_OUT:?}" | awk -F / '{print $NF}' | fzf --preview "pistol '{}'")
                 if [ -d "$PTH" ]; then
                   echo ChangeDirectory: "'"$PWD/${PTH:?}"'" >> "${XPLR_PIPE_MSG_IN:?}"
                   elif [ -f "$PTH" ]; then
                   echo FocusPath: "'"$PWD/${PTH:?}"'" >> "${XPLR_PIPE_MSG_IN:?}"
                 fi
-                ]===],
+                ]],
         }, "Refresh",
     },
 }
@@ -51,12 +51,12 @@ keys.Z = {
     help = "zoxide jump",
     messages = {
         {
-            BashExec = [===[
+            BashExec = [[
       PTH=$(zoxide query -i)
       if [ "$PTH" ]; then
         echo ChangeDirectory: "'"${PTH:?}"'" >> "${XPLR_PIPE_MSG_IN:?}"
       fi
-    ]===],
+    ]],
         },
     },
 }

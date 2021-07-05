@@ -17,10 +17,6 @@
            :ElSleuth "guibg=#2c3043 guifg=#ecc48d"
            :ElFt "guifg=#ae81ff guibg=#2c3043"
 
-           :VGitSignAdd "guifg=#a1cd5e guibg=#011627"
-           :VGitSignRemove "guifg=#fc514e guibg=#011627"
-           :VGitSignChange "guifg=#e3d18a guibg=#011627"
-
            :BufferlineCurrent "guibg=#011627 guifg=#ecc48d"
            :BUfferlineNormal "guibg=#2c3043 guifg=#82aaff"
            :NvimDapVirtualText "guifg=#7fdbca"}]

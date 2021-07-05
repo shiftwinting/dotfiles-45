@@ -6,13 +6,14 @@
 (telescope.setup
   {:defaults
      {:prompt_prefix (.. (icons.get "telescope") " ")
-      :selection_caret  "❯ "
+      :selection_caret  "> "
+      :layout_strategy "flex"
+      :layout_config {:horizontal {:prompt_position "top"}
+                      :vertical {:preview_cutoff 5}}
       :mappings {:i {:<esc> actions.close}}
-      :prompt_position "top"
       :sorting_strategy "ascending"
       :shorten_path true
-      ;:results_width 0.1
-      :winblend 20
+      :borderchars ["─" "│" "─" "│" "┌" "┐" "┘" "└"]
       :file_previewer previewers.cat.new}
    :extensions
      {:arecibo {:selected_engine "duckduckgo"

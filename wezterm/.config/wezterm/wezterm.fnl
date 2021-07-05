@@ -1,5 +1,6 @@
 (let [wezterm (require "wezterm")]
-     {:harfbuzz_features ["clig=1"
+     {:harfbuzz_features ["CLIK=1"
+                          "calt=0"
                           "liga=1"]
       :font (wezterm.font_with_fallback ["Iosevka" "nonicon" "Noto Color Emoji"])
       :font_size 12.5

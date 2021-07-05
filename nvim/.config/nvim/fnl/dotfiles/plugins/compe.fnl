@@ -25,4 +25,5 @@
             :tags true
             :treesitter true
             :conjure true
+            :orgmode true
             :zsh true}})

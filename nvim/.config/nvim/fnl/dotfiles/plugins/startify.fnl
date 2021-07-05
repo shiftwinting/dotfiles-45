@@ -14,6 +14,7 @@
    {:type "files" :header ["   MRU"]}
    {:type "dir" :header [(.. "   MRU " (vim.fn.getcwd))]}])
 (set nvim.g.startify_files_number 5)
+(set nvim.g.startify_change_to_dir 1)
 (def v (vim.version))
 (set nvim.g.startify_custom_header
   (vim.fn.startify#pad

@@ -9,10 +9,10 @@
    :rainbow {:enable true
              :extended_mode true
              :disable ["c" "cpp" "lua"]
-             :colors ["#ff79c6"
+             :colors ["#7c8f8f"
+                      "#ff79c6"
                       "#21c7a8"
                       "#82aaff"
-                      "#ecc48d"
                       "#ae81ff"]}
    :indent {:enable true}
    :incremental_selection {:enable true

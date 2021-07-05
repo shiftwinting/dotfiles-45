@@ -45,7 +45,10 @@
 (smap :n :<leader> "<cmd>Telescope keymaps<CR>")
 (smap :n :<C-M-p> "<cmd>Telescope project<CR>")
 (smap :n :<leader>cb "<cmd>lua require 'dotfiles.plugins.telescope.custom'.curbuf()<CR>")
-(smap :n :<M-x> "<cmd>lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))<cr>")
+(smap :n :<M-x> "<cmd>lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))<CR>")
+(smap :n :<leader>n "<cmd>lua require 'dotfiles.plugins.telescope.custom'.notes()<CR>")
+
+;Scroll
 (let [n 2]
  (do
   (smap :n :<Up> (.. n "<C-Y>"))
@@ -94,7 +97,7 @@
 
 
 ;Neogit
-(noremap :n :<C-g> "<cmd>lua require 'neogit'.open({kind = 'split'})<CR>")
+(noremap :n :<C-g> "<cmd>lua require 'neogit'.open()<CR>")
 
 ;Switching buffers
 (smap :n :<C-n> ":bnext<CR>")

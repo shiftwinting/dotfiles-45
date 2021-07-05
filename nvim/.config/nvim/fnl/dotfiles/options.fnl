@@ -32,7 +32,6 @@
         :emoji false
         :list true
         :pumblend 0
-        :winblend 15
         :title true
         :incsearch true
         :hlsearch true

@@ -6,24 +6,27 @@
    (builtin.git_files {:shorten_path false
                        :cwd "~/dotfiles"
                        :prompt "~ dotfiles ~"}))
-                       ;:height 10}))
  :cc
  (fn []
-   (builtin.find_files {:shorten_path false
+   (builtin.find_files {:shorten_path true
                         :cwd "~/contests"
                         :prompt "~ cc ~"}))
-                        ;:height 10}))
  :curbuf
  (fn []
    (builtin.current_buffer_fuzzy_find
      (themes.get_dropdown {:winblend 10
                            :border true
                            :previewer false
-                           :shorten_path false})))
+                           :shorten_path true})))
  :lsp_code_actions
  (fn []
    (builtin.lsp_code_actions
      (themes.get_dropdown {:winblend 10
                            :border true
-                           :previewer false
-                           :shorten_path false})))}
+                           :previewer false})))
+ :notes
+ (fn []
+   (builtin.find_files {:shorten_path true
+                        :find_command [:fd :.org]
+                        :cwd "~/org"
+                        :prompt "Notes"}))}

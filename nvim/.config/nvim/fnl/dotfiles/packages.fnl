@@ -11,6 +11,10 @@
                                                   hlgroup_normal = 'BufferlineNormal',
                                                 }"}
   :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}
+  :kristijanhusak/orgmode.nvim {:config "require 'orgmode'.setup {
+                                           org_agenda_files = { '~/org/notes/*' },
+                                           org_default_notes_file = { '~/org/refile.org' },
+                                         }"}
   :editorconfig/editorconfig-vim {}
   :jeffkreeftmeijer/vim-numbertoggle {}
   :AndrewRadev/splitjoin.vim {}
@@ -65,7 +69,7 @@
   :tpope/vim-surround {}
   :tpope/vim-repeat {}
   :b3nj5m1n/kommentary {}
-  :reedes/vim-pencil {:ft ["txt" "makrdown"]}
+  :reedes/vim-pencil {:ft ["txt" "markdown"]}
   :lukas-reineke/indent-blankline.nvim {:setup "require 'dotfiles.definitions'"
                                         :cond (fn [] (and (not= 1 vim.g.uivonim)
                                                           (not= 1 vim.g.gonvim_running)))}
@@ -77,14 +81,12 @@
                          :ft "markdown"}
 ; Git
   :iberianpig/tig-explorer.vim {:requires "rbgrouleff/bclose.vim"}
-  :TimUntersberger/neogit {:config "require 'neogit'.setup()"
-                           :cmd "Neogit"}
-  :tanvirtin/vgit.nvim {:config "require 'vgit'.setup{blames_enabled=false}"}
+  :TimUntersberger/neogit {:config "require 'neogit'.setup {integrations = { diffview = true }}"}
+  :lewis6991/gitsigns.nvim {:config "require 'gitsigns'.setup { keymaps = {} }"}
 
   :andymass/vim-matchup {}
   :KabbAmine/vCoolor.vim {}
   :mtdl9/vim-log-highlighting {}
-  :junegunn/limelight.vim {}
   :chrisbra/NrrwRgn {}
   :tkmpypy/chowcho.nvim {}
   :phaazon/hop.nvim {:config "require 'hop'.setup{}"}
@@ -112,8 +114,7 @@
 
   ; Telescope
   :nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'
-                                           require('telescope').load_extension('fzf')"
-                                  :commit "e5bd4963da8"}
+                                           require('telescope').load_extension('fzf')"}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"}
   :nvim-lua/popup.nvim {}
   :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}

@@ -10,23 +10,17 @@
          :stdin true}))
 (defn- exptab-lua []
   (if vim.bo.expandtab
-      "--no-use-tab"
-      "--use-tab"))
+      "Spaces"
+      "Tabs"))
 
 (formatter.setup
     {:filetype {:lua
-                [(fn [] {:exe "lua-format"
-                         :args ["--column-limit=100"
-                                (exptab-lua)
-                                "--align-args"
-                                "--align-parameter"
-                                "--extra-sep-at-table-end"
-                                "--spaces-inside-table-braces"
-                                "--align-table-field"
-                                "--single-quote-to-double-quote"
-                                "--spaces-around-equals-in-field"
-                                (.. "--indent-width=" (sw))]
-                         :stdin true})]
+                [(fn [] {:exe "stylua"
+                         :args ["--column-width" "100"
+                                "--indent-type " (exptab-lua)
+                                "--indent-width" (sw)
+                                "--quote-style" "AutoPreferDouble"]
+                         :stdin false})]
                 :cpp
                 [(fn [] {:exe "clang-format"
                          :args ["--style"

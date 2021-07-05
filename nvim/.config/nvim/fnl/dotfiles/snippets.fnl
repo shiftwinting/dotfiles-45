@@ -122,12 +122,15 @@ freopen(\"input1\", \"r\", stdin);
         return (x + y - 1) / y;
 }")}
       :rust
-       {:ri "scan.token::<${1:u}>();"
-        :rv "read_vector!(scan -> u${1:u}, ${2:n})"
+       {:ri "scanner.token::<${1:u}>();"
+        :rv "(0..n).map(|_| scanner.token()).collect::<Vec<${1:u}>>();"
         :freqmap (U.match_indentation "let mut ${1:freqs} = HashMap::new();
 for x in &${2:v} {
     let count = $1.entry(x).or_insert(0);
     *count += 1;
+}")
+        :ceil (U.match_indentation "fn ceil_div(x: u64, y: u64) -> u64 {
+    (x + y - 1) / y
 }")
         :ncr (U.match_indentation "fn nCr(n: u64, r: u64) -> u64 {
     if r > n {
@@ -172,23 +175,52 @@ let mut scan = Scanner::new(f); // CHANGE THIS BACK 🔫")
         :cc_base (U.match_indentation "#![allow(unused_imports)]
 use std::{io::{self, prelude::*}, str};
 
-macro_rules! read_vector {
-    (\\$scanner:ident -> \\$type:ty, \\$n:ident) => {
-        (0..\\$n).map(|_| \\$scanner.token()).collect::<Vec<\\$type>>()
+macro_rules! input_multiple {
+    (\\$scanner:ident -> \\$(\\$i:tt: \\$t:tt),+ \\$(,)?) => {
+        \\$(input!{\\$scanner -> \\$i: \\$t})*
+    };
+}
+macro_rules! input {
+    (\\$scanner:ident -> \\$i:tt: [[\\$t: ty; \\$m:ident]; \\$n:ident]) => { // nxm matrix
+        let \\$i = {
+        let mut v:Vec<Vec<\\$t>> = Vec::new();
+        for i in 0..n {
+            let subv = (0..\\$m).map(|_| \\$scanner.token()).collect::<Vec<\\$t>>();
+            v.push(subv);
+        }
+        let v = v;
+        v
+    };};
+    (\\$scanner:ident -> \\$i:tt: [\\$t:ty; \\$n:ident]) => {
+        let \\$i = (0..\\$n).map(|_| \\$scanner.token()).collect::<Vec<\\$t>>();
+    };
+    (\\$scanner:ident -> \\$i:tt: (\\$t1:ty, \\$t2:ty)) => {
+        let x = \\$scanner.token::<\\$t1>();
+        let y = \\$scanner.token::<\\$t2>();
+        let \\$i = (x, y);
+    };
+    (\\$scanner:ident -> \\$i:tt: \\$t:ty) => {
+        let \\$i = \\$scanner.token::<\\$t>();
+    };
+    (\\$scanner:ident -> \\$i:tt: \"bytes\") => {
+        let \\$i:Vec<u8> = Vec::from(\\$scanner.token::<String>());
+    };
+    (\\$scanner:ident -> \\$i:tt: \"chars\") => {
+        let \\$i:Vec<char> = \\$scanner.token::<String>().chars().collect();
     };
 }
 
 fn main() {
     let (stdin, stdout) = (io::stdin(), io::stdout());
-    let mut scan = Scanner::new(stdin.lock());
+    let mut scanner = Scanner::new(stdin.lock());
     let mut out = io::BufWriter::new(stdout.lock());
 
-    for _ in 0..scan.token::<usize>() {
+    for _ in 0..scanner.token::<usize>() {
         $0
     }
 }
 
-
+// Scanner by @EbTech
 struct Scanner<R> {
     reader: R,
     buf_str: Vec<u8>,
