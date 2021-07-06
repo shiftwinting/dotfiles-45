@@ -106,3 +106,6 @@
 ;Toggleterm
 (smap :n "<C-\\>" "<cmd>ToggleTerm<CR>")
 (smap :i "<C-\\>" "<cmd>ToggleTerm<CR>")
+
+;nvim-tree
+(smap :n "\\\\" "<cmd>NvimTreeToggle<CR>")

@@ -2,6 +2,7 @@ icons = "material-nf"
 
 [theme]
 name = "solarized-dark"
+
 [theme.overrides]
 separator = ""
 
@@ -47,4 +48,4 @@ block = "time"
 icons_format = " "
 interval = 60
 format = "%a %d/%m %R"
-on_click ="wldash"
+on_click = "wldash"

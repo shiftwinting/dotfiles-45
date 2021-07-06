@@ -47,8 +47,8 @@
   nvim.g.gnvim          (setopt :guifont "JetBrains Mono,nonicon,FantasqueSansMono Nerd Font,Inter:h12")
   nvim.g.gonvim_running (do
                          (setopt :linespace 2)
-                         (setopt :guifont "Fira Code:h11"))
-  nvim.g.neovide        (setopt :guifont "Source Code Pro,nonicon,FantasqueSansMono Nerd Font,Inter Regular:h15")
+                         (setopt :guifont "Iosevka,nonicon:h13.5"))
+  nvim.g.neovide        (setopt :guifont "Iosevka,nonicon,FantasqueSansMono Nerd Font,Inter Regular:h18")
   nvim.g.uivonim        (setopt :guifont "JetBrains Mono,nonicon,FantasqueSansMono Nerd Font,Inter,Noto Color Emoji:h30"))
 
 (when nvim.g.gnvim

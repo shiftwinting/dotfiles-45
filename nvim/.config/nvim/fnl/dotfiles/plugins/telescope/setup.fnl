@@ -2,7 +2,24 @@
         {require {actions telescope.actions
                   icons nvim-nonicons
                   telescope telescope
-                  previewers telescope.previewers}})
+                  previewers telescope.previewers
+                  Job plenary.job}})
+
+(defn- maker [filepath bufnr opts]
+  (let [filepath (vim.fn.expand filepath)]
+    (: (Job:new {:command "inspect"
+                 :args [filepath]
+                 :on_exit
+                   (fn [j]
+                     (let [ft (. (vim.split
+                                   (. (j:result) 1)
+                                   ": ")
+                                 2)]
+                       (if (= "binary" ft)
+                           (vim.schedule (fn [] (vim.api.nvim_buf_set_lines bufnr 0 -1 false ["BINARY"])))
+                           (previewers.buffer_previewer_maker filepath bufnr opts))))})
+      :sync)))
+
 (telescope.setup
   {:defaults
      {:prompt_prefix (.. (icons.get "telescope") " ")
@@ -14,12 +31,12 @@
       :sorting_strategy "ascending"
       :shorten_path true
       :borderchars ["─" "│" "─" "│" "┌" "┐" "┘" "└"]
-      :file_previewer previewers.cat.new}
+      :buffer_previewer_maker maker}
+
+   :pickers {:file_browser {:layout_config {:horizontal {:preview_width 0.7}}}
+             :git_files {:shorten_path true}}
+
    :extensions
-     {:arecibo {:selected_engine "duckduckgo"
-                :url_open_command "firefox"
-                :show_http_headers false
-                :show_domain_icons true}
-      :fzf {:fuzzy true
+     {:fzf {:fuzzy true
             :override_generic_sorter true
             :override_file_sorter true}}})

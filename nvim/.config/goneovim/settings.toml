@@ -38,7 +38,7 @@ Height = 600
 ## Also, `ExtMessages` is still experimental at this time and we don't recommend setting it to true if you want stability.
 ExtCmdline = true
 ExtPopupmenu = true
-ExtTabline = true
+ExtTabline = false
 ExtMessages = true
 ## Goneovim has a cached rendering feature enabled to speed up the process.
 ## If you want to disable it, set it to false
@@ -62,16 +62,7 @@ WindowSeparatorTheme = "dark"
 # WindowSeparatorGradient = false
 ## Draw built-in indent guide
 ## Enabling this setting will have a slight impact on performance.
-IndentGuide = true
-IndentGuideIgnoreFtList = [
-    "md",
-    "fennel",
-    "clojure",
-    "lisp",
-    "dashboard",
-    "packer"
-]
-OptionsToUseGuideWidth = "shiftwidth"
+IndentGuide = false
 ## Animates the scrolling behavior of Neovim when the scroll command is entered.
 SmoothScroll = true
 ## Disables horizontal scrolling for smooth scrolling with the touchpad.
@@ -84,7 +75,7 @@ DrawShadowForFloatWindow = true
 ## This option works only if `ExtMessages` is enabled.
 DesktopNotifications = true
 # Display the effect when clicked
-ClickEffect = true
+ClickEffect = false
 # Pattern that fills the diff background
 # Change the background pattern used for diff display.
 # This option allows you to use a visual effect pattern such as Dense, Diagonal Stripe instead of a regular solid pattern.
@@ -159,7 +150,7 @@ Right = [
 ### Configure externalized tabline UI.
 [Tabline]
 ### Whether or not to display the external tabline
-Visible = true
+Visible = false
 ShowIcon = true
 
 ## Configure externalized popupmenu UI.

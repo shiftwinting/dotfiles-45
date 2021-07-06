@@ -3,15 +3,22 @@
 
 (defn- sw [] vim.bo.shiftwidth)
 
-(defn- prettier [lang]
- (fn [] {:exe "prettier"
-         :args [(.. "--tab-width " (sw))
-                (.. "--parser " lang)]
-         :stdin true}))
 (defn- exptab-lua []
   (if vim.bo.expandtab
       "Spaces"
       "Tabs"))
+
+(defn- prettier [lang]
+  (if (= nil lang)
+      (fn [] {:exe "prettier"
+              :args ["--stdin-filepath" (vim.api.nvim_buf_get_name 0)
+                     "--tab-width" (sw)]
+              :stdin true})
+      (fn [] {:exe "prettier"
+              :args ["--stdin-filepath" (vim.api.nvim_buf_get_name 0)
+                     "--tab-width" (sw)
+                     "--parser" lang]
+              :stdin true})))
 
 (formatter.setup
     {:filetype {:lua
@@ -51,8 +58,9 @@
                 [(fn [] {:exe "shfmt"
                          :args [(.. "-i " (sw))]
                          :stdin true})]
-                :css  [(prettier "css")]
-                :json [(prettier "json")]
-                :less [(prettier "less")]
+                :css  [(prettier)]
+                :json [(prettier)]
+                :less [(prettier)]
                 :xml  [(prettier "xml")]
-                :toml [(prettier "toml")]}})
+                :toml [(prettier)]
+                :javascript [(prettier)]}})

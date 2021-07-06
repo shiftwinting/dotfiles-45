@@ -22,7 +22,7 @@
   :tpope/vim-sleuth {}
   :justinmk/vim-gtfo {}
   :matbme/JABS.nvim {}
-  :mhinz/vim-tree {}
+  :kyazdani42/nvim-tree.lua {}
   :yamatsum/nvim-nonicons {:requires "kyazdani42/nvim-web-devicons"
                            :config "require 'nvim-nonicons'"}
   :norcalli/nvim-colorizer.lua {:config "require 'colorizer'.setup()"
@@ -71,8 +71,7 @@
   :b3nj5m1n/kommentary {}
   :reedes/vim-pencil {:ft ["txt" "markdown"]}
   :lukas-reineke/indent-blankline.nvim {:setup "require 'dotfiles.definitions'"
-                                        :cond (fn [] (and (not= 1 vim.g.uivonim)
-                                                          (not= 1 vim.g.gonvim_running)))}
+                                        :cond (fn [] (not= 1 vim.g.uivonim))}
   :takac/vim-hardtime {}
   :antoinemadec/FixCursorHold.nvim {}
   :mhartington/formatter.nvim {:config "require 'dotfiles.plugins.formatter'"
@@ -80,7 +79,6 @@
   :oknozor/illumination {:run "./install.sh"
                          :ft "markdown"}
 ; Git
-  :iberianpig/tig-explorer.vim {:requires "rbgrouleff/bclose.vim"}
   :TimUntersberger/neogit {:config "require 'neogit'.setup {integrations = { diffview = true }}"}
   :lewis6991/gitsigns.nvim {:config "require 'gitsigns'.setup { keymaps = {} }"}
 
@@ -100,7 +98,6 @@
   :folke/lua-dev.nvim {}
   :tridactyl/vim-tridactyl {}
   :bluz71/vim-nightfly-guicolors {:setup "vim.o.termguicolors = true"}
-  :tversteeg/registers.nvim {}
   :aouelete/sway-vim-syntax {}
   :monaqa/dial.nvim {}
   :nacro90/numb.nvim {:config "require 'numb'.setup()"}
