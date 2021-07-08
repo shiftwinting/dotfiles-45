@@ -33,8 +33,7 @@
       :borderchars ["─" "│" "─" "│" "┌" "┐" "┘" "└"]
       :buffer_previewer_maker maker}
 
-   :pickers {:file_browser {:layout_config {:horizontal {:preview_width 0.7}}}
-             :git_files {:shorten_path true}}
+   :pickers {:file_browser {:layout_config {:horizontal {:preview_width 0.7}}}}
 
    :extensions
      {:fzf {:fuzzy true

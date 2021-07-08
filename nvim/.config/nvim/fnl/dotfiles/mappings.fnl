@@ -95,10 +95,6 @@
 (noremap :n "?ss" "<cmd>lua require('dotfiles.plugins.dap.functions').scopes_sidebar()<CR>")
 (noremap :n "?sf" "<cmd>lua require('dotfiles.plugins.dap.functions').scopes_float()<CR>")
 
-
-;Neogit
-(noremap :n :<C-g> "<cmd>lua require 'neogit'.open()<CR>")
-
 ;Switching buffers
 (smap :n :<C-n> ":bnext<CR>")
 (smap :n :<C-p> ":bprevious<CR>")

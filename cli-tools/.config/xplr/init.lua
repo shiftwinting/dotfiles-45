@@ -13,7 +13,8 @@ keys["ctrl-f"] = {
                   echo FocusPath: "'"$PWD/${PTH:?}"'" >> "${XPLR_PIPE_MSG_IN:?}"
                 fi
                 ]],
-        }, "Refresh",
+        },
+        "Refresh",
     },
 }
 keys.O = { help = "xdg-open", messages = { { BashExec = [[xdg-open ${XPLR_FOCUS_PATH:?}]] } } }
@@ -23,7 +24,8 @@ keys.p = {
     messages = {
         {
             BashExecSilently = [[xclip-pastefile > /dev/null && echo ExplorePwdAsync >> "${XPLR_PIPE_MSG_IN:?}"]],
-        }, "Refresh",
+        },
+        "Refresh",
     },
 }
 keys.R = {
@@ -37,7 +39,8 @@ keys.R = {
                   echo -e "$NODES" | pipe-rename
                   echo ExplorePwdAsync >> "${XPLR_PIPE_MSG_IN:?}"
                 fi]],
-        }, "Refresh",
+        },
+        "Refresh",
     },
 }
 keys.D = { help = "disk usage", messages = { { BashExec = [[dua i]] }, "ClearScreen", "Refresh" } }
@@ -45,8 +48,10 @@ keys["ctrl-n"] = {
     help = "new session",
     messages = { { BashExecSilently = [[wezterm start -- xplr &]] }, "Refresh" },
 }
-keys.P = { help = "paste.rs",
-           messages = { "PopMode", { SwitchModeCustom = "paste.rs" }, "Refresh" } }
+keys.P = {
+    help = "paste.rs",
+    messages = { "PopMode", { SwitchModeCustom = "paste.rs" }, "Refresh" },
+}
 keys.Z = {
     help = "zoxide jump",
     messages = {
@@ -76,6 +81,13 @@ keys.S = {
         },
     },
 }
+keys.c = {
+    help = "copy mode",
+    messages = {
+        "PopMode",
+        { SwitchModeBuiltin = "create" },
+    },
+}
 xplr.config.modes.custom = {
     ["paste.rs"] = {
         name = "paste.rs",
@@ -91,7 +103,9 @@ xplr.config.modes.custom = {
                                 curl --data-binary "@${PTH:?}" "https://paste.rs" | tee -a "${DEST:?}"
                                 echo
                                 read -p "[enter to continue]"]],
-                        }, "PopMode", "Refresh",
+                        },
+                        "PopMode",
+                        "Refresh",
                     },
                 },
                 l = {
@@ -102,7 +116,9 @@ xplr.config.modes.custom = {
                                 cat "${XPLR_SESSION_PATH:?}/paste.rs.list"
                                 echo
                                 read -p "[enter to continue]"]],
-                        }, "PopMode", "Refresh",
+                        },
+                        "PopMode",
+                        "Refresh",
                     },
                 },
                 o = {
@@ -116,7 +132,9 @@ xplr.config.modes.custom = {
                                   OPENER=$(which xdg-open)
                                   ${OPENER:-open} "${URL:?}"
                                 fi]],
-                        }, "PopMode", "Refresh",
+                        },
+                        "PopMode",
+                        "Refresh",
                     },
                 },
                 d = {
@@ -132,7 +150,9 @@ xplr.config.modes.custom = {
                                   echo
                                   read -p "[enter to continue]"
                                 fi]],
-                        }, "PopMode", "Refresh",
+                        },
+                        "PopMode",
+                        "Refresh",
                     },
                 },
                 esc = { help = "cancel", messages = { "PopMode", "Refresh" } },
@@ -147,7 +167,8 @@ xplr.config.modes.custom = {
                     help = "copy focused file",
                     messages = {
                         { BashExecSilently = [[xclip-copyfile $(cat "${XPLR_PIPE_RESULT_OUT:?}")]] },
-                        "PopMode", "Refresh",
+                        "PopMode",
+                        "Refresh",
                     },
                 },
                 esc = { help = "cancel", messages = { "PopMode", "Refresh" } },

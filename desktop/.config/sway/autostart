@@ -10,4 +10,5 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 exec wl-paste -t text --watch clipman store
 exec ~/.azotebg
 exec env RUST_BACKTRACE=1 swayrd > ~/.local/state/swayrd.log 2>&1
+exec sworkstyle &> /tmp/sworkstyle.log
 exec cms_notifs

@@ -63,4 +63,5 @@
                 :less [(prettier)]
                 :xml  [(prettier "xml")]
                 :toml [(prettier)]
-                :javascript [(prettier)]}})
+                :javascript [(prettier)]
+                :typescript [(prettier)]}})

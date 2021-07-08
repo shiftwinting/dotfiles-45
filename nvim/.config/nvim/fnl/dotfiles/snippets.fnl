@@ -181,7 +181,7 @@ macro_rules! input_multiple {
     };
 }
 macro_rules! input {
-    (\\$scanner:ident -> \\$i:tt: [[\\$t: ty; \\$m:ident]; \\$n:ident]) => { // nxm matrix
+    (\\$scanner:ident -> \\$i:tt: [[\\$t:ty; \\$m:ident]; \\$n:ident]) => { // nxm matrix
         let \\$i = {
         let mut v:Vec<Vec<\\$t>> = Vec::new();
         for i in 0..n {

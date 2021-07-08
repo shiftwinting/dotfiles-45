@@ -31,7 +31,6 @@
         :smartindent true
         :emoji false
         :list true
-        :pumblend 0
         :title true
         :incsearch true
         :hlsearch true

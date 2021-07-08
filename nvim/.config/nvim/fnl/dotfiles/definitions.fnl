@@ -39,6 +39,7 @@
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime
         :gtfo#terminals {:unix "wezterm start --cwd "}
         :AutoPairsMapCR false
+        :rooter_change_directory_for_non_project_files "current"
         :auto_abbrev_file_path "~/.local/share/nvim/abbrevatives"
         :minimap_git_colors 1
         :minimap_highlight_range 1

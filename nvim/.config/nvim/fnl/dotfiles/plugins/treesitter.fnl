@@ -9,7 +9,7 @@
    :rainbow {:enable true
              :extended_mode true
              :disable ["c" "cpp" "lua"]
-             :colors ["#7c8f8f"
+             :colors ["#7fdbca"
                       "#ff79c6"
                       "#21c7a8"
                       "#82aaff"

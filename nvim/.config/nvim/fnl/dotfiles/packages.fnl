@@ -28,6 +28,7 @@
   :norcalli/nvim-colorizer.lua {:config "require 'colorizer'.setup()"
                                 :cmd "ColorizerToggle"}
   :mhinz/vim-startify {:config "require 'dotfiles.plugins.startify'"}
+  :airblade/vim-rooter {}
 
 ; Completion
   :hrsh7th/nvim-compe {:config "require 'dotfiles.plugins.compe'"}

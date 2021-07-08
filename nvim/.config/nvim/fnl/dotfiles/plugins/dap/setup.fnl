@@ -11,21 +11,24 @@
           (callback {:type "server"
                      :host config.host
                      :port config.port}))})
+(def- lldb-conf
+ [{:name "Launch"
+   :type "lldb"
+   :request "launch"
+   :program (fn []
+              (vim.fn.input
+                "Path to executable: "
+                (.. (vim.fn.getcwd) "/")
+                "file"))
+   :cwd "${workspaceFolder}"
+   :stopOnEntry false
+   :args []
+   :runInTerminal false}])
+
 (set dap.configurations
-      {:rust [{:name "Launch"
-               :type "lldb"
-               :request "launch"
-               :program (fn []
-                          (vim.fn.input
-                            "Path to executable: "
-                            (.. (vim.fn.getcwd) "/")
-                            "file"))
-               :cwd "${workspaceFolder}"
-               :stopOnEntry false
-               :args []
-               :runInTerminal false}]
-       :c dap.configurations.rust
-       :cpp dap.configurations.rust})
+      {:rust lldb-conf
+       :c lldb-conf
+       :cpp lldb-conf})
 
 (nvim.fn.sign_define "DapBreakpoint"
                      {:text "•"
