@@ -11,7 +11,8 @@
       :cpp []
       :rust []
       :c []
-      :typescript []})
+      :typescript []
+      :javascript []})
 
 (set nvim.g.ale_fixers
      {:* [:remove_trailing_lines :trim_whitespace]})

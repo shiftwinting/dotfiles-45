@@ -3,12 +3,11 @@
                   builtin telescope.builtin}})
 {:dotfiles
  (fn []
-   (builtin.git_files {:shorten_path false
-                       :cwd "~/dotfiles"
+   (builtin.git_files {:cwd "~/dotfiles"
                        :prompt "~ dotfiles ~"}))
  :cc
  (fn []
-   (builtin.find_files {:shorten_path true
+   (builtin.find_files {:path_display [:shorten]
                         :cwd "~/contests"
                         :prompt "~ cc ~"}))
  :curbuf
@@ -17,7 +16,7 @@
      (themes.get_dropdown {:winblend 10
                            :border true
                            :previewer false
-                           :shorten_path true})))
+                           :path_display [:shorten]})))
  :lsp_code_actions
  (fn []
    (builtin.lsp_code_actions
@@ -26,7 +25,7 @@
                            :previewer false})))
  :notes
  (fn []
-   (builtin.find_files {:shorten_path true
+   (builtin.find_files {:path_display [:shorten]
                         :find_command [:fd :.org]
                         :cwd "~/org"
-                        :prompt "Notes"}))}
+                        :prompt "~ Notes ~"}))}

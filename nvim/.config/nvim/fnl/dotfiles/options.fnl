@@ -16,9 +16,10 @@
         :number true
         :relativenumber true
         :guicursor (str.join "," (core.concat (str.split nvim.o.guicursor ",") ["a:blinkon700"]))
-        :listchars "tab:» ,trail:_"
+        :listchars "tab:» ,trail:_,nbsp:␣"
+        :showbreak "↪ "
         :showmode false
-        :tabstop 4
+        :tabstop 8
         :shiftwidth 4
         :expandtab true
         :softtabstop 4

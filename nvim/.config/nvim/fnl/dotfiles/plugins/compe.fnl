@@ -14,7 +14,8 @@
    :max_abbr_width 100
    :max_kind_width 100
    :max_menu_width 100
-   :documentation {:winhighlight "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder"}
+   :documentation {:winhighlight "NormalFloat:NormalFloat,FloatBorder:FloatBorder"
+                   :border "single"}
    :source {:path true
             :buffer true
             :calc true

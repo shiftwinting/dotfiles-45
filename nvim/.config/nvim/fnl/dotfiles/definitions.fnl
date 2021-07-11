@@ -18,7 +18,7 @@
         :cphlang "rust"
         :cph_rust_createjson true
         :cpp_compile_command "g++ -D XOX solution.cpp -o cpp.out -g -O0"
-        :rust_compile_command "rustc -g solution.rs -o rust.out"
+        :rust_compile_command "clippy-driver -g solution.rs -o rust.out"
 
 
         :neovide_window_floating_blur false
@@ -31,6 +31,7 @@
         "conjure#highlight#enabled" 1
         "conjure#highlight#timeout" 500
         "conjure#highlight#group" "IncSearch"
+        "conjure#hud#border" "single"
         "conjure#mapping#doc_word" "K"
         "conjure#extract#tree_sitter#enabled" true
         "conjure#client#fennel#aniseed#aniseed_module_prefix" "aniseed."

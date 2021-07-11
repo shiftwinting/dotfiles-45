@@ -29,7 +29,6 @@
                       :vertical {:preview_cutoff 5}}
       :mappings {:i {:<esc> actions.close}}
       :sorting_strategy "ascending"
-      :shorten_path true
       :borderchars ["─" "│" "─" "│" "┌" "┐" "┘" "└"]
       :buffer_previewer_maker maker}
 

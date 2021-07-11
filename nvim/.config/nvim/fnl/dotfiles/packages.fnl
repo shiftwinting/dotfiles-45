@@ -127,7 +127,10 @@
   :mhinz/neovim-remote {}
   :junegunn/vim-easy-align {}})
 
-(packer.startup (fn []
-                   (each [key value (pairs packages)]
-                      (let [p {1 key}]
-                         (use (vim.tbl_deep_extend "error" p value))))))
+
+(do
+  (packer.init {:display {:prompt_border "single"}})
+  (packer.reset)
+  (each [key value (pairs packages)]
+    (let [p {1 key}]
+       (packer.use (vim.tbl_deep_extend "error" p value)))))

@@ -129,7 +129,8 @@ for x in &${2:v} {
     let count = $1.entry(x).or_insert(0);
     *count += 1;
 }")
-        :ceil (U.match_indentation "fn ceil_div(x: u64, y: u64) -> u64 {
+        :ceil (U.match_indentation "#[inline]
+fn ceil_div(x: u64, y: u64) -> u64 {
     (x + y - 1) / y
 }")
         :ncr (U.match_indentation "fn nCr(n: u64, r: u64) -> u64 {
@@ -172,10 +173,7 @@ for x in &${2:v} {
         :file_stdin (U.match_indentation "let f = File::open(\"input1\").unwrap(); // DELET THIS 🔫
 let f = BufReader::new(f); // DELET THIS 🔫
 let mut scan = Scanner::new(f); // CHANGE THIS BACK 🔫")
-        :cc_base (U.match_indentation "#![allow(unused_imports)]
-use std::{io::{self, prelude::*}, str};
-
-macro_rules! input_multiple {
+        :input_macros (U.match_indentation "macro_rules! input_multiple {
     (\\$scanner:ident -> \\$(\\$i:tt: \\$t:tt),+ \\$(,)?) => {
         \\$(input!{\\$scanner -> \\$i: \\$t})*
     };
@@ -208,7 +206,10 @@ macro_rules! input {
     (\\$scanner:ident -> \\$i:tt: \"chars\") => {
         let \\$i:Vec<char> = \\$scanner.token::<String>().chars().collect();
     };
-}
+}")
+        :cc_base (U.match_indentation "#![allow(unused_imports)]
+#![warn(clippy::all, clippy::pedantic)]
+use std::{io::{self, prelude::*}, str};
 
 fn main() {
     let (stdin, stdout) = (io::stdin(), io::stdout());

@@ -26,9 +26,9 @@
  (el.setup
    {:generator
     (fn [_ _]
-     [(extensions.gen_mode {:format_string " %s "})
+     [(extensions.gen_mode {:format_string "[%s]"})
       (sections.highlight "ElBranch" git-branch)
-      " "
+      sections.split
       file-icon
       (sections.highlight "ELFile" builtin.tail_file)
       (sections.collapse_builtin [" " builtin.modified_flag])

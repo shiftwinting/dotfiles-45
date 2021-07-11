@@ -34,7 +34,7 @@
 ;Telescope
 (smap :n :<leader>f "<cmd>lua require('telescope.builtin').find_files()<CR>")
 (smap :n :<leader>h "<cmd>Telescope frecency<CR>")
-(smap :n :<leader>lg "<cmd>lua require('telescope').extensions.fzf_writer.grep()<CR>")
+(smap :n :<leader>lg "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 (smap :n :<leader>sg "<cmd>lua require('telescope').extensions.fzf_writer.staged_grep()<CR>")
 (smap :n :<leader>gf "<cmd>Telescope git_files<CR>")
 (smap :n :<leader>ts "<cmd>Telescope treesitter<CR>")

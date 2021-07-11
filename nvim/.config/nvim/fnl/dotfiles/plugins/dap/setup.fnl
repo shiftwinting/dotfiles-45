@@ -5,14 +5,14 @@
 
 (set dap.adapters
  {:lldb {:type "executable"
-         :command "lldb-vscode"
+         :command "/usr/bin/lldb-vscode"
          :name "lldb"}
   :nlua (fn [callback config]
           (callback {:type "server"
                      :host config.host
                      :port config.port}))})
 (def- lldb-conf
- [{:name "Launch"
+ [{:name "Don't run in terminal"
    :type "lldb"
    :request "launch"
    :program (fn []
@@ -23,7 +23,19 @@
    :cwd "${workspaceFolder}"
    :stopOnEntry false
    :args []
-   :runInTerminal false}])
+   :runInTerminal false}
+  {:name "Run in terminal"
+   :type "lldb"
+   :request "launch"
+   :program (fn []
+              (vim.fn.input
+                "Path to executable: "
+                (.. (vim.fn.getcwd) "/")
+                "file"))
+   :cwd "${workspaceFolder}"
+   :stopOnEntry false
+   :args []
+   :runInTerminal true}])
 
 (set dap.configurations
       {:rust lldb-conf
