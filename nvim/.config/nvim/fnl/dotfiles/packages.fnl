@@ -5,7 +5,6 @@
   {:completion
      {:hrsh7th/nvim-compe {:config "require 'dotfiles.plugins.compe'"}
       :tami5/compe-conjure {:after "conjure"}
-      :tamago324/compe-zsh {}
       :norcalli/snippets.nvim {:config "require 'dotfiles.snippets'"}}
 
    :lsp
@@ -33,7 +32,6 @@
       :nvim-treesitter/nvim-treesitter-refactor {}
       :nvim-treesitter/nvim-treesitter-textobjects {}
       :nvim-treesitter/playground {}
-      :mfussenegger/nvim-ts-hint-textobject {}
       :nvim-treesitter/nvim-tree-docs {}}
 
    :git
@@ -44,12 +42,12 @@
    :telescope
      {:nvim-telescope/telescope.nvim {:config "require 'dotfiles.plugins.telescope.setup'
                                                require('telescope').load_extension('fzf')"}
-      :nvim-telescope/telescope-fzf-native.nvim {:run "make"}
+      :nvim-telescope/telescope-fzf-native.nvim {:run "make"} ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
       :nvim-lua/popup.nvim {}
       :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}
       :nvim-telescope/telescope-frecency.nvim {:requires "tami5/sql.nvim"
                                                :config "require'telescope'.load_extension('frecency')"}
-      :nvim-telescope/telescope-fzf-writer.nvim {}
+      :nvim-telescope/telescope-fzf-writer.nvim {} ;;;;;;;;;;;;;;;;;;;;;
       :nvim-telescope/telescope-project.nvim {:config "require'telescope'.load_extension('project')"}
       :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"
                                           :after "nvim-dap"}}
@@ -96,15 +94,15 @@
 
    :file_nav
      {:matbme/JABS.nvim {}
-      :kyazdani42/nvim-tree.lua {}
       :tkmpypy/chowcho.nvim {}
-      :mhinz/vim-sayonara {}
       :sayanarijit/xplr.vim {:cmd "XplrPicker"}}
 
    :misc
      {:wbthomason/packer.nvim {}
       :Olical/aniseed {}
-      :Olical/conjure {:ft ["fennel" "clojure"]}
+      :Olical/conjure {:ft ["fennel" "clojure"]
+                       :branch "fork/master"
+                       :lock true}
       :eraserhd/parinfer-rust {:run "cargo build --release"
                                :ft ["clojure" "fennel" "lisp" "scheme"]}
       :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}
@@ -117,9 +115,6 @@
       :antoinemadec/FixCursorHold.nvim {}
       :mhartington/formatter.nvim {:config "require 'dotfiles.plugins.formatter'"
                                    :cmd "Format"}
-      :oknozor/illumination {:run "./install.sh"
-                             :ft "markdown"}
-
       :mhinz/neovim-remote {}
       :KabbAmine/vCoolor.vim {}
       :mtdl9/vim-log-highlighting {}
@@ -133,7 +128,7 @@
       :tjdevries/express_line.nvim {:config "require 'dotfiles.plugins.el'"}}})
 
 (do
-  (packer.init {:display {:prompt_border "single"}})
+  (packer.init {:display {:prompt_border "rounded"}})
   (packer.reset)
   (each [group lst (pairs groups)]
     (each [plugin conf (pairs lst)]

@@ -38,7 +38,6 @@
 
         :dap_virtual_text "all frames"
         :cursorhold_updatetime 300  ;; shorter CursorHold, decoupled from updatetime
-        :gtfo#terminals {:unix "wezterm start --cwd "}
         :AutoPairsMapCR false
         :rooter_change_directory_for_non_project_files "current"
         :auto_abbrev_file_path "~/.local/share/nvim/abbrevatives"

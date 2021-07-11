@@ -123,7 +123,7 @@ freopen(\"input1\", \"r\", stdin);
 }")}
       :rust
        {:ri "scanner.token::<${1:u}>();"
-        :rv "(0..n).map(|_| scanner.token()).collect::<Vec<${1:u}>>();"
+        :rv "(0..${1:n}).map(|_| scanner.token()).collect::<Vec<${2:u}>>();"
         :freqmap (U.match_indentation "let mut ${1:freqs} = HashMap::new();
 for x in &${2:v} {
     let count = $1.entry(x).or_insert(0);
@@ -143,13 +143,15 @@ fn ceil_div(x: u64, y: u64) -> u64 {
         :npr (U.match_indentation "fn nPr(n: u64, r: u64) -> u64 {
     (n - r + 1..=n).product()
 }")
-        :gcd (U.match_indentation "fn gcd(mut x: u32, mut y: u32) -> u32 { // max is 4.2e9
-    while y != 0 {
-        let t = y;
-        y = x % y;
-        x = t;
+        :gcd (U.match_indentation "pub fn gcd<T>(a: T, b: T) -> T
+where
+    T: std::cmp::PartialEq + std::ops::Rem<Output = T> + Default + Copy,
+{
+    if b == T::default() {
+        a
+    } else {
+        gcd(b, a % b)
     }
-    x
 }")
         :factorise (U.match_indentation "fn factorise(mut n: u64) -> HashMap<u64, u64> {
     let mut factors = HashMap::new();
