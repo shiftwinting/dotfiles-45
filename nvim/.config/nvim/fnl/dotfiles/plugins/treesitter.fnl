@@ -25,7 +25,7 @@
               :smart_rename {:enable true
                              :keymaps {:smart_rename "grr"}}
               :navigation {:enable true
-                           :keymaps {:goto_definition "gnd"
+                           :keymaps {:goto_definition_lsp_fallback "gnd"
                                      :list_definitions "gnD"
                                      :list_defintions_toc "gO"
                                      :goto_next_usage "<M-2>"

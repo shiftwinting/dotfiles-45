@@ -18,24 +18,17 @@
 
 (map :c :<C-v> :<C-r>+)
 
-;reload init.lua
-(map :n :<C-r>i ":luafile ~/.config/nvim/init.lua<CR>")
-
-; hop.nvim
+;hop.nvim
 (smap "" "\\w" :<cmd>HopWord<CR>)
 (smap "" "\\p" :<cmd>HopPattern<CR>)
 (smap "" "\\l" :<cmd>HopLine<CR>)
 (smap "" "\\c" :<cmd>HopChar1<CR>)
 (smap "" "\\C" :<cmd>HopChar2<CR>)
 
-(smap :o :m ":<C-U>lua require('tsht').nodes()<CR>")
-(smap :v :m ":lua require('tsht').nodes()<CR>")
-
 ;Telescope
 (smap :n :<leader>f "<cmd>lua require('telescope.builtin').find_files()<CR>")
 (smap :n :<leader>h "<cmd>Telescope frecency<CR>")
 (smap :n :<leader>lg "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-(smap :n :<leader>sg "<cmd>lua require('telescope').extensions.fzf_writer.staged_grep()<CR>")
 (smap :n :<leader>gf "<cmd>Telescope git_files<CR>")
 (smap :n :<leader>ts "<cmd>Telescope treesitter<CR>")
 (smap :n :<leader>d "<cmd>lua require 'dotfiles.plugins.telescope.custom'.dotfiles()<CR>")
@@ -63,14 +56,17 @@
 
 (noremap :v :<M-CR> "<cmd>Telescope lsp_range_code_actions<CR>")
 (smap :n :K "<cmd>lua vim.lsp.buf.hover()<CR>")
-(smap :n :dn ":lua vim.lsp.diagnostic.goto_next()<CR>")
-(smap :n :dp ":lua vim.lsp.diagnostic.goto_prev()<CR>")
-(smap :n :gr "<cmd>lua vim.lsp.buf.rename()<CR>")
+(smap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = 'single' } })<CR>")
+(smap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = 'single' } })<CR>")
+(smap :n :gr "<cmd>lua require 'telescope.builtin'.lsp_references()<CR>")
 (smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
-(smap :n :gs "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-(smap :n :sd "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
+(smap :n :gD "<cmd>lua vim.lsp.buf.declaration()<CR>")
+(smap :n :gt "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+(smap :n :gi "<cmd>lua require 'telescope.builtin'.lsp_implementations()<CR>")
+(smap :n :<C-k> "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+(smap :n "\"d" "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>")
 (smap :n :<leader>e "<cmd>Telescope lsp_workspace_diagnostics<CR>")
-(smap :n :<leader>r "<cmd>Telescope lsp_references<CR>")
+(smap :n :<M-r> "<cmd>lua vim.lsp.buf.rename()<CR>")
 
 ;JABS
 (smap :n :tt "<cmd>JABSOpen<CR>")
@@ -92,8 +88,9 @@
 
 (noremap :n "?r" "<cmd>lua require'dap'.repl.toggle()<CR>")
 (noremap :n "?el" "<cmd>lua require'dap'.run_last()<CR>")
+(noremap :n "?ts" "<cmd>lua require 'telescope'.extensions.dap.scopes()<CR>")
 (noremap :n "?ss" "<cmd>lua require('dotfiles.plugins.dap.functions').scopes_sidebar()<CR>")
-(noremap :n "?sf" "<cmd>lua require('dotfiles.plugins.dap.functions').scopes_float()<CR>")
+(noremap :n "?tv" "<cmd>lua require 'telescope'.extensions.dap.variables { layout_strategy = 'vertical' }<CR>")
 
 ;Switching buffers
 (smap :n :<C-n> ":bnext<CR>")

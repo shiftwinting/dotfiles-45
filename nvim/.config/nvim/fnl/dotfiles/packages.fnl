@@ -95,7 +95,8 @@
    :file_nav
      {:matbme/JABS.nvim {}
       :tkmpypy/chowcho.nvim {}
-      :sayanarijit/xplr.vim {:cmd "XplrPicker"}}
+      :sayanarijit/xplr.vim {:cmd "XplrPicker"}
+      :kyazdani42/nvim-tree.lua {}}
 
    :misc
      {:wbthomason/packer.nvim {}
