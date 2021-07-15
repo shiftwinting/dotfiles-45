@@ -9,11 +9,10 @@
    :rainbow {:enable true
              :extended_mode true
              :disable ["c" "cpp" "lua"]
-             :colors ["#7fdbca"
-                      "#ff79c6"
-                      "#21c7a8"
-                      "#82aaff"
-                      "#ae81ff"]}
+             :colors ["#A4BF8D"
+                      "#A092C8"
+                      "#EBCA89"
+                      "#89B8C2"]}
    :indent {:enable true}
    :incremental_selection {:enable true
                            :keymaps {:init_selection "gnn"

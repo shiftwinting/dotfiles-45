@@ -1,26 +1,27 @@
 window {
-    background-color: #002b36;
-    color: #93a1a1;
+    background-color: #0E1016;
+    color: #C7C9D1;
 }
 
 #entry:nth-child(odd) {
-    background-color: #002b36;
+    background-color: #0E1016;
 }
 
 #entry:nth-child(even) {
-    background-color: #073642;
+    background-color: #161822;
 }
 
 #entry:selected {
-    background-color: #586e75;
+    background-color: #414758;
 }
 
 #input {
-    background-color: #073642;
-    color: #839496;
-    border-color: #586e75;
+    background-color: #161822;
+    color: #828597;
+    border-color: #414758;
+    border-radius: 0px;
 }
 
 #input:focus {
-    border-color: #b58900;
+    border-color: #EBCA89;
 }

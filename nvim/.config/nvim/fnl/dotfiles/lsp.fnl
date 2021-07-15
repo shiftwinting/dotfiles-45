@@ -89,7 +89,7 @@
                             :on_init on-init}
                          :tools
                            {:inlay_hints {:other_hints_prefix " » "
-                                          :highlight "NightflyOrange"}}})
+                                          :highlight "RustInlayHints"}}})
       (lspconfig.bashls.setup
                 {:capabilities capabilities
                  :on_attach on_attach

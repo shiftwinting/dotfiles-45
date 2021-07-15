@@ -87,7 +87,8 @@
                                     :cmd "ColorizerToggle"}
       :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'"}
       :delphinus/vim-auto-cursorline {}
-      :mhinz/vim-startify {:config "require 'dotfiles.plugins.startify'"}}
+      :mhinz/vim-startify {:config "require 'dotfiles.plugins.startify'"}
+      :elianiva/icy.nvim {:requires "rktjmp/lush.nvim"}}
 
    :environment
      {:editorconfig/editorconfig-vim {}

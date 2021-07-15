@@ -8,25 +8,24 @@ gaps outer 3
 gaps inner 7
 default_border pixel 2
 
-## Base16 Solarized Dark
-# Author: Ethan Schoonover (modified by aramisgithub)
+## Iceberg
 
-set $base00 #002b36
-set $base01 #073642
-set $base02 #586e75
-set $base03 #657b83
-set $base04 #839496
-set $base05 #93a1a1
-set $base06 #eee8d5
+set $base00 #0E1016
+set $base01 #161822
+set $base02 #36384A
+set $base03 #414758
+set $base04 #5C5E70
+set $base05 #828597
+set $base06 #C7C9D1
 set $base07 #fdf6e3
-set $base08 #dc322f
-set $base09 #cb4b16
-set $base0A #b58900
-set $base0B #859900
-set $base0C #2aa198
-set $base0D #268bd2
-set $base0E #6c71c4
-set $base0F #d33682
+set $base08 #E46767
+set $base09 #D18771
+set $base0A #EBCA89
+set $base0B #A4BF8D
+set $base0C #89B8C2
+set $base0D #85A0C7
+set $base0E #A092C8
+set $base0F #CC3768
 
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base05 $base0D $base00 $base0D $base0D
@@ -35,6 +34,7 @@ client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
+
 
 # GTK
 

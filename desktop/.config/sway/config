@@ -8,7 +8,7 @@ bar {
     position top
     status_command i3status-rs
     colors {
-        background #222222
+        background $base00
         separator  $base01
         statusline $base04
 

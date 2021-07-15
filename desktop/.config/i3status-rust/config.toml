@@ -1,10 +1,5 @@
 icons = "material-nf"
-
-[theme]
-name = "solarized-dark"
-
-[theme.overrides]
-separator = ""
+theme = "iceberg"
 
 [[block]]
 block = "focused_window"

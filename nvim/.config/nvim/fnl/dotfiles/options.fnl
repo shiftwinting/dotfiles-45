@@ -8,7 +8,7 @@
   "Sets a vim option"
   (core.assoc nvim.o opt value))
 
-(nvim.ex.colorscheme :nightfly)
+(nvim.ex.colorscheme :icy)
 
 (let [options
        {:mouse :a
