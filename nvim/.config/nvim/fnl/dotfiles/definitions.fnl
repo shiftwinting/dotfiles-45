@@ -13,7 +13,7 @@
         :indent_blankline_context_patterns [:class :function :method
                                             :if :for :while :struct
                                             :impl :loop :call_expression
-                                            :table :enum_item]
+                                            :table :enum_item :block]
 
         :cphlang "rust"
         :cph_rust_createjson true

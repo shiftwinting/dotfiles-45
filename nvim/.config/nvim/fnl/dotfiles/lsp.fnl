@@ -5,6 +5,17 @@
             icons nvim-nonicons
             lua-dev lua-dev
             rust-tools rust-tools}})
+(defn- preview-location-callback [_ _ result]
+  (if (or (= result nil)
+          (vim.tbl_isempty result))
+      nil
+      (vim.lsp.util.preview_location (. result 1) {:border "single"})))
+
+(defn peek-definition []
+  (let [params (vim.lsp.util.make_position_params)]
+    (do
+      (if (not (pcall vim.lsp.buf_request 0 "textDocument/definition" params preview-location-callback))
+          (pcall vim.lsp.buf_request 0 "textDocument/declaration" params preview-location-callback)))))
 
 (let [on-init (fn [client]
                 (set client.config.flags [])
@@ -72,10 +83,13 @@
 
       (lspconfig.sumneko_lua.setup luadev)
       (rust-tools.setup {:server
-                          {:capabilities capabilities
-                           :on_attach on_attach
-                           :handlers handlers
-                           :on_init on-init}})
+                           {:capabilities capabilities
+                            :on_attach on_attach
+                            :handlers handlers
+                            :on_init on-init}
+                         :tools
+                           {:inlay_hints {:other_hints_prefix " » "
+                                          :highlight "NightflyOrange"}}})
       (lspconfig.bashls.setup
                 {:capabilities capabilities
                  :on_attach on_attach
@@ -90,3 +104,5 @@
                                 (ts-utils.setup_client client)))
                  :handlers handlers
                  :on_init on-init})))
+
+{:peek_definition peek-definition}

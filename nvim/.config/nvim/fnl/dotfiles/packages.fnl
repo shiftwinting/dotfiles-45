@@ -60,6 +60,8 @@
       :b3nj5m1n/kommentary {}
       :junegunn/vim-easy-align {}
       :monaqa/dial.nvim {}
+      :folke/twilight.nvim {:config "require 'twilight'.setup{}"
+                            :cmd "Twilight"}
       :andymass/vim-matchup {}
       :takac/vim-hardtime {}
       :wfxr/minimap.vim {:cmd "Minimap"}
@@ -115,7 +117,7 @@
       :pbrisbin/vim-mkdir {}
       :antoinemadec/FixCursorHold.nvim {}
       :mhartington/formatter.nvim {:config "require 'dotfiles.plugins.formatter'"
-                                   :cmd "Format"}
+                                   :cmd ["Format" "FormatWrite"]}
       :mhinz/neovim-remote {}
       :KabbAmine/vCoolor.vim {}
       :mtdl9/vim-log-highlighting {}

@@ -36,7 +36,7 @@
       "<cmd>lua require'telescope'.extensions.z.list{ cmd = { vim.o.shell, '-c', 'zoxide query -sl' } }<CR>")
 (smap :n :<leader>th "<cmd>Telescope help_tags<CR>")
 (smap :n :<leader> "<cmd>Telescope keymaps<CR>")
-(smap :n :<C-M-p> "<cmd>Telescope project<CR>")
+(smap :n :<C-M-p> "<cmd>lua require'telescope'.extensions.project.project(require('telescope.themes').get_dropdown({}))<CR>")
 (smap :n :<leader>cb "<cmd>lua require 'dotfiles.plugins.telescope.custom'.curbuf()<CR>")
 (smap :n :<M-x> "<cmd>lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))<CR>")
 (smap :n :<leader>n "<cmd>lua require 'dotfiles.plugins.telescope.custom'.notes()<CR>")
@@ -62,11 +62,12 @@
 (smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
 (smap :n :gD "<cmd>lua vim.lsp.buf.declaration()<CR>")
 (smap :n :gt "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-(smap :n :gi "<cmd>lua require 'telescope.builtin'.lsp_implementations()<CR>")
+(smap :n :gi "<cmd>lua require 'telescope.builtin'.lsp_implementations({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
 (smap :n :<C-k> "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 (smap :n "\"d" "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>")
 (smap :n :<leader>e "<cmd>Telescope lsp_workspace_diagnostics<CR>")
 (smap :n :<M-r> "<cmd>lua vim.lsp.buf.rename()<CR>")
+(smap :n :gk "<cmd>lua require 'dotfiles.lsp'.peek_definition()<CR>")
 
 ;JABS
 (smap :n :tt "<cmd>JABSOpen<CR>")

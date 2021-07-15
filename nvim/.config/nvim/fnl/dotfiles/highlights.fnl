@@ -11,7 +11,8 @@
 
            :BufferlineCurrent "guibg=#011627 guifg=#ecc48d"
            :BufferlineNormal "guibg=#2c3043 guifg=#82aaff"
-           :NvimDapVirtualText "guifg=#7fdbca gui=Italic"}]
+           :NvimDapVirtualText "guifg=#7fdbca gui=Italic"
+           :LspCodeLens "guifg=#f78c6c gui=Italic"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
 
@@ -21,6 +22,8 @@
             :TelescopePromptPrefix "NightflyBlue"
             :TelescopeMatching "NightflyWatermelon"
             :TelescopeSelectionCaret "NightflyWatermelon"
-            :TelescopeSelection "NightflyTurquoise"}]
+            :TelescopeSelection "NightflyTurquoise"
+
+            :LspCodeLensSeparator "NightflyOrange"}]
     (each [group hl (pairs link)]
       (nvim.ex.highlight :link group hl)))
