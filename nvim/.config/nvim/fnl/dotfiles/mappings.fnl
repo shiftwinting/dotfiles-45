@@ -54,12 +54,12 @@
 (noremap :n :<M-CR>
          "<cmd>lua require 'dotfiles.plugins.telescope.custom'.lsp_code_actions()<CR>")
 
-(noremap :v :<M-CR> "<cmd>Telescope lsp_range_code_actions<CR>")
+(noremap :v :<M-CR> "<cmd>lua require 'telescope.builtin.lsp'.range_code_actions(require('telescope.themes').get_cursor({}))<CR>")
 (smap :n :K "<cmd>lua vim.lsp.buf.hover()<CR>")
 (smap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = 'single' } })<CR>")
 (smap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = 'single' } })<CR>")
-(smap :n :gr "<cmd>lua require 'telescope.builtin'.lsp_references()<CR>")
-(smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions()<CR>")
+(smap :n :gr "<cmd>lua require 'telescope.builtin'.lsp_references({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
+(smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
 (smap :n :gD "<cmd>lua vim.lsp.buf.declaration()<CR>")
 (smap :n :gt "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 (smap :n :gi "<cmd>lua require 'telescope.builtin'.lsp_implementations({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
@@ -71,7 +71,7 @@
 (smap :n :<C-q> "<cmd>Trouble<CR>")
 
 ;JABS
-(smap :n :tt "<cmd>JABSOpen<CR>")
+(smap :n :tt "<cmd>Telescope buffers<CR>")
 
 ;Compe
 (nvim.set_keymap :i :<CR> "compe#confirm('<CR>')"

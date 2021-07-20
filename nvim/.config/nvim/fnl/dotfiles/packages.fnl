@@ -96,8 +96,7 @@
       :airblade/vim-rooter {}}
 
    :file_nav
-     {:matbme/JABS.nvim {}
-      :tkmpypy/chowcho.nvim {}
+     {:tkmpypy/chowcho.nvim {}
       :sayanarijit/xplr.vim {:cmd "XplrPicker"}
       :kyazdani42/nvim-tree.lua {}}
 

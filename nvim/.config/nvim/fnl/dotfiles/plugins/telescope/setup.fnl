@@ -32,7 +32,10 @@
       :borderchars ["─" "│" "─" "│" "┌" "┐" "┘" "└"]
       :buffer_previewer_maker maker}
 
-   :pickers {:file_browser {:layout_config {:horizontal {:preview_width 0.7}}}}
+   :pickers {:file_browser {:layout_config {:horizontal {:preview_width 0.7}}}
+             :buffers {:sort_lastused true
+                       :mappings {:i {:<c-d> actions.delete_buffer}
+                                  :n {:<c-d> actions.delete_buffer}}}}
 
    :extensions
      {:fzf {:fuzzy true
