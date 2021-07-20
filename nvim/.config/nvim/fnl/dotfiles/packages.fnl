@@ -29,7 +29,7 @@
      {:nvim-treesitter/nvim-treesitter {:config "require 'dotfiles.plugins.treesitter'"
                                         :run ":TSUpdate"}
       "~/stuff/projects/nvim-ts-rainbow" {}
-      :nvim-treesitter/nvim-treesitter-refactor {}
+;      :nvim-treesitter/nvim-treesitter-refactor {}
       :nvim-treesitter/nvim-treesitter-textobjects {}
       :nvim-treesitter/playground {}
       :nvim-treesitter/nvim-tree-docs {}}
@@ -46,7 +46,7 @@
       :nvim-lua/popup.nvim {}
       :nvim-telescope/telescope-z.nvim {:config "require 'telescope'.load_extension('z')"}
       :nvim-telescope/telescope-frecency.nvim {:requires "tami5/sql.nvim"
-                                               :config "require'telescope'.load_extension('frecency')"}
+                                               :config "require 'telescope'.load_extension('frecency')"}
       :nvim-telescope/telescope-fzf-writer.nvim {} ;;;;;;;;;;;;;;;;;;;;;
       :nvim-telescope/telescope-project.nvim {:config "require'telescope'.load_extension('project')"}
       :nvim-telescope/telescope-dap.nvim {:config "require 'telescope'.load_extension('dap')"
@@ -97,14 +97,12 @@
 
    :file_nav
      {:tkmpypy/chowcho.nvim {}
-      :sayanarijit/xplr.vim {:cmd "XplrPicker"}
-      :kyazdani42/nvim-tree.lua {}}
+      :sayanarijit/xplr.vim {:cmd "XplrPicker"}}
 
    :misc
      {:wbthomason/packer.nvim {}
       :Olical/aniseed {}
-      :Olical/conjure {:ft ["fennel" "clojure"]
-                       :branch "master"}
+      :Olical/conjure {:ft ["fennel" "clojure"]}
       :eraserhd/parinfer-rust {:run "cargo build --release"
                                :ft ["clojure" "fennel" "lisp" "scheme"]}
       :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}

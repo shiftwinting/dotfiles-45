@@ -1,106 +1,103 @@
 (module dotfiles.mappings
         {require {nvim aniseed.nvim}})
 
-(defn- map [mode from to]
-  "Sets a mapping"
-  (nvim.set_keymap mode from to {}))
-
-(defn- smap [mode from to]
-  "Sets a mapping with {:silent true}"
-  (nvim.set_keymap mode from to {:silent true}))
-
-(defn- noremap [mode from to]
-  "Sets a mapping with {:noremap true}"
-  (nvim.set_keymap mode from to {:noremap true}))
-
+;leaders
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
 
-(map :c :<C-v> :<C-r>+)
+;pasting into cmd area
+(nvim.set_keymap :c :<C-v> :<C-r>+ {:noremap true})
+
+(defn- map [mode from to opts]
+  (let [params {:silent true
+                :noremap true
+                :expr false}]
+   (if (not= opts nil)
+     (do (if opts.nosilent
+           (tset params "silent" false))
+         (if opts.remap
+           (tset params "noremap" false))
+         (if opts.expr
+           (tset params "expr" true))
+         (if opts.noformat
+           (nvim.set_keymap mode from to params)
+           (nvim.set_keymap mode from (.. "<cmd>" to "<CR>") params)))
+     (nvim.set_keymap mode from (.. "<cmd>" to "<CR>") params))))
+
+
+;Compe
+(map :i :<CR> "compe#confirm('<CR>')" {:expr true :noformat true})
 
 ;hop.nvim
-(smap "" "\\w" :<cmd>HopWord<CR>)
-(smap "" "\\p" :<cmd>HopPattern<CR>)
-(smap "" "\\l" :<cmd>HopLine<CR>)
-(smap "" "\\c" :<cmd>HopChar1<CR>)
-(smap "" "\\C" :<cmd>HopChar2<CR>)
+(map "" "\\w" :HopWord)
+(map "" "\\p" :HopPattern)
+(map "" "\\l" :HopLine)
+(map "" "\\c" :HopChar1)
+(map "" "\\C" :HopChar2)
 
 ;Telescope
-(smap :n :<leader>f "<cmd>lua require('telescope.builtin').find_files()<CR>")
-(smap :n :<leader>h "<cmd>Telescope frecency<CR>")
-(smap :n :<leader>lg "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-(smap :n :<leader>gf "<cmd>Telescope git_files<CR>")
-(smap :n :<leader>ts "<cmd>Telescope treesitter<CR>")
-(smap :n :<leader>d "<cmd>lua require 'dotfiles.plugins.telescope.custom'.dotfiles()<CR>")
-(smap :n :<leader>z
-      "<cmd>lua require'telescope'.extensions.z.list{ cmd = { vim.o.shell, '-c', 'zoxide query -sl' } }<CR>")
-(smap :n :<leader>th "<cmd>Telescope help_tags<CR>")
-(smap :n :<leader> "<cmd>Telescope keymaps<CR>")
-(smap :n :<C-M-p> "<cmd>lua require'telescope'.extensions.project.project(require('telescope.themes').get_dropdown({}))<CR>")
-(smap :n :<leader>cb "<cmd>lua require 'dotfiles.plugins.telescope.custom'.curbuf()<CR>")
-(smap :n :<M-x> "<cmd>lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))<CR>")
-(smap :n :<leader>n "<cmd>lua require 'dotfiles.plugins.telescope.custom'.notes()<CR>")
+(map :n :<leader>f "lua require('telescope.builtin').find_files()")
+(map :n :<leader>h "Telescope frecency")
+(map :n :<leader>lg "lua require('telescope.builtin').live_grep()")
+(map :n :<leader>gf "Telescope git_files")
+(map :n :<leader>ts "Telescope treesitter")
+(map :n :<leader>d "lua require 'dotfiles.plugins.telescope.custom'.dotfiles()")
+(map :n :<leader>z "lua require'telescope'.extensions.z.list{ cmd = { vim.o.shell, '-c', 'zoxide query -sl' } }")
+
+(map :n :<leader>th "Telescope help_tags")
+(map :n :<leader> "Telescope keymaps")
+(map :n :<C-M-p> "lua require'telescope'.extensions.project.project(require('telescope.themes').get_dropdown({}))")
+(map :n :<leader>cb "lua require 'dotfiles.plugins.telescope.custom'.curbuf()")
+(map :n :<M-x> "lua require 'telescope.builtin'.commands(require('telescope.themes').get_ivy({}))")
+(map :n :<leader>n "lua require 'dotfiles.plugins.telescope.custom'.notes()")
+(map :n :tt "Telescope buffers")
 
 ;Scroll
 (let [n 2]
  (do
-  (smap :n :<Up> (.. n "<C-Y>"))
-  (smap :n :<ScrollWheelUp> (.. n "<C-Y>"))
-  (smap :n :<Down> (.. n "<C-E>"))
-  (smap :n :<ScrollWheelDown> (.. n "<C-E>"))))
+  (map :n :<Up> (.. n "<C-Y>") {:noformat true})
+  (map :n :<ScrollWheelUp> (.. n "<C-Y>") {:noformat true})
+  (map :n :<Down> (.. n "<C-E>") {:noformat true})
+  (map :n :<ScrollWheelDown> (.. n "<C-E>") {:noformat true})))
 
 
 ;LSP
-(noremap :n :<M-CR>
-         "<cmd>lua require 'dotfiles.plugins.telescope.custom'.lsp_code_actions()<CR>")
-
-(noremap :v :<M-CR> "<cmd>lua require 'telescope.builtin.lsp'.range_code_actions(require('telescope.themes').get_cursor({}))<CR>")
-(smap :n :K "<cmd>lua vim.lsp.buf.hover()<CR>")
-(smap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = 'single' } })<CR>")
-(smap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = 'single' } })<CR>")
-(smap :n :gr "<cmd>lua require 'telescope.builtin'.lsp_references({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
-(smap :n :gd "<cmd>lua require 'telescope.builtin'.lsp_definitions({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
-(smap :n :gD "<cmd>lua vim.lsp.buf.declaration()<CR>")
-(smap :n :gt "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-(smap :n :gi "<cmd>lua require 'telescope.builtin'.lsp_implementations({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
-(smap :n :<C-k> "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-(smap :n "'d" "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>")
-(smap :n :<leader>e "<cmd>Telescope lsp_workspace_diagnostics<CR>")
-(smap :n :<M-r> "<cmd>lua vim.lsp.buf.rename()<CR>")
-(smap :n :gk "<cmd>lua require 'dotfiles.lsp'.peek_definition()<CR>")
-(smap :n :<C-q> "<cmd>Trouble<CR>")
-
-;JABS
-(smap :n :tt "<cmd>Telescope buffers<CR>")
-
-;Compe
-(nvim.set_keymap :i :<CR> "compe#confirm('<CR>')"
-                 {:noremap true :silent true :expr true})
+(map :n :<M-CR> "lua require 'dotfiles.plugins.telescope.custom'.lsp_code_actions()" {:nosilent true})
+(map :v :<M-CR> "lua require 'telescope.builtin.lsp'.range_code_actions(require('telescope.themes').get_cursor({}))" {:nosilent true})
+(map :n :K "lua vim.lsp.buf.hover()")
+(map :n "]d" "lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = 'single' } })")
+(map :n "[d" "lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = 'single' } })")
+(map :n :gr "lua require 'telescope.builtin'.lsp_references({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})")
+(map :n :gd "lua require 'telescope.builtin'.lsp_definitions({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})")
+(map :n :gD "lua vim.lsp.buf.declaration()")
+(map :n :gt "lua vim.lsp.buf.type_definition()")
+(map :n :gi "lua require 'telescope.builtin'.lsp_implementations({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})")
+(map :n :<C-k> "lua vim.lsp.buf.signature_help()")
+(map :n "'d" "lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })")
+(map :n :<leader>e "Telescope lsp_workspace_diagnostics")
+(map :n :<M-r> "lua vim.lsp.buf.rename()")
+(map :n :gk "lua require 'dotfiles.lsp'.peek_definition()")
+(map :n :<C-q> "Trouble")
 
 ;nvim-dap
-(noremap :n :<F5> "<cmd>lua require'dap'.continue()<CR>")
-(noremap :n :<F10> "<cmd>lua require'dap'.step_over()<CR>")
-(noremap :n :<F11> "<cmd>lua require'dap'.step_into()<CR>")
-(noremap :n :<F12> "<cmd>lua require'dap'.step_out()<CR>")
-(noremap :n "?b" "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
-(noremap :n "?B" "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+(map :n :<F5> "lua require'dap'.continue()")
+(map :n :<F10> "lua require'dap'.step_over()")
+(map :n :<F11> "lua require'dap'.step_into()")
+(map :n :<F12> "lua require'dap'.step_out()")
+(map :n "?b" "lua require'dap'.toggle_breakpoint()")
+(map :n "?B" "lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))")
+(map :n "?l" "lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))")
 
-(noremap :n "?l"
-         "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
-
-(noremap :n "?r" "<cmd>lua require'dap'.repl.toggle()<CR>")
-(noremap :n "?el" "<cmd>lua require'dap'.run_last()<CR>")
-(noremap :n "?ts" "<cmd>lua require 'telescope'.extensions.dap.scopes()<CR>")
-(noremap :n "?ss" "<cmd>lua require('dotfiles.plugins.dap.functions').scopes_sidebar()<CR>")
-(noremap :n "?tv" "<cmd>lua require 'telescope'.extensions.dap.variables { layout_strategy = 'vertical' }<CR>")
+(map :n "?r" "lua require'dap'.repl.toggle()")
+(map :n "?el" "lua require'dap'.run_last()")
+(map :n "?ts" "lua require 'telescope'.extensions.dap.scopes()")
+(map :n "?ss" "lua require('dotfiles.plugins.dap.functions').scopes_sidebar()")
+(map :n "?tv" "lua require 'telescope'.extensions.dap.variables { layout_strategy = 'vertical' }")
 
 ;Switching buffers
-(smap :n :<C-n> ":bnext<CR>")
-(smap :n :<C-p> ":bprevious<CR>")
+(map :n :<C-n> ":bnext")
+(map :n :<C-p> ":bprevious")
 
 ;Toggleterm
-(smap :n "<C-\\>" "<cmd>ToggleTerm<CR>")
-(smap :i "<C-\\>" "<cmd>ToggleTerm<CR>")
-
-;nvim-tree
-(smap :n "\\\\" "<cmd>NvimTreeToggle<CR>")
+(map :n "<C-\\>" "ToggleTerm")
+(map :i "<C-\\>" "ToggleTerm")

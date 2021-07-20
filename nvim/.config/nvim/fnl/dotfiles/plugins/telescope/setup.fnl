@@ -7,18 +7,19 @@
 
 (defn- maker [filepath bufnr opts]
   (let [filepath (vim.fn.expand filepath)]
-    (: (Job:new {:command "inspect"
-                 :args [filepath]
+    (: (Job:new {:command "file"
+                 :args ["--mime-type" "-b" filepath]
                  :on_exit
                    (fn [j]
                      (let [ft (. (vim.split
                                    (. (j:result) 1)
-                                   ": ")
-                                 2)]
-                       (if (= "binary" ft)
-                           (vim.schedule (fn [] (vim.api.nvim_buf_set_lines bufnr 0 -1 false ["BINARY"])))
-                           (previewers.buffer_previewer_maker filepath bufnr opts))))})
-      :sync)))
+                                   "/")
+                                 1)]
+                       (if (or (= "text" ft) (= "inode" ft))
+                           (previewers.buffer_previewer_maker filepath bufnr opts)
+                           (vim.schedule (fn [] (vim.api.nvim_buf_set_lines bufnr 0 -1 false ["BINARY"]))))))})
+
+       :sync)))
 
 (telescope.setup
   {:defaults

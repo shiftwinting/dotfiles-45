@@ -1,6 +1,7 @@
 (module dotfiles.commands
-        {require {nvim aniseed.nvim}})
+        {require {nvim aniseed.nvim}
+         require-macros [macros]})
 
-(nvim.ex.command :CD ":lcd %:p:h")
-(nvim.ex.command :XplrProjectRoot ":XplrPicker `git rev-parse --show-toplevel`")
-(nvim.ex.command :CCFiles "lua require 'dotfiles.plugins.telescope.custom'.cc()")
+(defcmd :CD ":lcd %:p:h")
+(defcmd :XplrProjectRoot ":XplrPicker `git rev-parse --show-toplevel`")
+(defcmd :CCFiles "lua require 'dotfiles.plugins.telescope.custom'.cc()")

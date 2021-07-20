@@ -13,10 +13,10 @@
  :curbuf
  (fn []
    (builtin.current_buffer_fuzzy_find
-     {:winblend 10
-      :border true
-      :previewer false
-      :path_display [:shorten]}))
+     (themes.get_dropdown  {:winblend 10
+                            :border true
+                            :previewer false
+                            :path_display [:shorten]})))
  :lsp_code_actions
  (fn []
    (builtin.lsp_code_actions

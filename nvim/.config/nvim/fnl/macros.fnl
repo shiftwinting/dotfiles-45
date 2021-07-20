@@ -1,5 +1,5 @@
 (fn cmd-fmt [cmd]
-  (string.format "<Cmd>%s<CR>" cmd))
+  (.. "<cmd>" cmd "<CR>"))
 
 (fn augroup [name ...]
   `(do
@@ -10,6 +10,9 @@
 
 (fn autocmd [...]
   `(nvim.ex.autocmd ,...))
+
+(fn defcmd [...]
+  `(nvim.ex.command ,...))
 
 (fn sym-tostring [x]
   "convert variable's name to string"
@@ -52,5 +55,4 @@
                   `(print (.. "zest.se- option '" ,option "' not found"))))
             `(print (.. "zest.se- option '" ,option "' not found"))))))
 
-{: augroup : autocmd : g : se-}
-
+{: augroup : autocmd : g : se- : defcmd : cmd-fmt}

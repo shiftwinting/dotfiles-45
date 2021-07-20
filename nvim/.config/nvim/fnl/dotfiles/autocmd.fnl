@@ -1,6 +1,7 @@
 (module dotfiles.autocmd
         {require {core aniseed.core
-                  nvim aniseed.nvim}})
+                  nvim aniseed.nvim}
+         require-macros [macros]})
 
 (let [autocmds [[:WinLeave :<buffer> "set showtabline=2"]
                 ["BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc"]
@@ -16,7 +17,7 @@
                 [:FileType :rust "nnoremap <F4> :w <bar> exec '!rustc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')' && rm '.shellescape('%:r')<CR>"]]]
 
      (core.map (fn [[event pattern action]]
-                  (nvim.ex.autocmd event pattern action)) autocmds))
+                  (autocmd event pattern action)) autocmds))
 
 (vim.api.nvim_exec
   "augroup FormatAutogroup
