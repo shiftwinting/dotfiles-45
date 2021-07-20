@@ -10,7 +10,7 @@
    :lsp
      {:neovim/nvim-lspconfig {:config "require 'dotfiles.lsp'"}
       :nvim-lua/lsp-status.nvim {}
-      :folke/lsp-trouble.nvim {:config "require 'trouble'.setup()"
+      :folke/lsp-trouble.nvim {:config "require 'trouble'.setup { use_lsp_diagnostic_signs = true }"
                                :cmd "Trouble"}
       :onsails/lspkind-nvim {:cond (fn [] (not (= 1 vim.g.uivonim)))
                              :config "require 'dotfiles.plugins.lspkind'"}
@@ -74,7 +74,6 @@
 
    :visual
      {:jeffkreeftmeijer/vim-numbertoggle {}
-      :bluz71/vim-nightfly-guicolors {:setup "vim.o.termguicolors = true"}
       :jose-elias-alvarez/buftabline.nvim {:config "require('buftabline').setup {
                                                       icons = true,
                                                       icon_colors = true,
@@ -88,7 +87,8 @@
       :folke/todo-comments.nvim {:config "require 'dotfiles.plugins.todo'"}
       :delphinus/vim-auto-cursorline {}
       :mhinz/vim-startify {:config "require 'dotfiles.plugins.startify'"}
-      :elianiva/icy.nvim {:requires "rktjmp/lush.nvim"}}
+      :elianiva/icy.nvim {:requires "rktjmp/lush.nvim"
+                          :setup "vim.o.termguicolors = true"}}
 
    :environment
      {:editorconfig/editorconfig-vim {}
@@ -105,8 +105,7 @@
      {:wbthomason/packer.nvim {}
       :Olical/aniseed {}
       :Olical/conjure {:ft ["fennel" "clojure"]
-                       :branch "fork/master"
-                       :lock true}
+                       :branch "master"}
       :eraserhd/parinfer-rust {:run "cargo build --release"
                                :ft ["clojure" "fennel" "lisp" "scheme"]}
       :dense-analysis/ale {:config "require 'dotfiles.plugins.ale'"}

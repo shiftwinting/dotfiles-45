@@ -4,7 +4,7 @@ include ~/.config/sway/theming
 include ~/.config/sway/mappings
 
 bar {
-    font Iosevka 12
+    font Iosevka,Feather 11.6
     position top
     status_command i3status-rs
     colors {

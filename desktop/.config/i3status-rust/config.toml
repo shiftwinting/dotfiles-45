@@ -1,5 +1,15 @@
-icons = "material-nf"
 theme = "iceberg"
+
+[icons]
+name = "material-nf"
+[icons.overrides]
+volume_muted = "\uf210"
+volume_empty = "\uf20d"
+volume_half = "\uf20e"
+volume_full = "\uf20f"
+net_wired = "\uf18f"
+net_wireless = "\uf1bd"
+music = "\uf1ac"
 
 [[block]]
 block = "focused_window"
@@ -10,28 +20,24 @@ max_width = 70
 block = "music"
 buttons = ["play", "next"]
 format = "{title}"
+[block.theme_overrides]
+info_bg = "#A092C8"
 
 [[block]]
-block = "memory"
-display_type = "memory"
-icons = false
-format_mem = "{mem_used}"
+block = "load"
+icons_format = " \uf100 "
 
 [[block]]
 block = "temperature"
 collapsed = false
 chip = "coretemp-isa-0000"
 format = "{average}"
+icons_format = " \uf1ee "
 interval = 5
 
 [[block]]
 block = "sound"
 on_click = "pavucontrol"
-
-[[block]]
-block = "maildir"
-interval = 40
-inboxes = ["/home/p00f/Mail/BITS/INBOX", "/home/p00f/Mail/GMail/INBOX"]
 
 [[block]]
 block = "networkmanager"

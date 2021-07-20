@@ -6,7 +6,6 @@
                 ["BufNewFile,BufRead" "*.jsonc" "setfiletype jsonc"]
                 [:BufWritePost :wezterm.fnl "!fennel --compile wezterm.fnl > wezterm.lua"]
                 ["CursorHold,CursorHoldI" :* "lua require'nvim-lightbulb'.update_lightbulb({status_text={enabled=true}})"]
-                ["CursorHold" :* "lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })"]
                 [:FileType :fennel "setlocal indentexpr=lisp"]
                 [:FileType :clojure "setlocal indentexpr=lisp"]
                 [:FileType "Results,lspinfo,NeogitStatus" "let b:auto_cursorline_disabled = 1"]
@@ -16,8 +15,8 @@
                 [:FileType :cpp "nnoremap <F4> :w <bar> exec '!g++ -lm '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')' && rm '.shellescape('%:r')<CR>"]
                 [:FileType :rust "nnoremap <F4> :w <bar> exec '!rustc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')' && rm '.shellescape('%:r')<CR>"]]]
 
-     (core.map (fn [[event name action]]
-                  (nvim.ex.autocmd event name action)) autocmds))
+     (core.map (fn [[event pattern action]]
+                  (nvim.ex.autocmd event pattern action)) autocmds))
 
 (vim.api.nvim_exec
   "augroup FormatAutogroup

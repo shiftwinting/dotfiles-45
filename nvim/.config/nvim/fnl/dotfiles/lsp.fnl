@@ -89,7 +89,9 @@
                             :on_init on-init}
                          :tools
                            {:inlay_hints {:other_hints_prefix " » "
-                                          :highlight "RustInlayHints"}}})
+                                          :highlight "RustInlayHints"
+                                          :max_len_align true
+                                          :max_len_align_padding 2}}})
       (lspconfig.bashls.setup
                 {:capabilities capabilities
                  :on_attach on_attach

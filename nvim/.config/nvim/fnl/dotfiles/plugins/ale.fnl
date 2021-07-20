@@ -2,9 +2,7 @@
   {require {nvim aniseed.nvim}})
 
 (set nvim.g.ale_linters
-     {:python [:flake8]
-      :sh []
-      :java []
+     {:sh []
       :lua []
       :clojure [:joker]
       :fennel [:joker]

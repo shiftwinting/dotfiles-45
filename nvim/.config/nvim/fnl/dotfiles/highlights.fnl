@@ -18,15 +18,16 @@
            :NormalFloat "guibg=#161822"
            :FloatBorder "guifg=#414758 guibg=#161822"
 
-           :NvimDapVirtualText "guifg=#89B8C2 gui=Italic"
-           :RustInlayHints "guifg=#D18771"
-           :IndentBlankLineChar "cterm=nocombine gui=nocombine guifg=#414758"
+           :NvimDapVirtualText "guifg=#828597 gui=Italic"
+           :IndentBlankLineChar "cterm=nocombine gui=nocombine guifg=#36384A"
            :TSBoolean "guifg=#E46767"}]
      (each [group colour (pairs tbl)]
       (nvim.ex.highlight group colour)))
 
 (let [link {:SignAdd :GitSignsAdd
             :SignChange :GitSignsChange
-            :SignDelete :GitSignsDelete}]
+            :SignDelete :GitSignsDelete
+            :NvimDapVirtualText :RustInlayHints
+            :FloatBorder :TSPunctBracket}]
   (each [source destination (pairs link)]
-    (nvim.ex.highlight :link destination source)))
+    (nvim.ex.highlight! :link destination source)))

@@ -64,10 +64,11 @@
 (smap :n :gt "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 (smap :n :gi "<cmd>lua require 'telescope.builtin'.lsp_implementations({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})<CR>")
 (smap :n :<C-k> "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-(smap :n "\"d" "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>")
+(smap :n "'d" "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })<CR>")
 (smap :n :<leader>e "<cmd>Telescope lsp_workspace_diagnostics<CR>")
 (smap :n :<M-r> "<cmd>lua vim.lsp.buf.rename()<CR>")
 (smap :n :gk "<cmd>lua require 'dotfiles.lsp'.peek_definition()<CR>")
+(smap :n :<C-q> "<cmd>Trouble<CR>")
 
 ;JABS
 (smap :n :tt "<cmd>JABSOpen<CR>")

@@ -6,9 +6,9 @@
   {:highlight {:enable true
                :use_languagetree true
                :disable ["latex" "clojure" "css"]}
-   :rainbow {:enable true
+   :rainbow {:enable false
              :extended_mode true
-             :disable ["c" "cpp" "lua"]
+             :disable ["c" "cpp" "lua" "rust"]
              :colors ["#A4BF8D"
                       "#A092C8"
                       "#EBCA89"
@@ -66,5 +66,4 @@
                 :disable {}
                 :updatetime 25
                 :persist_queries false}
-   :context {:enable false}
    :matchup {:enable true}})
