@@ -28,6 +28,21 @@
 ;Compe
 (map :i :<CR> "compe#confirm('<CR>')" {:expr true :noformat true})
 
+;LuaSnip
+(map :i :<Tab> "luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'" {:expr true
+                                                                                          :noformat true
+                                                                                          :remap true})
+(map :i :<S-Tab> "lua require'luasnip'.jump(-1)")
+(map :s :<Tab> "lua require('luasnip').jump(1)")
+(map :s :<S-Tab> "lua require('luasnip').jump(-1)")
+(map :i :<C-E> "luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'" {:expr true
+                                                                                  :remap true
+                                                                                  :noformat true})
+
+(map :s :<C-E> "luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'" {:expr true
+                                                                                  :remap true
+                                                                                  :noformat true})
+
 ;hop.nvim
 (map "" "\\w" :HopWord)
 (map "" "\\p" :HopPattern)
@@ -63,7 +78,7 @@
 
 ;LSP
 (map :n :<M-CR> "lua require 'dotfiles.plugins.telescope.custom'.lsp_code_actions()" {:nosilent true})
-(map :v :<M-CR> "lua require 'telescope.builtin.lsp'.range_code_actions(require('telescope.themes').get_cursor({}))" {:nosilent true})
+(map :v :<M-CR> "lua require 'telescope.builtin.lsp'.range_code_actions(require('telescope.themes').get_cursor())" {:nosilent true})
 (map :n :K "lua vim.lsp.buf.hover()")
 (map :n "]d" "lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = 'single' } })")
 (map :n "[d" "lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = 'single' } })")
@@ -73,6 +88,7 @@
 (map :n :gt "lua vim.lsp.buf.type_definition()")
 (map :n :gi "lua require 'telescope.builtin'.lsp_implementations({layout_strategy = 'vertical', layout_config = { preview_height = 0.7 }})")
 (map :n :<C-k> "lua vim.lsp.buf.signature_help()")
+(map :i :<C-k> "lua vim.lsp.buf.signature_help()")
 (map :n "'d" "lua vim.lsp.diagnostic.show_line_diagnostics({ border = 'single' })")
 (map :n :<leader>e "Telescope lsp_workspace_diagnostics")
 (map :n :<M-r> "lua vim.lsp.buf.rename()")

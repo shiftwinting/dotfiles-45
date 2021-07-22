@@ -14,8 +14,12 @@
 (defn peek-definition []
   (let [params (vim.lsp.util.make_position_params)]
     (do
-      (if (not (pcall vim.lsp.buf_request 0 "textDocument/definition" params preview-location-callback))
-          (pcall vim.lsp.buf_request 0 "textDocument/declaration" params preview-location-callback)))))
+      (if (not (pcall vim.lsp.buf_request 0
+                                          "textDocument/definition"
+                                          params preview-location-callback))
+          (pcall vim.lsp.buf_request 0
+                                     "textDocument/declaration"
+                                      params preview-location-callback)))))
 
 (let [on-init (fn [client]
                 (set client.config.flags [])
@@ -89,9 +93,12 @@
                             :on_init on-init}
                          :tools
                            {:inlay_hints {:other_hints_prefix " » "
-                                          :highlight "RustInlayHints"
+                                          :highlight "NonText"
                                           :max_len_align true
-                                          :max_len_align_padding 2}}})
+                                          :max_len_align_padding 2}
+                            :runnables {:layout_strategy "center"
+                                        :layout_config {:height 0.5
+                                                        :width 0.5}}}})
       (lspconfig.bashls.setup
                 {:capabilities capabilities
                  :on_attach on_attach

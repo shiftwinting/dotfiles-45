@@ -27,7 +27,6 @@
 (let [link {:SignAdd :GitSignsAdd
             :SignChange :GitSignsChange
             :SignDelete :GitSignsDelete
-            :NvimDapVirtualText :RustInlayHints
             :FloatBorder :TSPunctBracket}]
   (each [source destination (pairs link)]
     (nvim.ex.highlight! :link destination source)))

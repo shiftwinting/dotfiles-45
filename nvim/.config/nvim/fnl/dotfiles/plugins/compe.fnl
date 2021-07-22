@@ -19,7 +19,7 @@
    :source {:path true
             :buffer true
             :calc true
-            :snippets_nvim true
+            :luasnip true
             :nvim_lsp true
             :nvim_lua false
             :spell false

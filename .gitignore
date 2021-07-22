@@ -1,4 +1,5 @@
 nvim/.config/nvim/lua
+!nvim/.config/nvim/lua/dotfiles/snippets/
 nvim/.config/nvim/plugin
 nvim/.config/nvim/init.lua
 

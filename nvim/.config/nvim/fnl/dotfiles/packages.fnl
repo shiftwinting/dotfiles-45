@@ -5,7 +5,7 @@
   {:completion
      {:hrsh7th/nvim-compe {:config "require 'dotfiles.plugins.compe'"}
       :tami5/compe-conjure {:after "conjure"}
-      :norcalli/snippets.nvim {:config "require 'dotfiles.snippets'"}}
+      :L3MON4D3/LuaSnip {:config "require 'dotfiles.snippets.snippets'"}}
 
    :lsp
      {:neovim/nvim-lspconfig {:config "require 'dotfiles.lsp'"}

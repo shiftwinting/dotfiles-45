@@ -11,4 +11,5 @@ exec wl-paste -t text --watch clipman store
 exec ~/.azotebg
 exec env RUST_BACKTRACE=1 swayrd > ~/.local/state/swayrd.log 2>&1
 exec sworkstyle &> /tmp/sworkstyle.log
+exec nwg-wrapper -s date-wttr.sh -r 1800000 -c date-wttr.css -p right -mr 50 -mb 800
 exec cms_notifs
